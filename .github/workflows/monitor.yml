@@ -1,0 +1,41 @@
+name: Early Signal Monitor
+
+on:
+  # Gira ogni 30 minuti automaticamente
+  schedule:
+    - cron: '*/30 * * * *'
+  # Permette anche run manuale da GitHub UI
+  workflow_dispatch:
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # serve per committare signals.json e dashboard
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run signal monitor
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python signal_monitor.py --quiet --days 3
+
+      - name: Commit signals.json aggiornato
+        run: |
+          git config user.name  "Signal Monitor Bot"
+          git config user.email "bot@signal-monitor.local"
+          git add signals.json
+          # Committa solo se ci sono cambiamenti reali
+          git diff --staged --quiet || git commit -m "chore: update signals $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

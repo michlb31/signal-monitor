@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Signal Monitor</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #21262d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --trump: #ff4757;
+    --ppa: #2ed573;
+    --nuclear: #ffa502;
+    --analyst: #5352ed;
+    --quantum: #eccc68;
+    --chips: #1e90ff;
+    --energy: #a29bfe;
+    --generic: #636e72;
+    --alert-bg: rgba(255,71,87,0.08);
+    --alert-border: rgba(255,71,87,0.4);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace; font-size: 14px; }
+
+  /* ── Header ── */
+  .header { padding: 20px 28px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--bg); z-index: 10; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+  .logo span { color: var(--trump); }
+  .meta { font-size: 12px; color: var(--muted); text-align: right; }
+  .refresh-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 12px; transition: border-color 0.2s; }
+  .refresh-btn:hover { border-color: var(--muted); }
+
+  /* ── Stats bar ── */
+  .stats { display: flex; gap: 16px; padding: 14px 28px; border-bottom: 1px solid var(--border); background: var(--surface); }
+  .stat { text-align: center; }
+  .stat-val { font-size: 22px; font-weight: 700; }
+  .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-alert .stat-val { color: var(--trump); }
+
+  /* ── Filters ── */
+  .filters { padding: 12px 28px; display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
+  .filter-btn { padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; transition: all 0.15s; }
+  .filter-btn.active { color: #fff; }
+  .filter-btn[data-tag="all"].active { background: #2d333b; border-color: var(--muted); }
+  .filter-btn[data-tag="trump"].active { background: var(--trump); border-color: var(--trump); }
+  .filter-btn[data-tag="ppa"].active { background: var(--ppa); border-color: var(--ppa); color: #000; }
+  .filter-btn[data-tag="nuclear"].active { background: var(--nuclear); border-color: var(--nuclear); color: #000; }
+  .filter-btn[data-tag="analyst"].active { background: var(--analyst); border-color: var(--analyst); }
+  .filter-btn[data-tag="quantum"].active { background: var(--quantum); border-color: var(--quantum); color: #000; }
+  .filter-btn[data-tag="chips"].active { background: var(--chips); border-color: var(--chips); }
+
+  /* ── Feed ── */
+  .feed { padding: 16px 28px; display: flex; flex-direction: column; gap: 10px; max-width: 1000px; }
+
+  /* ── Signal Card ── */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; transition: border-color 0.15s; }
+  .card:hover { border-color: #444d56; }
+  .card.is-alert { background: var(--alert-bg); border-color: var(--alert-border); }
+  .card-top { display: flex; align-items: flex-start; gap: 10px; }
+  .score-badge { min-width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; flex-shrink: 0; }
+  .score-high { background: rgba(255,71,87,0.2); color: var(--trump); }
+  .score-mid { background: rgba(255,165,2,0.2); color: var(--nuclear); }
+  .score-low { background: rgba(99,110,114,0.2); color: var(--muted); }
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
+  .card-title a { color: var(--text); text-decoration: none; }
+  .card-title a:hover { color: #58a6ff; }
+  .card-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 6px; }
+  .source-badge { font-size: 11px; color: var(--muted); background: #1c2128; padding: 2px 7px; border-radius: 4px; }
+  .date-badge { font-size: 11px; color: var(--muted); }
+  .alert-pill { font-size: 10px; font-weight: 700; background: var(--trump); color: #fff; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.5px; }
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; border: 1px solid; }
+  .tag-trump  { color: var(--trump);   border-color: var(--trump);   background: rgba(255,71,87,0.1); }
+  .tag-ppa    { color: var(--ppa);     border-color: var(--ppa);     background: rgba(46,213,115,0.1); }
+  .tag-nuclear{ color: var(--nuclear); border-color: var(--nuclear); background: rgba(255,165,2,0.1); }
+  .tag-analyst{ color: var(--analyst); border-color: var(--analyst); background: rgba(83,82,237,0.1); }
+  .tag-quantum{ color: var(--quantum); border-color: var(--quantum); background: rgba(236,204,104,0.1); }
+  .tag-chips  { color: var(--chips);   border-color: var(--chips);   background: rgba(30,144,255,0.1); }
+  .tag-energy_ai { color: var(--energy); border-color: var(--energy); background: rgba(162,155,254,0.1); }
+  .tag-generic{ color: var(--muted);   border-color: var(--border);  background: transparent; }
+  .tickers { font-size: 11px; color: var(--muted); margin-top: 5px; }
+  .ticker { font-weight: 700; color: #58a6ff; text-transform: uppercase; margin-right: 5px; }
+  .rules { font-size: 11px; color: var(--muted); margin-top: 4px; font-style: italic; }
+
+  /* Score bar */
+  .score-bar-wrap { width: 100%; height: 3px; background: var(--border); border-radius: 2px; margin-top: 8px; }
+  .score-bar { height: 3px; border-radius: 2px; transition: width 0.3s; }
+
+  /* ── Empty state ── */
+  .empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .empty-icon { font-size: 40px; margin-bottom: 12px; }
+
+  /* ── Legend ── */
+  .legend { padding: 16px 28px; border-top: 1px solid var(--border); margin-top: 20px; }
+  .legend h3 { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+  .legend-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 12px; }
+  .legend-item strong { display: block; margin-bottom: 2px; }
+  .legend-item span { color: var(--muted); font-size: 11px; }
+
+  /* ── Load overlay ── */
+  .load-notice { background: #1c2128; border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; margin: 20px 28px; }
+  .load-notice code { background: #0d1117; padding: 10px 16px; border-radius: 6px; display: block; margin: 10px 0; font-size: 13px; color: #58a6ff; text-align: left; white-space: pre; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Early<span>Signal</span> Monitor</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="refresh-btn" onclick="loadSignals()">⟳ Refresh</button>
+    <div class="meta" id="meta-info">Caricamento...</div>
+  </div>
+</div>
+
+<div class="stats" id="stats-bar">
+  <div class="stat"><div class="stat-val" id="stat-total">—</div><div class="stat-label">Segnali</div></div>
+  <div class="stat stat-alert"><div class="stat-val" id="stat-alerts">—</div><div class="stat-label">🚨 Alert</div></div>
+  <div class="stat"><div class="stat-val" id="stat-trump" style="color:var(--trump)">—</div><div class="stat-label">Trump</div></div>
+  <div class="stat"><div class="stat-val" id="stat-ppa" style="color:var(--ppa)">—</div><div class="stat-label">PPA</div></div>
+  <div class="stat"><div class="stat-val" id="stat-nuclear" style="color:var(--nuclear)">—</div><div class="stat-label">Nuclear</div></div>
+  <div class="stat"><div class="stat-val" id="stat-analyst" style="color:var(--analyst)">—</div><div class="stat-label">Analyst</div></div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-tag="all" onclick="setFilter('all', this)">Tutti</button>
+  <button class="filter-btn" data-tag="trump" onclick="setFilter('trump', this)">🔴 Trump Touch</button>
+  <button class="filter-btn" data-tag="ppa" onclick="setFilter('ppa', this)">🟢 Big Tech PPA</button>
+  <button class="filter-btn" data-tag="nuclear" onclick="setFilter('nuclear', this)">🟡 Nuclear</button>
+  <button class="filter-btn" data-tag="analyst" onclick="setFilter('analyst', this)">🟣 Analyst Upgrade</button>
+  <button class="filter-btn" data-tag="quantum" onclick="setFilter('quantum', this)">⚡ Quantum</button>
+  <button class="filter-btn" data-tag="chips" onclick="setFilter('chips', this)">🔵 AI Chips</button>
+  <button class="filter-btn" data-tag="alert" onclick="setFilter('alert', this)">🚨 Solo Alert</button>
+</div>
+
+<div class="feed" id="feed"></div>
+
+<div class="legend">
+  <h3>Pattern spiegati</h3>
+  <div class="legend-grid">
+    <div class="legend-item">
+      <strong style="color:var(--trump)">🔴 Trump Touch</strong>
+      <span>Post Truth Social, menzione Casa Bianca, contratto DoD/DOE, disclosure acquisto azioni da parte dell'amministrazione. Score +35/50.</span>
+    </div>
+    <div class="legend-item">
+      <strong style="color:var(--ppa)">🟢 Big Tech PPA</strong>
+      <span>Power Purchase Agreement Microsoft/Amazon/Google/Oracle per data center AI. Annunciato su SEC 8-K e Utility Dive prima dei media generalisti.</span>
+    </div>
+    <div class="legend-item">
+      <strong style="color:var(--nuclear)">🟡 Nuclear AI</strong>
+      <span>Deal nucleare (riavvio impianti, SMR) connesso a Big Tech. Fonte: NucNet, Utility Dive, 8-K Constellation/Vistra/Talen.</span>
+    </div>
+    <div class="legend-item">
+      <strong style="color:var(--analyst)">🟣 Analyst Cascade</strong>
+      <span>Upgrade da case minori (D.A. Davidson, Daiwa, Needham) prima delle grandi banche. Il secondo movimento è spesso più grande.</span>
+    </div>
+    <div class="legend-item">
+      <strong style="color:var(--quantum)">⚡ Quantum</strong>
+      <span>Grant/contratti governativi su quantum computing. Pattern: WSJ anticipa l'annuncio ufficiale di 24-48h.</span>
+    </div>
+    <div class="legend-item">
+      <strong>📊 Come usare</strong>
+      <span>Esegui signal_monitor.py ogni 30 min (--watch). Apri questo dashboard e filtra per Alert. Score ≥ 70 = azione immediata.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+let allSignals = [];
+let currentFilter = 'all';
+
+// ── Demo data (usato se signals.json non è disponibile) ──
+const DEMO_DATA = {
+  generated_at: new Date().toISOString(),
+  total_signals: 5,
+  alerts: 2,
+  signals: [
+    {
+      title: "[DEMO] Constellation Energy signs 20-year PPA with Microsoft for Three Mile Island restart",
+      source: "SEC EDGAR 8-K",
+      url: "https://www.sec.gov",
+      published: new Date().toISOString(),
+      summary: "Constellation announces signing of 20-year power purchase agreement with Microsoft to restart Unit 1 at Three Mile Island, adding 835MW of carbon-free energy.",
+      score: 95,
+      tags: ["ppa", "nuclear"],
+      alert: true,
+      pattern: "ppa",
+      matched_rules: ["Power Purchase Agreement", "Big Tech + energia", "Riavvio nucleare"],
+      tickers_mentioned: ["constellation"]
+    },
+    {
+      title: "[DEMO] Trump says 'go buy a Dell' at White House Mother's Day event",
+      source: "Truth Social Monitor",
+      url: "https://truthsocial.com",
+      published: new Date(Date.now() - 3600000).toISOString(),
+      summary: "President Trump thanked Michael Dell at a White House event and encouraged Americans to buy Dell products. Dell family previously donated $6.25B to Trump Accounts.",
+      score: 90,
+      tags: ["trump"],
+      alert: true,
+      pattern: "trump",
+      matched_rules: ["Trump menzione diretta", "White House evento"],
+      tickers_mentioned: ["dell"]
+    },
+    {
+      title: "[DEMO] D.A. Davidson upgrades Bloom Energy to Buy, raises target to $180",
+      source: "Benzinga Analyst Upgrades",
+      url: "https://benzinga.com",
+      published: new Date(Date.now() - 7200000).toISOString(),
+      summary: "D.A. Davidson initiates Bloom Energy with Buy rating and $180 price target, citing AI data center fuel cell opportunity.",
+      score: 65,
+      tags: ["analyst", "energy_ai"],
+      alert: true,
+      pattern: "analyst",
+      matched_rules: ["Casa minore upgrade early", "Fuel cell / energia alternativa AI"],
+      tickers_mentioned: ["bloom energy"]
+    },
+    {
+      title: "[DEMO] Trump administration preparing $2B federal grant for quantum computing",
+      source: "Utility Dive",
+      url: "https://utilitydive.com",
+      published: new Date(Date.now() - 10800000).toISOString(),
+      summary: "WSJ reports the Trump administration is preparing a $2 billion federal grant package for quantum computing companies including D-Wave and Rigetti.",
+      score: 80,
+      tags: ["trump", "quantum"],
+      alert: true,
+      pattern: "quantum",
+      matched_rules: ["Trump menzione diretta", "Quantum computing grant"],
+      tickers_mentioned: ["d-wave", "rigetti"]
+    },
+    {
+      title: "[DEMO] GE Vernova books $2.4B in data center orders Q1 2026",
+      source: "Seeking Alpha",
+      url: "https://seekingalpha.com",
+      published: new Date(Date.now() - 86400000).toISOString(),
+      summary: "GE Vernova reports record data center-related orders of $2.4B in Q1, exceeding the entire 2025 total, driven by AI power demand.",
+      score: 55,
+      tags: ["ppa", "energy_ai"],
+      alert: false,
+      pattern: "ppa",
+      matched_rules: ["Partnership AI infrastruttura miliardi", "Data center potenza massiccia"],
+      tickers_mentioned: ["ge vernova"]
+    }
+  ]
+};
+
+async function loadSignals() {
+  document.getElementById('meta-info').textContent = 'Aggiornamento...';
+  try {
+    const r = await fetch('signals.json?t=' + Date.now());
+    if (!r.ok) throw new Error('File non trovato');
+    const data = await r.json();
+    allSignals = data.signals || [];
+    updateStats(data);
+    document.getElementById('meta-info').textContent =
+      'Aggiornato: ' + new Date(data.generated_at).toLocaleTimeString('it-IT');
+  } catch (e) {
+    // Usa demo data se signals.json non esiste ancora
+    allSignals = DEMO_DATA.signals;
+    updateStats(DEMO_DATA);
+    document.getElementById('meta-info').textContent = '⚠️ Demo — esegui signal_monitor.py per dati reali';
+  }
+  renderFeed();
+}
+
+function updateStats(data) {
+  document.getElementById('stat-total').textContent = data.total_signals || allSignals.length;
+  document.getElementById('stat-alerts').textContent = data.alerts || allSignals.filter(s => s.alert).length;
+  document.getElementById('stat-trump').textContent = allSignals.filter(s => s.tags?.includes('trump')).length;
+  document.getElementById('stat-ppa').textContent = allSignals.filter(s => s.tags?.includes('ppa')).length;
+  document.getElementById('stat-nuclear').textContent = allSignals.filter(s => s.tags?.includes('nuclear')).length;
+  document.getElementById('stat-analyst').textContent = allSignals.filter(s => s.tags?.includes('analyst')).length;
+}
+
+function setFilter(tag, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = tag;
+  renderFeed();
+}
+
+function renderFeed() {
+  const feed = document.getElementById('feed');
+  let signals = [...allSignals];
+
+  if (currentFilter === 'alert') {
+    signals = signals.filter(s => s.alert);
+  } else if (currentFilter !== 'all') {
+    signals = signals.filter(s => s.tags?.includes(currentFilter) || s.pattern === currentFilter);
+  }
+
+  if (signals.length === 0) {
+    feed.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><div>Nessun segnale per questo filtro</div></div>`;
+    return;
+  }
+
+  feed.innerHTML = signals.map(s => {
+    const scoreClass = s.score >= 70 ? 'score-high' : s.score >= 45 ? 'score-mid' : 'score-low';
+    const barColor = s.score >= 70 ? 'var(--trump)' : s.score >= 45 ? 'var(--nuclear)' : 'var(--muted)';
+    const dateStr = s.published ? new Date(s.published).toLocaleDateString('it-IT', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}) : '';
+    const tags = (s.tags || []).map(t => `<span class="tag tag-${t}">${t}</span>`).join('');
+    const tickers = s.tickers_mentioned?.length ? `<div class="tickers">Ticker: ${s.tickers_mentioned.map(t => `<span class="ticker">${t}</span>`).join('')}</div>` : '';
+    const rules = s.matched_rules?.length ? `<div class="rules">Regole: ${s.matched_rules.slice(0,3).join(' · ')}</div>` : '';
+    const alertPill = s.alert ? `<span class="alert-pill">ALERT</span>` : '';
+
+    return `
+    <div class="card ${s.alert ? 'is-alert' : ''}">
+      <div class="card-top">
+        <div class="score-badge ${scoreClass}">${s.score}</div>
+        <div class="card-body">
+          <div class="card-title"><a href="${s.url}" target="_blank">${s.title}</a></div>
+          <div class="card-meta">
+            <span class="source-badge">${s.source}</span>
+            <span class="date-badge">${dateStr}</span>
+            ${alertPill}
+          </div>
+          <div class="tags">${tags}</div>
+          ${tickers}
+          ${rules}
+          <div class="score-bar-wrap"><div class="score-bar" style="width:${s.score}%;background:${barColor}"></div></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Caricamento iniziale
+loadSignals();
+// Auto-refresh ogni 5 minuti
+setInterval(loadSignals, 300000);
+</script>
+</body>
+</html>
