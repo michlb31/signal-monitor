@@ -804,7 +804,7 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
 
     print(f"\n{'='*65}")
     print(f"  EARLY SIGNAL MONITOR v2 — {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
-    print(f"  Finestra: {days_back}gg | Watchlist: {len(WATCHLIST)} ticker | Fonti: {len(FEEDS)+4}")
+    print(f"  Finestra: {days_back}gg | Watchlist: {len(WATCHLIST)} ticker | Fonti: {len(FEEDS)+6}")
     print(f"{'='*65}\n")
 
     print("📡 RSS feeds...")
@@ -827,6 +827,35 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     sigs = fetch_gov_contracts(days_back)
     print(f"  ✓ {len(sigs)} contratti rilevanti")
     all_signals.extend(sigs)
+
+    print("\n🏦 OpenBB Insider — Form 4 strutturato (open market only)...")
+    try:
+        from openbb_layer import fetch_openbb_insiders
+        obb_ins = fetch_openbb_insiders(days_back=days_back)
+        # Converti dict → Signal
+        for d in obb_ins:
+            all_signals.append(Signal(
+                title=d.get("title", ""),
+                source=d.get("source", "OpenBB Insider"),
+                source_type=d.get("source_type", "insider"),
+                url=d.get("url", ""),
+                published=d.get("published", ""),
+                published_dt=d.get("published_dt", ""),
+                summary=d.get("summary", ""),
+                raw_score=d.get("raw_score", 0),
+                final_score=d.get("final_score", 0),
+                tags=d.get("tags", []),
+                alert=d.get("alert", False),
+                pattern=d.get("pattern", "insider"),
+                matched_rules=d.get("matched_rules", []),
+                tickers_mentioned=d.get("tickers_mentioned", []),
+                ticker_symbols=d.get("ticker_symbols", []),
+                age_hours=d.get("age_hours", 0.0),
+                convergence_boost=d.get("convergence_boost", 0),
+            ))
+        print(f"  ✓ {len(obb_ins)} acquisti open market rilevati")
+    except Exception as e:
+        print(f"  ⚠️  OpenBB Insider: {e}")
 
     print("\n📰 Google News velocity...")
     sigs = fetch_google_news_velocity(days_back=2)
@@ -852,7 +881,31 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     print("\n📈 Options scanner (unusual activity)...")
     try:
         from options_scanner import scan_options
-        opt_sigs = scan_options(days_back=2)
+        opt_sigs_raw = scan_options(days_back=2)
+        opt_sigs = []
+        for d in opt_sigs_raw:
+            if isinstance(d, dict):
+                opt_sigs.append(Signal(
+                    title=d.get("title", ""),
+                    source=d.get("source", "options"),
+                    source_type=d.get("source_type", "options"),
+                    url=d.get("url", ""),
+                    published=d.get("published", ""),
+                    published_dt=d.get("published_dt", ""),
+                    summary=d.get("summary", ""),
+                    raw_score=d.get("raw_score", 0),
+                    final_score=d.get("final_score", 0),
+                    tags=d.get("tags", []),
+                    alert=d.get("alert", False),
+                    pattern=d.get("pattern", "options"),
+                    matched_rules=d.get("matched_rules", []),
+                    tickers_mentioned=d.get("tickers_mentioned", []),
+                    ticker_symbols=d.get("ticker_symbols", []),
+                    age_hours=d.get("age_hours", 0.0),
+                    convergence_boost=d.get("convergence_boost", 0),
+                ))
+            else:
+                opt_sigs.append(d)
         print(f"  ✓ {len(opt_sigs)} segnali options")
         all_signals.extend(opt_sigs)
     except Exception as e:

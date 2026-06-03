@@ -311,10 +311,20 @@ def scan_options(days_back: int = 2) -> list:
     print(f"    → {len(sigs)} ticker con buzz options")
     all_sigs.extend(sigs)
 
-    print("  Put/call ratio anomalies (yfinance)...")
-    sigs = fetch_putcall_anomalies()
-    print(f"    → {len(sigs)} anomalie P/C rilevate")
-    all_sigs.extend(sigs)
+    print("  Put/call ratio anomalies (OpenBB multi-scadenza → yfinance fallback)...")
+    obb_sigs = []
+    try:
+        from openbb_layer import fetch_openbb_options_chains
+        obb_sigs = fetch_openbb_options_chains()
+    except Exception:
+        pass
+    if obb_sigs:
+        print(f"    → {len(obb_sigs)} anomalie (OpenBB multi-expiry)")
+        all_sigs.extend(obb_sigs)
+    else:
+        sigs = fetch_putcall_anomalies()
+        print(f"    → {len(sigs)} anomalie P/C (yfinance fallback)")
+        all_sigs.extend(sigs)
 
     return all_sigs
 
