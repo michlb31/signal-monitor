@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Early Signal Monitor v2 — Stock Catalyst Detector
+Early Signal Monitor v3 — Stock Catalyst Detector
 ===================================================
 Monitora fonti chiave per individuare segnali precoci prima che un titolo esploda.
 
@@ -9,18 +9,25 @@ Pattern rilevati:
   2. Big Tech PPA     — Power Purchase Agreement Microsoft/Amazon/Google/Oracle
   3. Analyst Cascade  — Upgrade case minori prima delle grandi banche
   4. Insider Buying   — Form 4 SEC: executive e funzionari che comprano
-  5. Congress Trading — STOCK Act: senatori/congressisti comprano prima di votare policy
+  5. Congress Trading — STOCK Act via Capitol Trades RSS
   6. Gov Contracts    — USASpending.gov: contratti federali prima che escano sui media
+  7. Smart Money      — ARK Invest (CSV giornaliero), Pelosi tracker, 13F EDGAR
+  8. Crypto Policy    — executive order, SEC decisions, ETF approval
+  9. Space/Defense    — contratti NASA/SpaceX/DoD, nuovi settori
 
-Fonti gratuite usate:
-  SEC EDGAR 8-K RSS + full-text search
-  SEC EDGAR Form 4 (insider trading)
-  HouseStockWatcher + SenateStockWatcher (STOCK Act, JSON pubblico)
-  USASpending.gov API (contratti federali, API pubblica)
-  Federal Register RSS (executive orders/policy)
-  Google News RSS per ticker (misura velocita di menzione)
-  Reuters / CNBC / MarketWatch RSS
-  Utility Dive / Data Center Frontier / NucNet / Seeking Alpha / PR Newswire
+Settori monitorati:
+  Energia AI (CEG, GEV, BE, VST, TLN, OKLO, SMR, NEE, D)
+  AI Chips (PLTR, DELL, INTC, AMD, NVDA, AVGO, ORCL)
+  Quantum (QBTS, RGTI, IONQ)
+  Difesa avanzata (NOC, GD, LDOS, BAH, LMT, RTX, LHX)
+  Space (RKLB, LUNR, ASTS, RDW)
+  Crypto stocks (COIN, MSTR, RIOT, MARA, CLSK)
+
+Smart Money tracciati (gratis):
+  ARK Invest — CSV giornaliero pubblico (Cathie Wood)
+  Capitol Trades RSS — acquisti Congress in real-time
+  SEC 13F EDGAR — Berkshire, Pershing Square (trimestrale)
+  Pelosi Tracker RSS — Nancy Pelosi operazioni
 
 Scoring avanzato:
   - Time decay: notizie fresche pesano di piu (1.4x se < 1h, 0.4x se > 48h)
@@ -67,7 +74,12 @@ FEEDS = [
     {"name": "CNBC",                "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",                                                          "type": "media",   "base_score": 15, "credibility": 1.1},
     {"name": "MarketWatch",         "url": "https://feeds.marketwatch.com/marketwatch/topstories/",                                                          "type": "media",   "base_score": 15, "credibility": 1.0},
     {"name": "Seeking Alpha",       "url": "https://seekingalpha.com/market_currents.xml",                                                                   "type": "analyst", "base_score": 15, "credibility": 1.0},
-    {"name": "PR Newswire Energy",  "url": "https://www.prnewswire.com/rss/news-releases-list.rss?category=EN",                                             "type": "pr",      "base_score": 15, "credibility": 0.9},
+    {"name": "PR Newswire Energy",  "url": "https://www.prnewswire.com/rss/news-releases-list.rss?category=EN",  "type": "pr",      "base_score": 15, "credibility": 0.9},
+    # Nuovi settori
+    {"name": "SpaceNews",           "url": "https://spacenews.com/feed/",                                        "type": "media",   "base_score": 18, "credibility": 1.1},
+    {"name": "Defense News",        "url": "https://www.defensenews.com/arc/outboundfeeds/rss/",                 "type": "media",   "base_score": 18, "credibility": 1.1},
+    {"name": "CoinDesk",            "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",                   "type": "media",   "base_score": 15, "credibility": 1.0},
+    {"name": "Capitol Trades Buy",  "url": "https://www.capitoltrades.com/trades?asset_type=stock&txType=buy&rss=1", "type": "congress", "base_score": 40, "credibility": 1.5},
 ]
 
 # ─────────────────────────────────────────────
@@ -84,6 +96,7 @@ WATCHLIST = {
     "oklo":          "OKLO",
     "nuscale":       "SMR",
     "nextera":       "NEE",
+    "dominion":      "D",
     # Tech / AI chips
     "palantir":      "PLTR",
     "dell":          "DELL",
@@ -96,10 +109,25 @@ WATCHLIST = {
     "d-wave":        "QBTS",
     "rigetti":       "RGTI",
     "ionq":          "IONQ",
-    # Difesa / Gov
+    # Difesa avanzata
     "lockheed":      "LMT",
     "raytheon":      "RTX",
     "l3harris":      "LHX",
+    "northrop":      "NOC",
+    "general dynamics": "GD",
+    "leidos":        "LDOS",
+    "booz allen":    "BAH",
+    # Space
+    "rocket lab":    "RKLB",
+    "intuitive machines": "LUNR",
+    "ast spacemobile": "ASTS",
+    "redwire":       "RDW",
+    # Crypto stocks
+    "coinbase":      "COIN",
+    "microstrategy": "MSTR",
+    "riot platforms": "RIOT",
+    "marathon digital": "MARA",
+    "cleanspark":    "CLSK",
 }
 
 WATCHLIST_NAMES = list(WATCHLIST.keys())
@@ -132,6 +160,23 @@ VELOCITY_THRESHOLDS = {
     "rigetti":       8,
     "ionq":          8,
     "l3harris":      10,
+    "dominion":      15,
+    # Difesa avanzata
+    "northrop":      15,
+    "general dynamics": 12,
+    "leidos":        10,
+    "booz allen":    10,
+    # Space — micro cap
+    "rocket lab":    8,
+    "intuitive machines": 6,
+    "ast spacemobile": 6,
+    "redwire":       5,
+    # Crypto stocks
+    "coinbase":      20,
+    "microstrategy": 15,
+    "riot platforms": 10,
+    "marathon digital": 10,
+    "cleanspark":    8,
 }
 
 # ─────────────────────────────────────────────
@@ -164,6 +209,18 @@ SIGNAL_RULES = [
     # Settori specifici
     {"name": "Quantum + governo",           "pattern": r"quantum.{0,40}(grant|contract|billion|million|government|executive order)",                         "score": 35, "tag": "quantum",  "alert": True},
     {"name": "Executive Order energia/AI",  "pattern": r"executive order.{0,60}(energy|artificial intelligence|ai|nuclear|chip)",                            "score": 40, "tag": "policy",   "alert": True},
+    # Nuovi settori: Crypto
+    {"name": "Crypto ETF/policy governo",   "pattern": r"(bitcoin|crypto|btc).{0,60}(etf|executive order|sec|approval|reserve|strategic)",                   "score": 40, "tag": "crypto",   "alert": True},
+    {"name": "SEC crypto decision",         "pattern": r"sec.{0,40}(crypto|bitcoin|ethereum|digital asset).{0,40}(approv|rule|regulat)",                      "score": 35, "tag": "crypto",   "alert": True},
+    {"name": "Crypto + governo USA",        "pattern": r"(national bitcoin reserve|crypto.{0,20}strategic|digital asset.{0,20}reserve)",                      "score": 45, "tag": "crypto",   "alert": True},
+    # Nuovi settori: Space / Difesa
+    {"name": "Contratto NASA/Space Force",  "pattern": r"nasa|space force|spacex.{0,40}(contract|award|billion|million)",                                     "score": 30, "tag": "space",    "alert": True},
+    {"name": "DoD contratto big",           "pattern": r"(department of defense|dod|pentagon).{0,40}(billion|awarded|contract).{0,40}(million|billion)",       "score": 35, "tag": "defense",  "alert": True},
+    # Smart Money
+    {"name": "ARK Invest buy",              "pattern": r"ark invest|cathie wood|arkk|arkg|arkw|arkf|arkq",                                                    "score": 30, "tag": "smartmoney","alert": True},
+    {"name": "Pelosi acquisto",             "pattern": r"pelosi.{0,40}(bought|purchased|call|option|stock)|nancy pelosi.{0,40}(trade|buy)",                   "score": 45, "tag": "pelosi",   "alert": True},
+    {"name": "Congress member acquisto",    "pattern": r"(senator|representative|congressman|congresswoman).{0,40}(bought|purchased|calls|options|stock)",     "score": 35, "tag": "congress", "alert": True},
+    {"name": "Berkshire/Buffett posizione", "pattern": r"(berkshire|buffett|warren buffett).{0,40}(bought|acquired|stake|position|increased)",                 "score": 40, "tag": "smartmoney","alert": True},
 ]
 
 # ─────────────────────────────────────────────
@@ -467,6 +524,174 @@ def fetch_gov_contracts(days_back: int = 3) -> list:
     return signals
 
 
+def fetch_ark_trades(days_back: int = 3) -> list:
+    """
+    ARK Invest pubblica le operazioni giornaliere in CSV pubblico gratuito.
+    Cathie Wood e' considerata uno degli investitori piu influenti in tech/innovation.
+    Un acquisto ARK su un titolo small/mid cap spesso anticipa un rally.
+    """
+    signals = []
+    ark_funds = [
+        ("ARKK", "https://ark-funds.com/wp-content/uploads/funds-etf-csv/ARK_INNOVATION_ETF_ARKK_HOLDINGS.csv"),
+        ("ARKQ", "https://ark-funds.com/wp-content/uploads/funds-etf-csv/ARK_AUTONOMOUS_TECHNOLOGY_&_ROBOTICS_ETF_ARKQ_HOLDINGS.csv"),
+        ("ARKW", "https://ark-funds.com/wp-content/uploads/funds-etf-csv/ARK_NEXT_GENERATION_INTERNET_ETF_ARKW_HOLDINGS.csv"),
+    ]
+    cutoff = NOW - timedelta(days=days_back)
+
+    for fund_name, url in ark_funds:
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=15)
+            if r.status_code != 200:
+                continue
+            lines = r.text.strip().split("\n")
+            if len(lines) < 2:
+                continue
+            header = [h.strip().strip('"').lower() for h in lines[0].split(",")]
+
+            for line in lines[1:]:
+                if not line.strip():
+                    continue
+                cols = [c.strip().strip('"') for c in line.split(",")]
+                if len(cols) < len(header):
+                    continue
+                row = dict(zip(header, cols))
+
+                ticker = row.get("ticker", "").upper()
+                company = row.get("company", "").lower()
+                shares = row.get("shares", "0").replace(",", "")
+                date_str = row.get("date", "")
+                direction = row.get("direction", "").lower()  # "Bought" o "Sold"
+
+                # Solo acquisti su ticker in watchlist
+                if "buy" not in direction and "bought" not in direction:
+                    continue
+                matched = [n for n in WATCHLIST_NAMES if n in company or WATCHLIST.get(n, "") == ticker]
+                if not matched and ticker not in WATCHLIST.values():
+                    continue
+
+                pub_dt = parse_date(date_str)
+                if pub_dt < cutoff:
+                    continue
+
+                age_h = max((NOW - pub_dt).total_seconds() / 3600, 0)
+                final = min(int(55 * time_decay(age_h)), 100)
+
+                signals.append(Signal(
+                    title=f"[ARK {fund_name}] Cathie Wood COMPRA {ticker} — {shares} shares",
+                    source=f"ARK Invest ({fund_name})", source_type="smartmoney",
+                    url=f"https://ark-funds.com/funds/{fund_name.lower()}/",
+                    published=date_str, published_dt=pub_dt.isoformat(),
+                    summary=f"ARK {fund_name} ha acquistato {shares} shares di {ticker} ({company}). Data: {date_str}",
+                    raw_score=55, final_score=final,
+                    tags=["smartmoney"], alert=True, pattern="smartmoney",
+                    matched_rules=["ARK Invest buy"],
+                    tickers_mentioned=matched or [company[:30]],
+                    ticker_symbols=[ticker], age_hours=round(age_h, 1),
+                ))
+        except Exception as e:
+            print(f"  ⚠️  ARK {fund_name}: {e}")
+    return signals
+
+
+def fetch_pelosi_tracker(days_back: int = 14) -> list:
+    """
+    Pelosi Tracker RSS — operazioni di Nancy Pelosi e familiari.
+    Storico di performance eccezionale: +24% annuo in media sui trade documentati.
+    Fonte: pelositracker.com (RSS pubblico gratuito).
+    """
+    signals = []
+    cutoff = NOW - timedelta(days=days_back)
+    urls = [
+        "https://www.capitoltrades.com/politicians/P000197?rss=1",  # Pelosi su Capitol Trades
+        "https://pelositracker.com/feed/",                           # Pelosi tracker RSS
+    ]
+    for url in urls:
+        try:
+            parsed = feedparser.parse(url)
+            for entry in parsed.entries[:20]:
+                title = entry.get("title", "")
+                summary = re.sub(r"<[^>]+>", " ", entry.get("summary", ""))[:400]
+                pub_dt = parse_date(entry.get("published", ""))
+                if pub_dt < cutoff:
+                    continue
+                # Filtra solo acquisti (non vendite)
+                text = (title + " " + summary).lower()
+                if "sell" in text and "buy" not in text and "call" not in text:
+                    continue
+
+                age_h = max((NOW - pub_dt).total_seconds() / 3600, 0)
+                tickers = [n for n in WATCHLIST_NAMES if n in text]
+                t_symbols = [WATCHLIST[t] for t in tickers]
+                # Cerca ticker nel testo anche come simbolo
+                for sym in WATCHLIST.values():
+                    if f" {sym.lower()} " in text or f"({sym.lower()})" in text:
+                        if sym not in t_symbols:
+                            t_symbols.append(sym)
+
+                final = min(int(70 * time_decay(age_h)), 100)
+                signals.append(Signal(
+                    title=f"[Pelosi] {title}",
+                    source="Pelosi Tracker", source_type="pelosi",
+                    url=entry.get("link", url),
+                    published=entry.get("published", ""), published_dt=pub_dt.isoformat(),
+                    summary=summary.strip(),
+                    raw_score=70, final_score=final,
+                    tags=["pelosi", "congress", "smartmoney"], alert=True, pattern="pelosi",
+                    matched_rules=["Pelosi acquisto"],
+                    tickers_mentioned=tickers, ticker_symbols=t_symbols,
+                    age_hours=round(age_h, 1),
+                ))
+        except Exception as e:
+            print(f"  ⚠️  Pelosi tracker: {e}")
+    return signals
+
+
+def fetch_sec_13f(days_back: int = 45) -> list:
+    """
+    SEC Form 13F — posizioni trimestrali di grandi fondi (Berkshire, Pershing Square).
+    Lag di 45gg dalla fine del trimestre, ma utile per capire dove puntano i big.
+    CIK noti: Berkshire=1067983, Pershing Square=1336528, Scion (Burry)=1649339
+    """
+    signals = []
+    funds = [
+        ("Berkshire Hathaway (Buffett)", "1067983"),
+        ("Pershing Square (Ackman)",     "1336528"),
+        ("Scion Asset Mgmt (Burry)",     "1649339"),
+    ]
+    start = (NOW - timedelta(days=days_back)).strftime("%Y-%m-%d")
+
+    for fund_name, cik in funds:
+        url = (
+            f"https://efts.sec.gov/LATEST/search-index"
+            f"?q=%22{cik}%22&forms=13F-HR"
+            f"&dateRange=custom&startdt={start}"
+        )
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=12)
+            hits = r.json().get("hits", {}).get("hits", [])
+            if not hits:
+                continue
+            src = hits[0].get("_source", {})
+            date_filed = src.get("file_date", "")
+            pub_dt = parse_date(date_filed)
+            age_h = max((NOW - pub_dt).total_seconds() / 3600, 0)
+            title = f"[13F] {fund_name} — nuovo filing {date_filed}"
+            summary = f"Controlla il filing per vedere le nuove posizioni aperte/aumentate."
+            final = min(int(45 * time_decay(age_h)), 100)
+            signals.append(Signal(
+                title=title, source="SEC 13F", source_type="smartmoney",
+                url=f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&type=13F&dateb=&owner=include&count=5",
+                published=date_filed, published_dt=pub_dt.isoformat(),
+                summary=summary, raw_score=45, final_score=final,
+                tags=["smartmoney"], alert=False, pattern="smartmoney",
+                matched_rules=["Berkshire/Buffett posizione" if "Berkshire" in fund_name else "Smart money 13F"],
+                tickers_mentioned=[], ticker_symbols=[], age_hours=round(age_h, 1),
+            ))
+        except Exception as e:
+            pass
+    return signals
+
+
 def fetch_google_news_velocity(days_back: int = 2) -> list:
     signals = []
     ticker_counts = defaultdict(int)
@@ -576,6 +801,21 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     print(f"  ✓ {len(sigs)} ticker con velocity anomala")
     all_signals.extend(sigs)
 
+    print("\n🦆 ARK Invest (Cathie Wood) trades...")
+    sigs = fetch_ark_trades(days_back)
+    print(f"  ✓ {len(sigs)} acquisti ARK su watchlist")
+    all_signals.extend(sigs)
+
+    print("\n👩 Pelosi Tracker...")
+    sigs = fetch_pelosi_tracker(days_back=14)
+    print(f"  ✓ {len(sigs)} operazioni Pelosi")
+    all_signals.extend(sigs)
+
+    print("\n🏦 SEC 13F (Berkshire, Ackman, Burry)...")
+    sigs = fetch_sec_13f(days_back=45)
+    print(f"  ✓ {len(sigs)} filing 13F recenti")
+    all_signals.extend(sigs)
+
     # Deduplica + convergence + sort
     seen, unique = set(), []
     for s in all_signals:
@@ -649,6 +889,30 @@ def watch_mode(interval: int = 30, days_back: int = 3):
 #  SLACK NOTIFICATIONS
 # ─────────────────────────────────────────────
 
+def is_actionable(signal) -> tuple[bool, str]:
+    """
+    Un segnale è azionabile solo se ha almeno DUE elementi tra:
+      1. Velocity anomala (source_type == velocity)
+      2. Evento specifico (sec, gov, insider, congress, ppa, nuclear)
+      3. Convergence (tag convergence presente)
+    Ritorna (bool, motivo).
+    """
+    has_velocity    = signal.get("source_type") == "velocity"
+    has_event       = signal.get("source_type") in ("sec", "gov", "insider", "congress") \
+                      or signal.get("pattern") in ("ppa", "nuclear", "trump", "insider", "congress", "gov")
+    has_convergence = "convergence" in signal.get("tags", [])
+
+    count = sum([has_velocity, has_event, has_convergence])
+
+    if count >= 2:
+        reasons = []
+        if has_velocity:    reasons.append("velocity anomala")
+        if has_event:       reasons.append("evento specifico")
+        if has_convergence: reasons.append("convergence multi-fonte")
+        return True, " + ".join(reasons)
+    return False, ""
+
+
 def send_slack_alert(signals: list, webhook_url: str, min_score: int = 70):
     """
     Manda un messaggio Slack con i top alert.
@@ -657,28 +921,38 @@ def send_slack_alert(signals: list, webhook_url: str, min_score: int = 70):
     if not webhook_url:
         return
 
-    top = [s for s in signals if s.alert and s.final_score >= min_score]
-    if not top:
+    # Solo segnali azionabili (velocity + evento o convergence)
+    actionable = []
+    for s in signals:
+        if not s.alert or s.final_score < min_score:
+            continue
+        ok, reason = is_actionable(asdict(s))
+        if ok:
+            actionable.append((s, reason))
+
+    if not actionable:
+        print("  ℹ️  Slack: nessun segnale azionabile (velocity + evento richiesti)")
         return
+
+    top = actionable
 
     # Header del messaggio
     blocks = [
         {
             "type": "header",
-            "text": {"type": "plain_text", "text": f"🚨 Early Signal Monitor — {len(top)} alert"},
+            "text": {"type": "plain_text", "text": f"🎯 Early Signal — {len(top)} segnali azionabili"},
         },
         {
             "type": "context",
-            "elements": [{"type": "mrkdwn", "text": f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')} | Soglia: {min_score}+"}],
+            "elements": [{"type": "mrkdwn", "text": f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')} | Solo segnali con velocity + evento/convergence"}],
         },
         {"type": "divider"},
     ]
 
-    for s in top[:8]:  # max 8 per non intasare
+    for s, reason in top[:8]:
         age = f"{s.age_hours:.0f}h fa" if s.age_hours > 0 else "ora"
         tickers_str = " ".join(f"`{t}`" for t in s.ticker_symbols) if s.ticker_symbols else "_n/a_"
-        conv = f" 🔀 *+{s.convergence_boost} convergence*" if s.convergence_boost else ""
-        rules_str = " · ".join(s.matched_rules[:2])
+        conv = f" 🔀" if s.convergence_boost else ""
 
         blocks.append({
             "type": "section",
@@ -687,7 +961,8 @@ def send_slack_alert(signals: list, webhook_url: str, min_score: int = 70):
                 "text": (
                     f"*[{s.final_score}/100] {s.pattern.upper()}*{conv}\n"
                     f"{s.title[:120]}\n"
-                    f"Ticker: {tickers_str} | {age} | _{rules_str}_"
+                    f"Ticker: {tickers_str} | {age}\n"
+                    f"✅ _{reason}_"
                 ),
             },
             "accessory": {
@@ -699,7 +974,7 @@ def send_slack_alert(signals: list, webhook_url: str, min_score: int = 70):
         blocks.append({"type": "divider"})
 
     payload = {
-        "text": f"🚨 {len(top)} segnali ad alta priorità — Early Signal Monitor",
+        "text": f"🎯 {len(top)} segnali azionabili — Early Signal Monitor",
         "blocks": blocks,
     }
 
