@@ -362,6 +362,25 @@ def fetch_feed(cfg: dict, days_back: int = 3) -> list:
     return signals
 
 
+def _read_8k_content(accession: str, cik: str) -> str:
+    """
+    Legge il testo completo di un 8-K via EdgarTools.
+    Fallback a stringa vuota se non disponibile o non installato.
+    """
+    try:
+        from edgar import get_filings, set_identity
+        set_identity("Michele Guidi micheleguidi83@icloud.com")
+        filings = get_filings(cik=cik, form="8-K", limit=1)
+        if filings and len(filings) > 0:
+            filing = filings[0]
+            doc = filing.obj()
+            if doc and hasattr(doc, 'text'):
+                return doc.text[:3000]  # prime 3000 chars sono sufficienti
+    except Exception:
+        pass
+    return ""
+
+
 def fetch_sec_full_text(keywords: list, days_back: int = 3) -> list:
     signals = []
     start = (datetime.now() - timedelta(days=days_back)).strftime("%Y-%m-%d")
@@ -373,16 +392,29 @@ def fetch_sec_full_text(keywords: list, days_back: int = 3) -> list:
                 src = hit.get("_source", {})
                 company = src.get("entity_name", "Unknown")
                 date_filed = src.get("file_date", "")
+                cik = src.get("entity_id", "")
+                accession = src.get("period_of_report", "")
                 pub_dt = parse_date(date_filed)
                 age_h = max((NOW - pub_dt).total_seconds() / 3600, 0)
+
+                # Leggi testo completo 8-K via EdgarTools
+                full_text = _read_8k_content(accession, cik)
+                # Usa il testo completo per scoring se disponibile, altrimenti keyword+company
+                scoring_text = full_text if full_text else (kw + " " + company)
                 title = f"[SEC 8-K] {company} — depositato {date_filed}"
-                scored = score_text(title, kw + " " + company, 40, 1.3)
+                scored = score_text(title, scoring_text, 40, 1.3)
                 final = min(int(scored["raw_score"] * time_decay(age_h)), 100)
+                # Summary: usa prime 400 chars del testo reale se disponibile
+                if full_text:
+                    summary_text = full_text[:400].replace("\n", " ").strip()
+                else:
+                    summary_text = f"Keyword: '{kw}' | CIK: {src.get('entity_id','')}"
+
                 signals.append(Signal(
                     title=title, source="SEC EDGAR (keyword)", source_type="sec",
                     url=f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={src.get('entity_id','')}&type=8-K",
                     published=date_filed, published_dt=pub_dt.isoformat(),
-                    summary=f"Keyword trovata: '{kw}' | CIK: {src.get('entity_id','')}",
+                    summary=summary_text,
                     raw_score=scored["raw_score"], final_score=final,
                     tags=scored["tags"], alert=True, pattern=scored["pattern"],
                     matched_rules=scored["matched_rules"] + [f"SEC keyword: {kw}"],
