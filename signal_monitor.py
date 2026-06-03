@@ -816,6 +816,16 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     print(f"  ✓ {len(sigs)} filing 13F recenti")
     all_signals.extend(sigs)
 
+    # Layer 3a: options scanner
+    print("\n📈 Options scanner (unusual activity)...")
+    try:
+        from options_scanner import scan_options
+        opt_sigs = scan_options(days_back=2)
+        print(f"  ✓ {len(opt_sigs)} segnali options")
+        all_signals.extend(opt_sigs)
+    except Exception as e:
+        print(f"  ⚠️  Options scanner: {e}")
+
     # Deduplica + convergence + sort
     seen, unique = set(), []
     for s in all_signals:
@@ -869,6 +879,38 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     with open("signals.json", "w") as f:
         json.dump(output, f, indent=2, default=str)
     print(f"\n✅ signals.json — {len(unique)} segnali, {len(alerts)} alert, {len(convergence)} convergence")
+
+    # Layer 2: arricchimento prezzo + earnings
+    print("\n💹 Enricher — prezzo, earnings, timing...")
+    try:
+        from enricher import enrich_signals, format_context
+        output["signals"] = enrich_signals(output["signals"])
+        # Mostra contesto per top alert
+        enriched_alerts = [s for s in output["signals"] if s.get("alert") and s.get("price_context")]
+        if enriched_alerts:
+            print(f"\n{'─'*65}")
+            print("🎯 TOP ALERT CON CONTESTO PREZZO:")
+            print(f"{'─'*65}")
+            for s in enriched_alerts[:5]:
+                timing = s.get("price_context", {}).get("timing", "")
+                emoji = {"ENTRA":"🟢","ASPETTA":"🟡","TARDI":"🔴","PULLBACK":"🔵"}.get(timing,"⚪")
+                print(f"\n  {emoji} [{s['final_score']}/100] {s['title'][:80]}")
+                print(format_context(s))
+        # Salva JSON aggiornato con contesto
+        with open("signals.json", "w") as f:
+            json.dump(output, f, indent=2, default=str)
+    except ImportError:
+        print("  ⚠️  enricher.py non trovato o yfinance non installato")
+    except Exception as e:
+        print(f"  ⚠️  Enricher: {e}")
+
+    # Layer 3b: salva nel database storico
+    try:
+        from db import save_signals
+        save_signals(output["signals"])
+    except Exception as e:
+        print(f"  ⚠️  DB: {e}")
+
     return unique
 
 
