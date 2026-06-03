@@ -978,8 +978,16 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
             print(f"{'─'*65}")
             for s in enriched_alerts[:5]:
                 timing = s.get("price_context", {}).get("timing", "")
-                emoji = {"ENTRA":"🟢","ASPETTA":"🟡","TARDI":"🔴","PULLBACK":"🔵"}.get(timing,"⚪")
-                print(f"\n  {emoji} [{s['final_score']}/100] {s['title'][:80]}")
+                emoji = {
+                    "ENTRA":         "🟢",
+                    "ASPETTA":       "🟡",
+                    "TARDI":         "🔴",
+                    "PULLBACK":      "🔵",
+                    "SHORT-ENTRA":   "🔴🩳",
+                    "SHORT-ASPETTA": "🟠🩳",
+                }.get(timing, "⚪")
+                direction = s.get("price_context", {}).get("direction", "LONG")
+                print(f"\n  {emoji} [{s['final_score']}/100] [{direction}] {s['title'][:80]}")
                 print(format_context(s))
         # Salva JSON aggiornato con contesto
         with open("signals.json", "w") as f:
@@ -989,10 +997,11 @@ def run_monitor(days_back: int = 3, verbose: bool = True) -> list:
     except Exception as e:
         print(f"  ⚠️  Enricher: {e}")
 
-    # Layer 3b: salva nel database storico
+    # Layer 3b: salva nel database storico + aggiorna outcomes passati
     try:
-        from db import save_signals
+        from db import save_signals, update_outcomes
         save_signals(output["signals"])
+        update_outcomes()   # calcola rendimento reale per segnali > 7gg fa
     except Exception as e:
         print(f"  ⚠️  DB: {e}")
 

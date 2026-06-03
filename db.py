@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS signals (
     price_at_signal REAL,
     days_to_earnings INTEGER,
     timing          TEXT,
+    direction       TEXT DEFAULT 'LONG',
+    setup_type      TEXT DEFAULT '',
+    rr_ratio        REAL DEFAULT 0.0,
     tags            TEXT    -- JSON array
 );
 
@@ -69,6 +72,17 @@ def get_conn() -> sqlite3.Connection:
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    # Migrazione live: aggiunge colonne nuove se il db è pre-v2
+    for col, typ, default in [
+        ('direction',  'TEXT', "'LONG'"),
+        ('setup_type', 'TEXT', "''"),
+        ('rr_ratio',   'REAL', '0.0'),
+    ]:
+        try:
+            conn.execute(f"ALTER TABLE signals ADD COLUMN {col} {typ} DEFAULT {default}")
+            conn.commit()
+        except Exception:
+            pass  # colonna già presente
     return conn
 
 
@@ -108,8 +122,9 @@ def save_signals(signals: list):
         conn.execute("""
             INSERT INTO signals
             (recorded_at, ticker, ticker_symbol, pattern, source, score,
-             alert, title, url, price_at_signal, days_to_earnings, timing, tags)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+             alert, title, url, price_at_signal, days_to_earnings, timing,
+             direction, setup_type, rr_ratio, tags)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """, (
             now,
             ticker_name,
@@ -123,6 +138,9 @@ def save_signals(signals: list):
             ctx.get('current_price'),
             ctx.get('days_to_earnings'),
             ctx.get('timing'),
+            ctx.get('direction', sig.get('direction', 'LONG')),
+            ctx.get('setup_type', ''),
+            ctx.get('rr_ratio', 0.0),
             json.dumps(sig.get('tags', [])),
         ))
         saved += 1
@@ -154,7 +172,8 @@ def update_outcomes():
 
     # Segnali senza outcome completo
     pending = conn.execute("""
-        SELECT s.id, s.ticker_symbol, s.recorded_at, s.price_at_signal
+        SELECT s.id, s.ticker_symbol, s.recorded_at, s.price_at_signal,
+               COALESCE(s.direction, 'LONG') as direction
         FROM signals s
         WHERE s.price_at_signal IS NOT NULL
         AND s.ticker_symbol IS NOT NULL
@@ -185,10 +204,15 @@ def update_outcomes():
                 hist = t.history(start=start, end=end)
                 if hist.empty:
                     continue
-                price_then = float(hist['Close'].iloc[-1])
+                price_then  = float(hist['Close'].iloc[-1])
                 price_entry = row['price_at_signal']
-                pct_change = (price_then - price_entry) / price_entry * 100 if price_entry else 0
-                hit = 1 if pct_change > 5 else 0
+                pct_change  = (price_then - price_entry) / price_entry * 100 if price_entry else 0
+                # Hit = movimento nella direzione del segnale > 5%
+                direction   = row['direction'] if 'direction' in row.keys() else 'LONG'
+                if direction == 'SHORT':
+                    hit = 1 if pct_change < -5 else 0
+                else:
+                    hit = 1 if pct_change > 5 else 0
 
                 conn.execute("""
                     INSERT OR REPLACE INTO outcomes
@@ -207,40 +231,75 @@ def update_outcomes():
 
 def get_accuracy_report() -> str:
     """
-    Genera report di accuracy per pattern.
-    Mostra hit rate e rendimento medio per ogni tipo di segnale.
+    Report di accuracy per pattern + breakdown LONG vs SHORT + setup type.
+    Hit = movimento > 5% nella direzione del segnale a 14gg.
     """
     conn = get_conn()
+
+    # ── Per pattern ──────────────────────────────────────────
     rows = conn.execute("""
         SELECT
             s.pattern,
+            COALESCE(s.direction, 'LONG')                           AS direction,
             COUNT(DISTINCT s.id)                                    AS total,
-            AVG(CASE WHEN o.days_after=7  THEN o.pct_change END)   AS avg_7d,
+            AVG(CASE WHEN o.days_after=7  THEN o.pct_change END)    AS avg_7d,
             AVG(CASE WHEN o.days_after=14 THEN o.pct_change END)    AS avg_14d,
             AVG(CASE WHEN o.days_after=30 THEN o.pct_change END)    AS avg_30d,
             AVG(CASE WHEN o.days_after=14 THEN o.hit END)*100       AS hit_rate_14d
         FROM signals s
         LEFT JOIN outcomes o ON o.signal_id = s.id
-        GROUP BY s.pattern
+        GROUP BY s.pattern, direction
         HAVING total >= 3
         ORDER BY hit_rate_14d DESC NULLS LAST
     """).fetchall()
+
+    # ── Per setup type ────────────────────────────────────────
+    setup_rows = conn.execute("""
+        SELECT
+            COALESCE(s.setup_type, 'unknown')                       AS setup,
+            COUNT(DISTINCT s.id)                                    AS total,
+            AVG(CASE WHEN o.days_after=14 THEN o.pct_change END)    AS avg_14d,
+            AVG(CASE WHEN o.days_after=14 THEN o.hit END)*100       AS hit_rate_14d
+        FROM signals s
+        LEFT JOIN outcomes o ON o.signal_id = s.id
+        WHERE s.setup_type IS NOT NULL AND s.setup_type != ''
+        GROUP BY setup
+        HAVING total >= 3
+        ORDER BY hit_rate_14d DESC NULLS LAST
+    """).fetchall()
+
     conn.close()
 
     if not rows:
         return "Dati insufficienti — servono almeno 3 segnali per pattern con outcome a 14gg."
 
-    lines = ["\n📊 ACCURACY REPORT — Pattern performance\n" + "─"*55]
+    lines = ["\n📊 ACCURACY REPORT\n" + "═" * 65]
+
+    lines.append("\nPer pattern e direzione:")
+    lines.append("─" * 65)
     for r in rows:
-        hr = f"{r['hit_rate_14d']:.0f}%" if r['hit_rate_14d'] is not None else "n/a"
-        a7  = f"{r['avg_7d']:+.1f}%"  if r['avg_7d']  is not None else "n/a"
-        a14 = f"{r['avg_14d']:+.1f}%" if r['avg_14d'] is not None else "n/a"
-        a30 = f"{r['avg_30d']:+.1f}%" if r['avg_30d'] is not None else "n/a"
+        hr  = f"{r['hit_rate_14d']:.0f}%" if r['hit_rate_14d'] is not None else "n/a"
+        a7  = f"{r['avg_7d']:+.1f}%"      if r['avg_7d']       is not None else "n/a"
+        a14 = f"{r['avg_14d']:+.1f}%"     if r['avg_14d']      is not None else "n/a"
+        a30 = f"{r['avg_30d']:+.1f}%"     if r['avg_30d']      is not None else "n/a"
+        dir_icon = "📈" if r['direction'] == 'LONG' else "📉"
         lines.append(
-            f"  {r['pattern']:12s} | N={r['total']:3d} | "
-            f"Hit@14d: {hr:>5} | "
-            f"Avg: 7d={a7} 14d={a14} 30d={a30}"
+            f"  {dir_icon} {r['pattern']:12s} [{r['direction']:5s}] "
+            f"N={r['total']:3d} | Hit@14d: {hr:>5} | "
+            f"7d={a7} 14d={a14} 30d={a30}"
         )
+
+    if setup_rows:
+        lines.append("\nPer setup type:")
+        lines.append("─" * 65)
+        for r in setup_rows:
+            hr  = f"{r['hit_rate_14d']:.0f}%" if r['hit_rate_14d'] is not None else "n/a"
+            a14 = f"{r['avg_14d']:+.1f}%"     if r['avg_14d']      is not None else "n/a"
+            lines.append(
+                f"  {r['setup']:20s} N={r['total']:3d} | "
+                f"Hit@14d: {hr:>5} | Avg 14d: {a14}"
+            )
+
     return "\n".join(lines)
 
 
