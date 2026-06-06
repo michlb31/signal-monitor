@@ -1,18 +1,93 @@
 {
-  "generated_at": "2026-06-06T12:54:13.215094+00:00",
+  "generated_at": "2026-06-06T16:48:46.700508+00:00",
   "days_back": 3,
-  "total_signals": 180,
-  "alerts": 36,
-  "convergence_alerts": 3,
+  "total_signals": 176,
+  "alerts": 37,
+  "convergence_alerts": 6,
   "signals": [
     {
-      "title": "[News Velocity] D-Wave (QBTS): 34 articoli (4.2x soglia)",
+      "title": "Trump wants Bill Pulte to fire big chunk of national intelligence office staff: WSJ",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/trump-bill-pulte-fire-intelligence-dni.html",
+      "published": "Fri, 05 Jun 2026 21:26:16 GMT",
+      "published_dt": "2026-06-05T21:26:16+00:00",
+      "summary": "President Trump's comments are sure to roil members of Congress who criticized the appointment of Bill Pulte as acting national intelligence director.",
+      "raw_score": 100,
+      "final_score": 86,
+      "tags": [
+        "trump",
+        "congress",
+        "convergence"
+      ],
+      "alert": true,
+      "pattern": "trump",
+      "matched_rules": [
+        "Trump menzione diretta",
+        "Congress buy (STOCK Act)"
+      ],
+      "tickers_mentioned": [
+        "intel"
+      ],
+      "ticker_symbols": [
+        "INTC"
+      ],
+      "age_hours": 19.4,
+      "convergence_boost": 16,
+      "price_context": {
+        "current_price": 99.17,
+        "change_5d_pct": -13.5,
+        "change_30d_pct": 48.5,
+        "volume_ratio": 1.1,
+        "days_to_earnings": 47,
+        "beat_rate_pct": 75.0,
+        "analyst_target": 89.32,
+        "upside_to_target": -9.9,
+        "timing": "PULLBACK",
+        "entry_low": 40.43,
+        "entry_high": 41.85,
+        "stop_loss": 85.9,
+        "week_high_52": 132.75,
+        "pct_from_52w_high": -25.3,
+        "notes": [
+          "Ritracciamento su trend rialzista \u2014 opportunit\u00e0 di entry sul dip"
+        ],
+        "rsi": 40.5,
+        "macd_bullish": "False",
+        "macd_histogram": -3.6176,
+        "ma50": 88.76,
+        "ma200": 51.27,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 8.84,
+        "atr_pct": 8.9,
+        "bb_upper": 130.09,
+        "bb_lower": 101.71,
+        "bb_position": "LOWER",
+        "support": 40.63,
+        "resistance": 126.64,
+        "direction": "LONG",
+        "setup_type": "DIP_BUY",
+        "iv_atm": 0.856,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$90 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 1.9,
+        "risk_pct": 108.8,
+        "reward_pct": 207.8,
+        "target_price": 126.64
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] D-Wave (QBTS): 29 articoli (3.6x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=d-wave",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "34 menzioni in 48h vs soglia 8 \u2014 rapporto 4.2x.",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "29 menzioni in 48h vs soglia 8 \u2014 rapporto 3.6x.",
       "raw_score": 75,
       "final_score": 83,
       "tags": [
@@ -21,7 +96,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 4.2x soglia (34/8)"
+        "Velocity 3.6x soglia (29/8)"
       ],
       "tickers_mentioned": [
         "d-wave"
@@ -78,13 +153,13 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Ionq (IONQ): 30 articoli (3.8x soglia)",
+      "title": "[News Velocity] Ionq (IONQ): 35 articoli (4.4x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=ionq",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "30 menzioni in 48h vs soglia 8 \u2014 rapporto 3.8x.",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "35 menzioni in 48h vs soglia 8 \u2014 rapporto 4.4x.",
       "raw_score": 75,
       "final_score": 83,
       "tags": [
@@ -93,7 +168,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 3.8x soglia (30/8)"
+        "Velocity 4.4x soglia (35/8)"
       ],
       "tickers_mentioned": [
         "ionq"
@@ -154,8 +229,8 @@
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=ast%20spacemobile",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
       "summary": "20 menzioni in 48h vs soglia 6 \u2014 rapporto 3.3x.",
       "raw_score": 75,
       "final_score": 83,
@@ -222,235 +297,13 @@
       "direction": "LONG"
     },
     {
-      "title": "Trump wants Bill Pulte to fire big chunk of national intelligence office staff: WSJ",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/trump-bill-pulte-fire-intelligence-dni.html",
-      "published": "Fri, 05 Jun 2026 21:26:16 GMT",
-      "published_dt": "2026-06-05T21:26:16+00:00",
-      "summary": "President Trump's comments are sure to roil members of Congress who criticized the appointment of Bill Pulte as acting national intelligence director.",
-      "raw_score": 100,
-      "final_score": 78,
-      "tags": [
-        "trump",
-        "congress"
-      ],
-      "alert": true,
-      "pattern": "trump",
-      "matched_rules": [
-        "Trump menzione diretta",
-        "Congress buy (STOCK Act)"
-      ],
-      "tickers_mentioned": [
-        "intel"
-      ],
-      "ticker_symbols": [
-        "INTC"
-      ],
-      "age_hours": 15.5,
-      "convergence_boost": 8,
-      "price_context": {
-        "current_price": 99.17,
-        "change_5d_pct": -13.5,
-        "change_30d_pct": 48.5,
-        "volume_ratio": 1.1,
-        "days_to_earnings": 47,
-        "beat_rate_pct": 75.0,
-        "analyst_target": 89.32,
-        "upside_to_target": -9.9,
-        "timing": "PULLBACK",
-        "entry_low": 40.43,
-        "entry_high": 41.85,
-        "stop_loss": 85.9,
-        "week_high_52": 132.75,
-        "pct_from_52w_high": -25.3,
-        "notes": [
-          "Ritracciamento su trend rialzista \u2014 opportunit\u00e0 di entry sul dip"
-        ],
-        "rsi": 40.5,
-        "macd_bullish": "False",
-        "macd_histogram": -3.6176,
-        "ma50": 88.76,
-        "ma200": 51.27,
-        "above_ma50": "True",
-        "above_ma200": "True",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 8.84,
-        "atr_pct": 8.9,
-        "bb_upper": 130.09,
-        "bb_lower": 101.71,
-        "bb_position": "LOWER",
-        "support": 40.63,
-        "resistance": 126.64,
-        "direction": "LONG",
-        "setup_type": "DIP_BUY",
-        "iv_atm": 0.856,
-        "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$90 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 1.9,
-        "risk_pct": 108.8,
-        "reward_pct": 207.8,
-        "target_price": 126.64
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[Options OBB] LMT \u2014 BULLISH (2 segnali)",
-      "source": "OpenBB Options Chain",
-      "source_type": "options",
-      "url": "https://finance.yahoo.com/quote/LMT/options",
-      "published": "2026-06-06T12:58:15.789093+00:00",
-      "published_dt": "2026-06-06T12:58:15.789102+00:00",
-      "summary": "OTM OI 47,151 (53% totale) | OTM vol spike 8,073 | Max OI: strike $670 (+28%) exp 2026-06-18 \u2014 13,419 contratti",
-      "raw_score": "62",
-      "final_score": "78",
-      "tags": [
-        "options",
-        "bullish",
-        "openbb",
-        "convergence"
-      ],
-      "alert": true,
-      "pattern": "options",
-      "matched_rules": [
-        "OTM OI 47,151 (53% totale)",
-        "OTM vol spike 8,073"
-      ],
-      "tickers_mentioned": [
-        "lockheed"
-      ],
-      "ticker_symbols": [
-        "LMT"
-      ],
-      "age_hours": 0.0,
-      "convergence_boost": 16,
-      "price_context": {
-        "current_price": 523.76,
-        "change_5d_pct": -0.6,
-        "change_30d_pct": -0.5,
-        "volume_ratio": 0.7,
-        "days_to_earnings": 45,
-        "beat_rate_pct": 50.0,
-        "analyst_target": 625.16,
-        "upside_to_target": 19.4,
-        "timing": "ENTRA",
-        "entry_low": 513.28,
-        "entry_high": 534.24,
-        "stop_loss": 508.47,
-        "week_high_52": 692.0,
-        "pct_from_52w_high": -24.3,
-        "notes": [
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 57.9,
-        "macd_bullish": "True",
-        "macd_histogram": 2.3323,
-        "ma50": 550.3,
-        "ma200": 528.33,
-        "above_ma50": "False",
-        "above_ma200": "False",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 10.19,
-        "atr_pct": 1.9,
-        "bb_upper": 534.81,
-        "bb_lower": 504.7,
-        "bb_position": "UPPER",
-        "support": 510.1,
-        "resistance": 537.69,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 0.384,
-        "iv_regime": "MEDIUM",
-        "options_strategy": "BULL CALL SPREAD \u2014 compra $525 call / vendi $575 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
-        "rr_ratio": 6.6,
-        "risk_pct": 2.9,
-        "reward_pct": 19.4,
-        "target_price": 625.16
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[News Velocity] Nuscale (SMR): 21 articoli (2.6x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=nuscale",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "21 menzioni in 48h vs soglia 8 \u2014 rapporto 2.6x.",
-      "raw_score": 69,
-      "final_score": 77,
-      "tags": [
-        "velocity"
-      ],
-      "alert": true,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 2.6x soglia (21/8)"
-      ],
-      "tickers_mentioned": [
-        "nuscale"
-      ],
-      "ticker_symbols": [
-        "SMR"
-      ],
-      "age_hours": 0,
-      "convergence_boost": 8,
-      "price_context": {
-        "current_price": 10.5,
-        "change_5d_pct": -17.1,
-        "change_30d_pct": -17.5,
-        "volume_ratio": 1.4,
-        "days_to_earnings": 61,
-        "beat_rate_pct": null,
-        "analyst_target": 15.36,
-        "upside_to_target": 46.3,
-        "timing": "ENTRA",
-        "entry_low": 10.29,
-        "entry_high": 10.71,
-        "stop_loss": 9.5,
-        "week_high_52": 57.42,
-        "pct_from_52w_high": -81.7,
-        "notes": [
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 45.9,
-        "macd_bullish": "False",
-        "macd_histogram": -0.0439,
-        "ma50": 11.54,
-        "ma200": 21.85,
-        "above_ma50": "False",
-        "above_ma200": "False",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 1.19,
-        "atr_pct": 11.3,
-        "bb_upper": 13.83,
-        "bb_lower": 9.92,
-        "bb_position": "MIDDLE",
-        "support": 9.66,
-        "resistance": 10.99,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 1.146,
-        "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$10 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 4.9,
-        "risk_pct": 9.5,
-        "reward_pct": 46.3,
-        "target_price": 15.36
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[News Velocity] Rocket Lab (RKLB): 33 articoli (4.1x soglia)",
+      "title": "[News Velocity] Rocket Lab (RKLB): 25 articoli (3.1x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=rocket%20lab",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "33 menzioni in 48h vs soglia 8 \u2014 rapporto 4.1x.",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "25 menzioni in 48h vs soglia 8 \u2014 rapporto 3.1x.",
       "raw_score": 75,
       "final_score": 75,
       "tags": [
@@ -459,7 +312,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 4.1x soglia (33/8)"
+        "Velocity 3.1x soglia (25/8)"
       ],
       "tickers_mentioned": [
         "rocket lab"
@@ -516,13 +369,13 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Redwire (RDW): 30 articoli (6.0x soglia)",
+      "title": "[News Velocity] Redwire (RDW): 23 articoli (4.6x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=redwire",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "30 menzioni in 48h vs soglia 5 \u2014 rapporto 6.0x.",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "23 menzioni in 48h vs soglia 5 \u2014 rapporto 4.6x.",
       "raw_score": 75,
       "final_score": 75,
       "tags": [
@@ -531,7 +384,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 6.0x soglia (30/5)"
+        "Velocity 4.6x soglia (23/5)"
       ],
       "tickers_mentioned": [
         "redwire"
@@ -588,18 +441,17 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Rigetti (RGTI): 19 articoli (2.4x soglia)",
+      "title": "[News Velocity] Nuscale (SMR): 19 articoli (2.4x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
-      "url": "https://news.google.com/search?q=rigetti",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
+      "url": "https://news.google.com/search?q=nuscale",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
       "summary": "19 menzioni in 48h vs soglia 8 \u2014 rapporto 2.4x.",
       "raw_score": 65,
-      "final_score": 98,
+      "final_score": 73,
       "tags": [
-        "velocity",
-        "earnings"
+        "velocity"
       ],
       "alert": true,
       "pattern": "velocity",
@@ -607,57 +459,56 @@
         "Velocity 2.4x soglia (19/8)"
       ],
       "tickers_mentioned": [
-        "rigetti"
+        "nuscale"
       ],
       "ticker_symbols": [
-        "RGTI"
+        "SMR"
       ],
       "age_hours": 0,
       "convergence_boost": 8,
       "price_context": {
-        "current_price": 20.68,
-        "change_5d_pct": -19.0,
-        "change_30d_pct": 22.7,
-        "volume_ratio": 0.8,
-        "days_to_earnings": -26,
-        "beat_rate_pct": 75.0,
-        "analyst_target": 29.24,
-        "upside_to_target": 41.4,
-        "timing": "ASPETTA",
-        "entry_low": 20.27,
-        "entry_high": 21.09,
-        "stop_loss": 16.26,
-        "week_high_52": 58.15,
-        "pct_from_52w_high": -64.4,
+        "current_price": 10.5,
+        "change_5d_pct": -17.1,
+        "change_30d_pct": -17.5,
+        "volume_ratio": 1.4,
+        "days_to_earnings": 61,
+        "beat_rate_pct": null,
+        "analyst_target": 15.36,
+        "upside_to_target": 46.3,
+        "timing": "ENTRA",
+        "entry_low": 10.29,
+        "entry_high": 10.71,
+        "stop_loss": 9.5,
+        "week_high_52": 57.42,
+        "pct_from_52w_high": -81.7,
         "notes": [
-          "Earnings tra -26gg \u2014 pre-earnings window",
-          "In movimento ma non esagerato \u2014 monitora per conferma"
+          "Ancora a base \u2014 finestra di accumulo aperta"
         ],
-        "rsi": 55.5,
+        "rsi": 45.9,
         "macd_bullish": "False",
-        "macd_histogram": -0.1236,
-        "ma50": 18.57,
-        "ma200": 23.5,
-        "above_ma50": "True",
+        "macd_histogram": -0.0439,
+        "ma50": 11.54,
+        "ma200": 21.85,
+        "above_ma50": "False",
         "above_ma200": "False",
         "golden_cross": false,
         "death_cross": false,
-        "atr": 2.95,
-        "atr_pct": 14.3,
-        "bb_upper": 29.13,
-        "bb_lower": 14.44,
+        "atr": 1.19,
+        "atr_pct": 11.3,
+        "bb_upper": 13.83,
+        "bb_lower": 9.92,
         "bb_position": "MIDDLE",
-        "support": 15.46,
-        "resistance": 21.02,
+        "support": 9.66,
+        "resistance": 10.99,
         "direction": "LONG",
         "setup_type": "BASE_BUILD",
-        "iv_atm": 1.21,
+        "iv_atm": 1.146,
         "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$20 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 1.9,
-        "risk_pct": 21.4,
-        "reward_pct": 41.4,
-        "target_price": 29.24
+        "options_strategy": "SELL PUT \u2014 strike ~$10 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 4.9,
+        "risk_pct": 9.5,
+        "reward_pct": 46.3,
+        "target_price": 15.36
       },
       "direction": "LONG"
     },
@@ -666,8 +517,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/CEG/options",
-      "published": "2026-06-06T12:57:52.604976+00:00",
-      "published_dt": "2026-06-06T12:57:52.604986+00:00",
+      "published": "2026-06-06T16:52:38.239804+00:00",
+      "published_dt": "2026-06-06T16:52:38.239813+00:00",
       "summary": "OTM OI 44,166 (49% totale) | OTM vol spike 4,089 | Max OI: strike $350 (+38%) exp 2026-06-18 \u2014 3,195 contratti",
       "raw_score": "62",
       "final_score": "70",
@@ -741,8 +592,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/VST/options",
-      "published": "2026-06-06T12:57:58.819338+00:00",
-      "published_dt": "2026-06-06T12:57:58.819347+00:00",
+      "published": "2026-06-06T16:52:44.652405+00:00",
+      "published_dt": "2026-06-06T16:52:44.652416+00:00",
       "summary": "OTM OI 107,753 (46% totale) | OTM vol spike 8,548 | Max OI: strike $190 (+29%) exp 2026-09-18 \u2014 11,199 contratti",
       "raw_score": "62",
       "final_score": "70",
@@ -812,12 +663,87 @@
       "direction": "LONG"
     },
     {
+      "title": "[Options OBB] OKLO \u2014 BULLISH (2 segnali)",
+      "source": "OpenBB Options Chain",
+      "source_type": "options",
+      "url": "https://finance.yahoo.com/quote/OKLO/options",
+      "published": "2026-06-06T16:52:48.475728+00:00",
+      "published_dt": "2026-06-06T16:52:48.475737+00:00",
+      "summary": "OTM OI 102,760 (25% totale) | OTM vol spike 37,856 | Max OI: strike $80 (+39%) exp 2026-07-17 \u2014 14,372 contratti",
+      "raw_score": "62",
+      "final_score": "70",
+      "tags": [
+        "options",
+        "bullish",
+        "openbb"
+      ],
+      "alert": "True",
+      "pattern": "options",
+      "matched_rules": [
+        "OTM OI 102,760 (25% totale)",
+        "OTM vol spike 37,856"
+      ],
+      "tickers_mentioned": [
+        "oklo"
+      ],
+      "ticker_symbols": [
+        "OKLO"
+      ],
+      "age_hours": 0.0,
+      "convergence_boost": 8,
+      "price_context": {
+        "current_price": 58.09,
+        "change_5d_pct": -13.1,
+        "change_30d_pct": -24.0,
+        "volume_ratio": 1.2,
+        "days_to_earnings": 65,
+        "beat_rate_pct": null,
+        "analyst_target": 88.89,
+        "upside_to_target": 53.0,
+        "timing": "ENTRA",
+        "entry_low": 56.93,
+        "entry_high": 59.25,
+        "stop_loss": 53.04,
+        "week_high_52": 193.84,
+        "pct_from_52w_high": -70.0,
+        "notes": [
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 45.3,
+        "macd_bullish": "False",
+        "macd_histogram": -0.7082,
+        "ma50": 63.35,
+        "ma200": 85.66,
+        "above_ma50": "False",
+        "above_ma200": "False",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 6.07,
+        "atr_pct": 10.4,
+        "bb_upper": 77.33,
+        "bb_lower": 55.87,
+        "bb_position": "MIDDLE",
+        "support": 53.96,
+        "resistance": 65.97,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 1.015,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$50 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 6.1,
+        "risk_pct": 8.7,
+        "reward_pct": 53.0,
+        "target_price": 88.89
+      },
+      "direction": "LONG"
+    },
+    {
       "title": "[Options OBB] SMR \u2014 BULLISH (2 segnali)",
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/SMR/options",
-      "published": "2026-06-06T12:58:04.034328+00:00",
-      "published_dt": "2026-06-06T12:58:04.034337+00:00",
+      "published": "2026-06-06T16:52:50.053122+00:00",
+      "published_dt": "2026-06-06T16:52:50.053131+00:00",
       "summary": "P/C OI 0.45 | OTM vol spike 28,177 | Max OI: strike $12 (+16%) exp 2026-06-18 \u2014 8,960 contratti",
       "raw_score": "62",
       "final_score": "70",
@@ -891,8 +817,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/QBTS/options",
-      "published": "2026-06-06T12:58:09.585619+00:00",
-      "published_dt": "2026-06-06T12:58:09.585627+00:00",
+      "published": "2026-06-06T16:52:54.709018+00:00",
+      "published_dt": "2026-06-06T16:52:54.709027+00:00",
       "summary": "OTM OI 94,370 (28% totale) | OTM vol spike 21,422 | Max OI: strike $30 (+28%) exp 2027-01-15 \u2014 13,231 contratti",
       "raw_score": "62",
       "final_score": "70",
@@ -966,8 +892,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/RGTI/options",
-      "published": "2026-06-06T12:58:11.450643+00:00",
-      "published_dt": "2026-06-06T12:58:11.450652+00:00",
+      "published": "2026-06-06T16:52:56.774202+00:00",
+      "published_dt": "2026-06-06T16:52:56.774212+00:00",
       "summary": "OTM OI 107,552 (26% totale) | OTM vol spike 25,020 | Max OI: strike $27 (+32%) exp 2026-06-18 \u2014 7,685 contratti",
       "raw_score": "62",
       "final_score": "95",
@@ -1039,162 +965,15 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Microstrategy (MSTR): 38 articoli (2.5x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=microstrategy",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "38 menzioni in 48h vs soglia 15 \u2014 rapporto 2.5x.",
-      "raw_score": 68,
-      "final_score": 80,
-      "tags": [
-        "velocity"
-      ],
-      "alert": true,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 2.5x soglia (38/15)"
-      ],
-      "tickers_mentioned": [
-        "microstrategy"
-      ],
-      "ticker_symbols": [
-        "MSTR"
-      ],
-      "age_hours": 0,
-      "convergence_boost": 0,
-      "price_context": {
-        "current_price": 120.44,
-        "change_5d_pct": -24.3,
-        "change_30d_pct": -30.2,
-        "volume_ratio": 2.6,
-        "days_to_earnings": 54,
-        "beat_rate_pct": 25.0,
-        "analyst_target": 351.54,
-        "upside_to_target": 191.9,
-        "timing": "ENTRA",
-        "entry_low": 118.03,
-        "entry_high": 122.85,
-        "stop_loss": 114.42,
-        "week_high_52": 457.22,
-        "pct_from_52w_high": -73.7,
-        "notes": [
-          "Volume 2.6x media \u2014 interesse crescente",
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 14.4,
-        "macd_bullish": "False",
-        "macd_histogram": -5.7248,
-        "ma50": 155.28,
-        "ma200": 201.86,
-        "above_ma50": "False",
-        "above_ma200": "False",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 10.22,
-        "atr_pct": 8.5,
-        "bb_upper": 202.22,
-        "bb_lower": 119.7,
-        "bb_position": "LOWER",
-        "support": 116.4,
-        "resistance": 134.5,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 0.971,
-        "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$110 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 38.4,
-        "risk_pct": 5.0,
-        "reward_pct": 191.9,
-        "target_price": 351.54
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[News Velocity] Broadcom (AVGO): 68 articoli (2.3x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=broadcom",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "68 menzioni in 48h vs soglia 30 \u2014 rapporto 2.3x.",
-      "raw_score": 64,
-      "final_score": 80,
-      "tags": [
-        "velocity"
-      ],
-      "alert": true,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 2.3x soglia (68/30)"
-      ],
-      "tickers_mentioned": [
-        "broadcom"
-      ],
-      "ticker_symbols": [
-        "AVGO"
-      ],
-      "age_hours": 0,
-      "convergence_boost": 0,
-      "price_context": {
-        "current_price": 385.73,
-        "change_5d_pct": -13.7,
-        "change_30d_pct": -8.1,
-        "volume_ratio": 2.0,
-        "days_to_earnings": 89,
-        "beat_rate_pct": 100.0,
-        "analyst_target": 512.73,
-        "upside_to_target": 32.9,
-        "timing": "ENTRA",
-        "entry_low": 378.02,
-        "entry_high": 393.44,
-        "stop_loss": 351.41,
-        "week_high_52": 495.0,
-        "pct_from_52w_high": -22.1,
-        "notes": [
-          "Volume 2.0x media",
-          "Beat rate 100% \u2014 storicamente batte le stime",
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 39.5,
-        "macd_bullish": "False",
-        "macd_histogram": -3.6103,
-        "ma50": 398.41,
-        "ma200": 354.92,
-        "above_ma50": "False",
-        "above_ma200": "True",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 22.88,
-        "atr_pct": 5.9,
-        "bb_upper": 473.66,
-        "bb_lower": 384.38,
-        "bb_position": "LOWER",
-        "support": 307.86,
-        "resistance": 429.31,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 0.585,
-        "iv_regime": "MEDIUM",
-        "options_strategy": "BULL CALL SPREAD \u2014 compra $385 call / vendi $425 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
-        "rr_ratio": 3.7,
-        "risk_pct": 8.9,
-        "reward_pct": 32.9,
-        "target_price": 512.73
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[News Velocity] Bloom Energy (BE): 21 articoli (1.8x soglia)",
+      "title": "[News Velocity] Bloom Energy (BE): 25 articoli (2.1x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=bloom%20energy",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "21 menzioni in 48h vs soglia 12 \u2014 rapporto 1.8x.",
-      "raw_score": 56,
-      "final_score": 99,
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "25 menzioni in 48h vs soglia 12 \u2014 rapporto 2.1x.",
+      "raw_score": 61,
+      "final_score": 100,
       "tags": [
         "velocity",
         "earnings"
@@ -1202,7 +981,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 1.8x soglia (21/12)"
+        "Velocity 2.1x soglia (25/12)"
       ],
       "tickers_mentioned": [
         "bloom energy"
@@ -1261,148 +1040,223 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Cleanspark (CLSK): 18 articoli (2.2x soglia)",
+      "title": "[News Velocity] Rigetti (RGTI): 17 articoli (2.1x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
-      "url": "https://news.google.com/search?q=cleanspark",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "18 menzioni in 48h vs soglia 8 \u2014 rapporto 2.2x.",
-      "raw_score": 63,
-      "final_score": 84,
+      "url": "https://news.google.com/search?q=rigetti",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "17 menzioni in 48h vs soglia 8 \u2014 rapporto 2.1x.",
+      "raw_score": 61,
+      "final_score": 94,
       "tags": [
-        "velocity"
+        "velocity",
+        "earnings"
       ],
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 2.2x soglia (18/8)"
+        "Velocity 2.1x soglia (17/8)"
       ],
       "tickers_mentioned": [
-        "cleanspark"
+        "rigetti"
       ],
       "ticker_symbols": [
-        "CLSK"
+        "RGTI"
       ],
       "age_hours": 0,
-      "convergence_boost": 0,
+      "convergence_boost": 8,
       "price_context": {
-        "current_price": 15.59,
-        "change_5d_pct": -14.8,
-        "change_30d_pct": 27.5,
-        "volume_ratio": 1.6,
-        "days_to_earnings": 61,
-        "beat_rate_pct": 25.0,
-        "analyst_target": 20.38,
-        "upside_to_target": 30.7,
+        "current_price": 20.68,
+        "change_5d_pct": -19.0,
+        "change_30d_pct": 22.7,
+        "volume_ratio": 0.8,
+        "days_to_earnings": -26,
+        "beat_rate_pct": 75.0,
+        "analyst_target": 29.24,
+        "upside_to_target": 41.4,
         "timing": "ASPETTA",
-        "entry_low": 15.28,
-        "entry_high": 15.9,
-        "stop_loss": 13.44,
-        "week_high_52": 23.61,
-        "pct_from_52w_high": -34.0,
+        "entry_low": 20.27,
+        "entry_high": 21.09,
+        "stop_loss": 16.26,
+        "week_high_52": 58.15,
+        "pct_from_52w_high": -64.4,
         "notes": [
-          "Volume 1.6x media",
-          "\ud83c\udf1f Golden Cross \u2014 MA50 ha superato MA200",
+          "Earnings tra -26gg \u2014 pre-earnings window",
           "In movimento ma non esagerato \u2014 monitora per conferma"
         ],
-        "rsi": 63.8,
+        "rsi": 55.5,
         "macd_bullish": "False",
-        "macd_histogram": -0.1363,
-        "ma50": 12.96,
-        "ma200": 12.73,
+        "macd_histogram": -0.1236,
+        "ma50": 18.57,
+        "ma200": 23.5,
         "above_ma50": "True",
-        "above_ma200": "True",
-        "golden_cross": true,
+        "above_ma200": "False",
+        "golden_cross": false,
         "death_cross": false,
-        "atr": 1.43,
-        "atr_pct": 9.2,
-        "bb_upper": 19.49,
-        "bb_lower": 12.06,
+        "atr": 2.95,
+        "atr_pct": 14.3,
+        "bb_upper": 29.13,
+        "bb_lower": 14.44,
         "bb_position": "MIDDLE",
-        "support": 12.67,
-        "resistance": 19.17,
+        "support": 15.46,
+        "resistance": 21.02,
         "direction": "LONG",
         "setup_type": "BASE_BUILD",
-        "iv_atm": 1.221,
+        "iv_atm": 1.21,
         "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$15 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 2.2,
-        "risk_pct": 13.8,
-        "reward_pct": 30.7,
-        "target_price": 20.38
+        "options_strategy": "SELL PUT \u2014 strike ~$20 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 1.9,
+        "risk_pct": 21.4,
+        "reward_pct": 41.4,
+        "target_price": 29.24
       },
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Intuitive Machines (LUNR): 13 articoli (2.2x soglia)",
+      "title": "[News Velocity] Broadcom (AVGO): 55 articoli (1.8x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
-      "url": "https://news.google.com/search?q=intuitive%20machines",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "13 menzioni in 48h vs soglia 6 \u2014 rapporto 2.2x.",
-      "raw_score": 62,
-      "final_score": 62,
+      "url": "https://news.google.com/search?q=broadcom",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "55 menzioni in 48h vs soglia 30 \u2014 rapporto 1.8x.",
+      "raw_score": 57,
+      "final_score": 81,
+      "tags": [
+        "velocity"
+      ],
+      "alert": false,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.8x soglia (55/30)"
+      ],
+      "tickers_mentioned": [
+        "broadcom"
+      ],
+      "ticker_symbols": [
+        "AVGO"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 8,
+      "price_context": {
+        "current_price": 385.73,
+        "change_5d_pct": -13.7,
+        "change_30d_pct": -8.1,
+        "volume_ratio": 2.0,
+        "days_to_earnings": 89,
+        "beat_rate_pct": 100.0,
+        "analyst_target": 512.73,
+        "upside_to_target": 32.9,
+        "timing": "ENTRA",
+        "entry_low": 378.02,
+        "entry_high": 393.44,
+        "stop_loss": 351.41,
+        "week_high_52": 495.0,
+        "pct_from_52w_high": -22.1,
+        "notes": [
+          "Volume 2.0x media",
+          "Beat rate 100% \u2014 storicamente batte le stime",
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 39.5,
+        "macd_bullish": "False",
+        "macd_histogram": -3.6103,
+        "ma50": 398.41,
+        "ma200": 354.92,
+        "above_ma50": "False",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 22.88,
+        "atr_pct": 5.9,
+        "bb_upper": 473.66,
+        "bb_lower": 384.38,
+        "bb_position": "LOWER",
+        "support": 307.86,
+        "resistance": 429.31,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 0.585,
+        "iv_regime": "MEDIUM",
+        "options_strategy": "BULL CALL SPREAD \u2014 compra $385 call / vendi $425 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
+        "rr_ratio": 3.7,
+        "risk_pct": 8.9,
+        "reward_pct": 32.9,
+        "target_price": 512.73
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Microstrategy (MSTR): 34 articoli (2.3x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=microstrategy",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "34 menzioni in 48h vs soglia 15 \u2014 rapporto 2.3x.",
+      "raw_score": 64,
+      "final_score": 76,
       "tags": [
         "velocity"
       ],
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 2.2x soglia (13/6)"
+        "Velocity 2.3x soglia (34/15)"
       ],
       "tickers_mentioned": [
-        "intuitive machines"
+        "microstrategy"
       ],
       "ticker_symbols": [
-        "LUNR"
+        "MSTR"
       ],
       "age_hours": 0,
       "convergence_boost": 0,
       "price_context": {
-        "current_price": 29.36,
-        "change_5d_pct": -33.0,
-        "change_30d_pct": 6.5,
-        "volume_ratio": 0.8,
-        "days_to_earnings": 61,
-        "beat_rate_pct": 50.0,
-        "analyst_target": 40.78,
-        "upside_to_target": 38.9,
-        "timing": "PULLBACK",
-        "entry_low": 23.5,
-        "entry_high": 24.33,
-        "stop_loss": 23.22,
-        "week_high_52": 46.75,
-        "pct_from_52w_high": -37.2,
+        "current_price": 120.44,
+        "change_5d_pct": -24.3,
+        "change_30d_pct": -30.2,
+        "volume_ratio": 2.6,
+        "days_to_earnings": 54,
+        "beat_rate_pct": 25.0,
+        "analyst_target": 351.54,
+        "upside_to_target": 191.9,
+        "timing": "ENTRA",
+        "entry_low": 118.03,
+        "entry_high": 122.85,
+        "stop_loss": 114.42,
+        "week_high_52": 457.22,
+        "pct_from_52w_high": -73.7,
         "notes": [
-          "Ritracciamento su trend rialzista \u2014 opportunit\u00e0 di entry sul dip"
+          "Volume 2.6x media \u2014 interesse crescente",
+          "Ancora a base \u2014 finestra di accumulo aperta"
         ],
-        "rsi": 44.4,
+        "rsi": 14.4,
         "macd_bullish": "False",
-        "macd_histogram": -1.0837,
-        "ma50": 28.68,
-        "ma200": 17.47,
-        "above_ma50": "True",
-        "above_ma200": "True",
+        "macd_histogram": -5.7248,
+        "ma50": 155.28,
+        "ma200": 201.86,
+        "above_ma50": "False",
+        "above_ma200": "False",
         "golden_cross": false,
         "death_cross": false,
-        "atr": 5.55,
-        "atr_pct": 18.9,
-        "bb_upper": 44.02,
-        "bb_lower": 27.09,
-        "bb_position": "MIDDLE",
-        "support": 23.62,
-        "resistance": 31.15,
+        "atr": 10.22,
+        "atr_pct": 8.5,
+        "bb_upper": 202.22,
+        "bb_lower": 119.7,
+        "bb_position": "LOWER",
+        "support": 116.4,
+        "resistance": 134.5,
         "direction": "LONG",
-        "setup_type": "DIP_BUY",
-        "iv_atm": 1.47,
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 0.971,
         "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$25 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 24.3,
-        "risk_pct": 2.9,
-        "reward_pct": 70.5,
-        "target_price": 40.78
+        "options_strategy": "SELL PUT \u2014 strike ~$110 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 38.4,
+        "risk_pct": 5.0,
+        "reward_pct": 191.9,
+        "target_price": 351.54
       },
       "direction": "LONG"
     },
@@ -1411,8 +1265,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/GEV/options",
-      "published": "2026-06-06T12:57:54.856153+00:00",
-      "published_dt": "2026-06-06T12:57:54.856162+00:00",
+      "published": "2026-06-06T16:52:40.435028+00:00",
+      "published_dt": "2026-06-06T16:52:40.435038+00:00",
       "summary": "OTM OI 30,877 (35% totale) | OTM vol spike 3,644 | Max OI: strike $1050 (+14%) exp 2026-06-18 \u2014 1,722 contratti",
       "raw_score": "62",
       "final_score": "62",
@@ -1486,8 +1340,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/TLN/options",
-      "published": "2026-06-06T12:58:00.552132+00:00",
-      "published_dt": "2026-06-06T12:58:00.552141+00:00",
+      "published": "2026-06-06T16:52:46.448404+00:00",
+      "published_dt": "2026-06-06T16:52:46.448413+00:00",
       "summary": "OTM OI 18,367 (46% totale) | OTM vol spike 2,938 | Max OI: strike $430 (+18%) exp 2026-12-18 \u2014 2,720 contratti",
       "raw_score": "62",
       "final_score": "87",
@@ -1559,13 +1413,13 @@
       "direction": "LONG"
     },
     {
-      "title": "[Options OBB] OKLO \u2014 BULLISH (2 segnali)",
+      "title": "[Options OBB] LMT \u2014 BULLISH (2 segnali)",
       "source": "OpenBB Options Chain",
       "source_type": "options",
-      "url": "https://finance.yahoo.com/quote/OKLO/options",
-      "published": "2026-06-06T12:58:02.415733+00:00",
-      "published_dt": "2026-06-06T12:58:02.415744+00:00",
-      "summary": "OTM OI 102,760 (25% totale) | OTM vol spike 37,856 | Max OI: strike $80 (+39%) exp 2026-07-17 \u2014 14,372 contratti",
+      "url": "https://finance.yahoo.com/quote/LMT/options",
+      "published": "2026-06-06T16:53:00.503122+00:00",
+      "published_dt": "2026-06-06T16:53:00.503133+00:00",
+      "summary": "OTM OI 47,151 (53% totale) | OTM vol spike 8,073 | Max OI: strike $670 (+28%) exp 2026-06-18 \u2014 13,419 contratti",
       "raw_score": "62",
       "final_score": "62",
       "tags": [
@@ -1576,60 +1430,60 @@
       "alert": "True",
       "pattern": "options",
       "matched_rules": [
-        "OTM OI 102,760 (25% totale)",
-        "OTM vol spike 37,856"
+        "OTM OI 47,151 (53% totale)",
+        "OTM vol spike 8,073"
       ],
       "tickers_mentioned": [
-        "oklo"
+        "lockheed"
       ],
       "ticker_symbols": [
-        "OKLO"
+        "LMT"
       ],
       "age_hours": 0.0,
       "convergence_boost": 0,
       "price_context": {
-        "current_price": 58.09,
-        "change_5d_pct": -13.1,
-        "change_30d_pct": -24.0,
-        "volume_ratio": 1.2,
-        "days_to_earnings": 65,
-        "beat_rate_pct": null,
-        "analyst_target": 88.89,
-        "upside_to_target": 53.0,
+        "current_price": 523.76,
+        "change_5d_pct": -0.6,
+        "change_30d_pct": -0.5,
+        "volume_ratio": 0.7,
+        "days_to_earnings": 45,
+        "beat_rate_pct": 50.0,
+        "analyst_target": 625.16,
+        "upside_to_target": 19.4,
         "timing": "ENTRA",
-        "entry_low": 56.93,
-        "entry_high": 59.25,
-        "stop_loss": 53.04,
-        "week_high_52": 193.84,
-        "pct_from_52w_high": -70.0,
+        "entry_low": 513.28,
+        "entry_high": 534.24,
+        "stop_loss": 508.47,
+        "week_high_52": 692.0,
+        "pct_from_52w_high": -24.3,
         "notes": [
           "Ancora a base \u2014 finestra di accumulo aperta"
         ],
-        "rsi": 45.3,
-        "macd_bullish": "False",
-        "macd_histogram": -0.7082,
-        "ma50": 63.35,
-        "ma200": 85.66,
+        "rsi": 57.9,
+        "macd_bullish": "True",
+        "macd_histogram": 2.3323,
+        "ma50": 550.3,
+        "ma200": 528.33,
         "above_ma50": "False",
         "above_ma200": "False",
         "golden_cross": false,
         "death_cross": false,
-        "atr": 6.07,
-        "atr_pct": 10.4,
-        "bb_upper": 77.33,
-        "bb_lower": 55.87,
-        "bb_position": "MIDDLE",
-        "support": 53.96,
-        "resistance": 65.97,
+        "atr": 10.19,
+        "atr_pct": 1.9,
+        "bb_upper": 534.81,
+        "bb_lower": 504.7,
+        "bb_position": "UPPER",
+        "support": 510.1,
+        "resistance": 537.69,
         "direction": "LONG",
         "setup_type": "BASE_BUILD",
-        "iv_atm": 1.015,
-        "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$50 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 6.1,
-        "risk_pct": 8.7,
-        "reward_pct": 53.0,
-        "target_price": 88.89
+        "iv_atm": 0.384,
+        "iv_regime": "MEDIUM",
+        "options_strategy": "BULL CALL SPREAD \u2014 compra $525 call / vendi $575 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
+        "rr_ratio": 6.6,
+        "risk_pct": 2.9,
+        "reward_pct": 19.4,
+        "target_price": 625.16
       },
       "direction": "LONG"
     },
@@ -1638,8 +1492,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/RTX/options",
-      "published": "2026-06-06T12:58:17.681965+00:00",
-      "published_dt": "2026-06-06T12:58:17.681974+00:00",
+      "published": "2026-06-06T16:53:02.025097+00:00",
+      "published_dt": "2026-06-06T16:53:02.025107+00:00",
       "summary": "P/C vol 0.21 | OTM OI 62,222 (45% totale) | Max OI: strike $220 (+22%) exp 2026-06-18 \u2014 11,928 contratti",
       "raw_score": "62",
       "final_score": "72",
@@ -1714,8 +1568,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/LHX/options",
-      "published": "2026-06-06T12:58:18.978738+00:00",
-      "published_dt": "2026-06-06T12:58:18.978747+00:00",
+      "published": "2026-06-06T16:53:03.330504+00:00",
+      "published_dt": "2026-06-06T16:53:03.330514+00:00",
       "summary": "P/C OI 0.45 | OTM OI 4,855 (49% totale) | Max OI: strike $370 (+21%) exp 2027-01-15 \u2014 520 contratti",
       "raw_score": "62",
       "final_score": "72",
@@ -1790,8 +1644,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/BE/options",
-      "published": "2026-06-06T12:57:57.037841+00:00",
-      "published_dt": "2026-06-06T12:57:57.037850+00:00",
+      "published": "2026-06-06T16:52:42.668708+00:00",
+      "published_dt": "2026-06-06T16:52:42.668717+00:00",
       "summary": "OTM vol spike 19,202 | Max OI: strike $300 (+18%) exp 2026-06-18 \u2014 5,205 contratti",
       "raw_score": "54",
       "final_score": "97",
@@ -1867,8 +1721,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/NEE/options",
-      "published": "2026-06-06T12:58:05.600569+00:00",
-      "published_dt": "2026-06-06T12:58:05.600578+00:00",
+      "published": "2026-06-06T16:52:51.922865+00:00",
+      "published_dt": "2026-06-06T16:52:51.922875+00:00",
       "summary": "OTM OI 118,403 (40% totale) | Max OI: strike $95 (+11%) exp 2026-06-18 \u2014 11,511 contratti",
       "raw_score": "54",
       "final_score": "72",
@@ -1942,8 +1796,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/D/options",
-      "published": "2026-06-06T12:58:07.912616+00:00",
-      "published_dt": "2026-06-06T12:58:07.912625+00:00",
+      "published": "2026-06-06T16:52:53.080883+00:00",
+      "published_dt": "2026-06-06T16:52:53.080920+00:00",
       "summary": "P/C vol 0.14 | Max OI: strike $75 (+13%) exp 2027-01-15 \u2014 1,721 contratti",
       "raw_score": "54",
       "final_score": "72",
@@ -2017,8 +1871,8 @@
       "source": "OpenBB Options Chain",
       "source_type": "options",
       "url": "https://finance.yahoo.com/quote/IONQ/options",
-      "published": "2026-06-06T12:58:13.057722+00:00",
-      "published_dt": "2026-06-06T12:58:13.057731+00:00",
+      "published": "2026-06-06T16:52:58.563125+00:00",
+      "published_dt": "2026-06-06T16:52:58.563135+00:00",
       "summary": "OTM vol spike 20,675 | Max OI: strike $70 (+27%) exp 2026-06-18 \u2014 4,670 contratti",
       "raw_score": "54",
       "final_score": "62",
@@ -2091,8 +1945,8 @@
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=vistra",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
       "summary": "19 menzioni in 48h vs soglia 12 \u2014 rapporto 1.6x.",
       "raw_score": 53,
       "final_score": 61,
@@ -2159,12 +2013,110 @@
       "direction": "LONG"
     },
     {
+      "title": "[News Velocity] Nvidia (NVDA): 60 articoli (1.0x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=nvidia",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "60 menzioni in 48h vs soglia 60 \u2014 rapporto 1.0x.",
+      "raw_score": 45,
+      "final_score": 79,
+      "tags": [
+        "velocity",
+        "convergence"
+      ],
+      "alert": true,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.0x soglia (60/60)"
+      ],
+      "tickers_mentioned": [
+        "nvidia"
+      ],
+      "ticker_symbols": [
+        "NVDA"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 16,
+      "price_context": {
+        "current_price": 205.1,
+        "change_5d_pct": -2.7,
+        "change_30d_pct": 2.9,
+        "volume_ratio": 1.2,
+        "days_to_earnings": 81,
+        "beat_rate_pct": 100.0,
+        "analyst_target": 298.42,
+        "upside_to_target": 45.5,
+        "timing": "ENTRA",
+        "entry_low": 201.0,
+        "entry_high": 209.2,
+        "stop_loss": 193.64,
+        "week_high_52": 236.54,
+        "pct_from_52w_high": -13.3,
+        "notes": [
+          "Beat rate 100% \u2014 storicamente batte le stime",
+          "RSI 34 oversold su trend rialzista \u2014 dip da comprare",
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 34.3,
+        "macd_bullish": "False",
+        "macd_histogram": -1.9325,
+        "ma50": 203.22,
+        "ma200": 188.34,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 8.62,
+        "atr_pct": 4.2,
+        "bb_upper": 231.68,
+        "bb_lower": 206.07,
+        "bb_position": "LOWER",
+        "support": 196.99,
+        "resistance": 216.58,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 0.42,
+        "iv_regime": "MEDIUM",
+        "options_strategy": "BULL CALL SPREAD \u2014 compra $205 call / vendi $225 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
+        "rr_ratio": 8.1,
+        "risk_pct": 5.6,
+        "reward_pct": 45.5,
+        "target_price": 298.42
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "Bitcoin is cratering, but a new Wall Street crypto hype is on the rise",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/bitcoin-price-crash-crypto-hype-hyperliquid-etfs.html",
+      "published": "Sat, 06 Jun 2026 13:28:42 GMT",
+      "published_dt": "2026-06-06T13:28:42+00:00",
+      "summary": "As bitcoin dropped to its lowest price since 2024, investors flock to a new type of crypto investment linked to the hyperliquid platforms, HYPE ETFs.",
+      "raw_score": 60,
+      "final_score": 60,
+      "tags": [
+        "crypto"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [
+        "Crypto ETF/policy governo"
+      ],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 3.3,
+      "convergence_boost": 0
+    },
+    {
       "title": "[News Velocity] Dell (DELL): 50 articoli (2.0x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=dell",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
       "summary": "50 menzioni in 48h vs soglia 25 \u2014 rapporto 2.0x.",
       "raw_score": 60,
       "final_score": 70,
@@ -2232,75 +2184,148 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Coinbase (COIN): 39 articoli (1.9x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=coinbase",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "39 menzioni in 48h vs soglia 20 \u2014 rapporto 1.9x.",
-      "raw_score": 59,
-      "final_score": 65,
+      "title": "Over $1T wiped out as chip selloff impacts Nvidia, Broadcom, Micron",
+      "source": "Seeking Alpha",
+      "source_type": "analyst",
+      "url": "https://seekingalpha.com/news/4601211-over-1t-erased-chip-selloff-impacts-nvidia-broadcom?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+      "published": "Sat, 06 Jun 2026 11:15:24 -0400",
+      "published_dt": "2026-06-06T11:15:24-04:00",
+      "summary": "",
+      "raw_score": 35,
+      "final_score": 74,
       "tags": [
-        "velocity"
+        "convergence"
       ],
-      "alert": false,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 1.9x soglia (39/20)"
-      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [],
       "tickers_mentioned": [
-        "coinbase"
+        "nvidia",
+        "broadcom"
       ],
       "ticker_symbols": [
-        "COIN"
+        "AVGO",
+        "NVDA"
       ],
-      "age_hours": 0,
-      "convergence_boost": 0,
+      "age_hours": 1.6,
+      "convergence_boost": 16,
       "price_context": {
-        "current_price": 152.4,
-        "change_5d_pct": -19.4,
-        "change_30d_pct": -23.0,
-        "volume_ratio": 1.7,
-        "days_to_earnings": 54,
-        "beat_rate_pct": 50.0,
-        "analyst_target": 229.74,
-        "upside_to_target": 50.7,
+        "current_price": 385.73,
+        "change_5d_pct": -13.7,
+        "change_30d_pct": -8.1,
+        "volume_ratio": 2.0,
+        "days_to_earnings": 89,
+        "beat_rate_pct": 100.0,
+        "analyst_target": 512.73,
+        "upside_to_target": 32.9,
         "timing": "ENTRA",
-        "entry_low": 149.35,
-        "entry_high": 155.45,
-        "stop_loss": 145.37,
-        "week_high_52": 444.65,
-        "pct_from_52w_high": -65.7,
+        "entry_low": 378.02,
+        "entry_high": 393.44,
+        "stop_loss": 351.41,
+        "week_high_52": 495.0,
+        "pct_from_52w_high": -22.1,
         "notes": [
-          "Volume 1.7x media",
+          "Volume 2.0x media",
+          "Beat rate 100% \u2014 storicamente batte le stime",
           "Ancora a base \u2014 finestra di accumulo aperta"
         ],
-        "rsi": 25.5,
+        "rsi": 39.5,
         "macd_bullish": "False",
-        "macd_histogram": -3.9259,
-        "ma50": 186.82,
-        "ma200": 244.65,
+        "macd_histogram": -3.6103,
+        "ma50": 398.41,
+        "ma200": 354.92,
         "above_ma50": "False",
-        "above_ma200": "False",
+        "above_ma200": "True",
         "golden_cross": false,
         "death_cross": false,
-        "atr": 10.32,
-        "atr_pct": 6.8,
-        "bb_upper": 219.85,
-        "bb_lower": 155.03,
+        "atr": 22.88,
+        "atr_pct": 5.9,
+        "bb_upper": 473.66,
+        "bb_lower": 384.38,
         "bb_position": "LOWER",
-        "support": 147.88,
-        "resistance": 179.3,
+        "support": 307.86,
+        "resistance": 429.31,
         "direction": "LONG",
         "setup_type": "BASE_BUILD",
-        "iv_atm": 0.782,
+        "iv_atm": 0.585,
+        "iv_regime": "MEDIUM",
+        "options_strategy": "BULL CALL SPREAD \u2014 compra $385 call / vendi $425 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
+        "rr_ratio": 3.7,
+        "risk_pct": 8.9,
+        "reward_pct": 32.9,
+        "target_price": 512.73
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "Insider trades: Nvidia, Intel, Verizon among notable trades",
+      "source": "Seeking Alpha",
+      "source_type": "analyst",
+      "url": "https://seekingalpha.com/news/4601161-insider-trades-nvidia-intel-verizon-among-notable-trades?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+      "published": "Sat, 06 Jun 2026 11:03:59 -0400",
+      "published_dt": "2026-06-06T11:03:59-04:00",
+      "summary": "",
+      "raw_score": 35,
+      "final_score": 58,
+      "tags": [
+        "convergence"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [
+        "intel",
+        "nvidia"
+      ],
+      "ticker_symbols": [
+        "INTC",
+        "NVDA"
+      ],
+      "age_hours": 1.7,
+      "convergence_boost": 16,
+      "price_context": {
+        "current_price": 99.17,
+        "change_5d_pct": -13.5,
+        "change_30d_pct": 48.5,
+        "volume_ratio": 1.1,
+        "days_to_earnings": 47,
+        "beat_rate_pct": 75.0,
+        "analyst_target": 89.32,
+        "upside_to_target": -9.9,
+        "timing": "PULLBACK",
+        "entry_low": 40.43,
+        "entry_high": 41.85,
+        "stop_loss": 85.9,
+        "week_high_52": 132.75,
+        "pct_from_52w_high": -25.3,
+        "notes": [
+          "Ritracciamento su trend rialzista \u2014 opportunit\u00e0 di entry sul dip"
+        ],
+        "rsi": 40.5,
+        "macd_bullish": "False",
+        "macd_histogram": -3.6176,
+        "ma50": 88.76,
+        "ma200": 51.27,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 8.84,
+        "atr_pct": 8.9,
+        "bb_upper": 130.09,
+        "bb_lower": 101.71,
+        "bb_position": "LOWER",
+        "support": 40.63,
+        "resistance": 126.64,
+        "direction": "LONG",
+        "setup_type": "DIP_BUY",
+        "iv_atm": 0.856,
         "iv_regime": "HIGH",
-        "options_strategy": "SELL PUT \u2014 strike ~$135 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
-        "rr_ratio": 11.0,
-        "risk_pct": 4.6,
-        "reward_pct": 50.7,
-        "target_price": 229.74
+        "options_strategy": "SELL PUT \u2014 strike ~$90 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 1.9,
+        "risk_pct": 108.8,
+        "reward_pct": 207.8,
+        "target_price": 126.64
       },
       "direction": "LONG"
     },
@@ -2310,7 +2335,7 @@
       "source_type": "gov",
       "url": "https://www.usaspending.gov/award/80JSC024FA048",
       "published": null,
-      "published_dt": "2026-06-06T12:54:42.418390+00:00",
+      "published_dt": "2026-06-06T16:49:26.639273+00:00",
       "summary": "ELECTRICITY SUPPLY & ANCILLARY SERVICES FOR JSC (JSC, EF, SCTF)",
       "raw_score": 35,
       "final_score": 67,
@@ -2384,7 +2409,7 @@
       "source_type": "gov",
       "url": "https://www.usaspending.gov/award/36C10B25F0313",
       "published": null,
-      "published_dt": "2026-06-06T12:54:42.836531+00:00",
+      "published_dt": "2026-06-06T16:49:27.040538+00:00",
       "summary": "NATIONAL CENTER FOR VETERANS ANALYSIS AND STATISTICS PLATFORM",
       "raw_score": 35,
       "final_score": 67,
@@ -2453,22 +2478,239 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Dominion (D): 18 articoli (1.2x soglia)",
+      "title": "[News Velocity] Coinbase (COIN): 35 articoli (1.8x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
-      "url": "https://news.google.com/search?q=dominion",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "18 menzioni in 48h vs soglia 15 \u2014 rapporto 1.2x.",
-      "raw_score": 48,
-      "final_score": 66,
+      "url": "https://news.google.com/search?q=coinbase",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "35 menzioni in 48h vs soglia 20 \u2014 rapporto 1.8x.",
+      "raw_score": 56,
+      "final_score": 62,
       "tags": [
         "velocity"
       ],
       "alert": false,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 1.2x soglia (18/15)"
+        "Velocity 1.8x soglia (35/20)"
+      ],
+      "tickers_mentioned": [
+        "coinbase"
+      ],
+      "ticker_symbols": [
+        "COIN"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 0,
+      "price_context": {
+        "current_price": 152.4,
+        "change_5d_pct": -19.4,
+        "change_30d_pct": -23.0,
+        "volume_ratio": 1.7,
+        "days_to_earnings": 54,
+        "beat_rate_pct": 50.0,
+        "analyst_target": 229.74,
+        "upside_to_target": 50.7,
+        "timing": "ENTRA",
+        "entry_low": 149.35,
+        "entry_high": 155.45,
+        "stop_loss": 145.37,
+        "week_high_52": 444.65,
+        "pct_from_52w_high": -65.7,
+        "notes": [
+          "Volume 1.7x media",
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 25.5,
+        "macd_bullish": "False",
+        "macd_histogram": -3.9259,
+        "ma50": 186.82,
+        "ma200": 244.65,
+        "above_ma50": "False",
+        "above_ma200": "False",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 10.32,
+        "atr_pct": 6.8,
+        "bb_upper": 219.85,
+        "bb_lower": 155.03,
+        "bb_position": "LOWER",
+        "support": 147.88,
+        "resistance": 179.3,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 0.782,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$135 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 11.0,
+        "risk_pct": 4.6,
+        "reward_pct": 50.7,
+        "target_price": 229.74
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Oklo (OKLO): 10 articoli (1.2x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=oklo",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "10 menzioni in 48h vs soglia 8 \u2014 rapporto 1.2x.",
+      "raw_score": 48,
+      "final_score": 56,
+      "tags": [
+        "velocity"
+      ],
+      "alert": false,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.2x soglia (10/8)"
+      ],
+      "tickers_mentioned": [
+        "oklo"
+      ],
+      "ticker_symbols": [
+        "OKLO"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 8,
+      "price_context": {
+        "current_price": 58.09,
+        "change_5d_pct": -13.1,
+        "change_30d_pct": -24.0,
+        "volume_ratio": 1.2,
+        "days_to_earnings": 65,
+        "beat_rate_pct": null,
+        "analyst_target": 88.89,
+        "upside_to_target": 53.0,
+        "timing": "ENTRA",
+        "entry_low": 56.93,
+        "entry_high": 59.25,
+        "stop_loss": 53.04,
+        "week_high_52": 193.84,
+        "pct_from_52w_high": -70.0,
+        "notes": [
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 45.3,
+        "macd_bullish": "False",
+        "macd_histogram": -0.7082,
+        "ma50": 63.35,
+        "ma200": 85.66,
+        "above_ma50": "False",
+        "above_ma200": "False",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 6.07,
+        "atr_pct": 10.4,
+        "bb_upper": 77.33,
+        "bb_lower": 55.87,
+        "bb_position": "MIDDLE",
+        "support": 53.96,
+        "resistance": 65.97,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 1.015,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$50 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 6.1,
+        "risk_pct": 8.7,
+        "reward_pct": 53.0,
+        "target_price": 88.89
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Intuitive Machines (LUNR): 10 articoli (1.7x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=intuitive%20machines",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "10 menzioni in 48h vs soglia 6 \u2014 rapporto 1.7x.",
+      "raw_score": 55,
+      "final_score": 55,
+      "tags": [
+        "velocity"
+      ],
+      "alert": false,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.7x soglia (10/6)"
+      ],
+      "tickers_mentioned": [
+        "intuitive machines"
+      ],
+      "ticker_symbols": [
+        "LUNR"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 0,
+      "price_context": {
+        "current_price": 29.36,
+        "change_5d_pct": -33.0,
+        "change_30d_pct": 6.5,
+        "volume_ratio": 0.8,
+        "days_to_earnings": 61,
+        "beat_rate_pct": 50.0,
+        "analyst_target": 40.78,
+        "upside_to_target": 38.9,
+        "timing": "PULLBACK",
+        "entry_low": 23.5,
+        "entry_high": 24.33,
+        "stop_loss": 23.22,
+        "week_high_52": 46.75,
+        "pct_from_52w_high": -37.2,
+        "notes": [
+          "Ritracciamento su trend rialzista \u2014 opportunit\u00e0 di entry sul dip"
+        ],
+        "rsi": 44.4,
+        "macd_bullish": "False",
+        "macd_histogram": -1.0837,
+        "ma50": 28.68,
+        "ma200": 17.47,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 5.55,
+        "atr_pct": 18.9,
+        "bb_upper": 44.02,
+        "bb_lower": 27.09,
+        "bb_position": "MIDDLE",
+        "support": 23.62,
+        "resistance": 31.15,
+        "direction": "LONG",
+        "setup_type": "DIP_BUY",
+        "iv_atm": 1.47,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$25 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 24.3,
+        "risk_pct": 2.9,
+        "reward_pct": 70.5,
+        "target_price": 40.78
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Dominion (D): 17 articoli (1.1x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=dominion",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "17 menzioni in 48h vs soglia 15 \u2014 rapporto 1.1x.",
+      "raw_score": 47,
+      "final_score": 65,
+      "tags": [
+        "velocity"
+      ],
+      "alert": false,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.1x soglia (17/15)"
       ],
       "tickers_mentioned": [
         "dominion"
@@ -2526,22 +2768,22 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Palantir (PLTR): 28 articoli (1.1x soglia)",
+      "title": "[News Velocity] Palantir (PLTR): 29 articoli (1.2x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=palantir",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "28 menzioni in 48h vs soglia 25 \u2014 rapporto 1.1x.",
-      "raw_score": 46,
-      "final_score": 64,
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "29 menzioni in 48h vs soglia 25 \u2014 rapporto 1.2x.",
+      "raw_score": 47,
+      "final_score": 65,
       "tags": [
         "velocity"
       ],
       "alert": false,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 1.1x soglia (28/25)"
+        "Velocity 1.2x soglia (29/25)"
       ],
       "tickers_mentioned": [
         "palantir"
@@ -2599,22 +2841,168 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Amd (AMD): 54 articoli (1.4x soglia)",
+      "title": "Busted AI budgets at Uber, Microsoft and Nvidia spur hiring \u2014 because human workers are cheaper",
+      "source": "MarketWatch",
+      "source_type": "media",
+      "url": "https://www.marketwatch.com/story/the-job-market-is-actually-getting-a-boost-from-ai-turns-out-human-workers-are-cheaper-35b03640?mod=mw_rss_topstories",
+      "published": "Sat, 06 Jun 2026 15:55:00 GMT",
+      "published_dt": "2026-06-06T15:55:00+00:00",
+      "summary": "Uber blew its entire 2026 AI budget by April. Here\u2019s why replacing workers with bots backfired.",
+      "raw_score": 25,
+      "final_score": 69,
+      "tags": [
+        "convergence"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [
+        "nvidia"
+      ],
+      "ticker_symbols": [
+        "NVDA"
+      ],
+      "age_hours": 0.9,
+      "convergence_boost": 16,
+      "price_context": {
+        "current_price": 205.1,
+        "change_5d_pct": -2.7,
+        "change_30d_pct": 2.9,
+        "volume_ratio": 1.2,
+        "days_to_earnings": 81,
+        "beat_rate_pct": 100.0,
+        "analyst_target": 298.42,
+        "upside_to_target": 45.5,
+        "timing": "ENTRA",
+        "entry_low": 201.0,
+        "entry_high": 209.2,
+        "stop_loss": 193.64,
+        "week_high_52": 236.54,
+        "pct_from_52w_high": -13.3,
+        "notes": [
+          "Beat rate 100% \u2014 storicamente batte le stime",
+          "RSI 34 oversold su trend rialzista \u2014 dip da comprare",
+          "Ancora a base \u2014 finestra di accumulo aperta"
+        ],
+        "rsi": 34.3,
+        "macd_bullish": "False",
+        "macd_histogram": -1.9325,
+        "ma50": 203.22,
+        "ma200": 188.34,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": false,
+        "death_cross": false,
+        "atr": 8.62,
+        "atr_pct": 4.2,
+        "bb_upper": 231.68,
+        "bb_lower": 206.07,
+        "bb_position": "LOWER",
+        "support": 196.99,
+        "resistance": 216.58,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 0.42,
+        "iv_regime": "MEDIUM",
+        "options_strategy": "BULL CALL SPREAD \u2014 compra $205 call / vendi $225 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
+        "rr_ratio": 8.1,
+        "risk_pct": 5.6,
+        "reward_pct": 45.5,
+        "target_price": 298.42
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Cleanspark (CLSK): 11 articoli (1.4x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
-      "url": "https://news.google.com/search?q=amd",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "54 menzioni in 48h vs soglia 40 \u2014 rapporto 1.4x.",
+      "url": "https://news.google.com/search?q=cleanspark",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "11 menzioni in 48h vs soglia 8 \u2014 rapporto 1.4x.",
       "raw_score": 50,
-      "final_score": 50,
+      "final_score": 71,
       "tags": [
         "velocity"
       ],
       "alert": false,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 1.4x soglia (54/40)"
+        "Velocity 1.4x soglia (11/8)"
+      ],
+      "tickers_mentioned": [
+        "cleanspark"
+      ],
+      "ticker_symbols": [
+        "CLSK"
+      ],
+      "age_hours": 0,
+      "convergence_boost": 0,
+      "price_context": {
+        "current_price": 15.59,
+        "change_5d_pct": -14.8,
+        "change_30d_pct": 27.5,
+        "volume_ratio": 1.6,
+        "days_to_earnings": 61,
+        "beat_rate_pct": 25.0,
+        "analyst_target": 20.38,
+        "upside_to_target": 30.7,
+        "timing": "ASPETTA",
+        "entry_low": 15.28,
+        "entry_high": 15.9,
+        "stop_loss": 13.44,
+        "week_high_52": 23.61,
+        "pct_from_52w_high": -34.0,
+        "notes": [
+          "Volume 1.6x media",
+          "\ud83c\udf1f Golden Cross \u2014 MA50 ha superato MA200",
+          "In movimento ma non esagerato \u2014 monitora per conferma"
+        ],
+        "rsi": 63.8,
+        "macd_bullish": "False",
+        "macd_histogram": -0.1363,
+        "ma50": 12.96,
+        "ma200": 12.73,
+        "above_ma50": "True",
+        "above_ma200": "True",
+        "golden_cross": true,
+        "death_cross": false,
+        "atr": 1.43,
+        "atr_pct": 9.2,
+        "bb_upper": 19.49,
+        "bb_lower": 12.06,
+        "bb_position": "MIDDLE",
+        "support": 12.67,
+        "resistance": 19.17,
+        "direction": "LONG",
+        "setup_type": "BASE_BUILD",
+        "iv_atm": 1.221,
+        "iv_regime": "HIGH",
+        "options_strategy": "SELL PUT \u2014 strike ~$15 (-10% OTM), scadenza 45-60gg\n     IV alta: incassa il premio, hai -10% di buffer\n     \u26a0\ufe0f Evita se catalyst imminente (IV potrebbe salire ancora)",
+        "rr_ratio": 2.2,
+        "risk_pct": 13.8,
+        "reward_pct": 30.7,
+        "target_price": 20.38
+      },
+      "direction": "LONG"
+    },
+    {
+      "title": "[News Velocity] Amd (AMD): 51 articoli (1.3x soglia)",
+      "source": "Google News Velocity",
+      "source_type": "velocity",
+      "url": "https://news.google.com/search?q=amd",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "51 menzioni in 48h vs soglia 40 \u2014 rapporto 1.3x.",
+      "raw_score": 49,
+      "final_score": 49,
+      "tags": [
+        "velocity"
+      ],
+      "alert": false,
+      "pattern": "velocity",
+      "matched_rules": [
+        "Velocity 1.3x soglia (51/40)"
       ],
       "tickers_mentioned": [
         "amd"
@@ -2669,15 +3057,15 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Oracle (ORCL): 46 articoli (1.3x soglia)",
+      "title": "[News Velocity] Oracle (ORCL): 42 articoli (1.2x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=oracle",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "46 menzioni in 48h vs soglia 35 \u2014 rapporto 1.3x.",
-      "raw_score": 49,
-      "final_score": 89,
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
+      "summary": "42 menzioni in 48h vs soglia 35 \u2014 rapporto 1.2x.",
+      "raw_score": 48,
+      "final_score": 88,
       "tags": [
         "velocity",
         "earnings"
@@ -2685,7 +3073,7 @@
       "alert": true,
       "pattern": "velocity",
       "matched_rules": [
-        "Velocity 1.3x soglia (46/35)"
+        "Velocity 1.2x soglia (42/35)"
       ],
       "tickers_mentioned": [
         "oracle"
@@ -2743,159 +3131,12 @@
       "direction": "LONG"
     },
     {
-      "title": "[News Velocity] Nvidia (NVDA): 66 articoli (1.1x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=nvidia",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "66 menzioni in 48h vs soglia 60 \u2014 rapporto 1.1x.",
-      "raw_score": 46,
-      "final_score": 64,
-      "tags": [
-        "velocity"
-      ],
-      "alert": false,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 1.1x soglia (66/60)"
-      ],
-      "tickers_mentioned": [
-        "nvidia"
-      ],
-      "ticker_symbols": [
-        "NVDA"
-      ],
-      "age_hours": 0,
-      "convergence_boost": 0,
-      "price_context": {
-        "current_price": 205.1,
-        "change_5d_pct": -2.7,
-        "change_30d_pct": 2.9,
-        "volume_ratio": 1.2,
-        "days_to_earnings": 81,
-        "beat_rate_pct": 100.0,
-        "analyst_target": 298.42,
-        "upside_to_target": 45.5,
-        "timing": "ENTRA",
-        "entry_low": 201.0,
-        "entry_high": 209.2,
-        "stop_loss": 193.64,
-        "week_high_52": 236.54,
-        "pct_from_52w_high": -13.3,
-        "notes": [
-          "Beat rate 100% \u2014 storicamente batte le stime",
-          "RSI 34 oversold su trend rialzista \u2014 dip da comprare",
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 34.3,
-        "macd_bullish": "False",
-        "macd_histogram": -1.9325,
-        "ma50": 203.22,
-        "ma200": 188.34,
-        "above_ma50": "True",
-        "above_ma200": "True",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 8.62,
-        "atr_pct": 4.2,
-        "bb_upper": 231.68,
-        "bb_lower": 206.07,
-        "bb_position": "LOWER",
-        "support": 196.99,
-        "resistance": 216.58,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 0.42,
-        "iv_regime": "MEDIUM",
-        "options_strategy": "BULL CALL SPREAD \u2014 compra $205 call / vendi $225 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
-        "rr_ratio": 8.1,
-        "risk_pct": 5.6,
-        "reward_pct": 45.5,
-        "target_price": 298.42
-      },
-      "direction": "LONG"
-    },
-    {
-      "title": "[News Velocity] Leidos (LDOS): 10 articoli (1.0x soglia)",
-      "source": "Google News Velocity",
-      "source_type": "velocity",
-      "url": "https://news.google.com/search?q=leidos",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
-      "summary": "10 menzioni in 48h vs soglia 10 \u2014 rapporto 1.0x.",
-      "raw_score": 45,
-      "final_score": 55,
-      "tags": [
-        "velocity"
-      ],
-      "alert": false,
-      "pattern": "velocity",
-      "matched_rules": [
-        "Velocity 1.0x soglia (10/10)"
-      ],
-      "tickers_mentioned": [
-        "leidos"
-      ],
-      "ticker_symbols": [
-        "LDOS"
-      ],
-      "age_hours": 0,
-      "convergence_boost": 0,
-      "price_context": {
-        "current_price": 124.43,
-        "change_5d_pct": -2.6,
-        "change_30d_pct": -15.7,
-        "volume_ratio": 0.9,
-        "days_to_earnings": 52,
-        "beat_rate_pct": 100.0,
-        "analyst_target": 183.27,
-        "upside_to_target": 47.3,
-        "timing": "ENTRA",
-        "entry_low": 121.94,
-        "entry_high": 126.92,
-        "stop_loss": 119.46,
-        "week_high_52": 205.77,
-        "pct_from_52w_high": -39.5,
-        "notes": [
-          "Beat rate 100% \u2014 storicamente batte le stime",
-          "Ancora a base \u2014 finestra di accumulo aperta"
-        ],
-        "rsi": 51.7,
-        "macd_bullish": "False",
-        "macd_histogram": 0.8378,
-        "ma50": 141.57,
-        "ma200": 173.64,
-        "above_ma50": "False",
-        "above_ma200": "False",
-        "golden_cross": false,
-        "death_cross": false,
-        "atr": 4.08,
-        "atr_pct": 3.3,
-        "bb_upper": 131.25,
-        "bb_lower": 121.73,
-        "bb_position": "LOWER",
-        "support": 121.53,
-        "resistance": 134.47,
-        "direction": "LONG",
-        "setup_type": "BASE_BUILD",
-        "iv_atm": 0.463,
-        "iv_regime": "MEDIUM",
-        "options_strategy": "BULL CALL SPREAD \u2014 compra $125 call / vendi $135 call, scadenza 30-45gg\n     IV media: spread riduce il costo, profitto massimo a +10%",
-        "rr_ratio": 11.8,
-        "risk_pct": 4.0,
-        "reward_pct": 47.3,
-        "target_price": 183.27
-      },
-      "direction": "LONG"
-    },
-    {
       "title": "[News Velocity] Riot Platforms (RIOT): 10 articoli (1.0x soglia)",
       "source": "Google News Velocity",
       "source_type": "velocity",
       "url": "https://news.google.com/search?q=riot%20platforms",
-      "published": "2026-06-06T12:54:13.215094+00:00",
-      "published_dt": "2026-06-06T12:54:13.215094+00:00",
+      "published": "2026-06-06T16:48:46.700508+00:00",
+      "published_dt": "2026-06-06T16:48:46.700508+00:00",
       "summary": "10 menzioni in 48h vs soglia 10 \u2014 rapporto 1.0x.",
       "raw_score": 45,
       "final_score": 45,
@@ -2979,8 +3220,33 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
+    },
+    {
+      "title": "UGREEN unterst\u00fctzt 2026 Terra Wortmann Open als offizieller Partner mit \u201ePower f\u00fcr dein Spiel\"",
+      "source": "PR Newswire Energy",
+      "source_type": "pr",
+      "url": "https://www.prnewswire.com/news-releases/ugreen-unterstutzt-2026-terra-wortmann-open-als-offizieller-partner-mit-power-fur-ihr-spiel-302790975.html",
+      "published": "Sat, 6 Jun 2026 15:44:00 +0000",
+      "published_dt": "2026-06-06T15:44:00+00:00",
+      "summary": "BERLIN, 4. Juni 2026 /PRNewswire/ -- UGREEN, ein weltweit f\u00fchrender Anbieter von intelligenten Ladesystemen und digitalen L\u00f6sungen, ist offizieller Partner der 2026 Terra Wortmann Open, einem der weltweit f\u00fchrenden Rasentennisturniere. Durch diese Zusammenarbeit will UGREEN nahtlose,...",
+      "raw_score": 22,
+      "final_score": 42,
+      "tags": [
+        "convergence"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [
+        "intel"
+      ],
+      "ticker_symbols": [
+        "INTC"
+      ],
+      "age_hours": 1.1,
+      "convergence_boost": 16
     },
     {
       "title": "[SEC 8-K] Unknown \u2014 depositato 2026-02-24",
@@ -3003,53 +3269,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 2460.9,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Astronauts briefly shelter in Dragon during ISS leak repair",
-      "source": "SpaceNews",
-      "source_type": "media",
-      "url": "https://spacenews.com/astronauts-briefly-shelter-in-dragon-during-iss-leak-repair/",
-      "published": "Fri, 05 Jun 2026 16:29:16 +0000",
-      "published_dt": "2026-06-05T16:29:16+00:00",
-      "summary": "NASA instructed astronauts on the International Space Station to briefly shelter in a Dragon spacecraft June 5 as cosmonauts attempted to repair an air leak in a Russian module. \n The post  Astronauts briefly shelter in Dragon during ISS leak repair  appeared first on  SpaceNews .",
-      "raw_score": 52,
-      "final_score": 36,
-      "tags": [
-        "space"
-      ],
-      "alert": true,
-      "pattern": "generic",
-      "matched_rules": [
-        "Contratto NASA/Space Force"
-      ],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 20.4,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Let\u2019s build the moon base, but not lose sight of Mars",
-      "source": "SpaceNews",
-      "source_type": "media",
-      "url": "https://spacenews.com/lets-build-the-moon-base-but-not-lose-sight-of-mars/",
-      "published": "Fri, 05 Jun 2026 13:00:00 +0000",
-      "published_dt": "2026-06-05T13:00:00+00:00",
-      "summary": "These are heady days for NASA and the space industry. The Artemis 2 crew flew around the moon, traveling farther into space than any humans previously had; NASA announced an [&#8230;] \n The post  Let\u2019s build the moon base, but not lose sight of Mars  appeared first on  SpaceNews .",
-      "raw_score": 52,
-      "final_score": 36,
-      "tags": [
-        "space"
-      ],
-      "alert": true,
-      "pattern": "generic",
-      "matched_rules": [
-        "Contratto NASA/Space Force"
-      ],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 23.9,
+      "age_hours": 2464.8,
       "convergence_boost": 0
     },
     {
@@ -3072,51 +3292,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 15.9,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Lockheed Martin Investigation Initiated: Kahn Swick &amp; Foti, LLC Investigates the Officers and Directors of Lockheed Martin Corporation - LMT",
-      "source": "PR Newswire Energy",
-      "source_type": "pr",
-      "url": "https://www.prnewswire.com/news-releases/lockheed-martin-investigation-initiated-kahn-swick--foti-llc-investigates-the-officers-and-directors-of-lockheed-martin-corporation---lmt-302793154.html",
-      "published": "Sat, 6 Jun 2026 02:00:00 +0000",
-      "published_dt": "2026-06-06T02:00:00+00:00",
-      "summary": "NEW YORK and NEW ORLEANS, June 5, 2026 /PRNewswire/ -- Former Attorney General of Louisiana, Charles C. Foti, Jr., Esq., a partner at the law firm of Kahn Swick & Foti, LLC (\"KSF\"), announces that KSF has commenced an investigation into Lockheed Martin Corporation (NYSE: LMT) (\"Lockheed\"...",
-      "raw_score": 22,
-      "final_score": 34,
-      "tags": [
-        "convergence"
-      ],
-      "alert": true,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [
-        "lockheed"
-      ],
-      "ticker_symbols": [
-        "LMT"
-      ],
-      "age_hours": 10.9,
-      "convergence_boost": 16
-    },
-    {
-      "title": "Inside the Obama-era Iran nuclear deal that Trump withdrew from",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/06/trump-iran-jcpoa-nuclear-deal-obama.html",
-      "published": "Sat, 06 Jun 2026 12:00:01 GMT",
-      "published_dt": "2026-06-06T12:00:01+00:00",
-      "summary": "The U.S. and Iran have yet to reach a peace deal or address Iran's nuclear ambitions, despite signals from Trump that talks are progressing.",
-      "raw_score": 24,
-      "final_score": 33,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 0.9,
+      "age_hours": 19.8,
       "convergence_boost": 0
     },
     {
@@ -3139,30 +3315,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 38.4,
-      "convergence_boost": 0
-    },
-    {
-      "title": "U.S. bitcoin, ether ETFs end record multibillion outflow streak",
-      "source": "CoinDesk",
-      "source_type": "media",
-      "url": "https://www.coindesk.com/markets/2026/06/05/bitcoin-and-ether-etfs-end-record-multi-billion-outflow-streak",
-      "published": "Fri, 05 Jun 2026 08:53:30 +0000",
-      "published_dt": "2026-06-05T08:53:30+00:00",
-      "summary": "",
-      "raw_score": 55,
-      "final_score": 30,
-      "tags": [
-        "crypto"
-      ],
-      "alert": true,
-      "pattern": "generic",
-      "matched_rules": [
-        "Crypto ETF/policy governo"
-      ],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 28.0,
+      "age_hours": 42.3,
       "convergence_boost": 0
     },
     {
@@ -3181,7 +3334,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3200,7 +3353,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3219,7 +3372,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3238,7 +3391,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3257,7 +3410,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3276,7 +3429,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3295,7 +3448,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3314,7 +3467,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3333,7 +3486,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3352,7 +3505,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3371,7 +3524,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3390,7 +3543,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3409,7 +3562,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3428,7 +3581,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3447,7 +3600,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3466,7 +3619,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3485,7 +3638,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3504,7 +3657,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3523,7 +3676,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3542,7 +3695,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3561,7 +3714,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3580,7 +3733,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3599,7 +3752,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3618,7 +3771,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3637,7 +3790,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3656,7 +3809,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3675,7 +3828,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3694,7 +3847,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3713,7 +3866,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3732,7 +3885,53 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Astronauts briefly shelter in Dragon during ISS leak repair",
+      "source": "SpaceNews",
+      "source_type": "media",
+      "url": "https://spacenews.com/astronauts-briefly-shelter-in-dragon-during-iss-leak-repair/",
+      "published": "Fri, 05 Jun 2026 16:29:16 +0000",
+      "published_dt": "2026-06-05T16:29:16+00:00",
+      "summary": "NASA instructed astronauts on the International Space Station to briefly shelter in a Dragon spacecraft June 5 as cosmonauts attempted to repair an air leak in a Russian module. \n The post  Astronauts briefly shelter in Dragon during ISS leak repair  appeared first on  SpaceNews .",
+      "raw_score": 52,
+      "final_score": 28,
+      "tags": [
+        "space"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [
+        "Contratto NASA/Space Force"
+      ],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 24.3,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Let\u2019s build the moon base, but not lose sight of Mars",
+      "source": "SpaceNews",
+      "source_type": "media",
+      "url": "https://spacenews.com/lets-build-the-moon-base-but-not-lose-sight-of-mars/",
+      "published": "Fri, 05 Jun 2026 13:00:00 +0000",
+      "published_dt": "2026-06-05T13:00:00+00:00",
+      "summary": "These are heady days for NASA and the space industry. The Artemis 2 crew flew around the moon, traveling farther into space than any humans previously had; NASA announced an [&#8230;] \n The post  Let\u2019s build the moon base, but not lose sight of Mars  appeared first on  SpaceNews .",
+      "raw_score": 52,
+      "final_score": 28,
+      "tags": [
+        "space"
+      ],
+      "alert": true,
+      "pattern": "generic",
+      "matched_rules": [
+        "Contratto NASA/Space Force"
+      ],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 27.8,
       "convergence_boost": 0
     },
     {
@@ -3755,79 +3954,27 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 27.7,
+      "age_hours": 31.6,
       "convergence_boost": 0
     },
     {
-      "title": "Lockheed\u2019s GRIZZLY C-UAS system downs attack drone in live-fire demo",
-      "source": "Defense News",
+      "title": "The Fed can\u2019t protect consumers from supply shocks and price gouging \u2014 but Congress can",
+      "source": "MarketWatch",
       "source_type": "media",
-      "url": "https://www.defensenews.com/news/your-military/2026/06/03/lockheeds-grizzly-c-uas-system-downs-attack-drone-in-live-fire-demo/",
-      "published": "Wed, 03 Jun 2026 15:34:13 +0000",
-      "published_dt": "2026-06-03T15:34:13+00:00",
-      "summary": "The live-fire demonstration paired the radars, Sanctum software and launcher to destroy the target at Yuma Proving Ground, Arizona.",
-      "raw_score": 30,
-      "final_score": 28,
-      "tags": [
-        "convergence"
-      ],
-      "alert": true,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [
-        "lockheed"
-      ],
-      "ticker_symbols": [
-        "LMT"
-      ],
-      "age_hours": 69.3,
-      "convergence_boost": 16
-    },
-    {
-      "title": "AI is designing OpenAI's next model in a sign of 'superintelligence': SoftBank's Masayoshi Son to CNBC",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/softbank-masayoshi-son-openai-model-super-intelligence.html",
-      "published": "Fri, 05 Jun 2026 14:31:12 GMT",
-      "published_dt": "2026-06-05T14:31:12+00:00",
-      "summary": "SoftBank CEO Masayoshi Son said his forecast of artificial superintelligence arriving in 10 years was \"conservative\" and thinks it will be here sooner.",
-      "raw_score": 27,
-      "final_score": 26,
+      "url": "https://www.marketwatch.com/story/the-2-types-of-inflation-the-fed-cant-control-and-how-congress-must-protect-your-wallet-7ac2079a?mod=mw_rss_topstories",
+      "published": "Sat, 06 Jun 2026 14:40:00 GMT",
+      "published_dt": "2026-06-06T14:40:00+00:00",
+      "summary": "As global disruptions drive up Americans\u2019 grocery and gasoline prices, lawmakers need to take a stand.",
+      "raw_score": 23,
+      "final_score": 27,
       "tags": [],
       "alert": false,
       "pattern": "generic",
       "matched_rules": [],
-      "tickers_mentioned": [
-        "intel"
-      ],
-      "ticker_symbols": [
-        "INTC"
-      ],
-      "age_hours": 22.4,
-      "convergence_boost": 8
-    },
-    {
-      "title": "KIA ANUNCIA LOS PRECIOS DEL NUEVO SELTOS 2027",
-      "source": "PR Newswire Energy",
-      "source_type": "pr",
-      "url": "https://www.prnewswire.com/news-releases/kia-anuncia-los-precios-del-nuevo-seltos-2027-809855131.html",
-      "published": "Sat, 6 Jun 2026 02:22:00 +0000",
-      "published_dt": "2026-06-06T02:22:00+00:00",
-      "summary": "El Seltos LX FWD desde $24,990 MSRP1 M\u00e1s grande, m\u00e1s audaz, m\u00e1s inteligente y espacioso, el nuevo Seltos ofrece el mejor espacio para pasajeros en su clase2 y la mayor capacidad de carga de su segmento3 M\u00faltiples opciones de motorizaci\u00f3n: Motor de 2.0 litros de aspiraci\u00f3n natural o motor...",
-      "raw_score": 22,
-      "final_score": 26,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [
-        "intel"
-      ],
-      "ticker_symbols": [
-        "INTC"
-      ],
-      "age_hours": 10.5,
-      "convergence_boost": 8
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 2.1,
+      "convergence_boost": 0
     },
     {
       "title": "AST SpaceMobile sees New Glenn setback delaying initial commercial service into 2027",
@@ -3851,7 +3998,7 @@
         "ASTS",
         "CEG"
       ],
-      "age_hours": 63.7,
+      "age_hours": 67.6,
       "convergence_boost": 8
     },
     {
@@ -3874,64 +4021,37 @@
       "ticker_symbols": [
         "CEG"
       ],
-      "age_hours": 26.1,
+      "age_hours": 30.0,
       "convergence_boost": 8
     },
     {
-      "title": "46 Greenberg Traurig Attorneys Recognized in 2026 IAM Patent 1000",
-      "source": "PR Newswire Energy",
-      "source_type": "pr",
-      "url": "https://www.prnewswire.com/news-releases/46-greenberg-traurig-attorneys-recognized-in-2026-iam-patent-1000-302793127.html",
-      "published": "Sat, 6 Jun 2026 00:30:00 +0000",
-      "published_dt": "2026-06-06T00:30:00+00:00",
-      "summary": "NEW YORK, June 5, 2026 /PRNewswire/ -- Forty-six attorneys from global law firm Greenberg Traurig, LLP were recognized in the 2026 edition of Intellectual Asset Management (IAM)'s Patent 1000 \u2013 The World's Leading Patent Professionals. The firm was also recognized nationally in the United...",
-      "raw_score": 22,
-      "final_score": 23,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [
-        "intel"
-      ],
-      "ticker_symbols": [
-        "INTC"
-      ],
-      "age_hours": 12.4,
-      "convergence_boost": 8
-    },
-    {
-      "title": "Millionen Besitzer von Elektrofahrzeugen werden durch die vertrauensw\u00fcrdigste Batteriekennzahl der Branche in die Irre gef\u00fchrt!",
-      "source": "PR Newswire Energy",
-      "source_type": "pr",
-      "url": "https://www.prnewswire.com/news-releases/millionen-besitzer-von-elektrofahrzeugen-werden-durch-die-vertrauenswurdigste-batteriekennzahl-der-branche-in-die-irre-gefuhrt-302793172.html",
-      "published": "Sat, 6 Jun 2026 00:26:00 +0000",
-      "published_dt": "2026-06-06T00:26:00+00:00",
-      "summary": "Electrify Europe und ZEVA Global f\u00fchren weltweit erstmals per Funk\u00fcbertragung bereitgestellte Berichte zu intelligenten Batterieanalysen ein und stellen damit infrage, wie der Batteriezustand in der Elektrofahrzeugbranche gemessen wird. HEIST-OP-DEN-BERG, Belgien und VANCOUVER, BC, 6....",
-      "raw_score": 22,
-      "final_score": 23,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [
-        "intel"
-      ],
-      "ticker_symbols": [
-        "INTC"
-      ],
-      "age_hours": 12.5,
-      "convergence_boost": 8
-    },
-    {
-      "title": "Abel goes his own way with new Berkshire investments, including billions for AI",
+      "title": "Inside the Obama-era Iran nuclear deal that Trump withdrew from",
       "source": "CNBC",
       "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/06/abel-goes-his-own-way-with-new-berkshire-investments-including-billions-for-ai.html",
-      "published": "Sat, 06 Jun 2026 12:31:02 GMT",
-      "published_dt": "2026-06-06T12:31:02+00:00",
-      "summary": "Warren Buffett tells CNBC's Becky Quick new Berkshire Hathaway CEO Greg Abel has \"launched\" with his first major deal.",
-      "raw_score": 16,
+      "url": "https://www.cnbc.com/2026/06/06/trump-iran-jcpoa-nuclear-deal-obama.html",
+      "published": "Sat, 06 Jun 2026 12:00:01 GMT",
+      "published_dt": "2026-06-06T12:00:01+00:00",
+      "summary": "The U.S. and Iran have yet to reach a peace deal or address Iran's nuclear ambitions, despite signals from Trump that talks are progressing.",
+      "raw_score": 24,
+      "final_score": 24,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 4.8,
+      "convergence_boost": 0
+    },
+    {
+      "title": "US strikes Iranian sites after Iran launches drones, in latest Gulf flare-up",
+      "source": "Defense News",
+      "source_type": "media",
+      "url": "https://www.defensenews.com/flashpoints/middle-east/2026/06/06/us-strikes-iranian-sites-after-iran-launches-drones-in-latest-gulf-flare-up/",
+      "published": "Sat, 06 Jun 2026 15:00:51 +0000",
+      "published_dt": "2026-06-06T15:00:51+00:00",
+      "summary": "U.S. forces struck Iranian coastal radar sites on Saturday after shooting down drones launched by Iran toward the Strait of Hormuz, the U.S.\u00a0military\u00a0said.",
+      "raw_score": 19,
       "final_score": 22,
       "tags": [],
       "alert": false,
@@ -3939,7 +4059,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 0.4,
+      "age_hours": 1.8,
       "convergence_boost": 0
     },
     {
@@ -3958,7 +4078,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3977,7 +4097,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -3996,7 +4116,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4015,7 +4135,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4034,7 +4154,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4053,7 +4173,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4072,7 +4192,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4091,7 +4211,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4110,7 +4230,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4129,7 +4249,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4148,7 +4268,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4167,7 +4287,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4186,7 +4306,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4205,7 +4325,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4224,7 +4344,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4243,7 +4363,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4262,7 +4382,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4281,7 +4401,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4300,7 +4420,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4319,7 +4439,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4338,7 +4458,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4357,7 +4477,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4376,7 +4496,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4395,7 +4515,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4414,7 +4534,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4433,7 +4553,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4452,7 +4572,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4471,7 +4591,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4490,26 +4610,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 36.9,
-      "convergence_boost": 0
-    },
-    {
-      "title": "DOE orders OUC\u2019s 465-MW coal unit in Florida to continue running",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/doe-orlando-coal-florida-stanton-emergency-202/822119/",
-      "published": "Fri, 05 Jun 2026 09:58:18 -0400",
-      "published_dt": "2026-06-05T09:58:18-04:00",
-      "summary": "Although Florida is at &ldquo;normal risk&rdquo; for long-term energy adequacy, the unit near Orlando needs to remain online partly to help serve potential data centers in the state, the department said.",
-      "raw_score": 30,
-      "final_score": 21,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 22.9,
+      "age_hours": 40.8,
       "convergence_boost": 0
     },
     {
@@ -4532,7 +4633,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 50.0,
+      "age_hours": 53.9,
       "convergence_boost": 0
     },
     {
@@ -4555,7 +4656,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 58.0,
+      "age_hours": 61.9,
       "convergence_boost": 0
     },
     {
@@ -4578,7 +4679,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 60.6,
+      "age_hours": 64.5,
       "convergence_boost": 0
     },
     {
@@ -4601,7 +4702,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 145380.9,
+      "age_hours": 145384.8,
       "convergence_boost": 0
     },
     {
@@ -4624,7 +4725,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 16260.9,
+      "age_hours": 16264.8,
       "convergence_boost": 0
     },
     {
@@ -4647,7 +4748,7 @@
       ],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 24756.9,
+      "age_hours": 24760.8,
       "convergence_boost": 0
     },
     {
@@ -4666,7 +4767,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 24.6,
+      "age_hours": 28.5,
       "convergence_boost": 0
     },
     {
@@ -4685,7 +4786,26 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 16.4,
+      "age_hours": 20.3,
+      "convergence_boost": 0
+    },
+    {
+      "title": "DOE orders OUC\u2019s 465-MW coal unit in Florida to continue running",
+      "source": "Utility Dive",
+      "source_type": "media",
+      "url": "https://www.utilitydive.com/news/doe-orlando-coal-florida-stanton-emergency-202/822119/",
+      "published": "Fri, 05 Jun 2026 09:58:18 -0400",
+      "published_dt": "2026-06-05T09:58:18-04:00",
+      "summary": "Although Florida is at &ldquo;normal risk&rdquo; for long-term energy adequacy, the unit near Orlando needs to remain online partly to help serve potential data centers in the state, the department said.",
+      "raw_score": 30,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 26.8,
       "convergence_boost": 0
     },
     {
@@ -4704,26 +4824,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 25.2,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Fervo Energy faces transmission constraints in the West, analysts say",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/fervo-energy-geothermal-transmission-constraints/822141/",
-      "published": "Fri, 05 Jun 2026 10:53:55 -0400",
-      "published_dt": "2026-06-05T10:53:55-04:00",
-      "summary": "&ldquo;Management has highlighted [transmission constraints] as a risk factor ... citing behind-the-meter as a potential solution,&rdquo; said&nbsp;Jefferies equity analyst Julien Dumoulin-Smith.",
-      "raw_score": 24,
-      "final_score": 16,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 22.0,
+      "age_hours": 29.2,
       "convergence_boost": 0
     },
     {
@@ -4742,7 +4843,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 15.7,
+      "age_hours": 19.6,
       "convergence_boost": 0
     },
     {
@@ -4761,7 +4862,102 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 6.1,
+      "age_hours": 10.0,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Chinese EVs may hit U.S. within a few years, one way or another",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/chinese-evs-auto-sales-manufacturing-us.html",
+      "published": "Sat, 06 Jun 2026 13:35:07 GMT",
+      "published_dt": "2026-06-06T13:35:07+00:00",
+      "summary": "Chinese electric vehicles are likely to be sold in the U.S. within years, despite tariffs, strict laws and opposition from the auto industry and politicians.",
+      "raw_score": 16,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 3.2,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Wall Street's 'fear gauge' punches back as the 'crash up' in chip stocks finally reverses",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/wall-streets-fear-gauge-punches-back-as-the-crash-up-in-chip-stocks-finally-reverses.html",
+      "published": "Sat, 06 Jun 2026 12:58:29 GMT",
+      "published_dt": "2026-06-06T12:58:29+00:00",
+      "summary": "The monster rally in semiconductor stocks hit a wall on Friday, and the VIX at last caught up with other volatility metrics.",
+      "raw_score": 16,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 3.8,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Abel goes his own way with new Berkshire investments, including billions for AI",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/abel-goes-his-own-way-with-new-berkshire-investments-including-billions-for-ai.html",
+      "published": "Sat, 06 Jun 2026 12:31:02 GMT",
+      "published_dt": "2026-06-06T12:31:02+00:00",
+      "summary": "Warren Buffett tells CNBC's Becky Quick new Berkshire Hathaway CEO Greg Abel has \"launched\" with his first major deal.",
+      "raw_score": 16,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 4.3,
+      "convergence_boost": 0
+    },
+    {
+      "title": "How \u2018Backrooms\u2019 producer Peter Chernin thinks Hollywood needs to change",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/backrooms-peter-chernin-hollywood.html",
+      "published": "Sat, 06 Jun 2026 13:00:01 GMT",
+      "published_dt": "2026-06-06T13:00:01+00:00",
+      "summary": "Franchise fatigue could drive an entertainment industry sea change as the appetite for fresh ideas grows and younger audiences make up more box office sales.",
+      "raw_score": 16,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 3.8,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Remote work career risks for Gen Z are 'subtle, but material,' Harvard professor says: How to avoid the pitfalls",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/06/remote-work-career-risks-for-gen-z-how-to-avoid-the-pitfalls.html",
+      "published": "Sat, 06 Jun 2026 13:30:01 GMT",
+      "published_dt": "2026-06-06T13:30:01+00:00",
+      "summary": "Forgoing the office can have detrimental \"scarring\" impacts on young workers. Here's how to navigate the benefits and drawbacks of remote work.",
+      "raw_score": 16,
+      "final_score": 16,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 3.3,
       "convergence_boost": 0
     },
     {
@@ -4780,7 +4976,26 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 24.1,
+      "age_hours": 28.0,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Fervo Energy faces transmission constraints in the West, analysts say",
+      "source": "Utility Dive",
+      "source_type": "media",
+      "url": "https://www.utilitydive.com/news/fervo-energy-geothermal-transmission-constraints/822141/",
+      "published": "Fri, 05 Jun 2026 10:53:55 -0400",
+      "published_dt": "2026-06-05T10:53:55-04:00",
+      "summary": "&ldquo;Management has highlighted [transmission constraints] as a risk factor ... citing behind-the-meter as a potential solution,&rdquo; said&nbsp;Jefferies equity analyst Julien Dumoulin-Smith.",
+      "raw_score": 24,
+      "final_score": 13,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 25.9,
       "convergence_boost": 0
     },
     {
@@ -4799,83 +5014,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 42.6,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Protesters target NV Energy at electric utility conference as anger over affordability rises",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/protesters-target-nv-energy-electric-utility-conference-anger-over-affordability-electric-rates/821995/",
-      "published": "Thu, 04 Jun 2026 10:15:55 -0400",
-      "published_dt": "2026-06-04T10:15:55-04:00",
-      "summary": "&ldquo;In Las Vegas, one of the fastest warming cities in the country, you cannot live without electricity,&rdquo; said protest organizer Leslie Vega, who said she&rsquo;s lost loved ones to heatstroke.",
-      "raw_score": 24,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 46.6,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Electric sector needs firm gas supply to protect grid reliability, gas industry report says",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/electric-sector-needs-firm-gas-supply-to-protect-grid-reliability-report/821981/",
-      "published": "Thu, 04 Jun 2026 09:41:53 -0400",
-      "published_dt": "2026-06-04T09:41:53-04:00",
-      "summary": "The report, prepared for the Natural Gas Council, applauded reforms introduced following Winter Storm Uri in 2021 but said better coordination between the gas and electric sectors is still needed.",
-      "raw_score": 24,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 47.2,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Speed to power requires more transmission, not less competition",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/speed-to-power-competitive-transmission-ferc-complaint/821675/",
-      "published": "Thu, 04 Jun 2026 09:37:06 -0400",
-      "published_dt": "2026-06-04T09:37:06-04:00",
-      "summary": "A complaint at FERC seeking to limit competition among transmission developers would inject uncertainty&nbsp;into the process and spur regulatory delays, writes&nbsp;Will Hazelip from National Grid Ventures US.",
-      "raw_score": 24,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 47.3,
-      "convergence_boost": 0
-    },
-    {
-      "title": "MISO\u2019s resource outlook improves as forecast generation additions outpace demand growth",
-      "source": "Utility Dive",
-      "source_type": "media",
-      "url": "https://www.utilitydive.com/news/oms-miso-survey-resource-outlook-generation/821973/",
-      "published": "Thu, 04 Jun 2026 09:05:11 -0400",
-      "published_dt": "2026-06-04T09:05:11-04:00",
-      "summary": "The Midcontinent Independent System Operator is expected to have growing capacity surpluses over the next five years, according to the OMS-MISO survey.",
-      "raw_score": 24,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 47.8,
+      "age_hours": 46.5,
       "convergence_boost": 0
     },
     {
@@ -4894,26 +5033,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 18.7,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Next Ariane 6 launch to carry 36 Amazon Leo satellites using upgraded boosters",
-      "source": "SpaceNews",
-      "source_type": "media",
-      "url": "https://spacenews.com/next-ariane-6-launch-to-carry-36-amazon-leo-satellites-using-upgraded-boosters/",
-      "published": "Fri, 05 Jun 2026 14:02:31 +0000",
-      "published_dt": "2026-06-05T14:02:31+00:00",
-      "summary": "Amazon will fly its largest number of broadband satellites to date later this month on the first Ariane 6 launch to use upgraded boosters. \n The post  Next Ariane 6 launch to carry 36 Amazon Leo satellites using upgraded boosters  appeared first on  SpaceNews .",
-      "raw_score": 19,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 22.9,
+      "age_hours": 22.6,
       "convergence_boost": 0
     },
     {
@@ -4932,26 +5052,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 16.9,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Huge fascist-era underground cisterns draw Western special forces to Italy for tunnel training",
-      "source": "Defense News",
-      "source_type": "media",
-      "url": "https://www.defensenews.com/global/europe/2026/06/05/huge-fascist-era-underground-cisterns-draw-western-special-forces-to-italy-for-tunnel-training/",
-      "published": "Fri, 05 Jun 2026 15:36:37 +0000",
-      "published_dt": "2026-06-05T15:36:37+00:00",
-      "summary": "After resisting 150 bombing runs by the Allies in the Second World War, the cisterns continued to be used by the Italian Air Force to hold aviation fuel.",
-      "raw_score": 19,
-      "final_score": 13,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 21.3,
+      "age_hours": 20.8,
       "convergence_boost": 0
     },
     {
@@ -4970,45 +5071,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 7.9,
-      "convergence_boost": 0
-    },
-    {
-      "title": "AstraZeneca CEO says AI is reshaping drug development \u2014 and helping boost the odds of success",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/astrazeneca-ceo-says-ai-is-reshaping-drug-development-and-helping-boost-the-odds-of-success.html",
-      "published": "Fri, 05 Jun 2026 22:26:16 GMT",
-      "published_dt": "2026-06-05T22:26:16+00:00",
-      "summary": "AstraZeneca CEO Pascal Soriot said AI is helping the company develop medicines faster and make smarter decisions throughout the research process.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 14.5,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Meta's stock sinks on report company could raise tens of billions of dollars to fund AI push",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/meta-stock-sinks-on-report-company-could-raise-tens-of-billions-for-ai.html",
-      "published": "Fri, 05 Jun 2026 20:22:44 GMT",
-      "published_dt": "2026-06-05T20:22:44+00:00",
-      "summary": "Meta shares dropped after the Financial Times reported the company could potentially raise tens of billions of dollars in a stock offering to help its AI push.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 16.5,
+      "age_hours": 11.8,
       "convergence_boost": 0
     },
     {
@@ -5027,17 +5090,17 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 14.0,
+      "age_hours": 17.9,
       "convergence_boost": 0
     },
     {
-      "title": "Bitcoin cracks $60,000, sinking to lowest level since October 2024",
+      "title": "AstraZeneca CEO says AI is reshaping drug development \u2014 and helping boost the odds of success",
       "source": "CNBC",
       "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/bitcoin-dismal-week-price-below-all-time-high-crypto-investors.html",
-      "published": "Fri, 05 Jun 2026 20:59:16 GMT",
-      "published_dt": "2026-06-05T20:59:16+00:00",
-      "summary": "The weeklong sell-off was exacerbated after a stronger-than-expected\u00a0May jobs report Friday sent yields higher and pressured risk assets.",
+      "url": "https://www.cnbc.com/2026/06/05/astrazeneca-ceo-says-ai-is-reshaping-drug-development-and-helping-boost-the-odds-of-success.html",
+      "published": "Fri, 05 Jun 2026 22:26:16 GMT",
+      "published_dt": "2026-06-05T22:26:16+00:00",
+      "summary": "AstraZeneca CEO Pascal Soriot said AI is helping the company develop medicines faster and make smarter decisions throughout the research process.",
       "raw_score": 16,
       "final_score": 11,
       "tags": [],
@@ -5046,7 +5109,26 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 15.9,
+      "age_hours": 18.4,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Meta's stock sinks on report company could raise tens of billions of dollars to fund AI push",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/meta-stock-sinks-on-report-company-could-raise-tens-of-billions-for-ai.html",
+      "published": "Fri, 05 Jun 2026 20:22:44 GMT",
+      "published_dt": "2026-06-05T20:22:44+00:00",
+      "summary": "Meta shares dropped after the Financial Times reported the company could potentially raise tens of billions of dollars in a stock offering to help its AI push.",
+      "raw_score": 16,
+      "final_score": 11,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 20.4,
       "convergence_boost": 0
     },
     {
@@ -5065,64 +5147,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 15.3,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Mythos rejuvenated the cybersecurity sector. Earnings put the recent rally to the test",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/mythos-cybersecurity-earnings-palo-alto-crowdstrike.html",
-      "published": "Fri, 05 Jun 2026 20:25:09 GMT",
-      "published_dt": "2026-06-05T20:25:09+00:00",
-      "summary": "Mythos gave the cybersecurity sector a boost, but upbeat earnings weren't enough for investors in search of an AI payoff.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 16.5,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Iran's threats against this Red Sea choke point are a big vulnerability for the oil market",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/iran-war-oil-price-strait-hormuz-bab-el-mandeb-chokepoint.html",
-      "published": "Fri, 05 Jun 2026 22:05:04 GMT",
-      "published_dt": "2026-06-05T22:05:04+00:00",
-      "summary": "Oil prices would spike if Iran's Houthi allies started attacking ships passing through the Bab el-Mandeb Strait.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 14.8,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/crypto-mutiny-on-strategy-shorts-target-mstr-in-bitcoin-bloodbath.html",
-      "published": "Fri, 05 Jun 2026 18:14:15 GMT",
-      "published_dt": "2026-06-05T18:14:15+00:00",
-      "summary": "Flows around Strategy (MSTR) and the company's variable-rate preferred stock STRC are turning bearish this week.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 18.7,
+      "age_hours": 19.2,
       "convergence_boost": 0
     },
     {
@@ -5141,7 +5166,64 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 18.8,
+      "age_hours": 22.7,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Mythos rejuvenated the cybersecurity sector. Earnings put the recent rally to the test",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/mythos-cybersecurity-earnings-palo-alto-crowdstrike.html",
+      "published": "Fri, 05 Jun 2026 20:25:09 GMT",
+      "published_dt": "2026-06-05T20:25:09+00:00",
+      "summary": "Mythos gave the cybersecurity sector a boost, but upbeat earnings weren't enough for investors in search of an AI payoff.",
+      "raw_score": 16,
+      "final_score": 11,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 20.4,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Iran's threats against this Red Sea choke point are a big vulnerability for the oil market",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/iran-war-oil-price-strait-hormuz-bab-el-mandeb-chokepoint.html",
+      "published": "Fri, 05 Jun 2026 22:05:04 GMT",
+      "published_dt": "2026-06-05T22:05:04+00:00",
+      "summary": "Oil prices would spike if Iran's Houthi allies started attacking ships passing through the Bab el-Mandeb Strait.",
+      "raw_score": 16,
+      "final_score": 11,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 18.7,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/crypto-mutiny-on-strategy-shorts-target-mstr-in-bitcoin-bloodbath.html",
+      "published": "Fri, 05 Jun 2026 18:14:15 GMT",
+      "published_dt": "2026-06-05T18:14:15+00:00",
+      "summary": "Flows around Strategy (MSTR) and the company's variable-rate preferred stock STRC are turning bearish this week.",
+      "raw_score": 16,
+      "final_score": 11,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 22.6,
       "convergence_boost": 0
     },
     {
@@ -5160,7 +5242,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 17.8,
+      "age_hours": 21.7,
       "convergence_boost": 0
     },
     {
@@ -5179,7 +5261,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 16.8,
+      "age_hours": 20.7,
       "convergence_boost": 0
     },
     {
@@ -5198,7 +5280,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 19.9,
+      "age_hours": 23.8,
       "convergence_boost": 0
     },
     {
@@ -5217,7 +5299,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 18.5,
+      "age_hours": 22.4,
       "convergence_boost": 0
     },
     {
@@ -5236,64 +5318,26 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 15.5,
+      "age_hours": 19.4,
       "convergence_boost": 0
     },
     {
-      "title": "The gold chart looks precarious. Here's how to profit",
-      "source": "CNBC",
+      "title": "Next Ariane 6 launch to carry 36 Amazon Leo satellites using upgraded boosters",
+      "source": "SpaceNews",
       "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/the-gold-chart-looks-precarious-heres-how-to-profit.html",
-      "published": "Fri, 05 Jun 2026 16:03:23 GMT",
-      "published_dt": "2026-06-05T16:03:23+00:00",
-      "summary": "Gold is at a technically precarious juncture, and the good news for you is that options market may be mispricing the risk.",
-      "raw_score": 16,
-      "final_score": 11,
+      "url": "https://spacenews.com/next-ariane-6-launch-to-carry-36-amazon-leo-satellites-using-upgraded-boosters/",
+      "published": "Fri, 05 Jun 2026 14:02:31 +0000",
+      "published_dt": "2026-06-05T14:02:31+00:00",
+      "summary": "Amazon will fly its largest number of broadband satellites to date later this month on the first Ariane 6 launch to use upgraded boosters. \n The post  Next Ariane 6 launch to carry 36 Amazon Leo satellites using upgraded boosters  appeared first on  SpaceNews .",
+      "raw_score": 19,
+      "final_score": 10,
       "tags": [],
       "alert": false,
       "pattern": "generic",
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 20.8,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Odds of a Fed hike this year jump on prediction markets",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/odds-of-a-fed-hike-this-year-jump-on-prediction-markets-.html",
-      "published": "Fri, 05 Jun 2026 16:08:04 GMT",
-      "published_dt": "2026-06-05T16:08:04+00:00",
-      "summary": "Following an unexpectedly hot jobs report, prediction market traders see a 52% chance the Federal Reserve increases interest rates this year.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 20.8,
-      "convergence_boost": 0
-    },
-    {
-      "title": "LinkedIn co-founder Reid Hoffman is leaving Microsoft's board after almost a decade",
-      "source": "CNBC",
-      "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/linkedin-co-founder-reid-hoffman-leaving-microsoft-board-after-decade.html",
-      "published": "Fri, 05 Jun 2026 16:19:27 GMT",
-      "published_dt": "2026-06-05T16:19:27+00:00",
-      "summary": "Reid Hoffman was one of OpenAI's first donors, and he left its board in 2023 as the nonprofit cozied up with Microsoft.",
-      "raw_score": 16,
-      "final_score": 11,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 20.6,
+      "age_hours": 26.8,
       "convergence_boost": 0
     },
     {
@@ -5312,7 +5356,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 28.4,
+      "age_hours": 32.3,
       "convergence_boost": 0
     },
     {
@@ -5331,17 +5375,17 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 29.8,
+      "age_hours": 33.8,
       "convergence_boost": 0
     },
     {
-      "title": "AstroForge completes DeepSpace-2 spacecraft",
-      "source": "SpaceNews",
+      "title": "Huge fascist-era underground cisterns draw Western special forces to Italy for tunnel training",
+      "source": "Defense News",
       "source_type": "media",
-      "url": "https://spacenews.com/astroforge-completes-deepspace-2-spacecraft/",
-      "published": "Thu, 04 Jun 2026 16:03:25 +0000",
-      "published_dt": "2026-06-04T16:03:25+00:00",
-      "summary": "Asteroid mining startup AstroForge has completed assembly of its latest spacecraft for launch later this year, incorporating lessons from a failed mission last year. \n The post  AstroForge completes DeepSpace-2 spacecraft  appeared first on  SpaceNews .",
+      "url": "https://www.defensenews.com/global/europe/2026/06/05/huge-fascist-era-underground-cisterns-draw-western-special-forces-to-italy-for-tunnel-training/",
+      "published": "Fri, 05 Jun 2026 15:36:37 +0000",
+      "published_dt": "2026-06-05T15:36:37+00:00",
+      "summary": "After resisting 150 bombing runs by the Allies in the Second World War, the cisterns continued to be used by the Italian Air Force to hold aviation fuel.",
       "raw_score": 19,
       "final_score": 10,
       "tags": [],
@@ -5350,26 +5394,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 44.8,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Delian Asparouhov and Philip Johnston on making the case for orbital data centers",
-      "source": "SpaceNews",
-      "source_type": "media",
-      "url": "https://spacenews.com/delian-asparouhov-and-philip-johnston-on-making-the-case-for-orbital-data-centers/",
-      "published": "Thu, 04 Jun 2026 15:03:40 +0000",
-      "published_dt": "2026-06-04T15:03:40+00:00",
-      "summary": "This episode of Space Minds is from SpaceNews\u2019 recent event on orbital data centers. There, Jeff Foust talks with talks with Founders Fund\u2019s Delian Asparouhov about why he\u2019s warming to [&#8230;] \n The post  Delian Asparouhov and Philip Johnston on making the case for orbital data centers  appeared first on  SpaceNews .",
-      "raw_score": 19,
-      "final_score": 10,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 45.8,
+      "age_hours": 25.2,
       "convergence_boost": 0
     },
     {
@@ -5388,7 +5413,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 24.7,
+      "age_hours": 28.6,
       "convergence_boost": 0
     },
     {
@@ -5407,45 +5432,83 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 25.9,
+      "age_hours": 29.8,
       "convergence_boost": 0
     },
     {
-      "title": "Hidden chemical weapons sites emerge in Syria amid fragile security transition",
-      "source": "Defense News",
+      "title": "Protesters target NV Energy at electric utility conference as anger over affordability rises",
+      "source": "Utility Dive",
       "source_type": "media",
-      "url": "https://www.defensenews.com/global/mideast-africa/2026/06/04/hidden-chemical-weapons-sites-emerge-in-syria-amid-fragile-security-transition/",
-      "published": "Thu, 04 Jun 2026 15:02:01 +0000",
-      "published_dt": "2026-06-04T15:02:01+00:00",
-      "summary": "Over a decade after Syria agreed to dismantle its arsenal, international inspectors have uncovered scores of previously hidden chemical weapons materials.",
-      "raw_score": 19,
-      "final_score": 10,
+      "url": "https://www.utilitydive.com/news/protesters-target-nv-energy-electric-utility-conference-anger-over-affordability-electric-rates/821995/",
+      "published": "Thu, 04 Jun 2026 10:15:55 -0400",
+      "published_dt": "2026-06-04T10:15:55-04:00",
+      "summary": "&ldquo;In Las Vegas, one of the fastest warming cities in the country, you cannot live without electricity,&rdquo; said protest organizer Leslie Vega, who said she&rsquo;s lost loved ones to heatstroke.",
+      "raw_score": 24,
+      "final_score": 9,
       "tags": [],
       "alert": false,
       "pattern": "generic",
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 45.9,
+      "age_hours": 50.5,
       "convergence_boost": 0
     },
     {
-      "title": "Dutch plant for combat-zone robots offers fresh supply pipeline for Ukraine",
-      "source": "Defense News",
+      "title": "Electric sector needs firm gas supply to protect grid reliability, gas industry report says",
+      "source": "Utility Dive",
       "source_type": "media",
-      "url": "https://www.defensenews.com/global/europe/2026/06/04/dutch-plant-for-combat-zone-robots-offers-fresh-supply-pipeline-for-ukraine/",
-      "published": "Thu, 04 Jun 2026 13:49:51 +0000",
-      "published_dt": "2026-06-04T13:49:51+00:00",
-      "summary": "The facility has already produced its first THeMIS vehicle for the Dutch government, part of a run of more than 100 such robots pledged by the Netherlands.",
-      "raw_score": 19,
-      "final_score": 10,
+      "url": "https://www.utilitydive.com/news/electric-sector-needs-firm-gas-supply-to-protect-grid-reliability-report/821981/",
+      "published": "Thu, 04 Jun 2026 09:41:53 -0400",
+      "published_dt": "2026-06-04T09:41:53-04:00",
+      "summary": "The report, prepared for the Natural Gas Council, applauded reforms introduced following Winter Storm Uri in 2021 but said better coordination between the gas and electric sectors is still needed.",
+      "raw_score": 24,
+      "final_score": 9,
       "tags": [],
       "alert": false,
       "pattern": "generic",
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 47.1,
+      "age_hours": 51.1,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Speed to power requires more transmission, not less competition",
+      "source": "Utility Dive",
+      "source_type": "media",
+      "url": "https://www.utilitydive.com/news/speed-to-power-competitive-transmission-ferc-complaint/821675/",
+      "published": "Thu, 04 Jun 2026 09:37:06 -0400",
+      "published_dt": "2026-06-04T09:37:06-04:00",
+      "summary": "A complaint at FERC seeking to limit competition among transmission developers would inject uncertainty&nbsp;into the process and spur regulatory delays, writes&nbsp;Will Hazelip from National Grid Ventures US.",
+      "raw_score": 24,
+      "final_score": 9,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 51.2,
+      "convergence_boost": 0
+    },
+    {
+      "title": "MISO\u2019s resource outlook improves as forecast generation additions outpace demand growth",
+      "source": "Utility Dive",
+      "source_type": "media",
+      "url": "https://www.utilitydive.com/news/oms-miso-survey-resource-outlook-generation/821973/",
+      "published": "Thu, 04 Jun 2026 09:05:11 -0400",
+      "published_dt": "2026-06-04T09:05:11-04:00",
+      "summary": "The Midcontinent Independent System Operator is expected to have growing capacity surpluses over the next five years, according to the OMS-MISO survey.",
+      "raw_score": 24,
+      "final_score": 9,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 51.7,
       "convergence_boost": 0
     },
     {
@@ -5464,7 +5527,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 67.9,
+      "age_hours": 71.8,
       "convergence_boost": 0
     },
     {
@@ -5483,7 +5546,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 26.0,
+      "age_hours": 29.9,
       "convergence_boost": 0
     },
     {
@@ -5502,7 +5565,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 43.9,
+      "age_hours": 47.8,
       "convergence_boost": 0
     },
     {
@@ -5521,7 +5584,26 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 37.7,
+      "age_hours": 41.7,
+      "convergence_boost": 0
+    },
+    {
+      "title": "The gold chart looks precarious. Here's how to profit",
+      "source": "CNBC",
+      "source_type": "media",
+      "url": "https://www.cnbc.com/2026/06/05/the-gold-chart-looks-precarious-heres-how-to-profit.html",
+      "published": "Fri, 05 Jun 2026 16:03:23 GMT",
+      "published_dt": "2026-06-05T16:03:23+00:00",
+      "summary": "Gold is at a technically precarious juncture, and the good news for you is that options market may be mispricing the risk.",
+      "raw_score": 16,
+      "final_score": 8,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 24.8,
       "convergence_boost": 0
     },
     {
@@ -5540,26 +5622,45 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 25.1,
+      "age_hours": 29.1,
       "convergence_boost": 0
     },
     {
-      "title": "Broadway's $1.9 billion season is the latest sign of consumers splurging on experiences",
-      "source": "CNBC",
+      "title": "AstroForge completes DeepSpace-2 spacecraft",
+      "source": "SpaceNews",
       "source_type": "media",
-      "url": "https://www.cnbc.com/2026/06/05/broadway-record-ticket-sales.html",
-      "published": "Fri, 05 Jun 2026 12:00:01 GMT",
-      "published_dt": "2026-06-05T12:00:01+00:00",
-      "summary": "Sunday's Tony Awards follow a record-breaking season on Broadway. The awards often lead to further ticket sales for winning shows.",
-      "raw_score": 16,
-      "final_score": 8,
+      "url": "https://spacenews.com/astroforge-completes-deepspace-2-spacecraft/",
+      "published": "Thu, 04 Jun 2026 16:03:25 +0000",
+      "published_dt": "2026-06-04T16:03:25+00:00",
+      "summary": "Asteroid mining startup AstroForge has completed assembly of its latest spacecraft for launch later this year, incorporating lessons from a failed mission last year. \n The post  AstroForge completes DeepSpace-2 spacecraft  appeared first on  SpaceNews .",
+      "raw_score": 19,
+      "final_score": 7,
       "tags": [],
       "alert": false,
       "pattern": "generic",
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 24.9,
+      "age_hours": 48.8,
+      "convergence_boost": 0
+    },
+    {
+      "title": "Delian Asparouhov and Philip Johnston on making the case for orbital data centers",
+      "source": "SpaceNews",
+      "source_type": "media",
+      "url": "https://spacenews.com/delian-asparouhov-and-philip-johnston-on-making-the-case-for-orbital-data-centers/",
+      "published": "Thu, 04 Jun 2026 15:03:40 +0000",
+      "published_dt": "2026-06-04T15:03:40+00:00",
+      "summary": "This episode of Space Minds is from SpaceNews\u2019 recent event on orbital data centers. There, Jeff Foust talks with talks with Founders Fund\u2019s Delian Asparouhov about why he\u2019s warming to [&#8230;] \n The post  Delian Asparouhov and Philip Johnston on making the case for orbital data centers  appeared first on  SpaceNews .",
+      "raw_score": 19,
+      "final_score": 7,
+      "tags": [],
+      "alert": false,
+      "pattern": "generic",
+      "matched_rules": [],
+      "tickers_mentioned": [],
+      "ticker_symbols": [],
+      "age_hours": 49.8,
       "convergence_boost": 0
     },
     {
@@ -5578,7 +5679,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 51.1,
+      "age_hours": 55.0,
       "convergence_boost": 0
     },
     {
@@ -5597,17 +5698,17 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 66.6,
+      "age_hours": 70.5,
       "convergence_boost": 0
     },
     {
-      "title": "Electronics manufacturer Murata to explore Xona satellite timing service for telecom, data centers",
-      "source": "SpaceNews",
+      "title": "Hidden chemical weapons sites emerge in Syria amid fragile security transition",
+      "source": "Defense News",
       "source_type": "media",
-      "url": "https://spacenews.com/electronics-manufacturer-murata-to-explore-xona-satellite-timing-service-for-telecom-data-centers/",
-      "published": "Wed, 03 Jun 2026 15:19:56 +0000",
-      "published_dt": "2026-06-03T15:19:56+00:00",
-      "summary": "Xona is developing a low Earth orbit network to provide backup to GPS-dependent systems \n The post  Electronics manufacturer Murata to explore Xona satellite timing service for telecom, data centers  appeared first on  SpaceNews .",
+      "url": "https://www.defensenews.com/global/mideast-africa/2026/06/04/hidden-chemical-weapons-sites-emerge-in-syria-amid-fragile-security-transition/",
+      "published": "Thu, 04 Jun 2026 15:02:01 +0000",
+      "published_dt": "2026-06-04T15:02:01+00:00",
+      "summary": "Over a decade after Syria agreed to dismantle its arsenal, international inspectors have uncovered scores of previously hidden chemical weapons materials.",
       "raw_score": 19,
       "final_score": 7,
       "tags": [],
@@ -5616,17 +5717,17 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 69.6,
+      "age_hours": 49.8,
       "convergence_boost": 0
     },
     {
-      "title": "Europe is rearming together \u2014 except in space",
-      "source": "SpaceNews",
+      "title": "Dutch plant for combat-zone robots offers fresh supply pipeline for Ukraine",
+      "source": "Defense News",
       "source_type": "media",
-      "url": "https://spacenews.com/europe-is-rearming-together-except-in-space/",
-      "published": "Wed, 03 Jun 2026 13:00:00 +0000",
-      "published_dt": "2026-06-03T13:00:00+00:00",
-      "summary": "Europe is rapidly rewriting its security architecture. Faced with Russian aggression, mounting doubts about long-term American commitment and growing pressure to shoulder more of its own defense burden, European states [&#8230;] \n The post  Europe is rearming together \u2014 except in space  appeared first on  SpaceNews .",
+      "url": "https://www.defensenews.com/global/europe/2026/06/04/dutch-plant-for-combat-zone-robots-offers-fresh-supply-pipeline-for-ukraine/",
+      "published": "Thu, 04 Jun 2026 13:49:51 +0000",
+      "published_dt": "2026-06-04T13:49:51+00:00",
+      "summary": "The facility has already produced its first THeMIS vehicle for the Dutch government, part of a run of more than 100 such robots pledged by the Netherlands.",
       "raw_score": 19,
       "final_score": 7,
       "tags": [],
@@ -5635,7 +5736,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 71.9,
+      "age_hours": 51.0,
       "convergence_boost": 0
     },
     {
@@ -5654,7 +5755,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 49.9,
+      "age_hours": 53.8,
       "convergence_boost": 0
     },
     {
@@ -5673,45 +5774,7 @@
       "matched_rules": [],
       "tickers_mentioned": [],
       "ticker_symbols": [],
-      "age_hours": 64.4,
-      "convergence_boost": 0
-    },
-    {
-      "title": "US tells Europe, Canada to boost NATO air and naval forces",
-      "source": "Defense News",
-      "source_type": "media",
-      "url": "https://www.defensenews.com/global/europe/2026/06/03/us-tells-europe-canada-to-boost-nato-air-and-naval-forces/",
-      "published": "Wed, 03 Jun 2026 15:55:26 +0000",
-      "published_dt": "2026-06-03T15:55:26+00:00",
-      "summary": "\u201cNations just need to assign the capabilities they have to\u00a0NATO,\u201d a spokesman for the alliance's military headquarters said.",
-      "raw_score": 19,
-      "final_score": 7,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 69.0,
-      "convergence_boost": 0
-    },
-    {
-      "title": "Gulf tensions escalate as Iran hits Kuwait, US strikes near Hormuz",
-      "source": "Defense News",
-      "source_type": "media",
-      "url": "https://www.defensenews.com/news/your-military/2026/06/03/gulf-tensions-escalate-as-iran-hits-kuwait-us-strikes-near-hormuz/",
-      "published": "Wed, 03 Jun 2026 15:09:44 +0000",
-      "published_dt": "2026-06-03T15:09:44+00:00",
-      "summary": "CENTCOM said it had carried out a new round of defensive strikes in southern Iran, while an Iranian drone attack on the Kuwait airport killed one person.",
-      "raw_score": 19,
-      "final_score": 7,
-      "tags": [],
-      "alert": false,
-      "pattern": "generic",
-      "matched_rules": [],
-      "tickers_mentioned": [],
-      "ticker_symbols": [],
-      "age_hours": 69.7,
+      "age_hours": 68.3,
       "convergence_boost": 0
     }
   ]
