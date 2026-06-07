@@ -246,6 +246,9 @@ class Signal:
     ticker_symbols: list = field(default_factory=list)
     age_hours: float = 0.0
     convergence_boost: int = 0
+    sentiment: str = ""           # POSITIVE / NEGATIVE / NEUTRAL
+    sentiment_score: float = 0.0  # net score [-1, +1]
+    direction: str = "LONG"       # LONG / SHORT (propagato da sentiment/enricher)
 
 # ─────────────────────────────────────────────
 #  TIME UTILS
@@ -727,15 +730,24 @@ def fetch_sec_13f(days_back: int = 45) -> list:
 def fetch_google_news_velocity(days_back: int = 2) -> list:
     signals = []
     ticker_counts = defaultdict(int)
+    ticker_titles = defaultdict(list)   # titoli per sentiment analysis
     cutoff = NOW - timedelta(days=days_back)
     for company_name in WATCHLIST_NAMES:
         url = f"https://news.google.com/rss/search?q={urllib.parse.quote(company_name + ' stock')}&hl=en-US&gl=US&ceid=US:en"
         try:
             parsed = feedparser.parse(url)
-            count = sum(1 for e in parsed.entries if parse_date(e.get("published", "")) > cutoff)
-            ticker_counts[company_name] = count
+            recent = [e for e in parsed.entries if parse_date(e.get("published", "")) > cutoff]
+            ticker_counts[company_name] = len(recent)
+            ticker_titles[company_name] = [e.get("title", "") for e in recent]
         except Exception:
             pass
+
+    # Carica il modulo sentiment una sola volta (fallback silenzioso se assente)
+    try:
+        from sentiment import score_sentiment, sentiment_score_adjustment
+        _sentiment_on = True
+    except Exception:
+        _sentiment_on = False
 
     for company_name, count in ticker_counts.items():
         threshold = VELOCITY_THRESHOLDS.get(company_name, 10)
@@ -747,16 +759,38 @@ def fetch_google_news_velocity(days_back: int = 2) -> list:
         excess_ratio = count / threshold          # es. 96/25 = 3.84x per DELL
         v_score = min(int(30 + excess_ratio * 15), 75)
         alert = excess_ratio >= 2.0              # alert solo se almeno 2x la soglia
+
+        # ── SENTIMENT NLP sui titoli ──────────────────────────────
+        sent_label, sent_net, direction = "", 0.0, "LONG"
+        sent_rules = []
+        if _sentiment_on:
+            sent = score_sentiment(ticker_titles.get(company_name, []))
+            delta, note, flip = sentiment_score_adjustment(sent)
+            sent_label = sent["label"]
+            sent_net = sent["net_score"]
+            v_score = max(0, min(v_score + delta, 100))
+            if flip:
+                direction = "SHORT"
+            if note:
+                sent_rules.append(note)
+            # Sentiment fortemente negativo → la velocity NON è bullish
+            if sent_label == "NEGATIVE" and sent["confidence"] >= 0.5:
+                alert = alert and flip  # alert solo se è un vero segnale short
+
+        title_sent = f" [{sent_label}]" if sent_label else ""
         signals.append(Signal(
-            title=f"[News Velocity] {company_name.title()} ({ticker}): {count} articoli ({excess_ratio:.1f}x soglia)",
+            title=f"[News Velocity] {company_name.title()} ({ticker}): {count} articoli ({excess_ratio:.1f}x soglia){title_sent}",
             source="Google News Velocity", source_type="velocity",
             url=f"https://news.google.com/search?q={urllib.parse.quote(company_name)}",
             published=NOW.isoformat(), published_dt=NOW.isoformat(),
-            summary=f"{count} menzioni in {days_back*24}h vs soglia {threshold} — rapporto {excess_ratio:.1f}x.",
+            summary=f"{count} menzioni in {days_back*24}h vs soglia {threshold} — rapporto {excess_ratio:.1f}x. "
+                    + (f"Sentiment {sent_label} ({sent_net:+.2f})." if sent_label else ""),
             raw_score=v_score, final_score=v_score,
-            tags=["velocity"], alert=alert, pattern="velocity",
-            matched_rules=[f"Velocity {excess_ratio:.1f}x soglia ({count}/{threshold})"],
+            tags=["velocity"] + (["sentiment"] if sent_label else []),
+            alert=alert, pattern="velocity",
+            matched_rules=[f"Velocity {excess_ratio:.1f}x soglia ({count}/{threshold})"] + sent_rules,
             tickers_mentioned=[company_name], ticker_symbols=[ticker], age_hours=0,
+            sentiment=sent_label, sentiment_score=sent_net, direction=direction,
         ))
     return signals
 

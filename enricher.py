@@ -445,13 +445,17 @@ def get_price_context(ticker_str: str) -> Optional[PriceContext]:
             notes.append("MACD bullish crossover sopra MA50")
 
         # ── DIREZIONE: LONG vs SHORT ──────────────────────────
-        # SHORT: titolo molto esteso (RSI > 72, +35% in 30gg, vicino o sopra resistenza)
-        # e nessun golden cross recente che invaliderebbe la short
+        # NOTA da backtest (2y, 94 trade): shortare titoli momentum overbought
+        # PERDE (MEAN_REVERT_SHORT: PF 0.55, win 25%). I titoli in trend forte
+        # continuano a salire. Criteri SHORT resi più restrittivi: serve
+        # esaurimento CONFERMATO (RSI estremo + momentum rotto), non solo overbought.
         is_short = (
-            rsi_val > 72 and
-            chg30 > 35 and
-            (bb_pos == "UPPER" or pct_high > -4) and
-            not golden_cross
+            rsi_val > 76 and                          # era 72 — solo estremi
+            chg30 > 40 and                            # era 35
+            bb_pos == "UPPER" and                     # deve essere sulla banda alta
+            pct_high > -3 and                         # proprio sui massimi
+            not golden_cross and
+            (death_cross or not macd_bull)            # conferma: momentum che gira
         )
         direction = "SHORT" if is_short else "LONG"
 
