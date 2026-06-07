@@ -225,10 +225,142 @@ def format_report(a: dict) -> str:
 
 
 # ─────────────────────────────────────────────
+#  ALERT INTELLIGENTI (solo su cambio di stato)
+# ─────────────────────────────────────────────
+
+import json
+import os
+from pathlib import Path
+
+STATE_FILE = Path(__file__).parent / "forex_state.json"
+
+
+def _load_state() -> dict:
+    try:
+        return json.loads(STATE_FILE.read_text())
+    except Exception:
+        return {}
+
+
+def _save_state(state: dict):
+    try:
+        STATE_FILE.write_text(json.dumps(state, indent=2))
+    except Exception:
+        pass
+
+
+def detect_changes(a: dict, state: dict) -> list:
+    """
+    Confronta l'analisi attuale con lo stato salvato.
+    Ritorna lista di alert (solo cambiamenti rilevanti, zero rumore).
+    """
+    alerts = []
+    tech = a.get("tech", {})
+    price = tech.get("price")
+
+    # 1. Cambio di bias composito (la cosa più importante)
+    prev_dir = state.get("direction")
+    cur_dir = a["direction"]
+    if prev_dir and prev_dir != cur_dir:
+        alerts.append({
+            "type": "BIAS_FLIP",
+            "msg": f"⚠️ Bias XAU cambiato: {prev_dir} → *{cur_dir}* "
+                   f"(score {a['composite_score']:+.1f}). Rivaluta la posizione."
+        })
+
+    # 2. Escalation evento ad alto impatto (avvisa una volta per soglia)
+    ev = a.get("event", {}).get("event", {})
+    if ev:
+        d = ev.get("days_until", 99)
+        name = ev.get("event", "?")
+        warned = state.get("event_warned", {})
+        key = f"{name}_{ev.get('date','')}"
+        for thr, label in [(0, "OGGI"), (1, "DOMANI"), (3, "tra 3gg")]:
+            if d <= thr and warned.get(key, 99) > thr:
+                alerts.append({
+                    "type": "EVENT",
+                    "msg": f"🔴 *{name} {label}* ({ev.get('desc','')}) — "
+                           f"volatilità estrema su XAU. Gestisci stop/size."
+                })
+                warned[key] = thr
+                break
+        state["event_warned"] = warned
+
+    # 3. Rottura livello tecnico chiave (MA200)
+    ma200 = tech.get("ma200")
+    if price and ma200:
+        prev_price = state.get("last_price")
+        if prev_price:
+            crossed_down = prev_price >= ma200 > price
+            crossed_up = prev_price <= ma200 < price
+            if crossed_down:
+                alerts.append({"type": "LEVEL",
+                    "msg": f"📉 XAU ha rotto la MA200 (${ma200:.0f}) al ribasso — conferma bearish."})
+            elif crossed_up:
+                alerts.append({"type": "LEVEL",
+                    "msg": f"📈 XAU ha recuperato la MA200 (${ma200:.0f}) — possibile inversione."})
+
+    # Aggiorna stato
+    state["direction"] = cur_dir
+    state["last_price"] = price
+    state["composite_score"] = a["composite_score"]
+    state["updated_at"] = a["timestamp"]
+    return alerts
+
+
+def send_forex_slack(a: dict, alerts: list, webhook: str):
+    import requests
+    if not webhook or not alerts:
+        return
+    tech = a.get("tech", {})
+    dir_icon = {"LONG": "🟢📈", "SHORT": "🔴📉", "FLAT": "🟡"}.get(a["direction"], "⚪")
+    blocks = [
+        {"type": "header", "text": {"type": "plain_text",
+            "text": f"XAU/USD — {len(alerts)} aggiornamenti"}},
+        {"type": "section", "text": {"type": "mrkdwn",
+            "text": f"{dir_icon} *Bias: {a['direction']}* (score {a['composite_score']:+.1f}, "
+                    f"conf {int(a['confidence']*100)}%)\n"
+                    f"Prezzo ${tech.get('price',0):.0f} | RSI {tech.get('rsi',0):.0f} | "
+                    f"MA200 ${tech.get('ma200',0):.0f}"}},
+        {"type": "divider"},
+    ]
+    for al in alerts:
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": al["msg"]}})
+    payload = {"text": f"XAU/USD — {len(alerts)} alert", "blocks": blocks}
+    try:
+        r = requests.post(webhook, json=payload, timeout=10)
+        print(f"  {'✅' if r.status_code==200 else '⚠️'} Slack forex: {len(alerts)} alert (HTTP {r.status_code})")
+    except Exception as e:
+        print(f"  ⚠️ Slack forex: {e}")
+
+
+# ─────────────────────────────────────────────
 #  ENTRY POINT
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":
-    print("\nAnalisi XAU/USD in corso (macro + tecnica + COT + news + calendario)...\n")
+    import argparse
+    p = argparse.ArgumentParser(description="Forex Monitor XAU/USD")
+    p.add_argument("--alert", action="store_true", help="Modalità alert: Slack solo su cambi di stato")
+    p.add_argument("--slack-webhook", type=str, default="", help="Slack webhook (o env SLACK_WEBHOOK_URL)")
+    p.add_argument("--quiet", action="store_true", help="Output ridotto")
+    args = p.parse_args()
+
+    if not args.quiet:
+        print("\nAnalisi XAU/USD (macro + tecnica + COT + news + calendario)...\n")
     a = analyze_xau()
-    print(format_report(a))
+    if not args.quiet:
+        print(format_report(a))
+
+    if args.alert:
+        state = _load_state()
+        alerts = detect_changes(a, state)
+        _save_state(state)
+        webhook = args.slack_webhook or os.environ.get("SLACK_WEBHOOK_URL", "")
+        if alerts:
+            print(f"\n🔔 {len(alerts)} cambiamenti rilevati:")
+            for al in alerts:
+                print(f"  • {al['msg']}")
+            send_forex_slack(a, alerts, webhook)
+        else:
+            print("\n✓ Nessun cambiamento di stato — nessun alert (come da design anti-spam).")

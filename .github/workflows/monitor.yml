@@ -26,16 +26,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run signal monitor
+      - name: Run signal monitor (azioni)
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python signal_monitor.py --quiet --days 3
 
-      - name: Commit signals.json aggiornato
+      - name: Run forex monitor (XAU/USD, alert su cambio stato)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python forex_monitor.py --alert --quiet
+        continue-on-error: true
+
+      - name: Commit stato aggiornato
         run: |
           git config user.name  "Signal Monitor Bot"
           git config user.email "bot@signal-monitor.local"
-          git add signals.json
+          git add signals.json forex_state.json
           # Committa solo se ci sono cambiamenti reali
           git diff --staged --quiet || git commit -m "chore: update signals $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
