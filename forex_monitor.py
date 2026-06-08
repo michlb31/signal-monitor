@@ -34,8 +34,20 @@ def _technical_bias() -> dict:
     from enricher import _rsi, _macd, _atr, _bollinger, _support_resistance
     import pandas as pd
 
-    t = yf.Ticker(GOLD)
-    hist = t.history(period="1y", auto_adjust=True)
+    # Preferisci lo SPOT (Twelve Data) per matchare TradingView/broker;
+    # fallback al future yfinance se la key non c'è.
+    hist = pd.DataFrame()
+    source = "future GC=F"
+    try:
+        from twelvedata import available, td_time_series
+        if available():
+            hist = td_time_series("XAU/USD", interval="1day", outputsize=365)
+            if not hist.empty:
+                source = "spot XAU/USD (Twelve Data)"
+    except Exception:
+        pass
+    if hist.empty:
+        hist = yf.Ticker(GOLD).history(period="1y", auto_adjust=True)
     if hist.empty:
         return {}
     closes = list(hist["Close"].values.astype(float))
@@ -64,6 +76,7 @@ def _technical_bias() -> dict:
         "rsi": rsi, "macd_bull": mb, "atr": round(atr, 2),
         "ma50": round(ma50, 2), "ma200": round(ma200, 2),
         "support": supp, "resistance": res, "bb_pos": bb_pos,
+        "price_source": source,
     }
 
 
