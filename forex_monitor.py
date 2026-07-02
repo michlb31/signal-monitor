@@ -31,7 +31,8 @@ GOLD = "GC=F"
 # ─────────────────────────────────────────────
 
 def _technical_bias() -> dict:
-    from enricher import _rsi, _macd, _atr, _bollinger, _support_resistance
+    from ta import (rsi as _rsi, macd as _macd, atr as _atr,
+                    bollinger as _bollinger, support_resistance as _support_resistance)
     import pandas as pd
 
     # Preferisci lo SPOT (Twelve Data) per matchare TradingView/broker;

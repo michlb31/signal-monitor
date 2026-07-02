@@ -1,4 +1,4 @@
-name: Early Signal Monitor
+name: FX Signal Monitor
 
 on:
   # Gira ogni 30 minuti automaticamente
@@ -11,7 +11,7 @@ jobs:
   run-monitor:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # serve per committare signals.json e dashboard
+      contents: write   # serve per committare i file di stato
 
     steps:
       - name: Checkout repo
@@ -26,12 +26,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run signal monitor (azioni)
+      - name: FX monitor (universo IC Markets — ticket su nuovi segnali)
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: python signal_monitor.py --quiet --days 3
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+        run: python fx_monitor.py --alert --quiet
+        continue-on-error: true
 
-      - name: Run forex monitor (XAU/USD, alert su cambio stato)
+      - name: XAU specialist (bias flip / MA200 / eventi — anti-spam)
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
@@ -41,9 +44,10 @@ jobs:
 
       - name: Commit stato aggiornato
         run: |
-          git config user.name  "Signal Monitor Bot"
+          git config user.name  "FX Monitor Bot"
           git config user.email "bot@signal-monitor.local"
-          git add signals.json forex_state.json
+          git pull --rebase origin main || true
+          git add fx_state.json forex_state.json
           # Committa solo se ci sono cambiamenti reali
-          git diff --staged --quiet || git commit -m "chore: update signals $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "chore: update fx state $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
