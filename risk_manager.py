@@ -108,6 +108,9 @@ def build_ticket(symbol: str, direction: str, entry: float,
                                   f"(stop {stop_points:.0f} punti troppo ampio per il capitale)")}
 
     # ── MARGINE (stima) ──
+    # Leva PER STRUMENTO (verificata su icmarkets.eu, regole ESMA):
+    # FX major 1:30, AUD/NZD 1:20, oro/indici 1:20, argento/energia 1:10.
+    # NON usare la leva conto flat: l'oro a 1:20 impegna ~€195 per 0.01 lot!
     if m["cls"] == "fx":
         notional_usd = lots * 100_000 * (entry if m["quote"] == "USD" else
                                          (1.0 if m["base"] == "USD" else 1.2))
@@ -115,7 +118,14 @@ def build_ticket(symbol: str, direction: str, entry: float,
         notional_usd = lots * 100 * entry
     else:  # energia (1000 barili/lot), indici (1×)
         notional_usd = lots * (1000 if m["cls"] == "energy" else 1) * entry
-    margin_eur = notional_usd / ACCOUNT["leverage"] / eurusd
+    inst_leverage = m.get("leverage", ACCOUNT["leverage"])
+    margin_eur = notional_usd / inst_leverage / eurusd
+
+    # Margine oltre il 50% dell'equity = posizione ingestibile a prescindere dal rischio
+    if margin_eur > ACCOUNT["equity_eur"] * 0.5:
+        return {"accepted": False, "symbol": symbol, "direction": direction,
+                "reject_reason": (f"margine ~€{margin_eur:.0f} (leva 1:{inst_leverage}) "
+                                  f"> 50% dell'equity €{ACCOUNT['equity_eur']:.0f}")}
 
     return {
         "accepted": True,
