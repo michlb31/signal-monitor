@@ -47,7 +47,7 @@ jobs:
           git config user.name  "FX Monitor Bot"
           git config user.email "bot@signal-monitor.local"
           git pull --rebase origin main || true
-          git add fx_state.json forex_state.json fx_journal.json
+          git add fx_state.json forex_state.json fx_journal.json fx_dashboard.json
           # Committa solo se ci sono cambiamenti reali
           git diff --staged --quiet || git commit -m "chore: update fx state $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push

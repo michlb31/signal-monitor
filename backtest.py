@@ -380,6 +380,8 @@ if __name__ == "__main__":
     p.add_argument("--db", action="store_true", help="report outcome reali dal DB")
     p.add_argument("--fx", action="store_true",
                    help="profilo FX: universo IC Markets + soglie forex")
+    p.add_argument("--json", type=str, default="",
+                   help="scrivi le statistiche in un file JSON (per la dashboard)")
     args = p.parse_args()
 
     if args.db:
@@ -396,3 +398,23 @@ if __name__ == "__main__":
         trades = backtest_technical(tickers, period=args.period,
                                     horizon=args.horizon, profile=profile)
         report(trades)
+
+        if args.json and trades:
+            import json as _json
+            from collections import defaultdict as _dd
+            from datetime import datetime as _dt, timezone as _tz
+            by_setup = _dd(list)
+            for t in trades:
+                by_setup[t["setup"]].append(t)
+            payload = {
+                "generated_at": _dt.now(_tz.utc).isoformat(),
+                "profile": profile, "period": args.period,
+                "horizon": args.horizon, "n_instruments": len(tickers),
+                "overall": _stats(trades),
+                "by_direction": {d: _stats([t for t in trades if t["direction"] == d])
+                                 for d in ("LONG", "SHORT")},
+                "by_setup": {s: _stats(v) for s, v in by_setup.items()},
+            }
+            with open(args.json, "w") as f:
+                _json.dump(payload, f, indent=1, default=str)
+            print(f"\n✓ statistiche salvate in {args.json}")

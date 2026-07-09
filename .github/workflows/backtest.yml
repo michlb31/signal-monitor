@@ -1,0 +1,38 @@
+name: Weekly FX Backtest
+
+on:
+  # Ogni domenica alle 06:00 UTC — verifica che l'edge dei setup persista
+  schedule:
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
+
+jobs:
+  rolling-backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Rolling backtest FX (2y, tutto l'universo)
+        run: python backtest.py --fx --period 2y --horizon 12 --json fx_backtest.json
+
+      - name: Commit risultati
+        run: |
+          git config user.name  "FX Monitor Bot"
+          git config user.email "bot@signal-monitor.local"
+          git pull --rebase origin main || true
+          git add fx_backtest.json
+          git diff --staged --quiet || git commit -m "chore: rolling backtest $(date -u +'%Y-%m-%d')"
+          git push

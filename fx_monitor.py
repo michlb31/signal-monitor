@@ -148,6 +148,65 @@ def print_report(out: dict):
 
 
 # ─────────────────────────────────────────────
+#  EXPORT DASHBOARD (fx_dashboard.json → GitHub Pages)
+# ─────────────────────────────────────────────
+
+DASHBOARD_FILE = Path(__file__).parent / "fx_dashboard.json"
+
+
+def export_dashboard(out: dict):
+    """Snapshot completo per la dashboard statica (letto via GitHub Pages)."""
+    try:
+        from fx_journal import _load as journal_load, report as journal_report
+        trades = journal_load()
+    except Exception:
+        trades, journal_report = [], lambda: {}
+
+    try:
+        from econ_calendar import upcoming_events
+        events = upcoming_events(days_ahead=10, min_impact="MEDIUM")[:12]
+    except Exception:
+        events = []
+
+    backtest_latest = None
+    try:
+        bt_file = Path(__file__).parent / "fx_backtest.json"
+        if bt_file.exists():
+            backtest_latest = json.loads(bt_file.read_text())
+    except Exception:
+        pass
+
+    payload = {
+        "generated_at": out["timestamp"],
+        "account": {"equity_eur": ACCOUNT["equity_eur"],
+                    "leverage": ACCOUNT["leverage"],
+                    "risk_pct": ACCOUNT["risk_pct"] * 100},
+        "n_titles": out.get("n_titles", 0),
+        "news_events": [{"rule": e["rule"], "strength": e["strength"],
+                         "n": e["n_matches"]} for e in out.get("events", [])[:8]],
+        "universe": [{
+            "symbol": r["symbol"], "direction": r["direction"],
+            "confidence": r["confidence"], "layers": r["layers"],
+            "gate": r["gate"],
+            "gate_reason": (r["gate_reasons"][0] if r["gate_reasons"] else ""),
+            "price": r["tech"].get("price"), "rsi": r["tech"].get("rsi"),
+        } for r in out["results"]],
+        "tickets": out["portfolio"],
+        "rejected": [t for t in out["tickets"] if not t.get("accepted")][:5],
+        "calendar": [{"date": str(e["date"]), "ccy": e["ccy"],
+                      "event": e["event"][:40], "impact": e["impact"],
+                      "days_until": e["days_until"]} for e in events],
+        "journal": journal_report(),
+        "trades": trades[-40:],
+        "backtest": backtest_latest,
+    }
+    try:
+        DASHBOARD_FILE.write_text(json.dumps(payload, indent=1, default=str))
+    except Exception as e:
+        print(f"  ⚠️ dashboard export: {e}")
+
+
+# ─────────────────────────────────────────────
 #  ALERT MODE (anti-spam, stato persistito)
 # ─────────────────────────────────────────────
 
@@ -245,6 +304,9 @@ if __name__ == "__main__":
     except Exception as e:
         closed = []
         print(f"  ⚠️ journal: {e}")
+
+    # ── Dashboard: snapshot per GitHub Pages (sempre) ──
+    export_dashboard(out)
 
     if args.alert:
         state = _load_state()
