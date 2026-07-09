@@ -235,9 +235,27 @@ if __name__ == "__main__":
     if not args.quiet:
         print_report(out)
 
+    # ── Journal: registra i nuovi ticket e aggiorna gli outcome ──
+    try:
+        from fx_journal import record_tickets, update_outcomes, format_report
+        n_rec = record_tickets(out["portfolio"])
+        closed = update_outcomes()
+        if not args.quiet:
+            print("\n" + format_report())
+    except Exception as e:
+        closed = []
+        print(f"  ⚠️ journal: {e}")
+
     if args.alert:
         state = _load_state()
         alerts = detect_new_tickets(out, state)
+        # Alert anche sui trade chiusi dal journal (TP/SL/tempo)
+        for t in closed:
+            icon = "🟢" if t["r_multiple"] > 0 else "🔴"
+            alerts.append({"type": "CLOSED", "ticket": None,
+                           "msg": (f"{icon} {t['symbol']} {t['direction']} chiuso: "
+                                   f"{t['exit_reason']} → {t['r_multiple']:+.2f}R "
+                                   f"(~€{t.get('pnl_eur_est', 0):+.0f})")})
         _save_state(state)
         if alerts:
             print(f"\n🔔 {len(alerts)} cambiamenti:")

@@ -127,6 +127,35 @@ def build_ticket(symbol: str, direction: str, entry: float,
                 "reject_reason": (f"margine ~€{margin_eur:.0f} (leva 1:{inst_leverage}) "
                                   f"> 50% dell'equity €{ACCOUNT['equity_eur']:.0f}")}
 
+    # ── COSTI: spread + swap stimato (modulo "meccanica CFD") ──
+    spread_pts = m.get("spread", 0)
+    spread_cost_eur = spread_pts * usd_pp * (lots / 0.01) / eurusd
+    # Gate qualità: se lo spread mangia >15% dello stop, il trade parte troppo in salita
+    if stop_points > 0 and spread_pts / stop_points > 0.15:
+        return {"accepted": False, "symbol": symbol, "direction": direction,
+                "reject_reason": (f"spread {spread_pts} pt = "
+                                  f"{spread_pts/stop_points*100:.0f}% dello stop — costi proibitivi")}
+
+    # Swap giornaliero stimato dal differenziale tassi (solo FX; senza markup broker)
+    swap_eur_day = None
+    if m["cls"] == "fx":
+        try:
+            from decision_engine import policy_rates
+            r = policy_rates()
+            diff = r.get(m["base"], 0) - r.get(m["quote"], 0)   # LONG: incassi base, paghi quote
+            swap_eur_day = round(sign * diff / 100 / 365 * notional_usd / eurusd, 2)
+        except Exception:
+            pass
+
+    # Nota earnings season per gli indici USA
+    season_note = ""
+    if m["cls"] == "index" and m["quote"] == "USD":
+        try:
+            from instruments import earnings_season
+            season_note = earnings_season()
+        except Exception:
+            pass
+
     return {
         "accepted": True,
         "symbol": symbol, "direction": direction,
@@ -144,6 +173,9 @@ def build_ticket(symbol: str, direction: str, entry: float,
         "reasons": reasons,
         "next_event": next_event,
         "currencies": currency_exposure(symbol),
+        "spread_cost_eur": round(spread_cost_eur, 2),
+        "swap_eur_day": swap_eur_day,
+        "season_note": season_note,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -182,8 +214,15 @@ def format_ticket(t: dict) -> str:
         f"Margine ~€{t['margin_eur']}",
         f"     Perché: {'; '.join(t['reasons'][:3])}",
     ]
+    costs = f"     Costi: spread ~€{t.get('spread_cost_eur', 0)}"
+    if t.get("swap_eur_day") is not None:
+        costs += (f" | swap ~€{t['swap_eur_day']:+.2f}/notte (stima da tassi, "
+                  f"verifica su MT5)")
+    lines.append(costs)
     if t.get("next_event"):
         lines.append(f"     ⚠️ {t['next_event']}")
+    if t.get("season_note"):
+        lines.append(f"     📊 {t['season_note']} — volatilità earnings sugli indici USA")
     return "\n".join(lines)
 
 

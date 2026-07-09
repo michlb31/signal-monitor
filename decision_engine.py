@@ -73,6 +73,50 @@ def _pct_change(yf_symbol: str, days: int) -> float:
 
 
 # ─────────────────────────────────────────────
+#  CARRY — differenziali di tasso (modulo 4/9 del metodo)
+# ─────────────────────────────────────────────
+
+# Fallback statici — verificati 2026-07-09 (USD/EUR/GBP via FRED live;
+# gli altri da aggiornare periodicamente: sono SOLO il fallback).
+POLICY_RATES_STATIC = {
+    "USD": 3.63, "EUR": 2.25, "GBP": 3.73, "JPY": 1.00,
+    "CHF": 0.25, "CAD": 2.75, "AUD": 3.60, "NZD": 3.25,
+}
+_FRED_RATE_SERIES = {"USD": "DFF", "EUR": "ECBDFR", "GBP": "IUDSOIA"}
+_rates_cache: dict = {}
+
+
+def policy_rates() -> dict:
+    """Tassi di policy per valuta: FRED live dove possibile, statici altrove."""
+    if _rates_cache:
+        return _rates_cache
+    import os, requests
+    rates = dict(POLICY_RATES_STATIC)
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    if key:
+        for ccy, sid in _FRED_RATE_SERIES.items():
+            try:
+                r = requests.get("https://api.stlouisfed.org/fred/series/observations",
+                                 params={"series_id": sid, "api_key": key,
+                                         "file_type": "json", "sort_order": "desc",
+                                         "limit": 3}, timeout=10)
+                obs = [o for o in r.json().get("observations", []) if o["value"] != "."]
+                if obs:
+                    rates[ccy] = float(obs[0]["value"])
+            except Exception:
+                pass
+    _rates_cache.update(rates)
+    return rates
+
+
+def carry_score(base: str, quote: str) -> float:
+    """Differenziale di tasso normalizzato: >0 favorisce il LONG della coppia."""
+    r = policy_rates()
+    diff = r.get(base, 0) - r.get(quote, 0)
+    return _clip(diff / 3.0)   # 3 punti di differenziale = segnale pieno
+
+
+# ─────────────────────────────────────────────
 #  LAYER MACRO
 # ─────────────────────────────────────────────
 
@@ -106,7 +150,10 @@ def macro_scores() -> dict:
     out = {}
     for sym, m in INSTRUMENTS.items():
         if m["cls"] == "fx":
-            out[sym] = round(_clip(strength.get(m["base"], 0) - strength.get(m["quote"], 0)), 3)
+            # 75% momentum di forza relativa + 25% carry (differenziale tassi)
+            mom = strength.get(m["base"], 0) - strength.get(m["quote"], 0)
+            car = carry_score(m["base"], m["quote"])
+            out[sym] = round(_clip(0.75 * mom + 0.25 * car), 3)
         elif sym in ("XAUUSD", "XAGUSD"):
             try:
                 from forex_macro import get_macro_bias
@@ -151,15 +198,37 @@ def tech_score(symbol: str) -> dict:
         s += 0.25 if ma50 > ma200 else -0.25
     s += 0.25 if macd_bull else -0.25
 
+    # Conferma volume (solo dove il dato esiste: indici/energia/metalli via
+    # futures; le coppie FX su yfinance non hanno volume → skip automatico)
+    vol_ratio = 0.0
+    try:
+        v = h["Volume"]
+        v_avg = float(v.iloc[-21:-1].mean())
+        if v_avg > 0:
+            vol_ratio = float(v.iloc[-1]) / v_avg
+            if vol_ratio >= 1.5:            # volume anomalo conferma il trend
+                s += 0.15 if s > 0 else -0.15
+    except Exception:
+        pass
+
     # anti-inseguimento: RSI estremo contro la direzione dimezza lo score
     if s > 0 and rsi_v >= RSI_EXTREME_HI:
         s *= 0.5
     if s < 0 and rsi_v <= RSI_EXTREME_LO:
         s *= 0.5
 
+    # Calibrazione da backtest FX (415 trade, 2y, 23 strumenti — 2026-07-09):
+    # comprare debolezza in trend rialzista è l'edge reale (DIP_BUY PF 4.83,
+    # MEAN_REVERT_LONG PF 2.47); vendere forza perde (MEAN_REVERT_SHORT PF 0.51).
+    if s > 0 and rsi_v < 42:
+        s = min(s * 1.15, 1.0)      # long su pullback: leggero boost
+    if s < 0 and rsi_v > 62:
+        s *= 0.8                    # short contro forza: penalità
+
     return {"score": round(_clip(s), 3), "price": cur, "rsi": rsi_v,
             "atr": atr_v, "ma50": ma50, "ma200": ma200,
-            "support": supp, "resistance": res, "macd_bull": macd_bull}
+            "support": supp, "resistance": res, "macd_bull": macd_bull,
+            "vol_ratio": round(vol_ratio, 2)}
 
 
 # ─────────────────────────────────────────────
@@ -210,21 +279,19 @@ def cot_score(symbol: str) -> float:
 # ─────────────────────────────────────────────
 
 def event_guard(symbol: str) -> dict:
-    """Blocca strumenti esposti a un evento HIGH imminente (per ora: eventi USA)."""
+    """Guard multi-valuta (calendario v2): blocca lo strumento se un evento
+    HIGH che tocca una delle SUE valute è entro EVENT_GUARD_DAYS."""
+    ccys = currency_exposure(symbol)
+    # indici/energia quotati USD ma sensibili anche alla valuta locale via tag
+    tag_ccy = {"ECB": "EUR", "BOE": "GBP", "BOJ": "JPY", "RBA": "AUD"}
+    for tag, c in tag_ccy.items():
+        if tag in INSTRUMENTS[symbol]["tags"] and c not in ccys:
+            ccys.append(c)
     try:
-        from econ_calendar import next_high_impact
-        nxt = next_high_impact()
+        from econ_calendar import event_guard_for
+        return event_guard_for(ccys or ["USD"], guard_days=EVENT_GUARD_DAYS)
     except Exception:
         return {"blocked": False}
-    if not nxt:
-        return {"blocked": False}
-    d = nxt.get("days_until", 99)
-    us_exposed = ("USD" in currency_exposure(symbol)
-                  or any(t in INSTRUMENTS[symbol]["tags"] for t in ("FED", "CPI_US", "JOBS_US")))
-    if us_exposed and d <= EVENT_GUARD_DAYS:
-        return {"blocked": True,
-                "reason": f"{nxt['event']} tra {d}gg — event guard attivo (rientra post-evento)"}
-    return {"blocked": False, "next_event": f"{nxt['event']} tra {d}gg"}
 
 
 # ─────────────────────────────────────────────

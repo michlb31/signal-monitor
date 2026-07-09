@@ -89,11 +89,21 @@ def _prepare(df: pd.DataFrame) -> pd.DataFrame:
 #  LOGICA SETUP (mirror di enricher, no-lookahead)
 # ═══════════════════════════════════════════════════════════
 
-def _classify(row) -> tuple:
+# Soglie per classe di asset: le azioni momentum si muovono 5-10x il forex.
+# Il profilo "fx" scala i trigger sulla volatilità valutaria (e include
+# MEAN_REVERT in entrambe le direzioni: sul forex il range trading è simmetrico).
+PROFILES = {
+    "stock": {"short_rsi": 72, "short_chg30": 35, "dip_chg5": -7, "trend_chg30": 20},
+    "fx":    {"short_rsi": 70, "short_chg30": 6,  "dip_chg5": -2, "trend_chg30": 5},
+}
+
+
+def _classify(row, profile: str = "stock") -> tuple:
     """
     Ritorna (direction, setup_type) o (None, None) se nessun trigger di entry.
     Solo setup azionabili — non valuta ogni giorno, solo trigger reali.
     """
+    P = PROFILES[profile]
     rsi, chg5, chg30 = row["rsi"], row["chg5"], row["chg30"]
     price = row["Close"]
     ma50, ma200 = row["ma50"], row["ma200"]
@@ -105,20 +115,29 @@ def _classify(row) -> tuple:
         return None, None
 
     # SHORT: overbought esteso vicino ai massimi
-    if rsi > 72 and chg30 > 35 and price >= resist * 0.97:
+    if rsi > P["short_rsi"] and chg30 > P["short_chg30"] and price >= resist * 0.97:
         return "SHORT", "MEAN_REVERT_SHORT"
 
+    # FX: mean-reversion anche LONG (oversold sul supporto — il forex rangeggia)
+    if profile == "fx" and rsi < 100 - P["short_rsi"] and chg30 < -P["short_chg30"] \
+            and price <= support * 1.03:
+        return "LONG", "MEAN_REVERT_LONG"
+
     # LONG DIP_BUY: storno su trend rialzista
-    if chg5 < -7 and price > ma50 and rsi < 45:
+    if chg5 < P["dip_chg5"] and price > ma50 and rsi < 45:
         return "LONG", "DIP_BUY"
 
-    # LONG BREAKOUT: rottura resistenza con volume
-    if price >= resist * 0.99 and vol_ratio > 1.5 and price > ma50:
+    # LONG BREAKOUT: rottura resistenza con volume (senza volume nel FX)
+    vol_ok = vol_ratio > 1.5 or (profile == "fx" and row["vol_avg"] == 0)
+    if price >= resist * 0.99 and vol_ok and price > ma50:
         return "LONG", "BREAKOUT"
 
-    # LONG TREND_FOLLOW: trend sano + momentum
-    if price > ma50 > ma200 and macd_bull and 0 < chg30 <= 20 and 45 < rsi < 65:
+    # TREND_FOLLOW: trend sano + momentum (FX: anche short simmetrico)
+    if price > ma50 > ma200 and macd_bull and 0 < chg30 <= P["trend_chg30"] and 45 < rsi < 65:
         return "LONG", "TREND_FOLLOW"
+    if profile == "fx" and price < ma50 < ma200 and not macd_bull \
+            and -P["trend_chg30"] <= chg30 < 0 and 35 < rsi < 55:
+        return "SHORT", "TREND_FOLLOW"
 
     return None, None
 
@@ -186,14 +205,17 @@ def _simulate_trade(df, i, direction, atr, horizon, atr_stop=1.5, atr_target=3.0
 #  BACKTEST RUNNER
 # ═══════════════════════════════════════════════════════════
 
-def backtest_technical(tickers, period="1y", horizon=15, cooldown=10):
+def backtest_technical(tickers, period="1y", horizon=15, cooldown=10,
+                       profile="stock"):
     """
     Esegue il backtest replay su una lista di ticker.
     cooldown: giorni minimi tra due entry sullo stesso ticker (evita overlap).
+    profile: 'stock' o 'fx' (soglie scalate sulla volatilità dell'asset class).
     """
     all_trades = []
     print(f"\n{'='*68}")
-    print(f"  BACKTEST TECNICO — {len(tickers)} ticker | period={period} | horizon={horizon}gg")
+    print(f"  BACKTEST TECNICO [{profile.upper()}] — {len(tickers)} strumenti | "
+          f"period={period} | horizon={horizon}gg")
     print(f"  Stop 1.5×ATR | Target 3×ATR (R:R 2:1) | no-lookahead")
     print(f"{'='*68}\n")
 
@@ -208,7 +230,7 @@ def backtest_technical(tickers, period="1y", horizon=15, cooldown=10):
             for i in range(200, len(df) - 1):
                 if i - last_entry < cooldown:
                     continue
-                direction, setup = _classify(df.iloc[i])
+                direction, setup = _classify(df.iloc[i], profile=profile)
                 if direction is None:
                     continue
                 atr = df["atr"].iloc[i]
@@ -235,14 +257,37 @@ def _stats(trades) -> dict:
     rets = [t["return_pct"] for t in trades]
     gross_win = sum(t["return_pct"] for t in trades if t["return_pct"] > 0)
     gross_loss = abs(sum(t["return_pct"] for t in trades if t["return_pct"] < 0))
+
+    # ── Metriche quant (modulo 6 del metodo) ──────────────────
+    mean_r = statistics.mean(rets)
+    std_r = statistics.pstdev(rets) if len(rets) > 1 else 0.0
+    downside = [r for r in rets if r < 0]
+    dstd = statistics.pstdev(downside) if len(downside) > 1 else 0.0
+    avg_days = statistics.mean(t["days_held"] for t in trades)
+    ann = math.sqrt(252 / max(avg_days, 1))          # fattore di annualizzazione
+    sharpe = (mean_r / std_r) * ann if std_r > 0 else None
+    sortino = (mean_r / dstd) * ann if dstd > 0 else None
+
+    # Max drawdown sull'equity curve (trade in ordine cronologico)
+    ordered = sorted(trades, key=lambda t: t["date"])
+    equity = peak = 0.0
+    max_dd = 0.0
+    for t in ordered:
+        equity += t["return_pct"]
+        peak = max(peak, equity)
+        max_dd = max(max_dd, peak - equity)
+
     return {
         "n": len(trades),
         "win_rate": len(wins) / len(trades) * 100,
-        "avg_return": statistics.mean(rets),
+        "avg_return": mean_r,
         "median_return": statistics.median(rets),
-        "avg_days": statistics.mean(t["days_held"] for t in trades),
+        "avg_days": avg_days,
         "profit_factor": gross_win / gross_loss if gross_loss > 0 else float("inf"),
         "total_return": sum(rets),
+        "sharpe": sharpe,
+        "sortino": sortino,
+        "max_drawdown": max_dd,
     }
 
 
@@ -259,6 +304,9 @@ def report(trades):
     print(f"  Avg return:     {s['avg_return']:+.2f}% per trade")
     print(f"  Median return:  {s['median_return']:+.2f}%")
     print(f"  Profit factor:  {s['profit_factor']:.2f}  (>1 = profittevole)")
+    print(f"  Sharpe (ann.):  {s['sharpe']:.2f}" if s.get('sharpe') else "  Sharpe:         n/d")
+    print(f"  Sortino (ann.): {s['sortino']:.2f}" if s.get('sortino') else "  Sortino:        n/d")
+    print(f"  Max drawdown:   -{s['max_drawdown']:.1f}% (equity curve dei trade)")
     print(f"  Hold medio:     {s['avg_days']:.1f} giorni")
 
     # Per direzione
@@ -330,11 +378,21 @@ if __name__ == "__main__":
     p.add_argument("--period", type=str, default="1y", help="1y / 2y / 5y")
     p.add_argument("--horizon", type=int, default=15, help="giorni max di holding")
     p.add_argument("--db", action="store_true", help="report outcome reali dal DB")
+    p.add_argument("--fx", action="store_true",
+                   help="profilo FX: universo IC Markets + soglie forex")
     args = p.parse_args()
 
     if args.db:
         backtest_from_db()
     else:
-        tickers = args.tickers.split(",") if args.tickers else DEFAULT_TICKERS
-        trades = backtest_technical(tickers, period=args.period, horizon=args.horizon)
+        profile = "fx" if args.fx else "stock"
+        if args.tickers:
+            tickers = args.tickers.split(",")
+        elif args.fx:
+            from instruments import INSTRUMENTS
+            tickers = [m["yf"] for m in INSTRUMENTS.values()]
+        else:
+            tickers = DEFAULT_TICKERS
+        trades = backtest_technical(tickers, period=args.period,
+                                    horizon=args.horizon, profile=profile)
         report(trades)

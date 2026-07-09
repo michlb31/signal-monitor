@@ -29,59 +29,59 @@ COT_CODES = {
 INSTRUMENTS = {
     # ── FX MAJOR ────────────────────────────────────────────────────────
     # point = 1 pip (0.0001; 0.01 per JPY). 0.01 lot = 1.000 unità → ~$0.10/pip
-    "EURUSD": {"cls": "fx", "leverage": 30, "base": "EUR", "quote": "USD", "td": "EUR/USD", "yf": "EURUSD=X",
+    "EURUSD": {"cls": "fx", "leverage": 30, "spread": 1.0, "base": "EUR", "quote": "USD", "td": "EUR/USD", "yf": "EURUSD=X",
                "point": 0.0001, "usd_per_point_001": 0.10, "tags": ["FED", "ECB", "CPI_US", "JOBS_US", "RISK"]},
-    "GBPUSD": {"cls": "fx", "leverage": 30, "base": "GBP", "quote": "USD", "td": "GBP/USD", "yf": "GBPUSD=X",
+    "GBPUSD": {"cls": "fx", "leverage": 30, "spread": 1.2, "base": "GBP", "quote": "USD", "td": "GBP/USD", "yf": "GBPUSD=X",
                "point": 0.0001, "usd_per_point_001": 0.10, "tags": ["FED", "BOE", "CPI_US", "JOBS_US"]},
-    "USDJPY": {"cls": "fx", "leverage": 30, "base": "USD", "quote": "JPY", "td": "USD/JPY", "yf": "USDJPY=X",
+    "USDJPY": {"cls": "fx", "leverage": 30, "spread": 1.0, "base": "USD", "quote": "JPY", "td": "USD/JPY", "yf": "USDJPY=X",
                "point": 0.01, "usd_per_point_001": 0.065, "tags": ["FED", "BOJ", "CPI_US", "RISK"]},
-    "USDCHF": {"cls": "fx", "leverage": 30, "base": "USD", "quote": "CHF", "td": "USD/CHF", "yf": "USDCHF=X",
+    "USDCHF": {"cls": "fx", "leverage": 30, "spread": 1.5, "base": "USD", "quote": "CHF", "td": "USD/CHF", "yf": "USDCHF=X",
                "point": 0.0001, "usd_per_point_001": 0.11, "tags": ["FED", "SNB", "RISK", "GEO"]},
-    "USDCAD": {"cls": "fx", "leverage": 30, "base": "USD", "quote": "CAD", "td": "USD/CAD", "yf": "USDCAD=X",
+    "USDCAD": {"cls": "fx", "leverage": 30, "spread": 1.2, "base": "USD", "quote": "CAD", "td": "USD/CAD", "yf": "USDCAD=X",
                "point": 0.0001, "usd_per_point_001": 0.073, "tags": ["FED", "BOC", "OIL"]},
-    "AUDUSD": {"cls": "fx", "leverage": 20, "base": "AUD", "quote": "USD", "td": "AUD/USD", "yf": "AUDUSD=X",
+    "AUDUSD": {"cls": "fx", "leverage": 20, "spread": 1.0, "base": "AUD", "quote": "USD", "td": "AUD/USD", "yf": "AUDUSD=X",
                "point": 0.0001, "usd_per_point_001": 0.10, "tags": ["FED", "RBA", "CHINA", "RISK"]},
-    "NZDUSD": {"cls": "fx", "leverage": 20, "base": "NZD", "quote": "USD", "td": "NZD/USD", "yf": "NZDUSD=X",
+    "NZDUSD": {"cls": "fx", "leverage": 20, "spread": 1.3, "base": "NZD", "quote": "USD", "td": "NZD/USD", "yf": "NZDUSD=X",
                "point": 0.0001, "usd_per_point_001": 0.10, "tags": ["FED", "CHINA"]},
     # ── FX MINOR / CROSS ────────────────────────────────────────────────
-    "EURGBP": {"cls": "fx", "leverage": 30, "base": "EUR", "quote": "GBP", "td": "EUR/GBP", "yf": "EURGBP=X",
+    "EURGBP": {"cls": "fx", "leverage": 30, "spread": 1.3, "base": "EUR", "quote": "GBP", "td": "EUR/GBP", "yf": "EURGBP=X",
                "point": 0.0001, "usd_per_point_001": 0.127, "tags": ["ECB", "BOE"]},
-    "EURJPY": {"cls": "fx", "leverage": 30, "base": "EUR", "quote": "JPY", "td": "EUR/JPY", "yf": "EURJPY=X",
+    "EURJPY": {"cls": "fx", "leverage": 30, "spread": 1.6, "base": "EUR", "quote": "JPY", "td": "EUR/JPY", "yf": "EURJPY=X",
                "point": 0.01, "usd_per_point_001": 0.065, "tags": ["ECB", "BOJ", "RISK"]},
-    "GBPJPY": {"cls": "fx", "leverage": 30, "base": "GBP", "quote": "JPY", "td": "GBP/JPY", "yf": "GBPJPY=X",
+    "GBPJPY": {"cls": "fx", "leverage": 30, "spread": 2.5, "base": "GBP", "quote": "JPY", "td": "GBP/JPY", "yf": "GBPJPY=X",
                "point": 0.01, "usd_per_point_001": 0.065, "tags": ["BOE", "BOJ", "RISK"]},
-    "AUDJPY": {"cls": "fx", "leverage": 20, "base": "AUD", "quote": "JPY", "td": "AUD/JPY", "yf": "AUDJPY=X",
+    "AUDJPY": {"cls": "fx", "leverage": 20, "spread": 1.8, "base": "AUD", "quote": "JPY", "td": "AUD/JPY", "yf": "AUDJPY=X",
                "point": 0.01, "usd_per_point_001": 0.065, "tags": ["RBA", "BOJ", "CHINA", "RISK"]},
     # ── METALLI ─────────────────────────────────────────────────────────
     # XAU: 0.01 lot = 1 oz → $1 per $1 di movimento (verificato live sul conto utente)
-    "XAUUSD": {"cls": "metal", "leverage": 20, "base": "XAU", "quote": "USD", "td": "XAU/USD", "yf": "GC=F",
+    "XAUUSD": {"cls": "metal", "leverage": 20, "spread": 0.35, "base": "XAU", "quote": "USD", "td": "XAU/USD", "yf": "GC=F",
                "point": 1.0, "usd_per_point_001": 1.0, "tags": ["FED", "CPI_US", "JOBS_US", "GEO", "RISK", "REAL_YIELDS"]},
     # XAG: 0.01 lot = 50 oz → $0.50 per $0.01 → $50 per $1. ATR alto: quasi mai sizable con capitale piccolo
-    "XAGUSD": {"cls": "metal", "leverage": 10, "base": "XAG", "quote": "USD", "td": "XAG/USD", "yf": "SI=F",
+    "XAGUSD": {"cls": "metal", "leverage": 10, "spread": 2.5, "base": "XAG", "quote": "USD", "td": "XAG/USD", "yf": "SI=F",
                "point": 0.01, "usd_per_point_001": 0.50, "tags": ["FED", "CPI_US", "GEO", "RISK"]},
     # ── ENERGIA ─────────────────────────────────────────────────────────
     # WTI/Brent: 0.01 lot = 1 barile → $0.01 per $0.01 ⇒ $1 per $1
-    "XTIUSD": {"cls": "energy", "leverage": 10, "base": None, "quote": "USD", "td": None, "yf": "CL=F",
+    "XTIUSD": {"cls": "energy", "leverage": 10, "spread": 3.0, "base": None, "quote": "USD", "td": None, "yf": "CL=F",
                "point": 0.01, "usd_per_point_001": 0.01, "tags": ["OPEC", "GEO", "CHINA", "OIL"]},
-    "XBRUSD": {"cls": "energy", "leverage": 10, "base": None, "quote": "USD", "td": None, "yf": "BZ=F",
+    "XBRUSD": {"cls": "energy", "leverage": 10, "spread": 4.0, "base": None, "quote": "USD", "td": None, "yf": "BZ=F",
                "point": 0.01, "usd_per_point_001": 0.01, "tags": ["OPEC", "GEO", "OIL"]},
-    "XNGUSD": {"cls": "energy", "leverage": 10, "base": None, "quote": "USD", "td": None, "yf": "NG=F",
+    "XNGUSD": {"cls": "energy", "leverage": 10, "spread": 10.0, "base": None, "quote": "USD", "td": None, "yf": "NG=F",
                "point": 0.001, "usd_per_point_001": 0.01, "tags": ["GAS"]},
     # ── INDICI ──────────────────────────────────────────────────────────
     # 0.01 lot ≈ $0.01/punto su IC Markets (contratto 1 × indice). VERIFICARE su MT5.
-    "US500":  {"cls": "index", "leverage": 20, "base": None, "quote": "USD", "td": None, "yf": "^GSPC",
+    "US500":  {"cls": "index", "leverage": 20, "spread": 0.5, "base": None, "quote": "USD", "td": None, "yf": "^GSPC",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "JOBS_US", "RISK"]},
-    "USTEC":  {"cls": "index", "leverage": 20, "base": None, "quote": "USD", "td": None, "yf": "^NDX",
+    "USTEC":  {"cls": "index", "leverage": 20, "spread": 2.0, "base": None, "quote": "USD", "td": None, "yf": "^NDX",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "RISK", "TECH"]},
-    "US30":   {"cls": "index", "leverage": 20, "base": None, "quote": "USD", "td": None, "yf": "^DJI",
+    "US30":   {"cls": "index", "leverage": 20, "spread": 2.5, "base": None, "quote": "USD", "td": None, "yf": "^DJI",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "JOBS_US", "RISK"]},
-    "GER40":  {"cls": "index", "leverage": 20, "base": None, "quote": "EUR", "td": None, "yf": "^GDAXI",
+    "GER40":  {"cls": "index", "leverage": 20, "spread": 1.2, "base": None, "quote": "EUR", "td": None, "yf": "^GDAXI",
                "point": 1.0, "usd_per_point_001": 0.011, "tags": ["ECB", "RISK"]},
-    "UK100":  {"cls": "index", "leverage": 20, "base": None, "quote": "GBP", "td": None, "yf": "^FTSE",
+    "UK100":  {"cls": "index", "leverage": 20, "spread": 1.0, "base": None, "quote": "GBP", "td": None, "yf": "^FTSE",
                "point": 1.0, "usd_per_point_001": 0.013, "tags": ["BOE", "RISK"]},
-    "JP225":  {"cls": "index", "leverage": 20, "base": None, "quote": "JPY", "td": None, "yf": "^N225",
+    "JP225":  {"cls": "index", "leverage": 20, "spread": 8.0, "base": None, "quote": "JPY", "td": None, "yf": "^N225",
                "point": 1.0, "usd_per_point_001": 0.0065, "tags": ["BOJ", "RISK"]},
-    "AUS200": {"cls": "index", "leverage": 20, "base": None, "quote": "AUD", "td": None, "yf": "^AXJO",
+    "AUS200": {"cls": "index", "leverage": 20, "spread": 2.0, "base": None, "quote": "AUD", "td": None, "yf": "^AXJO",
                "point": 1.0, "usd_per_point_001": 0.0066, "tags": ["RBA", "CHINA", "RISK"]},
 }
 
@@ -134,3 +134,14 @@ if __name__ == "__main__":
         print(f"  {cls:7s}: {', '.join(syms)}")
     print(f"\nEsempio pairs_for_currency('USD'): {pairs_for_currency('USD')}")
     print(f"Esempio instruments_with_tag('GEO'): {instruments_with_tag('GEO')}")
+
+def earnings_season(today=None) -> str:
+    """Finestra earnings season USA (approssimata). Ritorna etichetta o ''."""
+    from datetime import date, datetime
+    d = today or datetime.now().date()
+    windows = [((1, 12), (2, 15), "Q4"), ((4, 10), (5, 20), "Q1"),
+               ((7, 10), (8, 20), "Q2"), ((10, 10), (11, 20), "Q3")]
+    for (m1, d1), (m2, d2), q in windows:
+        if date(d.year, m1, d1) <= d <= date(d.year, m2, d2):
+            return f"earnings season USA ({q})"
+    return ""

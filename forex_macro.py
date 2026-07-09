@@ -39,6 +39,7 @@ INSTRUMENTS = {
     "y10":    "^TNX",       # 10Y yield
     "y5":     "^FVX",       # 5Y yield
     "y30":    "^TYX",       # 30Y yield
+    "y3m":    "^IRX",       # 13-week T-bill (per la pendenza della curva)
     "silver": "SI=F",
     "vix":    "^VIX",
     "oil":    "CL=F",
@@ -155,6 +156,15 @@ def get_macro_bias() -> dict:
         score += contrib
         impact = "bearish" if contrib < 0 else "bullish"
         breakdown.append(f"REAL YIELD {real['value']:.2f}% ({rchg:+.3f}) → {impact} oro [FRED]")
+
+    # Pendenza curva dei rendimenti (10Y − 3M): inversione = stress → bullish oro
+    if "y10" in changes and "y3m" in changes:
+        slope = changes["y10"]["price"] - changes["y3m"]["price"]
+        if slope < 0:
+            score += 0.5
+            breakdown.append(f"CURVA INVERTITA (10Y−3M = {slope:+.2f}) → bullish oro")
+        else:
+            breakdown.append(f"Curva 10Y−3M: {slope:+.2f} (normale)")
 
     # Classificazione
     if score >= 2.0:
