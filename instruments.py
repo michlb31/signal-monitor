@@ -68,14 +68,17 @@ INSTRUMENTS = {
     "XNGUSD": {"cls": "energy", "leverage": 10, "spread": 10.0, "base": None, "quote": "USD", "td": None, "yf": "NG=F",
                "point": 0.001, "usd_per_point_001": 0.01, "tags": ["GAS"]},
     # ── INDICI ──────────────────────────────────────────────────────────
-    # 0.01 lot ≈ $0.01/punto su IC Markets (contratto 1 × indice). VERIFICARE su MT5.
+    # Simboli VERIFICATI su icmarkets.eu/en/trading-markets/indices (2026-07-09):
+    # US500, USTEC, US30, DE40, UK100, JP225, AUS200 (disponibili anche:
+    # STOXX50, F40, US2000, VIX, DXY, HK50...). Leva indici 1:20 (dal sito).
+    # 0.01 lot ≈ $0.01/punto (contratto 1 × indice) — punto da verificare su MT5.
     "US500":  {"cls": "index", "leverage": 20, "spread": 0.5, "base": None, "quote": "USD", "td": None, "yf": "^GSPC",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "JOBS_US", "RISK"]},
     "USTEC":  {"cls": "index", "leverage": 20, "spread": 2.0, "base": None, "quote": "USD", "td": None, "yf": "^NDX",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "RISK", "TECH"]},
     "US30":   {"cls": "index", "leverage": 20, "spread": 2.5, "base": None, "quote": "USD", "td": None, "yf": "^DJI",
                "point": 1.0, "usd_per_point_001": 0.01, "tags": ["FED", "CPI_US", "JOBS_US", "RISK"]},
-    "GER40":  {"cls": "index", "leverage": 20, "spread": 1.2, "base": None, "quote": "EUR", "td": None, "yf": "^GDAXI",
+    "DE40":  {"cls": "index", "leverage": 20, "spread": 1.2, "base": None, "quote": "EUR", "td": None, "yf": "^GDAXI",
                "point": 1.0, "usd_per_point_001": 0.011, "tags": ["ECB", "RISK"]},
     "UK100":  {"cls": "index", "leverage": 20, "spread": 1.0, "base": None, "quote": "GBP", "td": None, "yf": "^FTSE",
                "point": 1.0, "usd_per_point_001": 0.013, "tags": ["BOE", "RISK"]},

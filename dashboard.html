@@ -289,11 +289,13 @@ function renderTickets(ts) {
     return `<div class="card">
       <div class="row"><span class="sym">${esc(t.symbol)}</span>${dir}
         <span class="chip">conf ${Math.round(t.confidence*100)}%</span></div>
-      <div class="row"><span class="k">Entry</span><b>${t.entry}</b></div>
-      <div class="row"><span class="k">Stop</span><b>${t.stop}</b></div>
-      <div class="row"><span class="k">TP1 (2R)</span><b>${t.tp1}</b>${t.tp2?` <span class="k">· TP2</span> <b>${t.tp2}</b>`:""}</div>
+      <div class="row"><span class="k">Entry</span><b>${t.entry}</b>
+        <span class="k">Stop</span><b>${t.stop}</b></div>
+      <div class="row"><span class="k">TP ladder</span>
+        <b style="font-variant-numeric:tabular-nums">${(t.tps||[t.tp1]).join(" → ")}</b></div>
       <div class="row"><span class="k">Size</span><b>${t.lots} lot</b>
         <span class="k">rischio</span><b>€${t.risk_eur} (${t.risk_pct}%)</b></div>
+      ${t.exit_plan ? `<div class="why">↗ ${esc(t.exit_plan)}</div>` : ""}
       <div class="why">${esc((t.reasons||[]).slice(0,2).join(" · "))}</div>
       ${t.next_event ? `<div class="why">⚠️ ${esc(t.next_event)}</div>` : ""}
     </div>`;

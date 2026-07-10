@@ -84,10 +84,10 @@ EVENT_RULES = [
     # ── BCE ────────────────────────────────────────────────────────
     {"name": "BCE hawkish",
      "pattern": r"(ecb|lagarde)\b.{0,80}(hawkish|rate hike|raise rates|tighten|restrictive)",
-     "impacts": [("EUR", "BULL", 0.85), ("GER40", "BEAR", 0.45)]},
+     "impacts": [("EUR", "BULL", 0.85), ("DE40", "BEAR", 0.45)]},
     {"name": "BCE dovish",
      "pattern": r"(ecb|lagarde)\b.{0,80}(dovish|rate cut|cut rates|cuts rates|easing|pause)",
-     "impacts": [("EUR", "BEAR", 0.85), ("GER40", "BULL", 0.45)]},
+     "impacts": [("EUR", "BEAR", 0.85), ("DE40", "BULL", 0.45)]},
     # ── BoE ────────────────────────────────────────────────────────
     {"name": "BoE hawkish",
      "pattern": r"(bank of england|boe|bailey)\b.{0,80}(hawkish|rate hike|raise rates|tighten)",

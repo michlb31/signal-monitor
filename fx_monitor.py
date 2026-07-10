@@ -261,10 +261,12 @@ def send_slack(out: dict, alerts: list, webhook: str):
         if a["ticket"]:
             t = a["ticket"]
             icon = "🟢" if t["direction"] == "LONG" else "🔴"
+            ladder = " → ".join(str(p) for p in (t.get("tps") or [t.get("tp1")]))
             txt = (f"{icon} *{a['msg']}* (conf {int(t['confidence']*100)}%)\n"
-                   f"Entry `{t['entry']}` | SL `{t['stop']}` | TP1 `{t['tp1']}`"
-                   + (f" | TP2 `{t['tp2']}`" if t.get("tp2") else "") + "\n"
+                   f"Entry `{t['entry']}` | SL `{t['stop']}`\n"
+                   f"TP ladder: `{ladder}`\n"
                    f"Size *{t['lots']} lot* | Rischio €{t['risk_eur']} ({t['risk_pct']}%)\n"
+                   f"_{t.get('exit_plan','')}_\n"
                    f"_{'; '.join(t['reasons'][:2])}_"
                    + (f"\n⚠️ {t['next_event']}" if t.get("next_event") else ""))
         else:

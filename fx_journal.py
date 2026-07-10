@@ -13,6 +13,11 @@ Regole di chiusura simulate sui daily H/L (conservative):
   - Se nello stesso giorno la barra tocca sia SL che TP1 → conta SL
   - Dopo MAX_HOLD_DAYS barre senza TP/SL → chiusura a mercato (TIME)
   - R multiple = (exit − entry) / (entry − stop), col segno della direzione
+
+NB: il target tracciato è TP1 = 1R (primo gradino della ladder a 5 TP).
+Le statistiche misurano quindi la qualità del segnale al primo obiettivo:
+WIN = +1R, LOSS = −1R. Le uscite scalate sui TP successivi sono gestione
+manuale dell'utente e non alterano la metrica del journal.
 """
 
 import json

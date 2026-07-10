@@ -21,16 +21,25 @@ from instruments import INSTRUMENTS, currency_exposure
 
 # ── Configurazione conto (modificare qui se cambia il capitale) ──
 ACCOUNT = {
-    "equity_eur": 360.0,
+    "equity_eur": 400.0,
     "leverage": 30,
     "risk_pct": 0.018,          # rischio target per trade (1.8%)
     # Cap rischio: con capitale micro il lotto minimo 0.01 su una major
-    # con stop 1.5×ATR vale ~2.5-3% — il cap a 3% accetta le major
+    # con stop stretto vale ~2-2.5% — il cap a 3% accetta le major
     # tenendo fuori gli strumenti davvero non sizable (oro: 27%!)
     "max_risk_pct": 0.03,       # oltre → trade rifiutato
     "max_positions": 2,
     "max_per_currency": 1,
     "eurusd": 1.10,             # fallback conversione (aggiornato a runtime se possibile)
+    # ── Posizioni STRETTE (richiesta capitale micro, 2026-07-09) ──
+    # Stop base 1.2×ATR, mai oltre 1.4×ATR anche se la struttura è più
+    # lontana (accettiamo stop "dentro la struttura" pur di restare sizable).
+    # Trade-off esplicito: più whipsaw in cambio di size/rischio gestibili.
+    "atr_stop_mult": 1.2,
+    "atr_stop_min": 1.0,
+    "atr_stop_max": 1.4,
+    # Ladder di 5 take profit in multipli di R (scalare l'uscita)
+    "tp_multiples": [1.0, 1.5, 2.0, 3.0, 4.0],
 }
 
 
@@ -68,24 +77,30 @@ def build_ticket(symbol: str, direction: str, entry: float,
     equity_usd = ACCOUNT["equity_eur"] * eurusd
     sign = 1 if direction == "LONG" else -1
 
-    # ── STOP: struttura vs volatilità, il più conservativo (cap 2.5 ATR) ──
-    atr_dist = 1.5 * atr_val
+    # ── STOP STRETTO: clamp della struttura in [1.0, 1.4]×ATR ──
+    # La struttura può stringere lo stop, mai allargarlo oltre il cap:
+    # con €400 uno stop largo rende il trade non sizable o troppo rischioso.
     if direction == "LONG" and support and support < entry:
         struct_dist = (entry - support) + 0.2 * atr_val
     elif direction == "SHORT" and resistance and resistance > entry:
         struct_dist = (resistance - entry) + 0.2 * atr_val
     else:
-        struct_dist = atr_dist
-    stop_dist = min(max(atr_dist, struct_dist), 2.5 * atr_val)
+        struct_dist = None
+
+    lo = ACCOUNT["atr_stop_min"] * atr_val
+    hi = ACCOUNT["atr_stop_max"] * atr_val
+    if struct_dist is None:
+        stop_dist = ACCOUNT["atr_stop_mult"] * atr_val
+        inside_structure = False
+    else:
+        stop_dist = min(max(struct_dist, lo), hi)
+        inside_structure = struct_dist > hi   # stop più stretto della struttura
     stop = entry - sign * stop_dist
 
-    # ── TARGET: TP1 = 2R; TP2 = struttura se più ambiziosa ──
-    tp1 = entry + sign * 2 * stop_dist
-    tp2 = None
-    if direction == "LONG" and resistance and resistance > tp1:
-        tp2 = resistance
-    elif direction == "SHORT" and support and support < tp1:
-        tp2 = support
+    # ── LADDER 5 TAKE PROFIT (multipli di R) ──
+    tps = [entry + sign * m * stop_dist for m in ACCOUNT["tp_multiples"]]
+    tp1 = tps[0]            # 1R — target di riferimento del journal
+    tp2 = tps[2]            # 2R — compat con dashboard/alert esistenti
 
     # ── SIZING ──
     stop_points = stop_dist / point
@@ -156,6 +171,14 @@ def build_ticket(symbol: str, direction: str, entry: float,
         except Exception:
             pass
 
+    # Scale-out: con 5 TP servono ≥0.05 lot per chiudere 1/5 alla volta
+    lots_final = round(lots, 2)
+    if lots_final >= 0.05:
+        exit_plan = "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven"
+    else:
+        exit_plan = ("size minima: uscita unica (consigliato TP2-TP3); "
+                     "a TP1 sposta lo stop a breakeven")
+
     return {
         "accepted": True,
         "symbol": symbol, "direction": direction,
@@ -163,8 +186,12 @@ def build_ticket(symbol: str, direction: str, entry: float,
         "stop": _round_price(symbol, stop),
         "tp1": _round_price(symbol, tp1),
         "tp2": _round_price(symbol, tp2) if tp2 else None,
+        "tps": [_round_price(symbol, t) for t in tps],
+        "tp_multiples": ACCOUNT["tp_multiples"],
+        "exit_plan": exit_plan,
+        "inside_structure": inside_structure,
         "stop_points": round(stop_points, 1),
-        "lots": round(lots, 2),
+        "lots": lots_final,
         "risk_eur": round(actual_risk_usd / eurusd, 2),
         "risk_pct": round(actual_risk_pct * 100, 1),
         "margin_eur": round(margin_eur, 2),
@@ -206,12 +233,18 @@ def format_ticket(t: dict) -> str:
         return (f"  ❌ {t['symbol']} {t.get('direction','')} RIFIUTATO — "
                 f"{t['reject_reason']}")
     icon = "🟢📈" if t["direction"] == "LONG" else "🔴📉"
+    tps = t.get("tps") or [t.get("tp1")]
+    mults = t.get("tp_multiples", [])
+    ladder = " → ".join(f"{p}" for p in tps)
+    mult_lbl = "/".join(f"{m:g}R" for m in mults) if mults else ""
     lines = [
         f"  {icon} {t['symbol']} {t['direction']}  (confidence {int(t['confidence']*100)}%)",
-        f"     Entry {t['entry']} | SL {t['stop']} ({t['stop_points']:.0f} pt) | "
-        f"TP1 {t['tp1']} (2R)" + (f" | TP2 {t['tp2']}" if t.get("tp2") else ""),
+        f"     Entry {t['entry']} | SL {t['stop']} ({t['stop_points']:.0f} pt"
+        + (", dentro la struttura" if t.get("inside_structure") else "") + ")",
+        f"     TP ladder ({mult_lbl}): {ladder}",
         f"     Size {t['lots']} lot | Rischio €{t['risk_eur']} ({t['risk_pct']}%) | "
         f"Margine ~€{t['margin_eur']}",
+        f"     Piano uscita: {t.get('exit_plan','')}",
         f"     Perché: {'; '.join(t['reasons'][:3])}",
     ]
     costs = f"     Costi: spread ~€{t.get('spread_cost_eur', 0)}"
