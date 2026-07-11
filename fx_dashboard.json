@@ -1,16 +1,21 @@
 {
- "generated_at": "2026-07-11T18:00:03.703305+00:00",
+ "generated_at": "2026-07-11T19:18:36.690737+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 20,
+ "n_titles": 19,
  "news_events": [
   {
    "rule": "Dollaro forte",
    "strength": 0.98,
    "n": 2
+  },
+  {
+   "rule": "De-escalation geopolitica",
+   "strength": 0.45,
+   "n": 1
   },
   {
    "rule": "Fed hawkish",
@@ -27,15 +32,15 @@
   {
    "symbol": "XAUUSD",
    "direction": "SHORT",
-   "confidence": 0.442,
+   "confidence": 0.486,
    "layers": {
-    "news": -0.337,
+    "news": -0.486,
     "macro": -0.86,
     "tech": -0.35,
     "cot": 0.033
    },
-   "gate": false,
-   "gate_reason": "confidence 0.44 < 0.45",
+   "gate": true,
+   "gate_reason": "",
    "price": 4104.10009765625,
    "rsi": 41.2
   },
@@ -55,6 +60,21 @@
    "rsi": 47.9
   },
   {
+   "symbol": "US500",
+   "direction": "LONG",
+   "confidence": 0.292,
+   "layers": {
+    "news": 0.015,
+    "macro": 0.251,
+    "tech": 0.85,
+    "cot": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.29 < 0.45",
+   "price": 7575.39013671875,
+   "rsi": 57.3
+  },
+  {
    "symbol": "GBPJPY",
    "direction": "LONG",
    "confidence": 0.287,
@@ -68,21 +88,6 @@
    "gate_reason": "confidence 0.29 < 0.45",
    "price": 216.68800354003906,
    "rsi": 68.4
-  },
-  {
-   "symbol": "US500",
-   "direction": "LONG",
-   "confidence": 0.265,
-   "layers": {
-    "news": -0.075,
-    "macro": 0.251,
-    "tech": 0.85,
-    "cot": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.27 < 0.45",
-   "price": 7575.39013671875,
-   "rsi": 57.3
   },
   {
    "symbol": "XNGUSD",
@@ -235,6 +240,21 @@
    "rsi": 10.8
   },
   {
+   "symbol": "XTIUSD",
+   "direction": "SHORT",
+   "confidence": 0.091,
+   "layers": {
+    "news": -0.134,
+    "macro": 0.035,
+    "tech": 0.173,
+    "cot": -0.7
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.09 < 0.45",
+   "price": 71.41000366210938,
+   "rsi": 38.0
+  },
+  {
    "symbol": "DE40",
    "direction": "LONG",
    "confidence": 0.076,
@@ -295,36 +315,6 @@
    "rsi": 39.4
   },
   {
-   "symbol": "XBRUSD",
-   "direction": "LONG",
-   "confidence": 0.054,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.035,
-    "tech": 0.173,
-    "cot": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.05 < 0.45",
-   "price": 76.01000213623047,
-   "rsi": 41.3
-  },
-  {
-   "symbol": "XTIUSD",
-   "direction": "SHORT",
-   "confidence": 0.051,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.035,
-    "tech": 0.173,
-    "cot": -0.7
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.05 < 0.45",
-   "price": 71.41000366210938,
-   "rsi": 38.0
-  },
-  {
    "symbol": "AUS200",
    "direction": "LONG",
    "confidence": 0.029,
@@ -368,10 +358,33 @@
    "gate_reason": "confidence 0.02 < 0.45",
    "price": 184.5540008544922,
    "rsi": 46.7
+  },
+  {
+   "symbol": "XBRUSD",
+   "direction": "LONG",
+   "confidence": 0.014,
+   "layers": {
+    "news": -0.134,
+    "macro": 0.035,
+    "tech": 0.173,
+    "cot": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.01 < 0.45",
+   "price": 76.01000213623047,
+   "rsi": 41.3
   }
  ],
  "tickets": [],
- "rejected": [],
+ "rejected": [
+  {
+   "accepted": false,
+   "symbol": "XAUUSD",
+   "direction": "SHORT",
+   "reject_reason": "lotto minimo 0.01 \u21d2 rischio 24.5% > 3.0% (stop 112 punti troppo ampio per il capitale)",
+   "entry_source": "daily"
+  }
+ ],
  "calendar": [
   {
    "date": "2026-07-14",
