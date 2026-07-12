@@ -1,12 +1,17 @@
 {
- "generated_at": "2026-07-12T15:34:01.943403+00:00",
+ "generated_at": "2026-07-12T16:59:14.039808+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 11,
+ "n_titles": 14,
  "news_events": [
+  {
+   "rule": "BoJ hawkish",
+   "strength": 0.85,
+   "n": 1
+  },
   {
    "rule": "Dollaro forte",
    "strength": 0.25,
@@ -43,21 +48,6 @@
    "gate_reason": "confidence 0.29 < 0.45",
    "price": 7575.39013671875,
    "rsi": 57.3
-  },
-  {
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "confidence": 0.242,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.249,
-    "tech": 0.35,
-    "cot": 0.532
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.24 < 0.45",
-   "price": 216.68800354003906,
-   "rsi": 68.4
   },
   {
    "symbol": "XNGUSD",
@@ -122,17 +112,47 @@
   {
    "symbol": "USDCAD",
    "direction": "LONG",
-   "confidence": 0.133,
+   "confidence": 0.134,
    "layers": {
     "news": 0.075,
-    "macro": -0.123,
+    "macro": -0.119,
     "tech": 0.35,
     "cot": 0.4
    },
    "gate": false,
    "gate_reason": "confidence 0.13 < 0.45",
-   "price": 1.4151999950408936,
-   "rsi": 48.8
+   "price": 1.4153000116348267,
+   "rsi": 48.9
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": "LONG",
+   "confidence": 0.133,
+   "layers": {
+    "news": -0.365,
+    "macro": 0.249,
+    "tech": 0.35,
+    "cot": 0.532
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.13 < 0.45",
+   "price": 216.68800354003906,
+   "rsi": 68.4
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": "SHORT",
+   "confidence": 0.118,
+   "layers": {
+    "news": -0.365,
+    "macro": 0.025,
+    "tech": -0.35,
+    "cot": 0.478
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.12 < 0.45",
+   "price": 184.5540008544922,
+   "rsi": 46.7
   },
   {
    "symbol": "XAGUSD",
@@ -150,21 +170,6 @@
    "rsi": 35.0
   },
   {
-   "symbol": "AUDJPY",
-   "direction": "LONG",
-   "confidence": 0.11,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.26,
-    "tech": 0.15,
-    "cot": -0.038
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.11 < 0.45",
-   "price": 112.41699981689453,
-   "rsi": 44.3
-  },
-  {
    "symbol": "EURGBP",
    "direction": "SHORT",
    "confidence": 0.102,
@@ -178,6 +183,21 @@
    "gate_reason": "confidence 0.10 < 0.45",
    "price": 0.8516700267791748,
    "rsi": 10.8
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.082,
+   "layers": {
+    "news": -0.298,
+    "macro": 0.083,
+    "tech": 0.35,
+    "cot": -0.7
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.08 < 0.45",
+   "price": 161.6719970703125,
+   "rsi": 52.7
   },
   {
    "symbol": "GBPUSD",
@@ -240,21 +260,6 @@
    "rsi": 43.3
   },
   {
-   "symbol": "JP225",
-   "direction": "LONG",
-   "confidence": 0.056,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.201,
-    "tech": 0.402,
-    "cot": -0.7
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.06 < 0.45",
-   "price": 68557.7265625,
-   "rsi": 39.4
-  },
-  {
    "symbol": "EURUSD",
    "direction": "SHORT",
    "confidence": 0.055,
@@ -300,21 +305,6 @@
    "rsi": 38.0
   },
   {
-   "symbol": "USDJPY",
-   "direction": "LONG",
-   "confidence": 0.03,
-   "layers": {
-    "news": 0.075,
-    "macro": 0.083,
-    "tech": 0.35,
-    "cot": -0.7
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.03 < 0.45",
-   "price": 161.6719970703125,
-   "rsi": 52.7
-  },
-  {
    "symbol": "AUS200",
    "direction": "LONG",
    "confidence": 0.029,
@@ -345,19 +335,34 @@
    "rsi": 60.2
   },
   {
-   "symbol": "EURJPY",
+   "symbol": "JP225",
    "direction": "SHORT",
-   "confidence": 0.008,
+   "confidence": 0.013,
    "layers": {
-    "news": 0.0,
-    "macro": 0.025,
-    "tech": -0.35,
-    "cot": 0.478
+    "news": -0.23,
+    "macro": 0.201,
+    "tech": 0.402,
+    "cot": -0.7
    },
    "gate": false,
    "gate_reason": "confidence 0.01 < 0.45",
-   "price": 184.5540008544922,
-   "rsi": 46.7
+   "price": 68557.7265625,
+   "rsi": 39.4
+  },
+  {
+   "symbol": "AUDJPY",
+   "direction": "LONG",
+   "confidence": 0.0,
+   "layers": {
+    "news": -0.365,
+    "macro": 0.26,
+    "tech": 0.15,
+    "cot": -0.038
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.00 < 0.45",
+   "price": 112.41699981689453,
+   "rsi": 44.3
   }
  ],
  "tickets": [],
