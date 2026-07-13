@@ -140,6 +140,11 @@
   <div style="overflow-x:auto"><table id="universe"></table></div>
 </section>
 
+<section id="stocksection" style="display:none">
+  <h2>📈 Azioni — candidati dalle news (universo: 1.697 CFD IC Markets)</h2>
+  <div style="overflow-x:auto"><table id="stocks"></table></div>
+</section>
+
 <section>
   <h2>📓 Journal — ultimi trade chiusi</h2>
   <div style="overflow-x:auto"><table id="journal"></table></div>
@@ -205,6 +210,7 @@ function render(d) {
   renderTickets(d.tickets || []);
   renderCalendar(d.calendar || []);
   renderUniverse(d.universe || []);
+  renderStocks(d.stock_candidates || []);
   renderJournal((d.trades||[]).filter(t => t.status === "CLOSED").slice(-15).reverse());
   renderBacktest(d.backtest);
 }
@@ -328,6 +334,26 @@ function renderUniverse(rows) {
       <td class="num">${fmt(L.news)}</td><td class="num">${fmt(L.macro)}</td>
       <td class="num">${fmt(L.tech)}</td><td class="num">${fmt(L.cot)}</td>
       <td class="num">${fmt(r.rsi,0)}</td><td>${gate}</td></tr>`;
+  }).join("");
+}
+
+/* ── Stock candidates table ────────────────────────────────────── */
+function renderStocks(rows) {
+  if (!rows.length) return;
+  $("stocksection").style.display = "";
+  const head = `<tr><th>Simbolo</th><th>Società</th><th>Dir</th>
+    <th class="num">Comp</th><th class="num">News</th><th class="num">Tech</th>
+    <th class="num">Menzioni</th><th>Gate</th></tr>`;
+  $("stocks").innerHTML = head + rows.slice(0, 12).map(c => {
+    const dir = c.direction === "LONG"
+      ? `<span class="dir-long">▲ L</span>`
+      : c.direction === "SHORT" ? `<span class="dir-short">▼ S</span>` : "–";
+    const gate = c.gate ? `<span class="gate-ok">✓ TICKET</span>`
+                        : `<span class="gate-no">${esc(c.gate_reason || "")}</span>`;
+    return `<tr><td><b>${esc(c.symbol)}</b></td><td>${esc((c.name||"").slice(0,26))}</td>
+      <td>${dir}</td><td class="num">${fmt(c.composite)}</td>
+      <td class="num">${fmt(c.news_score)}</td><td class="num">${fmt(c.tech_score)}</td>
+      <td class="num">${c.n_mentions ?? "–"}</td><td>${gate}</td></tr>`;
   }).join("");
 }
 

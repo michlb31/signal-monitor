@@ -54,25 +54,31 @@ def _eurusd() -> float:
     return ACCOUNT["eurusd"]
 
 
-def _round_price(symbol: str, price: float) -> float:
-    """Arrotonda al tick sensato per lo strumento."""
-    point = INSTRUMENTS[symbol]["point"]
+def _round_price(point: float, price: float) -> float:
+    """Arrotonda al tick sensato per lo strumento (dal suo point)."""
+    if price is None:
+        return None
     if point >= 1:
-        return round(price, 1)
-    decimals = max(0, -int(math.floor(math.log10(point))) )
+        return round(price, 2)
+    decimals = max(0, -int(math.floor(math.log10(point))))
     return round(price, decimals + 1)
 
 
 def build_ticket(symbol: str, direction: str, entry: float,
                  atr_val: float, support: float, resistance: float,
-                 confidence: float, reasons: list, next_event: str = "") -> dict:
+                 confidence: float, reasons: list, next_event: str = "",
+                 meta: dict = None) -> dict:
     """
     Costruisce il trade ticket completo o lo rifiuta con motivazione.
     entry: prezzo corrente (spot Twelve Data se disponibile, altrimenti daily).
+    meta: metadati strumento esterni all'universo FX (es. azioni da stock_engine).
     """
-    m = INSTRUMENTS[symbol]
+    m = meta or INSTRUMENTS[symbol]
     point = m["point"]
-    usd_pp = m["usd_per_point_001"]
+    # P/L per punto per 1.0 lot (retrocompatibile col campo _001 dell'universo FX)
+    usd_pp_lot = m.get("usd_per_point_lot", m.get("usd_per_point_001", 0) * 100)
+    vol_step = m.get("volume_step", 0.01)
+    min_vol  = m.get("min_volume", 0.01)
     eurusd = _eurusd()
     equity_usd = ACCOUNT["equity_eur"] * eurusd
     sign = 1 if direction == "LONG" else -1
@@ -102,35 +108,40 @@ def build_ticket(symbol: str, direction: str, entry: float,
     tp1 = tps[0]            # 1R — target di riferimento del journal
     tp2 = tps[2]            # 2R — compat con dashboard/alert esistenti
 
-    # ── SIZING ──
+    # ── SIZING (generalizzato: step/minimi variabili per classe) ──
+    # FX/metalli/energia/indici: step 0.01 lot. Azioni USA: 0.1 az; EU: 1 az.
     stop_points = stop_dist / point
     risk_usd_target = equity_usd * ACCOUNT["risk_pct"]
-    risk_usd_min_lot = stop_points * usd_pp          # rischio con 0.01 lot
-    if risk_usd_min_lot <= 0:
+    risk_per_lot = stop_points * usd_pp_lot          # rischio per 1.0 lot
+    if risk_per_lot <= 0:
         return {"accepted": False, "symbol": symbol,
                 "reject_reason": "stop non calcolabile"}
 
-    n_min_lots = risk_usd_target / risk_usd_min_lot   # multipli di 0.01
-    lots = max(1, math.floor(n_min_lots)) * 0.01
+    lots_raw = risk_usd_target / risk_per_lot
+    lots = math.floor(lots_raw / vol_step) * vol_step
+    lots = max(min_vol, round(lots, 4))
 
-    actual_risk_usd = (lots / 0.01) * risk_usd_min_lot
+    actual_risk_usd = lots * risk_per_lot
     actual_risk_pct = actual_risk_usd / equity_usd
 
-    if n_min_lots < 1 and actual_risk_pct > ACCOUNT["max_risk_pct"]:
+    if lots_raw < min_vol and actual_risk_pct > ACCOUNT["max_risk_pct"]:
         return {"accepted": False, "symbol": symbol, "direction": direction,
-                "reject_reason": (f"lotto minimo 0.01 ⇒ rischio "
+                "reject_reason": (f"volume minimo {min_vol:g} ⇒ rischio "
                                   f"{actual_risk_pct*100:.1f}% > {ACCOUNT['max_risk_pct']*100:.1f}% "
                                   f"(stop {stop_points:.0f} punti troppo ampio per il capitale)")}
 
     # ── MARGINE (stima) ──
     # Leva PER STRUMENTO (verificata su icmarkets.eu, regole ESMA):
-    # FX major 1:30, AUD/NZD 1:20, oro/indici 1:20, argento/energia 1:10.
-    # NON usare la leva conto flat: l'oro a 1:20 impegna ~€195 per 0.01 lot!
+    # FX major 1:30, AUD/NZD 1:20, oro/indici 1:20, argento/energia 1:10,
+    # azioni 1:5 (margine 20%, dal PDF Stocks Specification Sheet).
+    ccy_usd = {"USD": 1.0, "EUR": eurusd, "GBP": eurusd * 1.17}.get(m.get("quote"), 1.0)
     if m["cls"] == "fx":
         notional_usd = lots * 100_000 * (entry if m["quote"] == "USD" else
                                          (1.0 if m["base"] == "USD" else 1.2))
     elif m["cls"] == "metal":
         notional_usd = lots * 100 * entry
+    elif m["cls"] == "stock":
+        notional_usd = lots * entry * ccy_usd        # 1 lot = 1 azione
     else:  # energia (1000 barili/lot), indici (1×)
         notional_usd = lots * (1000 if m["cls"] == "energy" else 1) * entry
     inst_leverage = m.get("leverage", ACCOUNT["leverage"])
@@ -142,14 +153,23 @@ def build_ticket(symbol: str, direction: str, entry: float,
                 "reject_reason": (f"margine ~€{margin_eur:.0f} (leva 1:{inst_leverage}) "
                                   f"> 50% dell'equity €{ACCOUNT['equity_eur']:.0f}")}
 
-    # ── COSTI: spread + swap stimato (modulo "meccanica CFD") ──
+    # ── COSTI: spread/commissioni + swap stimato (modulo "meccanica CFD") ──
     spread_pts = m.get("spread", 0)
-    spread_cost_eur = spread_pts * usd_pp * (lots / 0.01) / eurusd
+    spread_cost_eur = spread_pts * usd_pp_lot * lots / eurusd
     # Gate qualità: se lo spread mangia >15% dello stop, il trade parte troppo in salita
-    if stop_points > 0 and spread_pts / stop_points > 0.15:
+    if spread_pts and stop_points > 0 and spread_pts / stop_points > 0.15:
         return {"accepted": False, "symbol": symbol, "direction": direction,
                 "reject_reason": (f"spread {spread_pts} pt = "
                                   f"{spread_pts/stop_points*100:.0f}% dello stop — costi proibitivi")}
+
+    # Commissioni azioni (PDF): USA $0.02/az per lato; EU 0.10% per lato
+    commission_eur = None
+    if m.get("commission"):
+        ctype, cval = m["commission"]
+        if ctype == "per_share":
+            commission_eur = round(max(cval * lots, 0.02) * 2 / eurusd, 2)
+        else:  # pct del nozionale
+            commission_eur = round(cval * lots * entry * ccy_usd * 2 / eurusd, 2)
 
     # Swap giornaliero stimato dal differenziale tassi (solo FX; senza markup broker)
     swap_eur_day = None
@@ -171,9 +191,9 @@ def build_ticket(symbol: str, direction: str, entry: float,
         except Exception:
             pass
 
-    # Scale-out: con 5 TP servono ≥0.05 lot per chiudere 1/5 alla volta
+    # Scale-out: con 5 TP servono ≥5 step di volume per chiudere 1/5 alla volta
     lots_final = round(lots, 2)
-    if lots_final >= 0.05:
+    if lots_final >= 5 * vol_step:
         exit_plan = "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven"
     else:
         exit_plan = ("size minima: uscita unica (consigliato TP2-TP3); "
@@ -182,11 +202,11 @@ def build_ticket(symbol: str, direction: str, entry: float,
     return {
         "accepted": True,
         "symbol": symbol, "direction": direction,
-        "entry": _round_price(symbol, entry),
-        "stop": _round_price(symbol, stop),
-        "tp1": _round_price(symbol, tp1),
-        "tp2": _round_price(symbol, tp2) if tp2 else None,
-        "tps": [_round_price(symbol, t) for t in tps],
+        "entry": _round_price(point, entry),
+        "stop": _round_price(point, stop),
+        "tp1": _round_price(point, tp1),
+        "tp2": _round_price(point, tp2) if tp2 else None,
+        "tps": [_round_price(point, t) for t in tps],
         "tp_multiples": ACCOUNT["tp_multiples"],
         "exit_plan": exit_plan,
         "inside_structure": inside_structure,
@@ -199,10 +219,14 @@ def build_ticket(symbol: str, direction: str, entry: float,
         "confidence": confidence,
         "reasons": reasons,
         "next_event": next_event,
-        "currencies": currency_exposure(symbol),
+        # le azioni non entrano nel vincolo valute FX (correlazione diversa)
+        "currencies": [] if m["cls"] == "stock" else currency_exposure(symbol),
         "spread_cost_eur": round(spread_cost_eur, 2),
+        "commission_eur": commission_eur,
         "swap_eur_day": swap_eur_day,
         "season_note": season_note,
+        "yf": m.get("yf"),          # per il journal (outcome tracking)
+        "asset_class": m["cls"],
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -248,10 +272,14 @@ def format_ticket(t: dict) -> str:
         f"     Perché: {'; '.join(t['reasons'][:3])}",
     ]
     costs = f"     Costi: spread ~€{t.get('spread_cost_eur', 0)}"
+    if t.get("commission_eur") is not None:
+        costs += f" | commissioni ~€{t['commission_eur']} (A/R)"
     if t.get("swap_eur_day") is not None:
         costs += (f" | swap ~€{t['swap_eur_day']:+.2f}/notte (stima da tassi, "
                   f"verifica su MT5)")
     lines.append(costs)
+    if t.get("company"):
+        lines.insert(1, f"     {t['company']}")
     if t.get("next_event"):
         lines.append(f"     ⚠️ {t['next_event']}")
     if t.get("season_note"):

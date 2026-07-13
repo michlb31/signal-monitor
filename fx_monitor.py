@@ -95,6 +95,29 @@ def run(verbose: bool = True) -> dict:
 
     portfolio = select_portfolio(tickets)
 
+    # ── AZIONI: discovery news-driven sull'universo IC Markets (1.697 titoli) ──
+    stock_candidates = []
+    try:
+        from stock_engine import scan as stock_scan
+        if verbose:
+            print("\n📈 Azioni — discovery news su 1.697 titoli IC Markets...")
+        sres = stock_scan(verbose=verbose)
+        stock_candidates = [
+            {k: c.get(k) for k in ("symbol", "name", "direction", "composite",
+                                   "news_score", "tech_score", "gate",
+                                   "gate_reason", "n_mentions", "price")}
+            for c in sres["candidates"]]
+        stock_ok = [t for t in sres["tickets"] if t.get("accepted")]
+        tickets.extend(sres["tickets"])
+        # Max 1 azione in portafoglio, solo se resta uno slot libero
+        if stock_ok and len(portfolio) < ACCOUNT["max_positions"]:
+            portfolio.append(stock_ok[0])
+        if verbose:
+            print(f"  ✓ {sres['n_discovered']} menzionate, "
+                  f"{len(stock_candidates)} analizzate, {len(stock_ok)} qualificate")
+    except Exception as e:
+        print(f"  ⚠️ stock engine: {e}")
+
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "n_titles": news["n_titles"],
@@ -102,6 +125,7 @@ def run(verbose: bool = True) -> dict:
         "results": results,
         "tickets": tickets,
         "portfolio": portfolio,
+        "stock_candidates": stock_candidates,
     }
 
 
@@ -141,6 +165,19 @@ def print_report(out: dict):
                if t.get("accepted") and t.get("skipped_reason")]
     for t in skipped:
         print(f"  ⏭  {t['symbol']} {t['direction']} saltato — {t['skipped_reason']}")
+
+    sc = out.get("stock_candidates", [])
+    if sc:
+        print(f"\n{'─'*70}")
+        print(f"📈 AZIONI — candidati dalle news ({len(sc)} analizzati):")
+        for c in sc[:8]:
+            ok = "✅" if c.get("gate") else "  "
+            comp = c.get("composite")
+            comp_s = f"{comp:+.2f}" if comp is not None else "  n/d"
+            print(f"  {ok} {c['symbol']:12s} {c.get('direction','?'):5s} "
+                  f"comp={comp_s}  ({c.get('n_mentions', 0)} news)  "
+                  f"{(c.get('name') or '')[:28]:28s} "
+                  f"{c.get('gate_reason', '') if not c.get('gate') else ''}")
     print(f"\n{'═'*70}")
     print(f"  ⚠️ Regole manuali: max -4% di perdita/giorno → stop. "
           f"Chiudi/riduci prima del weekend.")
@@ -196,6 +233,7 @@ def export_dashboard(out: dict):
         "calendar": [{"date": str(e["date"]), "ccy": e["ccy"],
                       "event": e["event"][:40], "impact": e["impact"],
                       "days_until": e["days_until"]} for e in events],
+        "stock_candidates": out.get("stock_candidates", []),
         "journal": journal_report(),
         "trades": trades[-40:],
         "backtest": backtest_latest,

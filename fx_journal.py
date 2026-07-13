@@ -58,6 +58,7 @@ def record_tickets(tickets: list) -> int:
         trades.append({
             "id": f"{tk['symbol']}_{datetime.now(timezone.utc).strftime('%Y%m%d%H%M')}",
             "symbol": tk["symbol"], "direction": tk["direction"],
+            "yf": tk.get("yf"),                     # per outcome tracking (azioni)
             "entry": tk["entry"], "stop": tk["stop"],
             "tp1": tk["tp1"], "tp2": tk.get("tp2"),
             "lots": tk["lots"], "risk_eur": tk["risk_eur"],
@@ -86,11 +87,12 @@ def update_outcomes() -> list:
         if t["status"] != "OPEN":
             continue
         meta = INSTRUMENTS.get(t["symbol"])
-        if not meta:
+        yf_sym = (meta or {}).get("yf") or t.get("yf")   # azioni: yf salvato nel trade
+        if not yf_sym:
             continue
         opened = datetime.fromisoformat(t["opened_at"]).date()
         try:
-            h = yf.Ticker(meta["yf"]).history(period="3mo", auto_adjust=True)
+            h = yf.Ticker(yf_sym).history(period="3mo", auto_adjust=True)
             h.index = [d.date() for d in h.index]
             bars = h[h.index > opened]
         except Exception:
