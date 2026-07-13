@@ -163,12 +163,21 @@ def discover(days_back: float = 1.0, verbose: bool = False) -> list:
     hits = {}   # sym -> {"mentions": [...], "score_sum": float}
     for title, age in titles:
         low = title.lower()
-        matched = set()
-        # 1) match per nome società (chiave a 1 o 2 token, precision-first)
+        # 1) match per nome società con ESCLUSIVITÀ DEL MATCH PIÙ LUNGO:
+        #    "Morgan Stanley" non deve attivare "Stanley Black & Decker"
+        #    (il cui key 1-token "stanley" è contenuto nello span più lungo).
+        spans = []   # (start, end, key_len, syms)
         for key, syms in name_keys.items():
             if len(syms) > 2:      # chiave ambigua → salta
                 continue
-            if re.search(rf"\b{re.escape(key)}\b", low):
+            for mm in re.finditer(rf"\b{re.escape(key)}\b", low):
+                spans.append((mm.start(), mm.end(), len(key), syms))
+        matched = set()
+        for s0, e0, klen, syms in spans:
+            contained = any(
+                (s1 <= s0 and e0 <= e1) and k1 > klen and other != syms
+                for s1, e1, k1, other in spans)
+            if not contained:
                 matched |= syms
         # 2) ticker solo se ESPLICITO: $AAPL, (AAPL), AAPL:
         for m in re.finditer(r"[\$\(]([A-Z]{2,6})[\):]?", title):
