@@ -33,7 +33,9 @@ from instruments import INSTRUMENTS, CURRENCIES, COT_CODES, currency_exposure
 warnings.filterwarnings("ignore")
 
 # ── Parametri (calibrabili dal backtest) ─────────────────────────
-WEIGHTS = {"news": 0.30, "macro": 0.30, "tech": 0.25, "cot": 0.15}
+# "event" = bias statistico pre-evento (eventstudy): attivo solo quando
+# un evento USD è a 1-7gg E lo strumento ha un pattern storico azionabile
+WEIGHTS = {"news": 0.30, "macro": 0.30, "tech": 0.25, "cot": 0.15, "event": 0.15}
 MIN_CONFIDENCE   = 0.45
 EVENT_GUARD_DAYS = 1      # blocca nuove entry se evento HIGH entro N giorni
 RSI_EXTREME_HI   = 74
@@ -313,8 +315,20 @@ def evaluate_universe(news_by_instrument: dict) -> list:
         t = tech_score(sym)
         c = cot_score(sym)
 
-        composite = (WEIGHTS["news"] * n + WEIGHTS["macro"] * mac +
-                     WEIGHTS["tech"] * t["score"] + WEIGHTS["cot"] * c)
+        # Layer 5: bias statistico pre-evento (eventstudy) — 0 se nessun
+        # evento USD a 1-7gg o nessun pattern storico azionabile
+        ev_score, ev_note = 0.0, ""
+        try:
+            from eventstudy import pre_event_bias
+            evb = pre_event_bias(sym)
+            ev_score = evb.get("score", 0.0)
+            ev_note = evb.get("note", "")
+        except Exception:
+            pass
+
+        composite = _clip(WEIGHTS["news"] * n + WEIGHTS["macro"] * mac +
+                          WEIGHTS["tech"] * t["score"] + WEIGHTS["cot"] * c +
+                          WEIGHTS["event"] * ev_score)
         direction = "LONG" if composite > 0 else "SHORT"
         confidence = abs(composite)
         sign = 1 if composite > 0 else -1
@@ -340,7 +354,9 @@ def evaluate_universe(news_by_instrument: dict) -> list:
             "symbol": sym, "direction": direction,
             "confidence": round(confidence, 3),
             "layers": {"news": round(n, 3), "macro": mac,
-                       "tech": t["score"], "cot": round(c, 3)},
+                       "tech": t["score"], "cot": round(c, 3),
+                       "event": round(ev_score, 3)},
+            "event_note": ev_note,
             "news_events": news_events,
             "tech": t, "gate": gate, "gate_reasons": reasons,
             "next_event": ev.get("next_event", ""),

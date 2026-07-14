@@ -321,7 +321,7 @@ function renderCalendar(evs) {
 function renderUniverse(rows) {
   const head = `<tr><th>Simbolo</th><th>Dir</th><th>Confidence</th>
     <th class="num">news</th><th class="num">macro</th><th class="num">tech</th>
-    <th class="num">cot</th><th class="num">RSI</th><th>Gate</th></tr>`;
+    <th class="num">cot</th><th class="num">evt</th><th class="num">RSI</th><th>Gate</th></tr>`;
   $("universe").innerHTML = head + rows.map(r => {
     const dir = r.direction === "LONG"
       ? `<span class="dir-long">▲ L</span>` : `<span class="dir-short">▼ S</span>`;
@@ -333,6 +333,7 @@ function renderUniverse(rows) {
     return `<tr><td><b>${esc(r.symbol)}</b></td><td>${dir}</td><td>${bar}</td>
       <td class="num">${fmt(L.news)}</td><td class="num">${fmt(L.macro)}</td>
       <td class="num">${fmt(L.tech)}</td><td class="num">${fmt(L.cot)}</td>
+      <td class="num">${fmt(L.event)}</td>
       <td class="num">${fmt(r.rsi,0)}</td><td>${gate}</td></tr>`;
   }).join("");
 }

@@ -245,8 +245,12 @@ def analyze_candidates(candidates: list, max_deep: int = 8,
             if tech > 0 and rsi >= 74: tech *= 0.5
             if tech < 0 and rsi <= 26: tech *= 0.5
 
-            # Earnings blackout ≤2gg (lezione AVGO -15% overnight)
+            # Earnings: blackout ≤2gg (lezione AVGO -15% overnight);
+            # a 3-7gg si attiva invece lo studio del DRIFT PRE-EARNINGS
+            # (eventstudy): se storicamente il titolo sale verso la
+            # trimestrale, il segnale concorde riceve un bonus.
             blackout = False
+            drift_bonus, drift_note = 0.0, ""
             try:
                 cal = t.calendar
                 ed = cal.get("Earnings Date") if cal is not None else None
@@ -258,10 +262,25 @@ def analyze_candidates(candidates: list, max_deep: int = 8,
                     if 0 <= days <= 2:
                         blackout = True
                         c["gate_reason"] = f"earnings tra {days}gg — blackout"
+                    elif 3 <= days <= 7:
+                        from eventstudy import earnings_drift
+                        dr = earnings_drift(c["meta"]["yf"])
+                        if dr.get("favorable_long"):
+                            drift_bonus = +0.10
+                            drift_note = (f"drift pre-earnings favorevole: "
+                                          f"{dr['mean_pct']:+.1f}% medio nei 5gg pre "
+                                          f"({int(dr['pos_rate']*100)}%, n={dr['n']}) — earnings tra {days}gg")
+                        elif dr.get("favorable_short"):
+                            drift_bonus = -0.10
+                            drift_note = (f"drift pre-earnings negativo: "
+                                          f"{dr['mean_pct']:+.1f}% medio nei 5gg pre "
+                                          f"({int(dr['pos_rate']*100)}%, n={dr['n']}) — earnings tra {days}gg")
             except Exception:
                 pass
 
-            composite = 0.5 * c["news_score"] + 0.5 * tech
+            composite = 0.5 * c["news_score"] + 0.5 * tech + drift_bonus
+            if drift_note:
+                c["drift_note"] = drift_note
             direction = "LONG" if composite > 0 else "SHORT"
             sign = 1 if composite > 0 else -1
 
@@ -300,6 +319,8 @@ def scan(verbose: bool = False) -> dict:
             continue
         reasons = [f"news: {c['titles'][0][:60]}",
                    f"sentiment {c['news_score']:+.2f} / tech {c['tech_score']:+.2f} concordi"]
+        if c.get("drift_note"):
+            reasons.append(c["drift_note"])
         tk = build_ticket(c["symbol"], c["direction"], c["price"],
                           atr_val=c["atr"], support=c["support"],
                           resistance=c["resistance"],

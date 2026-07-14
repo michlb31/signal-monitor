@@ -83,6 +83,8 @@ def run(verbose: bool = True) -> dict:
         reasons.append(f"macro {L['macro']:+.2f} / tech {L['tech']:+.2f} concordi")
         if abs(L["cot"]) >= 0.15:
             reasons.append(f"COT {L['cot']:+.2f}")
+        if r.get("event_note"):
+            reasons.append(r["event_note"])
         tk = build_ticket(
             r["symbol"], r["direction"], entry,
             atr_val=t.get("atr", 0),
@@ -139,14 +141,15 @@ def print_report(out: dict):
           f"  |  equity €{ACCOUNT['equity_eur']:.0f} @ 1:{ACCOUNT['leverage']}")
     print(f"{'═'*70}\n")
 
-    print(f"{'':2}{'Simbolo':<9}{'Dir':<7}{'Conf':>5}   {'news':>6}{'macro':>7}{'tech':>6}{'cot':>6}   Esito")
+    print(f"{'':2}{'Simbolo':<9}{'Dir':<7}{'Conf':>5}   {'news':>6}{'macro':>7}{'tech':>6}{'cot':>6}{'evt':>6}   Esito")
     print(f"{'─'*70}")
     for r in out["results"]:
         ok = "✅" if r["gate"] else "  "
         L = r["layers"]
         note = "PASS → ticket" if r["gate"] else (r["gate_reasons"][0] if r["gate_reasons"] else "")
         print(f"{ok:2}{r['symbol']:<9}{r['direction']:<7}{r['confidence']:>5.2f}   "
-              f"{L['news']:>6.2f}{L['macro']:>7.2f}{L['tech']:>6.2f}{L['cot']:>6.2f}   {note[:32]}")
+              f"{L['news']:>6.2f}{L['macro']:>7.2f}{L['tech']:>6.2f}{L['cot']:>6.2f}"
+              f"{L.get('event', 0):>6.2f}   {note[:32]}")
 
     print(f"\n{'─'*70}")
     if out["portfolio"]:
