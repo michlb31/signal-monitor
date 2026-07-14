@@ -47,6 +47,7 @@ THEMES = {
     "CHINA":    "china economy stimulus",
     "DOLLAR":   "US dollar forex",
     "GOLD":     "gold price",
+    "COCOA":    "cocoa prices Ivory Coast Ghana harvest",
 }
 
 # ─────────────────────────────────────────────
@@ -153,6 +154,40 @@ EVENT_RULES = [
     {"name": "Stress fiscale USA",
      "pattern": r"(government shutdown|debt ceiling|credit (downgrade|rating cut)|fiscal crisis)",
      "impacts": [("USD", "BEAR", 0.55), ("XAUUSD", "BULL", 0.55), ("US500", "BEAR", 0.4)]},
+    # ── Cacao (driver: meteo/raccolto Africa Occidentale — vedi research/cocoa_research.md) ──
+    {"name": "Cacao meteo avverso Africa Occidentale",
+     "pattern": r"(cocoa|ivory coast|c[oô]te d.ivoire|ghana|west africa)\b.{0,80}(drought|dry (weather|spell|conditions|season)|harmattan|heat ?wave|poor rain|below[- ]average rain|scant rain|irregular rain)",
+     "impacts": [("COCOA", "BULL", 0.8)]},
+    {"name": "Cacao meteo favorevole / raccolto abbondante",
+     "pattern": r"(cocoa|ivory coast|c[oô]te d.ivoire|ghana)\b.{0,80}((good|favou?rable|beneficial|abundant|ample|adequate) (rain|weather|moisture|soil)|bumper (crop|harvest)|strong (crop|harvest|output))",
+     "impacts": [("COCOA", "BEAR", 0.75)]},
+    {"name": "Cacao malattie piante",
+     "pattern": r"cocoa\b.{0,80}(black ?pod|swollen shoot|cssv|fungal|disease outbreak|pest)",
+     "impacts": [("COCOA", "BULL", 0.8)]},
+    {"name": "El Niño (rischio siccità Africa Occidentale)",
+     "pattern": r"el ni[ñn]o\b.{0,70}(develop|strengthen|emerg|return|watch|advisory|declared|intensif)",
+     "impacts": [("COCOA", "BULL", 0.55)]},
+    {"name": "Cacao arrivi/export in calo",
+     "pattern": r"cocoa\b.{0,80}(arrivals?|port deliver\w+|exports?|shipments?)\b.{0,50}(lag|below|down|fall|drop|decline|behind|slump|halt)",
+     "impacts": [("COCOA", "BULL", 0.75)]},
+    {"name": "Cacao arrivi/export in aumento",
+     "pattern": r"cocoa\b.{0,80}(arrivals?|port deliver\w+|exports?|shipments?)\b.{0,50}(ahead|above|up \d|rise|surge|jump|record|outpac)",
+     "impacts": [("COCOA", "BEAR", 0.75)]},
+    {"name": "Cacao deficit offerta",
+     "pattern": r"cocoa\b.{0,60}(deficit|shortage|shortfall|supply (crunch|squeeze|concerns)|stocks? (dwindl|at low|fall))",
+     "impacts": [("COCOA", "BULL", 0.85)]},
+    {"name": "Cacao surplus offerta",
+     "pattern": r"cocoa\b.{0,60}(surplus|glut|oversuppl|stocks? (rise|build|swell))",
+     "impacts": [("COCOA", "BEAR", 0.85)]},
+    {"name": "Instabilità Costa d'Avorio / Ghana",
+     "pattern": r"(ivory coast|c[oô]te d.ivoire|ghana)\b.{0,80}(unrest|coup|protest|strike|port (strike|closure|congestion)|export (ban|halt|suspension)|election (violence|crisis))",
+     "impacts": [("COCOA", "BULL", 0.7)]},
+    {"name": "Cacao domanda debole (grindings)",
+     "pattern": r"(cocoa|chocolate)\b.{0,80}(grindings? (fall|fell|drop|decline|down|weak)|demand (destruction|falls?|weakens?|slump))",
+     "impacts": [("COCOA", "BEAR", 0.7)]},
+    {"name": "Cacao domanda forte (grindings)",
+     "pattern": r"(cocoa|chocolate)\b.{0,80}(grindings? (rise|rose|jump|beat|up|strong)|demand (recover|rebound|resilient|strong))",
+     "impacts": [("COCOA", "BULL", 0.6)]},
 ]
 
 

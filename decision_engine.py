@@ -141,6 +141,14 @@ def currency_strength() -> dict:
     return {c: round(_clip(v / 1.5), 3) for c, v in raw.items()}
 
 
+# Stagionalità cacao MISURATA su CC=F 2000-2026 (research/cocoa_research.md):
+# ott -2.80%/35% win (arrivo raccolto → il pattern più forte), apr +3.02%/67%,
+# nov +3.42%/54% (dispersivo), dic +2.59%, feb +2.25%, mag -1.40%, set -0.75%.
+# Score prudenziali: forti solo dove magnitudo E win rate concordano.
+COCOA_SEASONAL = {1: 0.2, 2: 0.3, 3: 0.0, 4: 0.7, 5: -0.3, 6: 0.3,
+                  7: 0.1, 8: 0.1, 9: -0.2, 10: -0.8, 11: 0.4, 12: 0.4}
+
+
 def macro_scores() -> dict:
     """Score macro per ogni strumento dell'universo."""
     strength = currency_strength()
@@ -165,6 +173,12 @@ def macro_scores() -> dict:
                 out[sym] = round(_clip(-dxy_1d / 0.8 * 0.5), 3)
         elif m["cls"] == "energy":
             out[sym] = round(_clip(-dxy_1d / 0.8 * 0.4 + risk * 0.2), 3) if sym != "XNGUSD" else 0.0
+        elif m["cls"] == "soft":
+            # Asset idiosincratico (correlazioni macro misurate ≈0, DXY -0.18):
+            # il "macro" qui è la stagionalità del raccolto + tilt dollaro minimo
+            from datetime import datetime as _dt
+            seas = COCOA_SEASONAL.get(_dt.now().month, 0.0)
+            out[sym] = round(_clip(0.8 * seas - dxy_1d / 0.8 * 0.15), 3)
         elif m["cls"] == "index":
             out[sym] = round(risk * (1.0 if m["quote"] == "USD" else 0.8), 3)
         else:

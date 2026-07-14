@@ -142,8 +142,9 @@ def build_ticket(symbol: str, direction: str, entry: float,
         notional_usd = lots * 100 * entry
     elif m["cls"] == "stock":
         notional_usd = lots * entry * ccy_usd        # 1 lot = 1 azione
-    else:  # energia (1000 barili/lot), indici (1×)
-        notional_usd = lots * (1000 if m["cls"] == "energy" else 1) * entry
+    else:  # energia (1000 barili/lot), soft cacao (10 t/lot, stima da verificare su MT5), indici (1×)
+        _mult = 1000 if m["cls"] == "energy" else (10 if m["cls"] == "soft" else 1)
+        notional_usd = lots * _mult * entry
     inst_leverage = m.get("leverage", ACCOUNT["leverage"])
     margin_eur = notional_usd / inst_leverage / eurusd
 

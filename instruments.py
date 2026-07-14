@@ -24,6 +24,7 @@ COT_CODES = {
     "EUR": "099741", "GBP": "096742", "JPY": "097741", "CHF": "092741",
     "CAD": "090741", "AUD": "232741", "NZD": "112741",
     "XAUUSD": "088691", "XAGUSD": "084691", "XTIUSD": "067651",
+    "COCOA": "073732",
 }
 
 INSTRUMENTS = {
@@ -67,6 +68,15 @@ INSTRUMENTS = {
                "point": 0.01, "usd_per_point_001": 0.01, "tags": ["OPEC", "GEO", "OIL"]},
     "XNGUSD": {"cls": "energy", "leverage": 10, "spread": 10.0, "base": None, "quote": "USD", "td": None, "yf": "NG=F",
                "point": 0.001, "usd_per_point_001": 0.01, "tags": ["GAS"]},
+    # ── SOFT COMMODITIES ────────────────────────────────────────────────
+    # Cocoa: futures CFD IC Markets (simbolo MT5 "Cocoa"), replica ICE US ($/t).
+    # ⚠️ VERIFICARE su MT5 (tasto dx → Specifiche): contract size e lotto minimo.
+    #    Stima: 1 lot = 10 t (mirror ICE) → 0.01 lot = $0.10 per $1/t.
+    #    Con vol attuale ~76% annua (ATR ~$270/g) il risk manager rifiuterà i
+    #    ticket (rischio > cap 3% su €400): resta in universo come segnale
+    #    informativo finché la vol non rientra. Ricerca: research/cocoa_research.md
+    "COCOA":  {"cls": "soft", "leverage": 10, "spread": 8.0, "base": None, "quote": "USD", "td": None, "yf": "CC=F",
+               "point": 1.0, "usd_per_point_001": 0.10, "tags": ["COCOA", "WEATHER", "SOFTS"]},
     # ── INDICI ──────────────────────────────────────────────────────────
     # Simboli VERIFICATI su icmarkets.eu/en/trading-markets/indices (2026-07-09):
     # US500, USTEC, US30, DE40, UK100, JP225, AUS200 (disponibili anche:
@@ -132,7 +142,7 @@ def currency_exposure(symbol: str) -> list:
 
 if __name__ == "__main__":
     print(f"Universo IC Markets: {len(INSTRUMENTS)} strumenti")
-    for cls in ["fx", "metal", "energy", "index"]:
+    for cls in ["fx", "metal", "energy", "soft", "index"]:
         syms = [s for s, m in INSTRUMENTS.items() if m["cls"] == cls]
         print(f"  {cls:7s}: {', '.join(syms)}")
     print(f"\nEsempio pairs_for_currency('USD'): {pairs_for_currency('USD')}")
