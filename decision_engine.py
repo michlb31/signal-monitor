@@ -206,6 +206,10 @@ def tech_score(symbol: str) -> dict:
     ma50 = ta.ma(h["Close"], 50)
     ma200 = ta.ma(h["Close"], 200)
     supp, res = ta.support_resistance(h)
+    # Estensione: quanto del movimento è GIÀ avvenuto (anti-inseguimento)
+    ema20 = ta.ema(closes, 20)[-1] if len(closes) >= 20 else cur
+    stretch = (cur - ema20) / atr_v if atr_v else 0.0
+    burst = (cur - closes[-4]) / atr_v if atr_v and len(closes) >= 4 else 0.0
 
     s = 0.0
     if ma50:
@@ -243,6 +247,7 @@ def tech_score(symbol: str) -> dict:
 
     return {"score": round(_clip(s), 3), "price": cur, "rsi": rsi_v,
             "atr": atr_v, "ma50": ma50, "ma200": ma200,
+            "ema20": ema20, "stretch": round(stretch, 2), "burst": round(burst, 2),
             "support": supp, "resistance": res, "macd_bull": macd_bull,
             "vol_ratio": round(vol_ratio, 2)}
 
@@ -360,9 +365,27 @@ def evaluate_universe(news_by_instrument: dict) -> list:
             gate = False; reasons.append(f"RSI {rsi_v:.0f} ipercomprato")
         if sign < 0 and rsi_v <= RSI_EXTREME_LO:
             gate = False; reasons.append(f"RSI {rsi_v:.0f} ipervenduto")
+        # ANTI-INSEGUIMENTO (fix "segnali in ritardo"): il layer tech su daily
+        # CONFERMA i trend, non li anticipa — quindi il composito scatta per
+        # natura DOPO il movimento. Se il prezzo è già estremo rispetto alla
+        # sua media, entrare a mercato = comprare il massimo dello spike.
+        stretch, burst = t.get("stretch", 0.0), t.get("burst", 0.0)
+        if sign > 0 and (stretch > 2.2 or burst > 2.5):
+            gate = False; reasons.append(f"già esteso (+{stretch:.1f} ATR da EMA20) — non inseguire")
+        if sign < 0 and (stretch < -2.2 or burst < -2.5):
+            gate = False; reasons.append(f"già esteso ({stretch:.1f} ATR da EMA20) — non inseguire")
         ev = event_guard(sym)
         if ev.get("blocked"):
             gate = False; reasons.append(ev["reason"])
+
+        # Esteso ma non estremo → il ticket diventa ordine LIMIT sul
+        # ritracciamento verso EMA20 (dove il prezzo "si livella"), non market
+        entry_mode, pullback_px = "market", None
+        if gate and abs(stretch) > 1.2:
+            em = t.get("ema20") or t.get("price") or 0
+            av = t.get("atr") or 0
+            pullback_px = em + (0.3 * av if sign > 0 else -0.3 * av)
+            entry_mode = "pullback"
 
         results.append({
             "symbol": sym, "direction": direction,
@@ -372,6 +395,7 @@ def evaluate_universe(news_by_instrument: dict) -> list:
                        "event": round(ev_score, 3)},
             "event_note": ev_note,
             "news_events": news_events,
+            "entry_mode": entry_mode, "pullback_px": pullback_px,
             "tech": t, "gate": gate, "gate_reasons": reasons,
             "next_event": ev.get("next_event", ""),
         })

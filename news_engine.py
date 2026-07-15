@@ -224,12 +224,13 @@ def collect_titles(days_back: float = 1.5, per_theme: int = 15) -> list:
 
 
 def _recency(age_hours: float) -> float:
-    """Time decay (stessa filosofia del monitor azionario, tarata sul forex)."""
+    """Time decay. Più aggressivo di prima: una notizia macro di ieri è nei
+    prezzi da ieri — pesarla 0.45 contribuiva ai segnali in ritardo."""
     if age_hours < 2:   return 1.0
-    if age_hours < 6:   return 0.85
-    if age_hours < 12:  return 0.65
-    if age_hours < 24:  return 0.45
-    return 0.25
+    if age_hours < 6:   return 0.8
+    if age_hours < 12:  return 0.55
+    if age_hours < 24:  return 0.3
+    return 0.15
 
 
 # ─────────────────────────────────────────────

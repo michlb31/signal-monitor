@@ -76,6 +76,20 @@ _NEGATIVE = {
     "disappointing": 2.0, "disappoints": 2.0, "struggles": 1.5, "struggle": 1.3,
 }
 
+# Verbi di PURA price-action: raccontano un movimento GIÀ avvenuto sul
+# grafico (quindi già prezzato), non un catalyst nuovo. Pesarli come i
+# fondamentali significa comprare DOPO la salita ("Stock Gains as...") —
+# la causa n.1 dei segnali in ritardo. Restano direzionali ma valgono il 40%.
+_PRICE_ACTION = {
+    "surge", "surges", "soars", "soar", "jumps", "jump", "rally", "rallies",
+    "gains", "gain", "climbs", "rises", "record", "high",
+    "plunge", "plunges", "plummet", "plummets", "crash", "crashes",
+    "drops", "drop", "falls", "fall", "sinks", "tumble", "tumbles",
+    "slumps", "slump", "slides", "slide", "sell-off", "selloff",
+    "declines", "decline", "low",
+}
+_PRICE_ACTION_W = 0.4
+
 # Negatori che invertono il sentiment della parola seguente
 _NEGATORS = {"not", "no", "never", "without", "fails", "fail", "failed", "lacks", "lack"}
 
@@ -92,11 +106,12 @@ def _lexicon_score(text: str) -> float:
     for i, tok in enumerate(tokens):
         prev = tokens[i - 1] if i > 0 else ""
         flip = -1.0 if prev in _NEGATORS else 1.0
+        damp = _PRICE_ACTION_W if tok in _PRICE_ACTION else 1.0
         if tok in _POSITIVE:
-            score += _POSITIVE[tok] * flip
+            score += _POSITIVE[tok] * damp * flip
             hits += 1
         elif tok in _NEGATIVE:
-            score -= _NEGATIVE[tok] * flip
+            score -= _NEGATIVE[tok] * damp * flip
             hits += 1
     if hits == 0:
         return 0.0

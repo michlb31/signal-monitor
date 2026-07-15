@@ -77,6 +77,11 @@ def run(verbose: bool = True) -> dict:
         t = r["tech"]
         entry, src = _entry_price(r["symbol"], t.get("price", 0))
         reasons = []
+        # Segnale nato con prezzo già esteso → ordine LIMIT sul ritracciamento
+        if r.get("entry_mode") == "pullback" and r.get("pullback_px"):
+            entry, src = r["pullback_px"], "limit"
+            reasons.append(f"prezzo esteso {t.get('stretch', 0):+.1f} ATR da EMA20 → "
+                           f"ordine LIMIT sul ritracciamento (NON a mercato)")
         if r["news_events"]:
             reasons.append(f"news: {', '.join(r['news_events'][:2])}")
         L = r["layers"]
@@ -93,6 +98,7 @@ def run(verbose: bool = True) -> dict:
             next_event=r.get("next_event", ""),
         )
         tk["entry_source"] = src
+        tk["entry_type"] = "LIMIT" if src == "limit" else "MARKET"
         tickets.append(tk)
 
     portfolio = select_portfolio(tickets)
@@ -303,8 +309,9 @@ def send_slack(out: dict, alerts: list, webhook: str):
             t = a["ticket"]
             icon = "🟢" if t["direction"] == "LONG" else "🔴"
             ladder = " → ".join(str(p) for p in (t.get("tps") or [t.get("tp1")]))
+            etype = " ⏳ LIMIT (ritracciamento)" if t.get("entry_type") == "LIMIT" else ""
             txt = (f"{icon} *{a['msg']}* (conf {int(t['confidence']*100)}%)\n"
-                   f"Entry `{t['entry']}` | SL `{t['stop']}`\n"
+                   f"Entry `{t['entry']}`{etype} | SL `{t['stop']}`\n"
                    f"TP ladder: `{ladder}`\n"
                    f"Size *{t['lots']} lot* | Rischio €{t['risk_eur']} ({t['risk_pct']}%)\n"
                    f"_{t.get('exit_plan','')}_\n"

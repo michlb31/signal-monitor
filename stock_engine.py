@@ -53,7 +53,9 @@ EXCHANGE_SPECS = {
 NEWS_FEEDS = [
     "https://www.cnbc.com/id/100003114/device/rss/rss.html",
     "https://feeds.marketwatch.com/marketwatch/topstories/",
-    "https://news.google.com/rss/search?q=stock%20surges%20OR%20plunges%20OR%20upgrade%20OR%20earnings&hl=en-US&gl=US&ceid=US:en",
+    # Query CATALYST-first: cercare "surges OR plunges" significa trovare i
+    # movimenti GIÀ avvenuti e arrivare tardi per costruzione
+    "https://news.google.com/rss/search?q=stock%20upgrade%20OR%20downgrade%20OR%20guidance%20OR%20earnings%20OR%20contract&hl=en-US&gl=US&ceid=US:en",
     "https://news.google.com/rss/search?q=stock%20market%20movers%20today&hl=en-US&gl=US&ceid=US:en",
 ]
 
@@ -62,6 +64,18 @@ GENERIC_TOKENS = {
     "american", "bank", "capital", "energy", "first", "general", "global",
     "gold", "group", "national", "new", "pacific", "royal", "standard",
     "star", "sun", "united", "west", "digital", "air", "city", "life",
+    # Parole inglesi comuni che sono anche primo token di una società.
+    # Lezione IBM (14/07): "International Business Machines" → chiave
+    # "business" → short su "Business declares war on Pentagon..." che non
+    # parlava di IBM. Idem "equity"→EQR, "target"→TGT ("price target"!).
+    # Questi titoli restano scopribili via 2-token o ticker esplicito (TGT).
+    "business", "equity", "target", "discover", "gap", "shell", "dollar",
+    "public", "state", "southern", "western", "universal", "principal",
+    "citizens", "regions", "best", "five", "three", "coach", "extra",
+    "simon", "church", "waste", "tractor", "progressive", "main", "realty",
+    "income", "service", "republic", "ball", "news", "match", "block",
+    "fair", "live", "take", "booking", "advance", "morgan", "wells",
+    "delta", "phillips", "edison", "host",
 }
 SUFFIX_TOKENS = {
     "inc", "corp", "corporation", "plc", "sa", "ag", "nv", "se", "spa",
@@ -122,11 +136,46 @@ def _name_keys(universe: dict) -> dict:
 # ─────────────────────────────────────────────
 
 def _recency(age_h: float) -> float:
-    if age_h < 2:  return 1.0
-    if age_h < 6:  return 0.8
-    if age_h < 12: return 0.6
-    if age_h < 24: return 0.4
-    return 0.2
+    # Decadimento AGGRESSIVO: una notizia di 12h fa è nel prezzo da 12h.
+    # Il vecchio profilo (24h → 0.4) produceva segnali in ritardo di un giorno.
+    if age_h < 1:  return 1.0
+    if age_h < 3:  return 0.7
+    if age_h < 6:  return 0.45
+    if age_h < 12: return 0.25
+    return 0.1
+
+
+def _match_title(title: str, name_keys: dict, ticker_by_bare: dict) -> set:
+    """Simboli citati in un titolo: nome società (con esclusività dello span
+    più lungo) o ticker esplicito. Estratta da discover() per testabilità."""
+    low = title.lower()
+    # 1) match per nome società con ESCLUSIVITÀ DEL MATCH PIÙ LUNGO:
+    #    "Morgan Stanley" non deve attivare "Stanley Black & Decker"
+    #    (il cui key 1-token "stanley" è contenuto nello span più lungo).
+    spans = []   # (start, end, key_len, syms)
+    for key, syms in name_keys.items():
+        if len(syms) > 2:      # chiave ambigua → salta
+            continue
+        for mm in re.finditer(rf"\b{re.escape(key)}\b", low):
+            # Chiave 1-token: nel titolo ORIGINALE deve essere un nome
+            # proprio (Maiuscolo) — "as equity trading jumps" non è
+            # Equity Residential, "Apple beats" sì
+            if " " not in key and not title[mm.start()].isupper():
+                continue
+            spans.append((mm.start(), mm.end(), len(key), syms))
+    matched = set()
+    for s0, e0, klen, syms in spans:
+        contained = any(
+            (s1 <= s0 and e0 <= e1) and k1 > klen and other != syms
+            for s1, e1, k1, other in spans)
+        if not contained:
+            matched |= syms
+    # 2) ticker solo se ESPLICITO: $AAPL, (AAPL), AAPL:
+    for m in re.finditer(r"[\$\(]([A-Z]{2,6})[\):]?", title):
+        bare = m.group(1)
+        if bare in ticker_by_bare:
+            matched |= ticker_by_bare[bare]
+    return matched
 
 
 def discover(days_back: float = 1.0, verbose: bool = False) -> list:
@@ -162,29 +211,7 @@ def discover(days_back: float = 1.0, verbose: bool = False) -> list:
 
     hits = {}   # sym -> {"mentions": [...], "score_sum": float}
     for title, age in titles:
-        low = title.lower()
-        # 1) match per nome società con ESCLUSIVITÀ DEL MATCH PIÙ LUNGO:
-        #    "Morgan Stanley" non deve attivare "Stanley Black & Decker"
-        #    (il cui key 1-token "stanley" è contenuto nello span più lungo).
-        spans = []   # (start, end, key_len, syms)
-        for key, syms in name_keys.items():
-            if len(syms) > 2:      # chiave ambigua → salta
-                continue
-            for mm in re.finditer(rf"\b{re.escape(key)}\b", low):
-                spans.append((mm.start(), mm.end(), len(key), syms))
-        matched = set()
-        for s0, e0, klen, syms in spans:
-            contained = any(
-                (s1 <= s0 and e0 <= e1) and k1 > klen and other != syms
-                for s1, e1, k1, other in spans)
-            if not contained:
-                matched |= syms
-        # 2) ticker solo se ESPLICITO: $AAPL, (AAPL), AAPL:
-        for m in re.finditer(r"[\$\(]([A-Z]{2,6})[\):]?", title):
-            bare = m.group(1)
-            if bare in ticker_by_bare:
-                matched |= ticker_by_bare[bare]
-
+        matched = _match_title(title, name_keys, ticker_by_bare)
         if not matched:
             continue
         s = score_sentiment([title])
@@ -235,6 +262,10 @@ def analyze_candidates(candidates: list, max_deep: int = 8,
             ma50 = ta.ma(h["Close"], 50)
             ma200 = ta.ma(h["Close"], 200)
             supp, res = ta.support_resistance(h)
+            # Estensione del prezzo: quanto del movimento è GIÀ avvenuto
+            ema20 = ta.ema(closes, 20)[-1] if len(closes) >= 20 else cur
+            stretch = (cur - ema20) / atr if atr else 0.0
+            burst = (cur - closes[-4]) / atr if atr and len(closes) >= 4 else 0.0
 
             tech = 0.0
             if ma50:
@@ -284,7 +315,16 @@ def analyze_candidates(candidates: list, max_deep: int = 8,
             direction = "LONG" if composite > 0 else "SHORT"
             sign = 1 if composite > 0 else -1
 
-            gate = (not blackout
+            # ANTI-INSEGUIMENTO: la news spesso RACCONTA un movimento già
+            # avvenuto (il "ritardo enorme" dei segnali nasce qui). Se il
+            # prezzo è già lontano dalla sua media, non si insegue.
+            chase = (sign > 0 and (stretch > 2.2 or burst > 2.5)) or \
+                    (sign < 0 and (stretch < -2.2 or burst < -2.5))
+            if chase and "gate_reason" not in c:
+                c["gate_reason"] = (f"già esteso ({stretch:+.1f} ATR da EMA20, "
+                                    f"{burst:+.1f} ATR in 3gg) — non inseguire")
+
+            gate = (not blackout and not chase
                     and abs(composite) >= 0.5
                     and c["news_score"] * sign > 0.1
                     and tech * sign > 0.1)
@@ -292,9 +332,16 @@ def analyze_candidates(candidates: list, max_deep: int = 8,
                 c["gate_reason"] = (f"composite {abs(composite):.2f} < 0.5"
                                     if abs(composite) < 0.5 else "news/tech non concordi")
 
+            # Esteso ma non estremo → niente ingresso a mercato: ordine
+            # LIMIT sul ritracciamento verso la media (dove "si livella")
+            if gate and abs(stretch) > 1.2:
+                c["entry_mode"] = "pullback"
+                c["entry_limit"] = round(ema20 + (0.3 * atr if sign > 0 else -0.3 * atr), 2)
+
             c.update({"tech_score": round(tech, 3), "composite": round(composite, 3),
                       "direction": direction, "gate": gate,
                       "price": round(cur, 2), "rsi": rsi, "atr": atr,
+                      "stretch": round(stretch, 2), "ema20": round(ema20, 2),
                       "support": supp, "resistance": res})
             out.append(c)
             if verbose:
@@ -321,13 +368,19 @@ def scan(verbose: bool = False) -> dict:
                    f"sentiment {c['news_score']:+.2f} / tech {c['tech_score']:+.2f} concordi"]
         if c.get("drift_note"):
             reasons.append(c["drift_note"])
-        tk = build_ticket(c["symbol"], c["direction"], c["price"],
+        entry = c["price"]
+        if c.get("entry_mode") == "pullback":
+            entry = c["entry_limit"]
+            reasons.append(f"prezzo esteso {c.get('stretch', 0):+.1f} ATR da EMA20 → "
+                           f"ordine LIMIT a {entry} sul ritracciamento (NON a mercato)")
+        tk = build_ticket(c["symbol"], c["direction"], entry,
                           atr_val=c["atr"], support=c["support"],
                           resistance=c["resistance"],
                           confidence=abs(c["composite"]), reasons=reasons,
                           meta=c["meta"])
         tk["asset_class"] = "stock"
         tk["company"] = c["name"]
+        tk["entry_type"] = "LIMIT" if c.get("entry_mode") == "pullback" else "MARKET"
         tickets.append(tk)
     return {"candidates": analyzed, "tickets": tickets,
             "n_discovered": len(cands)}

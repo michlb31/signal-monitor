@@ -60,6 +60,8 @@ def _technical_bias() -> dict:
     supp, res = _support_resistance(hist.tail(60))
     ma50 = float(hist["Close"].rolling(50).mean().iloc[-1])
     ma200 = float(hist["Close"].rolling(200).mean().iloc[-1])
+    ema20 = float(hist["Close"].ewm(span=20).mean().iloc[-1])
+    stretch = (cur - ema20) / atr if atr else 0.0   # movimento già fatto, in ATR
 
     # Bias tecnico: sotto MA200 + MACD bearish = bearish
     score = 0
@@ -76,6 +78,7 @@ def _technical_bias() -> dict:
         "bias": bias, "score": score, "price": round(cur, 2),
         "rsi": rsi, "macd_bull": mb, "atr": round(atr, 2),
         "ma50": round(ma50, 2), "ma200": round(ma200, 2),
+        "ema20": round(ema20, 2), "stretch": round(stretch, 2),
         "support": supp, "resistance": res, "bb_pos": bb_pos,
         "price_source": source,
     }
@@ -276,11 +279,20 @@ def detect_changes(a: dict, state: dict) -> list:
     prev_dir = state.get("direction")
     cur_dir = a["direction"]
     if prev_dir and prev_dir != cur_dir:
-        alerts.append({
-            "type": "BIAS_FLIP",
-            "msg": f"⚠️ Bias XAU cambiato: {prev_dir} → *{cur_dir}* "
-                   f"(score {a['composite_score']:+.1f}). Rivaluta la posizione."
-        })
+        msg = (f"⚠️ Bias XAU cambiato: {prev_dir} → *{cur_dir}* "
+               f"(score {a['composite_score']:+.1f}). Rivaluta la posizione.")
+        # ANTI-INSEGUIMENTO: il bias su daily flippa DOPO il movimento (è
+        # conferma, non anticipo). Se il prezzo è già esteso, entrare a
+        # mercato = comprare lo spike (caso XAU 4090 del 14/07).
+        stretch = tech.get("stretch") or 0.0
+        ema20, atr_v = tech.get("ema20"), tech.get("atr") or 0.0
+        chasing = (cur_dir in ("LONG", "BULLISH") and stretch > 1.2) or \
+                  (cur_dir in ("SHORT", "BEARISH") and stretch < -1.2)
+        if chasing and ema20:
+            pull = ema20 + (0.3 * atr_v if stretch > 0 else -0.3 * atr_v)
+            msg += (f"\n🚦 Prezzo già esteso {stretch:+.1f} ATR da EMA20 (${ema20:.0f}): "
+                    f"NON entrare a mercato — ordine LIMIT sul ritracciamento verso ~${pull:.0f}.")
+        alerts.append({"type": "BIAS_FLIP", "msg": msg})
 
     # 2. Escalation evento ad alto impatto (avvisa una volta per soglia)
     ev = a.get("event", {}).get("event", {})
