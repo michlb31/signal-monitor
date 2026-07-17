@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-17T22:22:21.155103+00:00",
+ "generated_at": "2026-07-17T23:24:39.717824+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 52,
+ "n_titles": 53,
  "news_events": [
   {
    "rule": "CPI USA freddo",
@@ -144,8 +144,8 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.19 < 0.45",
-   "price": 10600.3701171875,
-   "rsi": 59.3
+   "price": 10572.2001953125,
+   "rsi": 55.2
   },
   {
    "symbol": "US30",
@@ -435,10 +435,10 @@
    "risk_pct": 1.7,
    "margin_eur": 25.89,
    "rr_tp1": 2.0,
-   "confidence": 0.698,
+   "confidence": 0.754,
    "reasons": [
     "news: Netflix stock falls as earnings forecast disappoints, compan",
-    "sentiment -0.55 / tech -0.85 concordi",
+    "sentiment -0.66 / tech -0.85 concordi",
     "prezzo esteso -2.1 ATR da EMA20 \u2192 ordine LIMIT a 74.08 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -449,7 +449,7 @@
    "season_note": "",
    "yf": "NFLX",
    "asset_class": "stock",
-   "timestamp": "2026-07-17T22:22:21.106956+00:00",
+   "timestamp": "2026-07-17T23:24:39.717759+00:00",
    "company": "Netflix Inc",
    "entry_type": "LIMIT"
   }
@@ -480,16 +480,16 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "TMHC.NYSE",
-   "name": "Taylor Morrison Home Corp",
+   "symbol": "NFLX.NAS",
+   "name": "Netflix Inc",
    "direction": "SHORT",
-   "composite": -0.075,
-   "news_score": -0.7,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.07 < 0.5",
-   "n_mentions": 1,
-   "price": 72.13
+   "composite": -0.754,
+   "news_score": -0.658,
+   "tech_score": -0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 8,
+   "price": 68.95
   },
   {
    "symbol": "PLNT.NYSE",
@@ -504,16 +504,16 @@
    "price": 52.36
   },
   {
-   "symbol": "NFLX.NAS",
-   "name": "Netflix Inc",
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
    "direction": "SHORT",
-   "composite": -0.698,
-   "news_score": -0.545,
-   "tech_score": -0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 7,
-   "price": 68.95
+   "composite": -0.286,
+   "news_score": -0.423,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.29 < 0.5",
+   "n_mentions": 2,
+   "price": 91.64
   },
   {
    "symbol": "AMZN.NAS",
@@ -540,6 +540,18 @@
    "price": 25.8
   },
   {
+   "symbol": "ELV.NYSE",
+   "name": "Elevance Health Inc",
+   "direction": "SHORT",
+   "composite": -0.266,
+   "news_score": -0.182,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (-1.7 ATR da EMA20, -3.3 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 1,
+   "price": 373.11
+  },
+  {
    "symbol": "PGR.NYSE",
    "name": "Progressive Corp/The",
    "direction": "LONG",
@@ -550,18 +562,6 @@
    "gate_reason": "composite 0.01 < 0.5",
    "n_mentions": 1,
    "price": 207.95
-  },
-  {
-   "symbol": "COP.NYSE",
-   "name": "ConocoPhillips",
-   "direction": "LONG",
-   "composite": 0.5,
-   "news_score": 0.15,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 114.71
   }
  ],
  "journal": {
