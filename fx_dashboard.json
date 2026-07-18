@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T14:58:04.631313+00:00",
+ "generated_at": "2026-07-18T16:01:49.406045+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 32,
+ "n_titles": 29,
  "news_events": [
   {
    "rule": "CPI USA freddo",
@@ -402,18 +402,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "NFLX.NAS",
-   "direction": "SHORT",
-   "entry": 74.08,
-   "stop": 78.07,
-   "tp1": 70.09,
-   "tp2": 66.1,
+   "symbol": "MOH.NYSE",
+   "direction": "LONG",
+   "entry": 225.37,
+   "stop": 215.4,
+   "tp1": 235.34,
+   "tp2": 245.31,
    "tps": [
-    70.09,
-    68.1,
-    66.1,
-    62.11,
-    58.12
+    235.34,
+    240.32,
+    245.31,
+    255.28,
+    265.24
    ],
    "tp_multiples": [
     1.0,
@@ -423,30 +423,29 @@
     4.0
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 4.0,
-   "lots": 2.0,
+   "inside_structure": "False",
+   "stop_points": 10.0,
+   "lots": 0.8,
    "risk_eur": 6.97,
    "risk_pct": 1.7,
-   "margin_eur": 25.89,
+   "margin_eur": 31.5,
    "rr_tp1": 2.0,
-   "confidence": 0.53,
+   "confidence": 0.652,
    "reasons": [
-    "news: Netflix stock falls as earnings forecast disappoints, compan",
-    "sentiment -0.21 / tech -0.85 concordi",
-    "prezzo esteso -2.1 ATR da EMA20 \u2192 ordine LIMIT a 74.08 sul ritracciamento (NON a mercato)"
+    "news: Can Molina Healthcare (MOH) Trade At A Premium After Its Con",
+    "sentiment +0.95 / tech +0.35 concordi"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.07,
+   "commission_eur": 0.03,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "NFLX",
+   "yf": "MOH",
    "asset_class": "stock",
-   "timestamp": "2026-07-18T14:58:04.631258+00:00",
-   "company": "Netflix Inc",
-   "entry_type": "LIMIT"
+   "timestamp": "2026-07-18T16:01:49.405978+00:00",
+   "company": "Molina Healthcare Inc",
+   "entry_type": "MARKET"
   }
  ],
  "rejected": [],
@@ -461,6 +460,42 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "MOH.NYSE",
+   "name": "Molina Healthcare Inc",
+   "direction": "LONG",
+   "composite": 0.652,
+   "news_score": 0.955,
+   "tech_score": 0.35,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 225.37
+  },
+  {
+   "symbol": "TTD.NAS",
+   "name": "The Trade Desk Inc. Class /",
+   "direction": "LONG",
+   "composite": 0.052,
+   "news_score": 0.955,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.05 < 0.5",
+   "n_mentions": 1,
+   "price": 18.59
+  },
+  {
+   "symbol": "CMI.NYSE",
+   "name": "Cummins Inc",
+   "direction": "LONG",
+   "composite": 0.14,
+   "news_score": 0.63,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.14 < 0.5",
+   "n_mentions": 1,
+   "price": 648.48
+  },
+  {
    "symbol": "MAT.NAS",
    "name": "Mattel Inc",
    "direction": "SHORT",
@@ -473,14 +508,26 @@
    "price": 14.3
   },
   {
+   "symbol": "UNH.NYSE",
+   "name": "UnitedHealth Group Inc CFI",
+   "direction": "LONG",
+   "composite": 0.334,
+   "news_score": 0.318,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.33 < 0.5",
+   "n_mentions": 1,
+   "price": 426.09
+  },
+  {
    "symbol": "NDAQ.NAS",
    "name": "Nasdaq Inc",
    "direction": "LONG",
-   "composite": 0.121,
-   "news_score": 0.392,
+   "composite": 0.034,
+   "news_score": 0.218,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.03 < 0.5",
    "n_mentions": 3,
    "price": 91.64
   },
@@ -488,11 +535,11 @@
    "symbol": "EXPE.NAS",
    "name": "Expedia Group Inc",
    "direction": "LONG",
-   "composite": 0.116,
-   "news_score": 0.382,
+   "composite": 0.031,
+   "news_score": 0.212,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.03 < 0.5",
    "n_mentions": 1,
    "price": 268.77
   },
@@ -500,42 +547,18 @@
    "symbol": "HTT.NYSE",
    "name": "High Templar Tech Limited",
    "direction": "SHORT",
-   "composite": -0.248,
-   "news_score": 0.353,
+   "composite": -0.327,
+   "news_score": 0.196,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.25 < 0.5",
+   "gate_reason": "composite 0.33 < 0.5",
    "n_mentions": 1,
    "price": 2.51
-  },
-  {
-   "symbol": "NFLX.NAS",
-   "name": "Netflix Inc",
-   "direction": "SHORT",
-   "composite": -0.53,
-   "news_score": -0.21,
-   "tech_score": -0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 3,
-   "price": 68.95
-  },
-  {
-   "symbol": "SMH.NAS",
-   "name": "Market Vectors Semiconduc",
-   "direction": "SHORT",
-   "composite": -0.081,
-   "news_score": 0.188,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.08 < 0.5",
-   "n_mentions": 3,
-   "price": 556.53
   }
  ],
  "journal": {
-  "n_total": 28,
-  "n_open": 10,
+  "n_total": 29,
+  "n_open": 11,
   "n_closed": 18,
   "open_symbols": [
    "GBPUSD LONG",
@@ -547,7 +570,8 @@
    "UAL.NAS LONG",
    "AMZN.NAS SHORT",
    "CAKE.NAS LONG",
-   "MAT.NAS SHORT"
+   "MAT.NAS SHORT",
+   "MOH.NYSE LONG"
   ],
   "win_rate": 55.6,
   "expectancy_r": 0.11,
@@ -1205,6 +1229,25 @@
     "sentiment -0.75 / tech -0.35 concordi"
    ],
    "opened_at": "2026-07-18T13:57:51.841842+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "MOH.NYSE_202607181601",
+   "symbol": "MOH.NYSE",
+   "direction": "LONG",
+   "yf": "MOH",
+   "entry": 225.37,
+   "stop": 215.4,
+   "tp1": 235.34,
+   "tp2": 245.31,
+   "lots": 0.8,
+   "risk_eur": 6.97,
+   "confidence": 0.652,
+   "reasons": [
+    "news: Can Molina Healthcare (MOH) Trade At A Premium After Its Con",
+    "sentiment +0.95 / tech +0.35 concordi"
+   ],
+   "opened_at": "2026-07-18T16:01:49.408313+00:00",
    "status": "OPEN"
   }
  ],
