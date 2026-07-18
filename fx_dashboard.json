@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-07-18T21:23:51.708204+00:00",
+ "generated_at": "2026-07-18T22:23:23.527430+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 24,
+ "n_titles": 20,
  "news_events": [
   {
    "rule": "BCE hawkish",
-   "strength": 1.0,
+   "strength": 0.8,
    "n": 1
   },
   {
@@ -27,32 +27,32 @@
   {
    "symbol": "EURJPY",
    "direction": "LONG",
-   "confidence": 0.383,
+   "confidence": 0.361,
    "layers": {
-    "news": 0.401,
+    "news": 0.327,
     "macro": 0.126,
     "tech": 0.85,
     "cot": 0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
+   "gate_reason": "confidence 0.36 < 0.45",
    "price": 185.76199340820312,
    "rsi": 61.3
   },
   {
    "symbol": "DE40",
    "direction": "SHORT",
-   "confidence": 0.356,
+   "confidence": 0.344,
    "layers": {
-    "news": -0.221,
+    "news": -0.178,
     "macro": -0.634,
     "tech": -0.35,
     "cot": -0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.36 < 0.45",
+   "gate_reason": "confidence 0.34 < 0.45",
    "price": 24830.98046875,
    "rsi": 53.7
   },
@@ -281,22 +281,6 @@
    "rsi": 12.3
   },
   {
-   "symbol": "EURUSD",
-   "direction": "LONG",
-   "confidence": 0.09,
-   "layers": {
-    "news": 0.546,
-    "macro": 0.005,
-    "tech": -0.35,
-    "cot": 0.083,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.09 < 0.45",
-   "price": 1.1445575952529907,
-   "rsi": 58.1
-  },
-  {
    "symbol": "XTIUSD",
    "direction": "SHORT",
    "confidence": 0.09,
@@ -345,18 +329,34 @@
    "rsi": 55.7
   },
   {
+   "symbol": "EURUSD",
+   "direction": "LONG",
+   "confidence": 0.071,
+   "layers": {
+    "news": 0.483,
+    "macro": 0.005,
+    "tech": -0.35,
+    "cot": 0.083,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.07 < 0.45",
+   "price": 1.1445575952529907,
+   "rsi": 58.1
+  },
+  {
    "symbol": "EURGBP",
    "direction": "SHORT",
-   "confidence": 0.046,
+   "confidence": 0.068,
    "layers": {
-    "news": 0.401,
+    "news": 0.327,
     "macro": -0.242,
     "tech": -0.425,
     "cot": 0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.05 < 0.45",
+   "gate_reason": "confidence 0.07 < 0.45",
    "price": 0.8502100110054016,
    "rsi": 22.5
   },
@@ -482,30 +482,6 @@
    "price": 648.48
   },
   {
-   "symbol": "EXPE.NAS",
-   "name": "Expedia Group Inc",
-   "direction": "LONG",
-   "composite": 0.031,
-   "news_score": 0.212,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.03 < 0.5",
-   "n_mentions": 1,
-   "price": 268.77
-  },
-  {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.019,
-   "news_score": 0.189,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.02 < 0.5",
-   "n_mentions": 2,
-   "price": 91.64
-  },
-  {
    "symbol": "MAT.NAS",
    "name": "Mattel Inc",
    "direction": "SHORT",
@@ -516,6 +492,18 @@
    "gate_reason": "composite 0.27 < 0.5",
    "n_mentions": 1,
    "price": 14.3
+  },
+  {
+   "symbol": "TTD.NAS",
+   "name": "The Trade Desk Inc. Class /",
+   "direction": "SHORT",
+   "composite": -0.347,
+   "news_score": 0.155,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.35 < 0.5",
+   "n_mentions": 2,
+   "price": 18.59
   }
  ],
  "journal": {
