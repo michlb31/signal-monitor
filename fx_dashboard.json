@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T16:01:49.406045+00:00",
+ "generated_at": "2026-07-18T17:31:30.623611+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 29,
+ "n_titles": 24,
  "news_events": [
   {
    "rule": "CPI USA freddo",
@@ -430,10 +430,10 @@
    "risk_pct": 1.7,
    "margin_eur": 31.5,
    "rr_tp1": 2.0,
-   "confidence": 0.652,
+   "confidence": 0.675,
    "reasons": [
-    "news: Can Molina Healthcare (MOH) Trade At A Premium After Its Con",
-    "sentiment +0.95 / tech +0.35 concordi"
+    "news: Molina Healthcare (MOH) Stock Looks Expensive On Illinois Co",
+    "sentiment +1.00 / tech +0.35 concordi"
    ],
    "next_event": "",
    "currencies": [],
@@ -443,7 +443,7 @@
    "season_note": "",
    "yf": "MOH",
    "asset_class": "stock",
-   "timestamp": "2026-07-18T16:01:49.405978+00:00",
+   "timestamp": "2026-07-18T17:31:30.467047+00:00",
    "company": "Molina Healthcare Inc",
    "entry_type": "MARKET"
   }
@@ -463,35 +463,71 @@
    "symbol": "MOH.NYSE",
    "name": "Molina Healthcare Inc",
    "direction": "LONG",
+   "composite": 0.675,
+   "news_score": 1.0,
+   "tech_score": 0.35,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 2,
+   "price": 225.37
+  },
+  {
+   "symbol": "ITW.NYSE",
+   "name": "Illinois Tool Works Inc",
+   "direction": "LONG",
    "composite": 0.652,
    "news_score": 0.955,
    "tech_score": 0.35,
    "gate": true,
    "gate_reason": null,
    "n_mentions": 1,
-   "price": 225.37
+   "price": 276.05
+  },
+  {
+   "symbol": "PANW.NYSE",
+   "name": "Palo Alto Networks Inc",
+   "direction": "LONG",
+   "composite": 0.585,
+   "news_score": 0.82,
+   "tech_score": 0.35,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 358.68
+  },
+  {
+   "symbol": "HTT.NYSE",
+   "name": "High Templar Tech Limited",
+   "direction": "SHORT",
+   "composite": -0.094,
+   "news_score": 0.661,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.09 < 0.5",
+   "n_mentions": 2,
+   "price": 2.51
   },
   {
    "symbol": "TTD.NAS",
    "name": "The Trade Desk Inc. Class /",
-   "direction": "LONG",
-   "composite": 0.052,
-   "news_score": 0.955,
+   "direction": "SHORT",
+   "composite": -0.207,
+   "news_score": 0.435,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
-   "n_mentions": 1,
+   "gate_reason": "composite 0.21 < 0.5",
+   "n_mentions": 2,
    "price": 18.59
   },
   {
    "symbol": "CMI.NYSE",
    "name": "Cummins Inc",
    "direction": "LONG",
-   "composite": 0.14,
-   "news_score": 0.63,
+   "composite": 0.028,
+   "news_score": 0.405,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.14 < 0.5",
+   "gate_reason": "composite 0.03 < 0.5",
    "n_mentions": 1,
    "price": 648.48
   },
@@ -499,11 +535,11 @@
    "symbol": "MAT.NAS",
    "name": "Mattel Inc",
    "direction": "SHORT",
-   "composite": -0.438,
-   "news_score": -0.525,
+   "composite": -0.344,
+   "news_score": -0.338,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.44 < 0.5",
+   "gate_reason": "composite 0.34 < 0.5",
    "n_mentions": 1,
    "price": 14.3
   },
@@ -511,49 +547,13 @@
    "symbol": "UNH.NYSE",
    "name": "UnitedHealth Group Inc CFI",
    "direction": "LONG",
-   "composite": 0.334,
-   "news_score": 0.318,
+   "composite": 0.286,
+   "news_score": 0.223,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.33 < 0.5",
+   "gate_reason": "composite 0.29 < 0.5",
    "n_mentions": 1,
    "price": 426.09
-  },
-  {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.034,
-   "news_score": 0.218,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.03 < 0.5",
-   "n_mentions": 3,
-   "price": 91.64
-  },
-  {
-   "symbol": "EXPE.NAS",
-   "name": "Expedia Group Inc",
-   "direction": "LONG",
-   "composite": 0.031,
-   "news_score": 0.212,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.03 < 0.5",
-   "n_mentions": 1,
-   "price": 268.77
-  },
-  {
-   "symbol": "HTT.NYSE",
-   "name": "High Templar Tech Limited",
-   "direction": "SHORT",
-   "composite": -0.327,
-   "news_score": 0.196,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.33 < 0.5",
-   "n_mentions": 1,
-   "price": 2.51
   }
  ],
  "journal": {
