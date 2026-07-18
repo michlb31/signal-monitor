@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T11:06:26.197193+00:00",
+ "generated_at": "2026-07-18T12:13:17.019016+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 36,
+ "n_titles": 33,
  "news_events": [
   {
    "rule": "Risk-off",
@@ -14,11 +14,6 @@
   },
   {
    "rule": "CPI USA freddo",
-   "strength": 0.15,
-   "n": 1
-  },
-  {
-   "rule": "Cina stimolo",
    "strength": 0.15,
    "n": 1
   }
@@ -91,16 +86,16 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.265,
+   "confidence": 0.252,
    "layers": {
-    "news": -0.119,
+    "news": -0.164,
     "macro": 0.391,
     "tech": 0.85,
     "cot": -0.191,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.27 < 0.45",
+   "gate_reason": "confidence 0.25 < 0.45",
    "price": 113.38300323486328,
    "rsi": 67.2
   },
@@ -119,22 +114,6 @@
    "gate_reason": "confidence 0.24 < 0.45",
    "price": 185.76199340820312,
    "rsi": 61.3
-  },
-  {
-   "symbol": "NZDUSD",
-   "direction": "LONG",
-   "confidence": 0.218,
-   "layers": {
-    "news": 0.097,
-    "macro": 0.538,
-    "tech": -0.12,
-    "cot": 0.381,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.22 < 0.45",
-   "price": 0.5844877362251282,
-   "rsi": 85.6
   },
   {
    "symbol": "GBPJPY",
@@ -169,6 +148,38 @@
    "rsi": 30.1
   },
   {
+   "symbol": "NZDUSD",
+   "direction": "LONG",
+   "confidence": 0.207,
+   "layers": {
+    "news": 0.06,
+    "macro": 0.538,
+    "tech": -0.12,
+    "cot": 0.381,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 0.5844877362251282,
+   "rsi": 85.6
+  },
+  {
+   "symbol": "AUS200",
+   "direction": "SHORT",
+   "confidence": 0.199,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.634,
+    "tech": -0.15,
+    "cot": 0.191,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.20 < 0.45",
+   "price": 8796.7001953125,
+   "rsi": 46.9
+  },
+  {
    "symbol": "UK100",
    "direction": "SHORT",
    "confidence": 0.195,
@@ -183,22 +194,6 @@
    "gate_reason": "confidence 0.19 < 0.45",
    "price": 10600.400390625,
    "rsi": 59.3
-  },
-  {
-   "symbol": "AUS200",
-   "direction": "SHORT",
-   "confidence": 0.188,
-   "layers": {
-    "news": 0.037,
-    "macro": -0.634,
-    "tech": -0.15,
-    "cot": 0.191,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
-   "price": 8796.7001953125,
-   "rsi": 46.9
   },
   {
    "symbol": "US30",
@@ -315,16 +310,16 @@
   {
    "symbol": "XTIUSD",
    "direction": "SHORT",
-   "confidence": 0.081,
+   "confidence": 0.09,
    "layers": {
-    "news": 0.03,
+    "news": 0.0,
     "macro": -0.168,
     "tech": 0.075,
     "cot": -0.387,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.08 < 0.45",
+   "gate_reason": "confidence 0.09 < 0.45",
    "price": 82.48999786376953,
    "rsi": 78.3
   },
@@ -395,16 +390,16 @@
   {
    "symbol": "AUDUSD",
    "direction": "SHORT",
-   "confidence": 0.015,
+   "confidence": 0.028,
    "layers": {
-    "news": 0.03,
+    "news": -0.015,
     "macro": 0.249,
     "tech": -0.28,
     "cot": -0.191,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.01 < 0.45",
+   "gate_reason": "confidence 0.03 < 0.45",
    "price": 0.6984703540802002,
    "rsi": 66.6
   }
@@ -422,18 +417,6 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.23,
-   "news_score": 0.61,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.23 < 0.5",
-   "n_mentions": 3,
-   "price": 91.64
-  },
-  {
    "symbol": "EXPE.NAS",
    "name": "Expedia Group Inc",
    "direction": "LONG",
@@ -446,14 +429,26 @@
    "price": 268.77
   },
   {
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.177,
+   "news_score": 0.505,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.18 < 0.5",
+   "n_mentions": 3,
+   "price": 91.64
+  },
+  {
    "symbol": "HTT.NYSE",
    "name": "High Templar Tech Limited",
    "direction": "SHORT",
-   "composite": -0.15,
-   "news_score": 0.549,
+   "composite": -0.248,
+   "news_score": 0.353,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.15 < 0.5",
+   "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 2.51
   },
@@ -461,11 +456,11 @@
    "symbol": "DG.PAR",
    "name": "Vinci",
    "direction": "SHORT",
-   "composite": -0.039,
-   "news_score": 0.272,
+   "composite": -0.087,
+   "news_score": 0.175,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.04 < 0.5",
+   "gate_reason": "composite 0.09 < 0.5",
    "n_mentions": 1,
    "price": 117.95
   },
@@ -473,11 +468,11 @@
    "symbol": "DG.NYSE",
    "name": "Dollar General Corp",
    "direction": "LONG",
-   "composite": 0.311,
-   "news_score": 0.272,
+   "composite": 0.262,
+   "news_score": 0.175,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.31 < 0.5",
+   "gate_reason": "composite 0.26 < 0.5",
    "n_mentions": 1,
    "price": 125.75
   },
@@ -485,11 +480,11 @@
    "symbol": "SMH.NAS",
    "name": "Market Vectors Semiconduc",
    "direction": "SHORT",
-   "composite": -0.04,
-   "news_score": 0.27,
+   "composite": -0.092,
+   "news_score": 0.165,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.04 < 0.5",
+   "gate_reason": "composite 0.09 < 0.5",
    "n_mentions": 3,
    "price": 556.53
   }
