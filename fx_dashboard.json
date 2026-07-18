@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T00:56:33.474368+00:00",
+ "generated_at": "2026-07-18T03:55:45.936444+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 48,
+ "n_titles": 40,
  "news_events": [
   {
    "rule": "Risk-off",
@@ -73,6 +73,38 @@
    "rsi": 87.0
   },
   {
+   "symbol": "DE40",
+   "direction": "SHORT",
+   "confidence": 0.29,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.634,
+    "tech": -0.35,
+    "cot": -0.083,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.29 < 0.45",
+   "price": 24830.98046875,
+   "rsi": 53.7
+  },
+  {
+   "symbol": "JP225",
+   "direction": "SHORT",
+   "confidence": 0.27,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.634,
+    "tech": -0.35,
+    "cot": 0.052,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.27 < 0.45",
+   "price": 64141.12109375,
+   "rsi": 33.2
+  },
+  {
    "symbol": "AUDJPY",
    "direction": "LONG",
    "confidence": 0.215,
@@ -133,8 +165,8 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.19 < 0.45",
-   "price": 10572.2001953125,
-   "rsi": 55.2
+   "price": 10600.400390625,
+   "rsi": 59.3
   },
   {
    "symbol": "GBPJPY",
@@ -151,6 +183,22 @@
    "gate_reason": "confidence 0.19 < 0.45",
    "price": 218.4810028076172,
    "rsi": 73.2
+  },
+  {
+   "symbol": "AUS200",
+   "direction": "SHORT",
+   "confidence": 0.188,
+   "layers": {
+    "news": 0.037,
+    "macro": -0.634,
+    "tech": -0.15,
+    "cot": 0.191,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.19 < 0.45",
+   "price": 8796.7001953125,
+   "rsi": 46.9
   },
   {
    "symbol": "US30",
@@ -217,22 +265,6 @@
    "rsi": 69.0
   },
   {
-   "symbol": "DE40",
-   "direction": "SHORT",
-   "confidence": 0.115,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.634,
-    "tech": 0.35,
-    "cot": -0.083,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.12 < 0.45",
-   "price": 24915.490234375,
-   "rsi": 54.5
-  },
-  {
    "symbol": "XTIUSD",
    "direction": "SHORT",
    "confidence": 0.082,
@@ -247,22 +279,6 @@
    "gate_reason": "confidence 0.08 < 0.45",
    "price": 81.7699966430664,
    "rsi": 77.6
-  },
-  {
-   "symbol": "JP225",
-   "direction": "SHORT",
-   "confidence": 0.082,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.634,
-    "tech": 0.402,
-    "cot": 0.052,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.08 < 0.45",
-   "price": 66835.5390625,
-   "rsi": 40.5
   },
   {
    "symbol": "AUDUSD",
@@ -311,22 +327,6 @@
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 0.8069400191307068,
    "rsi": 45.8
-  },
-  {
-   "symbol": "AUS200",
-   "direction": "SHORT",
-   "confidence": 0.063,
-   "layers": {
-    "news": 0.037,
-    "macro": -0.634,
-    "tech": 0.35,
-    "cot": 0.191,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.06 < 0.45",
-   "price": 8840.7001953125,
-   "rsi": 58.7
   },
   {
    "symbol": "USDJPY",
@@ -440,10 +440,10 @@
    "risk_pct": 1.7,
    "margin_eur": 25.89,
    "rr_tp1": 2.0,
-   "confidence": 0.601,
+   "confidence": 0.548,
    "reasons": [
     "news: Netflix stock falls as earnings forecast disappoints, compan",
-    "sentiment -0.35 / tech -0.85 concordi",
+    "sentiment -0.25 / tech -0.85 concordi",
     "prezzo esteso -2.1 ATR da EMA20 \u2192 ordine LIMIT a 74.08 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -454,7 +454,7 @@
    "season_note": "",
    "yf": "NFLX",
    "asset_class": "stock",
-   "timestamp": "2026-07-18T00:56:33.474301+00:00",
+   "timestamp": "2026-07-18T03:55:45.936393+00:00",
    "company": "Netflix Inc",
    "entry_type": "LIMIT"
   }
@@ -471,40 +471,16 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "PLNT.NYSE",
-   "name": "Planet Fitness Inc",
-   "direction": "LONG",
-   "composite": 0.378,
-   "news_score": 0.405,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.38 < 0.5",
-   "n_mentions": 1,
-   "price": 52.36
-  },
-  {
    "symbol": "NFLX.NAS",
    "name": "Netflix Inc",
    "direction": "SHORT",
-   "composite": -0.601,
-   "news_score": -0.353,
+   "composite": -0.548,
+   "news_score": -0.246,
    "tech_score": -0.85,
    "gate": true,
    "gate_reason": null,
-   "n_mentions": 7,
+   "n_mentions": 6,
    "price": 68.95
-  },
-  {
-   "symbol": "AMZN.NAS",
-   "name": "Amazon.com Inc",
-   "direction": "SHORT",
-   "composite": -0.3,
-   "news_score": -0.25,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.30 < 0.5",
-   "n_mentions": 1,
-   "price": 247.23
   },
   {
    "symbol": "FHN.NYSE",
@@ -517,42 +493,6 @@
    "gate_reason": "composite 0.29 < 0.5",
    "n_mentions": 1,
    "price": 25.8
-  },
-  {
-   "symbol": "UNP.NYSE",
-   "name": "Union Pacific Corp",
-   "direction": "LONG",
-   "composite": 0.213,
-   "news_score": -0.198,
-   "tech_score": 0.425,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+3.7 ATR da EMA20, +2.5 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 301.75
-  },
-  {
-   "symbol": "ELV.NYSE",
-   "name": "Elevance Health Inc",
-   "direction": "SHORT",
-   "composite": -0.266,
-   "news_score": -0.182,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (-1.7 ATR da EMA20, -3.3 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 373.11
-  },
-  {
-   "symbol": "PGR.NYSE",
-   "name": "Progressive Corp/The",
-   "direction": "LONG",
-   "composite": 0.011,
-   "news_score": 0.173,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.01 < 0.5",
-   "n_mentions": 1,
-   "price": 207.95
   }
  ],
  "journal": {
