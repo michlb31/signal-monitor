@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T12:13:17.019016+00:00",
+ "generated_at": "2026-07-18T13:57:51.839735+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 33,
+ "n_titles": 32,
  "news_events": [
   {
    "rule": "Risk-off",
@@ -404,7 +404,55 @@
    "rsi": 66.6
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "MAT.NAS",
+   "direction": "SHORT",
+   "entry": 14.3,
+   "stop": 15.0,
+   "tp1": 13.6,
+   "tp2": 12.89,
+   "tps": [
+    13.6,
+    13.24,
+    12.89,
+    12.19,
+    11.48
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "False",
+   "stop_points": 0.7,
+   "lots": 11.6,
+   "risk_eur": 7.14,
+   "risk_pct": 1.8,
+   "margin_eur": 28.99,
+   "rr_tp1": 2.0,
+   "confidence": 0.55,
+   "reasons": [
+    "news: Mattel (MAT) Stock Trades At A Discount On Earnings Despite ",
+    "sentiment -0.75 / tech -0.35 concordi"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.41,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "MAT",
+   "asset_class": "stock",
+   "timestamp": "2026-07-18T13:57:51.839671+00:00",
+   "company": "Mattel Inc",
+   "entry_type": "MARKET"
+  }
+ ],
  "rejected": [],
  "calendar": [
   {
@@ -417,28 +465,40 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "EXPE.NAS",
-   "name": "Expedia Group Inc",
-   "direction": "LONG",
-   "composite": 0.222,
-   "news_score": 0.594,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.22 < 0.5",
+   "symbol": "MAT.NAS",
+   "name": "Mattel Inc",
+   "direction": "SHORT",
+   "composite": -0.55,
+   "news_score": -0.75,
+   "tech_score": -0.35,
+   "gate": true,
+   "gate_reason": null,
    "n_mentions": 1,
-   "price": 268.77
+   "price": 14.3
   },
   {
    "symbol": "NDAQ.NAS",
    "name": "Nasdaq Inc",
    "direction": "LONG",
-   "composite": 0.177,
-   "news_score": 0.505,
+   "composite": 0.121,
+   "news_score": 0.392,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.18 < 0.5",
+   "gate_reason": "composite 0.12 < 0.5",
    "n_mentions": 3,
    "price": 91.64
+  },
+  {
+   "symbol": "EXPE.NAS",
+   "name": "Expedia Group Inc",
+   "direction": "LONG",
+   "composite": 0.116,
+   "news_score": 0.382,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.12 < 0.5",
+   "n_mentions": 1,
+   "price": 268.77
   },
   {
    "symbol": "HTT.NYSE",
@@ -451,6 +511,18 @@
    "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 2.51
+  },
+  {
+   "symbol": "SMH.NAS",
+   "name": "Market Vectors Semiconduc",
+   "direction": "SHORT",
+   "composite": -0.081,
+   "news_score": 0.188,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.08 < 0.5",
+   "n_mentions": 3,
+   "price": 556.53
   },
   {
    "symbol": "DG.PAR",
@@ -475,23 +547,11 @@
    "gate_reason": "composite 0.26 < 0.5",
    "n_mentions": 1,
    "price": 125.75
-  },
-  {
-   "symbol": "SMH.NAS",
-   "name": "Market Vectors Semiconduc",
-   "direction": "SHORT",
-   "composite": -0.092,
-   "news_score": 0.165,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.09 < 0.5",
-   "n_mentions": 3,
-   "price": 556.53
   }
  ],
  "journal": {
-  "n_total": 27,
-  "n_open": 9,
+  "n_total": 28,
+  "n_open": 10,
   "n_closed": 18,
   "open_symbols": [
    "GBPUSD LONG",
@@ -502,7 +562,8 @@
    "NFLX.NAS SHORT",
    "UAL.NAS LONG",
    "AMZN.NAS SHORT",
-   "CAKE.NAS LONG"
+   "CAKE.NAS LONG",
+   "MAT.NAS SHORT"
   ],
   "win_rate": 55.6,
   "expectancy_r": 0.11,
@@ -1141,6 +1202,25 @@
     "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 79.7 sul ritracciamento (NON a mercato)"
    ],
    "opened_at": "2026-07-17T19:08:47.793137+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "MAT.NAS_202607181357",
+   "symbol": "MAT.NAS",
+   "direction": "SHORT",
+   "yf": "MAT",
+   "entry": 14.3,
+   "stop": 15.0,
+   "tp1": 13.6,
+   "tp2": 12.89,
+   "lots": 11.6,
+   "risk_eur": 7.14,
+   "confidence": 0.55,
+   "reasons": [
+    "news: Mattel (MAT) Stock Trades At A Discount On Earnings Despite ",
+    "sentiment -0.75 / tech -0.35 concordi"
+   ],
+   "opened_at": "2026-07-18T13:57:51.841842+00:00",
    "status": "OPEN"
   }
  ],
