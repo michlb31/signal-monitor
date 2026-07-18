@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-18T06:05:36.205268+00:00",
+ "generated_at": "2026-07-18T08:20:52.883381+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 39,
+ "n_titles": 34,
  "news_events": [
   {
    "rule": "CPI USA freddo",
@@ -440,10 +440,10 @@
    "risk_pct": 1.7,
    "margin_eur": 25.89,
    "rr_tp1": 2.0,
-   "confidence": 0.534,
+   "confidence": 0.506,
    "reasons": [
     "news: Netflix stock falls as earnings forecast disappoints, compan",
-    "sentiment -0.22 / tech -0.85 concordi",
+    "sentiment -0.16 / tech -0.85 concordi",
     "prezzo esteso -2.1 ATR da EMA20 \u2192 ordine LIMIT a 74.08 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -454,7 +454,7 @@
    "season_note": "",
    "yf": "NFLX",
    "asset_class": "stock",
-   "timestamp": "2026-07-18T06:05:36.205244+00:00",
+   "timestamp": "2026-07-18T08:20:52.883330+00:00",
    "company": "Netflix Inc",
    "entry_type": "LIMIT"
   }
@@ -471,11 +471,23 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "BNY.NYSE",
+   "name": "Bank of New York Mellon Cx",
+   "direction": "LONG",
+   "composite": 0.28,
+   "news_score": 0.21,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.28 < 0.5",
+   "n_mentions": 1,
+   "price": 157.13
+  },
+  {
    "symbol": "NFLX.NAS",
    "name": "Netflix Inc",
    "direction": "SHORT",
-   "composite": -0.534,
-   "news_score": -0.219,
+   "composite": -0.506,
+   "news_score": -0.162,
    "tech_score": -0.85,
    "gate": true,
    "gate_reason": null,
