@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-07-19T17:05:29.308550+00:00",
+ "generated_at": "2026-07-19T18:27:47.113202+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 17,
+ "n_titles": 19,
  "news_events": [
   {
    "rule": "Escalation geopolitica",
@@ -409,56 +409,7 @@
    "rsi": 66.6
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "TSLA.NAS",
-   "direction": "SHORT",
-   "entry": 380.84,
-   "stop": 406.95,
-   "tp1": 354.73,
-   "tp2": 328.63,
-   "tps": [
-    354.73,
-    341.68,
-    328.63,
-    302.52,
-    276.41
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 26.1,
-   "lots": 0.3,
-   "risk_eur": 6.84,
-   "risk_pct": 1.7,
-   "margin_eur": 19.96,
-   "rr_tp1": 2.0,
-   "confidence": 0.607,
-   "reasons": [
-    "news: Dow Jones Futures Loom As U.S.-Iran Attacks Escalate; Google",
-    "sentiment -0.16 / tech -0.85 concordi",
-    "drift pre-earnings negativo: -2.7% medio nei 5gg pre (20%, n=10) \u2014 earnings tra 3gg"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "TSLA",
-   "asset_class": "stock",
-   "timestamp": "2026-07-19T17:05:29.308509+00:00",
-   "company": "Tesla Inc",
-   "entry_type": "MARKET"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [
   {
@@ -548,6 +499,18 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "DASH.NAS",
+   "name": "DoorDash Inc",
+   "direction": "LONG",
+   "composite": 0.225,
+   "news_score": 0.6,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.22 < 0.5",
+   "n_mentions": 1,
+   "price": 184.14
+  },
+  {
    "symbol": "USB.NYSE",
    "name": "US Bancorp",
    "direction": "LONG",
@@ -560,40 +523,16 @@
    "price": 63.14
   },
   {
-   "symbol": "UNH.NYSE",
-   "name": "UnitedHealth Group Inc CFI",
-   "direction": "LONG",
-   "composite": 0.006,
-   "news_score": -0.338,
-   "tech_score": 0.35,
+   "symbol": "AAL.NAS",
+   "name": "American Airlines Group Inc",
+   "direction": "SHORT",
+   "composite": -0.012,
+   "news_score": 0.15,
+   "tech_score": -0.175,
    "gate": false,
    "gate_reason": "composite 0.01 < 0.5",
    "n_mentions": 1,
-   "price": 426.09
-  },
-  {
-   "symbol": "AAL.NAS",
-   "name": "American Airlines Group Inc",
-   "direction": "LONG",
-   "composite": 0.048,
-   "news_score": 0.27,
-   "tech_score": -0.175,
-   "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
-   "n_mentions": 1,
    "price": 14.98
-  },
-  {
-   "symbol": "TSLA.NAS",
-   "name": "Tesla Inc",
-   "direction": "SHORT",
-   "composite": -0.607,
-   "news_score": -0.164,
-   "tech_score": -0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 3,
-   "price": 380.84
   }
  ],
  "journal": {
