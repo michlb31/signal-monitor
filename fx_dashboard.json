@@ -1,55 +1,87 @@
 {
- "generated_at": "2026-07-19T07:27:14.991563+00:00",
+ "generated_at": "2026-07-19T09:28:51.368592+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 8,
+ "n_titles": 10,
  "news_events": [
   {
    "rule": "BCE hawkish",
-   "strength": 0.55,
+   "strength": 0.3,
    "n": 1
   },
   {
    "rule": "CPI USA freddo",
-   "strength": 0.3,
+   "strength": 0.15,
    "n": 1
   }
  ],
  "universe": [
   {
-   "symbol": "EURJPY",
-   "direction": "LONG",
-   "confidence": 0.332,
+   "symbol": "US500",
+   "direction": "SHORT",
+   "confidence": 0.312,
    "layers": {
-    "news": 0.23,
-    "macro": 0.126,
-    "tech": 0.85,
-    "cot": 0.083,
+    "news": 0.045,
+    "macro": -0.792,
+    "tech": -0.35,
+    "cot": 0.0,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.33 < 0.45",
-   "price": 185.76199340820312,
-   "rsi": 61.3
+   "gate_reason": "confidence 0.31 < 0.45",
+   "price": 7457.68994140625,
+   "rsi": 58.7
+  },
+  {
+   "symbol": "USTEC",
+   "direction": "SHORT",
+   "confidence": 0.31,
+   "layers": {
+    "news": 0.049,
+    "macro": -0.792,
+    "tech": -0.35,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.31 < 0.45",
+   "price": 28592.66015625,
+   "rsi": 45.2
   },
   {
    "symbol": "DE40",
    "direction": "SHORT",
-   "confidence": 0.327,
+   "confidence": 0.31,
    "layers": {
-    "news": -0.123,
+    "news": -0.067,
     "macro": -0.634,
     "tech": -0.35,
     "cot": -0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.33 < 0.45",
+   "gate_reason": "confidence 0.31 < 0.45",
    "price": 24830.98046875,
    "rsi": 53.7
+  },
+  {
+   "symbol": "EURJPY",
+   "direction": "LONG",
+   "confidence": 0.301,
+   "layers": {
+    "news": 0.127,
+    "macro": 0.126,
+    "tech": 0.85,
+    "cot": 0.083,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.30 < 0.45",
+   "price": 185.76199340820312,
+   "rsi": 61.3
   },
   {
    "symbol": "AUDJPY",
@@ -66,38 +98,6 @@
    "gate_reason": "confidence 0.30 < 0.45",
    "price": 113.38300323486328,
    "rsi": 67.2
-  },
-  {
-   "symbol": "US500",
-   "direction": "SHORT",
-   "confidence": 0.298,
-   "layers": {
-    "news": 0.09,
-    "macro": -0.792,
-    "tech": -0.35,
-    "cot": 0.0,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.30 < 0.45",
-   "price": 7457.68994140625,
-   "rsi": 58.7
-  },
-  {
-   "symbol": "USTEC",
-   "direction": "SHORT",
-   "confidence": 0.296,
-   "layers": {
-    "news": 0.097,
-    "macro": -0.792,
-    "tech": -0.35,
-    "cot": 0.0,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.30 < 0.45",
-   "price": 28592.66015625,
-   "rsi": 45.2
   },
   {
    "symbol": "GBPJPY",
@@ -134,16 +134,16 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.231,
+   "confidence": 0.213,
    "layers": {
-    "news": 0.119,
+    "news": 0.06,
     "macro": 0.559,
     "tech": -0.12,
     "cot": 0.381,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
+   "gate_reason": "confidence 0.21 < 0.45",
    "price": 0.5844877362251282,
    "rsi": 85.6
   },
@@ -198,16 +198,16 @@
   {
    "symbol": "GBPUSD",
    "direction": "LONG",
-   "confidence": 0.172,
+   "confidence": 0.154,
    "layers": {
-    "news": 0.119,
+    "news": 0.06,
     "macro": 0.247,
     "tech": -0.12,
     "cot": 0.613,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.17 < 0.45",
+   "gate_reason": "confidence 0.15 < 0.45",
    "price": 1.345243215560913,
    "rsi": 66.1
   },
@@ -244,50 +244,50 @@
    "rsi": 41.9
   },
   {
-   "symbol": "USDCHF",
-   "direction": "LONG",
-   "confidence": 0.107,
-   "layers": {
-    "news": -0.119,
-    "macro": 0.19,
-    "tech": 0.35,
-    "cot": -0.014,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.11 < 0.45",
-   "price": 0.8069400191307068,
-   "rsi": 45.8
-  },
-  {
    "symbol": "EURGBP",
    "direction": "SHORT",
-   "confidence": 0.097,
+   "confidence": 0.128,
    "layers": {
-    "news": 0.23,
+    "news": 0.127,
     "macro": -0.242,
     "tech": -0.425,
     "cot": 0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.10 < 0.45",
+   "gate_reason": "confidence 0.13 < 0.45",
    "price": 0.8502100110054016,
    "rsi": 22.5
   },
   {
+   "symbol": "USDCHF",
+   "direction": "LONG",
+   "confidence": 0.124,
+   "layers": {
+    "news": -0.06,
+    "macro": 0.19,
+    "tech": 0.35,
+    "cot": -0.014,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.12 < 0.45",
+   "price": 0.8069400191307068,
+   "rsi": 45.8
+  },
+  {
    "symbol": "USDJPY",
    "direction": "LONG",
-   "confidence": 0.096,
+   "confidence": 0.114,
    "layers": {
-    "news": -0.119,
+    "news": -0.06,
     "macro": 0.121,
     "tech": 0.35,
     "cot": 0.052,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.10 < 0.45",
+   "gate_reason": "confidence 0.11 < 0.45",
    "price": 162.35299682617188,
    "rsi": 55.7
   },
@@ -310,16 +310,16 @@
   {
    "symbol": "USDCAD",
    "direction": "SHORT",
-   "confidence": 0.082,
+   "confidence": 0.065,
    "layers": {
-    "news": -0.119,
+    "news": -0.06,
     "macro": -0.386,
     "tech": 0.402,
     "cot": -0.209,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.08 < 0.45",
+   "gate_reason": "confidence 0.06 < 0.45",
    "price": 1.4019999504089355,
    "rsi": 12.3
   },
@@ -357,54 +357,103 @@
   },
   {
    "symbol": "EURUSD",
-   "direction": "LONG",
-   "confidence": 0.028,
+   "direction": "SHORT",
+   "confidence": 0.018,
    "layers": {
-    "news": 0.34,
+    "news": 0.185,
     "macro": 0.005,
     "tech": -0.35,
     "cot": 0.083,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.03 < 0.45",
+   "gate_reason": "confidence 0.02 < 0.45",
    "price": 1.1445575952529907,
    "rsi": 58.1
   },
   {
-   "symbol": "AUDUSD",
-   "direction": "LONG",
-   "confidence": 0.018,
-   "layers": {
-    "news": 0.119,
-    "macro": 0.271,
-    "tech": -0.28,
-    "cot": -0.191,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.02 < 0.45",
-   "price": 0.6984703540802002,
-   "rsi": 66.6
-  },
-  {
    "symbol": "XAUUSD",
-   "direction": "LONG",
-   "confidence": 0.003,
+   "direction": "SHORT",
+   "confidence": 0.013,
    "layers": {
-    "news": 0.105,
+    "news": 0.052,
     "macro": 0.449,
     "tech": -0.5,
     "cot": -0.253,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.00 < 0.45",
+   "gate_reason": "confidence 0.01 < 0.45",
    "price": 4018.800048828125,
    "rsi": 45.3
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": "LONG",
+   "confidence": 0.001,
+   "layers": {
+    "news": 0.06,
+    "macro": 0.271,
+    "tech": -0.28,
+    "cot": -0.191,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.00 < 0.45",
+   "price": 0.6984703540802002,
+   "rsi": 66.6
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "NFLX.NAS",
+   "direction": "SHORT",
+   "entry": 74.08,
+   "stop": 78.07,
+   "tp1": 70.09,
+   "tp2": 66.1,
+   "tps": [
+    70.09,
+    68.1,
+    66.1,
+    62.11,
+    58.12
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "True",
+   "stop_points": 4.0,
+   "lots": 2.0,
+   "risk_eur": 6.97,
+   "risk_pct": 1.7,
+   "margin_eur": 25.89,
+   "rr_tp1": 2.0,
+   "confidence": 0.535,
+   "reasons": [
+    "news: Netflix is spending big money on sports. Is the company maki",
+    "sentiment -0.22 / tech -0.85 concordi",
+    "prezzo esteso -2.1 ATR da EMA20 \u2192 ordine LIMIT a 74.08 sul ritracciamento (NON a mercato)"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.07,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "NFLX",
+   "asset_class": "stock",
+   "timestamp": "2026-07-19T09:28:51.368546+00:00",
+   "company": "Netflix Inc",
+   "entry_type": "LIMIT"
+  }
+ ],
  "rejected": [],
  "calendar": [
   {
@@ -494,16 +543,64 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "NXT.LSE",
+   "name": "Next PLC",
+   "direction": "LONG",
+   "composite": 0.357,
+   "news_score": 0.364,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.36 < 0.5",
+   "n_mentions": 2,
+   "price": 14875.0
+  },
+  {
+   "symbol": "ASML.AMS",
+   "name": "ASML Holding NV",
+   "direction": "LONG",
+   "composite": 0.357,
+   "news_score": 0.364,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.36 < 0.5",
+   "n_mentions": 2,
+   "price": 1537.0
+  },
+  {
+   "symbol": "GL.NYSE",
+   "name": "Globe Life Inc",
+   "direction": "LONG",
+   "composite": 0.415,
+   "news_score": 0.28,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.42 < 0.5",
+   "n_mentions": 1,
+   "price": 184.76
+  },
+  {
    "symbol": "GOOG.NAS",
    "name": "Alphabet Inc",
    "direction": "LONG",
-   "composite": 0.135,
-   "news_score": 0.42,
+   "composite": 0.06,
+   "news_score": 0.27,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.14 < 0.5",
+   "gate_reason": "composite 0.06 < 0.5",
    "n_mentions": 1,
    "price": 346.12
+  },
+  {
+   "symbol": "NFLX.NAS",
+   "name": "Netflix Inc",
+   "direction": "SHORT",
+   "composite": -0.535,
+   "news_score": -0.22,
+   "tech_score": -0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 4,
+   "price": 68.95
   }
  ],
  "journal": {
@@ -1222,109 +1319,109 @@
   }
  ],
  "backtest": {
-  "generated_at": "2026-07-12T08:05:38.847099+00:00",
+  "generated_at": "2026-07-19T08:04:57.352447+00:00",
   "profile": "fx",
   "period": "2y",
   "horizon": 12,
-  "n_instruments": 23,
+  "n_instruments": 24,
   "overall": {
-   "n": 416,
-   "win_rate": 42.78846153846153,
-   "avg_return": 0.02738422312143122,
-   "median_return": -0.47409954208253574,
-   "avg_days": 7.8798076923076925,
-   "profit_factor": 1.0261896397212205,
-   "total_return": 11.391836818515394,
-   "sharpe": 0.043903036419099616,
-   "sortino": 0.07697815142510986,
-   "max_drawdown": 62.948223773828566
+   "n": 427,
+   "win_rate": 41.451990632318505,
+   "avg_return": 0.05956839737418258,
+   "median_return": -0.5826376490300479,
+   "avg_days": 7.850117096018735,
+   "profit_factor": 1.0515003264464267,
+   "total_return": 25.43570567877593,
+   "sharpe": 0.08397894972479952,
+   "sortino": 0.15143951275358108,
+   "max_drawdown": 61.56046998445353
   },
   "by_direction": {
    "LONG": {
-    "n": 306,
-    "win_rate": 48.69281045751634,
-    "avg_return": 0.3600426856758833,
-    "median_return": -0.08964636265436618,
-    "avg_days": 8.261437908496733,
-    "profit_factor": 1.4666075923612674,
-    "total_return": 110.17306181682031,
-    "sharpe": 0.6106994296936658,
-    "sortino": 1.1172387638088128,
-    "max_drawdown": 27.89021994110692
+    "n": 315,
+    "win_rate": 46.666666666666664,
+    "avg_return": 0.34743679256053805,
+    "median_return": -0.19787450289918693,
+    "avg_days": 8.228571428571428,
+    "profit_factor": 1.3790230756801567,
+    "total_return": 109.44258965656954,
+    "sharpe": 0.5059290942480459,
+    "sortino": 0.8997865570920901,
+    "max_drawdown": 31.44126745649875
    },
    "SHORT": {
-    "n": 110,
-    "win_rate": 26.36363636363636,
-    "avg_return": -0.8980111363482265,
-    "median_return": -1.30394566611512,
-    "avg_days": 6.818181818181818,
-    "profit_factor": 0.5032622527992213,
-    "total_return": -98.7812249983049,
-    "sharpe": -1.3482608106981107,
-    "sortino": -2.40459750658142,
-    "max_drawdown": 107.52644233079066
+    "n": 112,
+    "win_rate": 26.785714285714285,
+    "avg_return": -0.7500614640874422,
+    "median_return": -1.2933588096466844,
+    "avg_days": 6.785714285714286,
+    "profit_factor": 0.5904998094004519,
+    "total_return": -84.00688397779352,
+    "sharpe": -1.0203129055688323,
+    "sortino": -1.9714327689460553,
+    "max_drawdown": 86.41794434841641
    }
   },
   "by_setup": {
-   "BREAKOUT": {
-    "n": 168,
-    "win_rate": 42.857142857142854,
-    "avg_return": -0.009348394487780166,
-    "median_return": -0.31456165717839024,
-    "avg_days": 8.363095238095237,
-    "profit_factor": 0.9822388996865228,
-    "total_return": -1.57053027394706,
-    "sharpe": -0.04013536465375977,
-    "sortino": -0.07975667323628619,
-    "max_drawdown": 20.64565508569227
-   },
    "TREND_FOLLOW": {
     "n": 149,
     "win_rate": 44.29530201342282,
-    "avg_return": -0.11321880746811235,
-    "median_return": -0.5665060483446328,
-    "avg_days": 8.060402684563758,
-    "profit_factor": 0.8884556281400166,
-    "total_return": -16.86960231274874,
-    "sharpe": -0.2209185426888387,
-    "sortino": -0.3349444633787956,
-    "max_drawdown": 51.48728517484951
+    "avg_return": 0.04078027012839605,
+    "median_return": -0.4740727446833741,
+    "avg_days": 8.087248322147651,
+    "profit_factor": 1.0408068034943512,
+    "total_return": 6.076260249131015,
+    "sharpe": 0.06976635440665387,
+    "sortino": 0.1204146867255429,
+    "max_drawdown": 32.318886574980766
    },
-   "MEAN_REVERT_LONG": {
-    "n": 21,
-    "win_rate": 66.66666666666666,
-    "avg_return": 1.4827005153457224,
-    "median_return": 2.0642648632303686,
-    "avg_days": 8.333333333333334,
-    "profit_factor": 1.7966739340710967,
-    "total_return": 31.136710822260174,
-    "sharpe": 1.360443809351167,
-    "sortino": 3.035922814093236,
-    "max_drawdown": 23.76463809577016
+   "BREAKOUT": {
+    "n": 169,
+    "win_rate": 42.01183431952663,
+    "avg_return": 0.017360191007367624,
+    "median_return": -0.3804401846581207,
+    "avg_days": 8.21301775147929,
+    "profit_factor": 1.0327750709139913,
+    "total_return": 2.933872280245142,
+    "sharpe": 0.06862293430839715,
+    "sortino": 0.15108668704783215,
+    "max_drawdown": 20.64565508569227
    },
    "DIP_BUY": {
-    "n": 17,
-    "win_rate": 76.47058823529412,
-    "avg_return": 3.9276657627937976,
+    "n": 19,
+    "win_rate": 68.42105263157895,
+    "avg_return": 3.4619650104349464,
     "median_return": 2.860771423829445,
-    "avg_days": 7.176470588235294,
-    "profit_factor": 4.9855891329465205,
-    "total_return": 66.77031796749456,
-    "sharpe": 2.9290658227957787,
-    "sortino": 7.2640356576659775,
-    "max_drawdown": 9.67622132342629
+    "avg_days": 7.631578947368421,
+    "profit_factor": 3.209380819469483,
+    "total_return": 65.77733519826396,
+    "sharpe": 2.311857492257545,
+    "sortino": 6.553326741634114,
+    "max_drawdown": 10.069430227890255
    },
    "MEAN_REVERT_SHORT": {
-    "n": 61,
-    "win_rate": 21.311475409836063,
-    "avg_return": -1.1159845800744843,
-    "median_return": -1.6750384926573876,
-    "avg_days": 6.147540983606557,
-    "profit_factor": 0.5119250157951899,
-    "total_return": -68.07505938454354,
-    "sharpe": -1.4584171390302336,
-    "sortino": -2.9598269919601856,
+    "n": 63,
+    "win_rate": 20.634920634920633,
+    "avg_return": -1.239370071904805,
+    "median_return": -1.67569134315272,
+    "avg_days": 6.174603174603175,
+    "profit_factor": 0.4808810239477568,
+    "total_return": -78.08031453000271,
+    "sharpe": -1.6191296956021237,
+    "sortino": -3.265558994550531,
     "max_drawdown": 80.63449572294661
+   },
+   "MEAN_REVERT_LONG": {
+    "n": 27,
+    "win_rate": 51.85185185185185,
+    "avg_return": 1.0640204622643912,
+    "median_return": 0.7592134389343754,
+    "avg_days": 8.333333333333334,
+    "profit_factor": 1.3815493423889542,
+    "total_return": 28.728552481138564,
+    "sharpe": 0.734954807839568,
+    "sortino": 1.7418565930148138,
+    "max_drawdown": 23.93582897996698
    }
   }
  }
