@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-07-25T01:03:14.025617+00:00",
+ "generated_at": "2026-07-25T04:43:54.173683+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 52,
+ "n_titles": 42,
  "news_events": [
   {
-   "rule": "Fed dovish",
-   "strength": 0.3,
-   "n": 1
+   "rule": "BoJ hawkish",
+   "strength": 0.83,
+   "n": 2
   },
   {
    "rule": "BoE dovish",
@@ -23,14 +23,14 @@
    "n": 1
   },
   {
-   "rule": "BoJ hawkish",
+   "rule": "OPEC aumenta produzione",
    "strength": 0.22,
    "n": 2
   },
   {
-   "rule": "OPEC aumenta produzione",
-   "strength": 0.22,
-   "n": 2
+   "rule": "Fed hawkish",
+   "strength": 0.15,
+   "n": 1
   },
   {
    "rule": "Dollaro forte",
@@ -42,10 +42,10 @@
   {
    "symbol": "EURUSD",
    "direction": "SHORT",
-   "confidence": 0.476,
+   "confidence": 0.533,
    "layers": {
-    "news": 0.09,
-    "macro": -0.619,
+    "news": -0.112,
+    "macro": -0.606,
     "tech": -0.85,
     "cot": -0.7,
     "event": 0.0
@@ -58,66 +58,114 @@
   {
    "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.411,
+   "confidence": 0.467,
    "layers": {
-    "news": -0.164,
-    "macro": 0.872,
+    "news": 0.037,
+    "macro": 0.859,
     "tech": 0.85,
     "cot": -0.092,
     "event": 0.0
    },
-   "gate": false,
-   "gate_reason": "confidence 0.41 < 0.45",
+   "gate": true,
+   "gate_reason": "",
    "price": 0.8177000284194946,
    "rsi": 66.9
   },
   {
-   "symbol": "USDJPY",
-   "direction": "LONG",
-   "confidence": 0.382,
-   "layers": {
-    "news": -0.258,
-    "macro": 0.826,
-    "tech": 0.425,
-    "cot": 0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
-   "price": 163.79100036621094,
-   "rsi": 75.2
-  },
-  {
    "symbol": "GBPUSD",
    "direction": "SHORT",
-   "confidence": 0.355,
+   "confidence": 0.411,
    "layers": {
-    "news": -0.037,
-    "macro": -0.691,
+    "news": -0.235,
+    "macro": -0.678,
     "tech": -0.85,
     "cot": 0.505,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.36 < 0.45",
+   "gate_reason": "confidence 0.41 < 0.45",
    "price": 1.3318594694137573,
    "rsi": 47.3
   },
   {
+   "symbol": "USDJPY",
+   "direction": "LONG",
+   "confidence": 0.358,
+   "layers": {
+    "news": -0.324,
+    "macro": 0.812,
+    "tech": 0.425,
+    "cot": 0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.36 < 0.45",
+   "price": 163.79100036621094,
+   "rsi": 75.2
+  },
+  {
+   "symbol": "DE40",
+   "direction": "LONG",
+   "confidence": 0.241,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.12,
+    "tech": 0.402,
+    "cot": 0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.24 < 0.45",
+   "price": 25099.0,
+   "rsi": 36.4
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": "LONG",
+   "confidence": 0.24,
+   "layers": {
+    "news": 0.155,
+    "macro": 0.484,
+    "tech": 0.402,
+    "cot": -0.346,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.24 < 0.45",
+   "price": 1.4091999530792236,
+   "rsi": 31.0
+  },
+  {
+   "symbol": "NZDUSD",
+   "direction": "SHORT",
+   "confidence": 0.237,
+   "layers": {
+    "news": -0.112,
+    "macro": -0.486,
+    "tech": -0.68,
+    "cot": 0.748,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.24 < 0.45",
+   "price": 0.5789047479629517,
+   "rsi": 63.8
+  },
+  {
    "symbol": "AUDUSD",
    "direction": "SHORT",
-   "confidence": 0.193,
+   "confidence": 0.204,
    "layers": {
-    "news": 0.09,
-    "macro": -0.348,
+    "news": -0.112,
+    "macro": -0.183,
     "tech": -0.35,
     "cot": -0.19,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
+   "gate_reason": "confidence 0.20 < 0.45",
    "price": 0.6983240246772766,
-   "rsi": 59.0
+   "rsi": 55.2
   },
   {
    "symbol": "UK100",
@@ -132,8 +180,8 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.19 < 0.45",
-   "price": 10639.2001953125,
-   "rsi": 47.3
+   "price": 10736.2001953125,
+   "rsi": 55.2
   },
   {
    "symbol": "COCOA",
@@ -141,79 +189,31 @@
    "confidence": 0.176,
    "layers": {
     "news": 0.0,
-    "macro": 0.074,
+    "macro": 0.073,
     "tech": 0.5,
     "cot": 0.191,
     "event": 0.0
    },
    "gate": false,
    "gate_reason": "confidence 0.18 < 0.45",
-   "price": 5331.0,
-   "rsi": 45.0
-  },
-  {
-   "symbol": "NZDUSD",
-   "direction": "SHORT",
-   "confidence": 0.175,
-   "layers": {
-    "news": 0.09,
-    "macro": -0.482,
-    "tech": -0.68,
-    "cot": 0.748,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
-   "price": 0.5791058540344238,
-   "rsi": 64.0
-  },
-  {
-   "symbol": "USDCAD",
-   "direction": "LONG",
-   "confidence": 0.172,
-   "layers": {
-    "news": -0.046,
-    "macro": 0.458,
-    "tech": 0.402,
-    "cot": -0.346,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.17 < 0.45",
-   "price": 1.4091999530792236,
-   "rsi": 31.7
-  },
-  {
-   "symbol": "AUDJPY",
-   "direction": "LONG",
-   "confidence": 0.17,
-   "layers": {
-    "news": -0.172,
-    "macro": 0.478,
-    "tech": 0.425,
-    "cot": -0.19,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.17 < 0.45",
-   "price": 114.37300109863281,
-   "rsi": 75.2
+   "price": 5376.0,
+   "rsi": 45.9
   },
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.148,
+   "confidence": 0.166,
    "layers": {
     "news": 0.013,
-    "macro": 0.013,
-    "tech": 0.175,
+    "macro": 0.01,
+    "tech": 0.25,
     "cot": 0.643,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.15 < 0.45",
-   "price": 90.47000122070312,
-   "rsi": 85.5
+   "gate_reason": "confidence 0.17 < 0.45",
+   "price": 89.30999755859375,
+   "rsi": 82.4
   },
   {
    "symbol": "US30",
@@ -232,6 +232,22 @@
    "rsi": 32.9
   },
   {
+   "symbol": "AUDJPY",
+   "direction": "LONG",
+   "confidence": 0.14,
+   "layers": {
+    "news": -0.421,
+    "macro": 0.629,
+    "tech": 0.425,
+    "cot": -0.19,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.14 < 0.45",
+   "price": 114.37300109863281,
+   "rsi": 75.2
+  },
+  {
    "symbol": "EURGBP",
    "direction": "SHORT",
    "confidence": 0.133,
@@ -244,56 +260,24 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.13 < 0.45",
-   "price": 0.8533300161361694,
-   "rsi": 47.6
-  },
-  {
-   "symbol": "EURJPY",
-   "direction": "LONG",
-   "confidence": 0.118,
-   "layers": {
-    "news": -0.172,
-    "macro": 0.207,
-    "tech": 0.85,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.12 < 0.45",
-   "price": 186.2449951171875,
-   "rsi": 65.6
-  },
-  {
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "confidence": 0.116,
-   "layers": {
-    "news": -0.293,
-    "macro": 0.135,
-    "tech": 0.35,
-    "cot": 0.505,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.12 < 0.45",
-   "price": 218.29100036621094,
-   "rsi": 66.1
+   "price": 0.8531699776649475,
+   "rsi": 47.2
   },
   {
    "symbol": "XBRUSD",
    "direction": "LONG",
-   "confidence": 0.112,
+   "confidence": 0.111,
    "layers": {
     "news": 0.013,
-    "macro": 0.013,
+    "macro": 0.01,
     "tech": 0.175,
     "cot": 0.0,
     "event": 0.4
    },
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
-   "price": 98.37999725341797,
-   "rsi": 86.2
+   "price": 96.77999877929688,
+   "rsi": 82.6
   },
   {
    "symbol": "XNGUSD",
@@ -308,88 +292,72 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
-   "price": 2.9079999923706055,
-   "rsi": 24.7
+   "price": 2.871000051498413,
+   "rsi": 23.4
+  },
+  {
+   "symbol": "XAUUSD",
+   "direction": "SHORT",
+   "confidence": 0.094,
+   "layers": {
+    "news": 0.026,
+    "macro": 0.366,
+    "tech": -0.85,
+    "cot": 0.009,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.09 < 0.45",
+   "price": 4067.60009765625,
+   "rsi": 43.8
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": "LONG",
+   "confidence": 0.048,
+   "layers": {
+    "news": -0.52,
+    "macro": 0.135,
+    "tech": 0.35,
+    "cot": 0.505,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.05 < 0.45",
+   "price": 218.29100036621094,
+   "rsi": 66.1
   },
   {
    "symbol": "USTEC",
    "direction": "LONG",
-   "confidence": 0.094,
+   "confidence": 0.047,
    "layers": {
-    "news": 0.105,
+    "news": -0.052,
     "macro": 0.15,
     "tech": -0.35,
     "cot": 0.0,
     "event": 0.7
    },
    "gate": false,
-   "gate_reason": "confidence 0.09 < 0.45",
-   "price": 28128.341796875,
+   "gate_reason": "confidence 0.05 < 0.45",
+   "price": 28128.33984375,
    "rsi": 33.1
   },
   {
-   "symbol": "XAUUSD",
-   "direction": "SHORT",
-   "confidence": 0.073,
-   "layers": {
-    "news": 0.214,
-    "macro": 0.37,
-    "tech": -1.0,
-    "cot": 0.009,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.07 < 0.45",
-   "price": 4055.699951171875,
-   "rsi": 42.8
-  },
-  {
-   "symbol": "DE40",
+   "symbol": "EURJPY",
    "direction": "LONG",
-   "confidence": 0.053,
+   "confidence": 0.043,
    "layers": {
-    "news": 0.0,
-    "macro": 0.12,
-    "tech": -0.35,
-    "cot": 0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.05 < 0.45",
-   "price": 24763.119140625,
-   "rsi": 28.3
-  },
-  {
-   "symbol": "US500",
-   "direction": "LONG",
-   "confidence": 0.039,
-   "layers": {
-    "news": 0.022,
-    "macro": 0.15,
-    "tech": -0.35,
-    "cot": 0.0,
-    "event": 0.5
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.04 < 0.45",
-   "price": 7411.97998046875,
-   "rsi": 38.9
-  },
-  {
-   "symbol": "JP225",
-   "direction": "LONG",
-   "confidence": 0.036,
-   "layers": {
-    "news": -0.06,
-    "macro": 0.12,
-    "tech": -0.35,
-    "cot": 0.7,
+    "news": -0.421,
+    "macro": 0.207,
+    "tech": 0.85,
+    "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
-   "price": 66422.6015625,
-   "rsi": 42.6
+   "price": 186.2449951171875,
+   "rsi": 65.6
   },
   {
    "symbol": "AUS200",
@@ -404,24 +372,56 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.03 < 0.45",
-   "price": 8839.0,
-   "rsi": 49.0
+   "price": 8772.2998046875,
+   "rsi": 40.6
   },
   {
-   "symbol": "XAGUSD",
+   "symbol": "JP225",
    "direction": "SHORT",
-   "confidence": 0.025,
+   "confidence": 0.022,
    "layers": {
-    "news": 0.0,
-    "macro": 0.37,
-    "tech": -0.5,
-    "cot": -0.071,
+    "news": -0.253,
+    "macro": 0.12,
+    "tech": -0.35,
+    "cot": 0.7,
     "event": 0.0
    },
    "gate": false,
    "gate_reason": "confidence 0.02 < 0.45",
-   "price": 58.4900016784668,
-   "rsi": 41.3
+   "price": 64611.1484375,
+   "rsi": 34.4
+  },
+  {
+   "symbol": "XAGUSD",
+   "direction": "LONG",
+   "confidence": 0.012,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.366,
+    "tech": -0.35,
+    "cot": -0.071,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.01 < 0.45",
+   "price": 58.65599822998047,
+   "rsi": 41.8
+  },
+  {
+   "symbol": "US500",
+   "direction": "SHORT",
+   "confidence": 0.001,
+   "layers": {
+    "news": -0.112,
+    "macro": 0.15,
+    "tech": -0.35,
+    "cot": 0.0,
+    "event": 0.5
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.00 < 0.45",
+   "price": 7411.97998046875,
+   "rsi": 38.9
   }
  ],
  "tickets": [
@@ -455,10 +455,10 @@
    "risk_pct": 1.5,
    "margin_eur": 33.33,
    "rr_tp1": 2.0,
-   "confidence": 0.476,
+   "confidence": 0.533,
    "reasons": [
-    "news: Dollaro forte, Fed dovish",
-    "macro -0.62 / tech -0.85 concordi",
+    "news: Dollaro forte, Fed hawkish",
+    "macro -0.61 / tech -0.85 concordi",
     "COT -0.70"
    ],
    "next_event": "FOMC (USD) tra 4gg",
@@ -472,9 +472,57 @@
    "season_note": "",
    "yf": "EURUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-07-25T01:03:06.309785+00:00",
+   "timestamp": "2026-07-25T04:43:46.986500+00:00",
    "entry_source": "daily",
    "entry_type": "MARKET"
+  },
+  {
+   "accepted": true,
+   "symbol": "VRSN.NAS",
+   "direction": "LONG",
+   "entry": 271.56,
+   "stop": 259.65,
+   "tp1": 283.47,
+   "tp2": 295.39,
+   "tps": [
+    283.47,
+    289.43,
+    295.39,
+    307.3,
+    319.21
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "True",
+   "stop_points": 11.9,
+   "lots": 0.6,
+   "risk_eur": 6.28,
+   "risk_pct": 1.6,
+   "margin_eur": 28.65,
+   "rr_tp1": 2.0,
+   "confidence": 0.5,
+   "reasons": [
+    "news: VeriSign (VRSN) Stock Looks Strong On Cash Flow Yet Stretche",
+    "sentiment +0.15 / tech +0.85 concordi",
+    "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 271.56 sul ritracciamento (NON a mercato)"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.04,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "VRSN",
+   "asset_class": "stock",
+   "timestamp": "2026-07-25T04:43:54.173626+00:00",
+   "company": "VeriSign Inc",
+   "entry_type": "LIMIT"
   }
  ],
  "rejected": [],
@@ -501,7 +549,92 @@
    "days_until": 6
   }
  ],
- "stock_candidates": [],
+ "stock_candidates": [
+  {
+   "symbol": "RNG.NYSE",
+   "name": "RingCentral Inc",
+   "direction": "LONG",
+   "composite": 0.885,
+   "news_score": 0.919,
+   "tech_score": 0.85,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+2.7 ATR da EMA20, +3.1 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 1,
+   "price": 48.31
+  },
+  {
+   "symbol": "UNH.NYSE",
+   "name": "UnitedHealth Group Inc CFI",
+   "direction": "LONG",
+   "composite": 0.49,
+   "news_score": 0.63,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.49 < 0.5",
+   "n_mentions": 1,
+   "price": 420.74
+  },
+  {
+   "symbol": "RKT.NYSE",
+   "name": "Rocket Companies Inc. Clas",
+   "direction": "SHORT",
+   "composite": -0.305,
+   "news_score": 0.239,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.31 < 0.5",
+   "n_mentions": 1,
+   "price": 13.05
+  },
+  {
+   "symbol": "AXP.NYSE",
+   "name": "American Express Co",
+   "direction": "SHORT",
+   "composite": -0.338,
+   "news_score": 0.174,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (-1.9 ATR da EMA20, -2.5 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 2,
+   "price": 326.17
+  },
+  {
+   "symbol": "INTC.NAS",
+   "name": "Intel Corp",
+   "direction": "SHORT",
+   "composite": -0.1,
+   "news_score": 0.15,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.10 < 0.5",
+   "n_mentions": 5,
+   "price": 92.32
+  },
+  {
+   "symbol": "NEM.NYSE",
+   "name": "Newmont Corporation",
+   "direction": "SHORT",
+   "composite": -0.1,
+   "news_score": 0.15,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.10 < 0.5",
+   "n_mentions": 1,
+   "price": 93.19
+  },
+  {
+   "symbol": "VRSN.NAS",
+   "name": "VeriSign Inc",
+   "direction": "LONG",
+   "composite": 0.5,
+   "news_score": 0.15,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 280.0
+  }
+ ],
  "journal": {
   "n_total": 47,
   "n_open": 8,
