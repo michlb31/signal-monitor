@@ -1,20 +1,15 @@
 {
- "generated_at": "2026-07-25T16:58:11.496927+00:00",
+ "generated_at": "2026-07-25T18:00:49.041200+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 27,
+ "n_titles": 23,
  "news_events": [
   {
    "rule": "Cina stimolo",
    "strength": 0.55,
-   "n": 1
-  },
-  {
-   "rule": "BoE dovish",
-   "strength": 0.15,
    "n": 1
   },
   {
@@ -75,16 +70,16 @@
   {
    "symbol": "GBPUSD",
    "direction": "SHORT",
-   "confidence": 0.359,
+   "confidence": 0.34,
    "layers": {
-    "news": -0.064,
+    "news": 0.0,
     "macro": -0.678,
     "tech": -0.85,
     "cot": 0.505,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.36 < 0.45",
+   "gate_reason": "confidence 0.34 < 0.45",
    "price": 1.3318594694137573,
    "rsi": 47.3
   },
@@ -153,20 +148,20 @@
    "rsi": 31.0
   },
   {
-   "symbol": "UK100",
+   "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.182,
+   "confidence": 0.193,
    "layers": {
-    "news": 0.03,
-    "macro": 0.12,
-    "tech": 0.85,
-    "cot": -0.505,
+    "news": -0.037,
+    "macro": 0.135,
+    "tech": 0.35,
+    "cot": 0.505,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
-   "price": 10736.2001953125,
-   "rsi": 55.2
+   "gate_reason": "confidence 0.19 < 0.45",
+   "price": 218.29100036621094,
+   "rsi": 66.1
   },
   {
    "symbol": "COCOA",
@@ -185,20 +180,36 @@
    "rsi": 45.9
   },
   {
-   "symbol": "GBPJPY",
+   "symbol": "UK100",
    "direction": "LONG",
    "confidence": 0.173,
    "layers": {
-    "news": -0.101,
-    "macro": 0.135,
-    "tech": 0.35,
-    "cot": 0.505,
+    "news": 0.0,
+    "macro": 0.12,
+    "tech": 0.85,
+    "cot": -0.505,
     "event": 0.0
    },
    "gate": false,
    "gate_reason": "confidence 0.17 < 0.45",
-   "price": 218.29100036621094,
-   "rsi": 66.1
+   "price": 10736.2001953125,
+   "rsi": 55.2
+  },
+  {
+   "symbol": "EURGBP",
+   "direction": "SHORT",
+   "confidence": 0.171,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.072,
+    "tech": -0.35,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.17 < 0.45",
+   "price": 0.8531699776649475,
+   "rsi": 47.2
   },
   {
    "symbol": "NZDUSD",
@@ -231,22 +242,6 @@
    "gate_reason": "confidence 0.16 < 0.45",
    "price": 186.2449951171875,
    "rsi": 65.6
-  },
-  {
-   "symbol": "EURGBP",
-   "direction": "SHORT",
-   "confidence": 0.152,
-   "layers": {
-    "news": 0.064,
-    "macro": 0.072,
-    "tech": -0.35,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.15 < 0.45",
-   "price": 0.8531699776649475,
-   "rsi": 47.2
   },
   {
    "symbol": "US30",
@@ -456,7 +451,7 @@
    "season_note": "",
    "yf": "EURUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-07-25T16:57:55.957043+00:00",
+   "timestamp": "2026-07-25T18:00:38.545575+00:00",
    "entry_source": "daily",
    "entry_type": "MARKET"
   }
@@ -487,28 +482,16 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "SOFI.NAS",
-   "name": "SoFi Technologies Inc",
+   "symbol": "JLL.NYSE",
+   "name": "Jones Lang LaSalle Inc",
    "direction": "SHORT",
-   "composite": -0.025,
-   "news_score": 0.6,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.02 < 0.5",
-   "n_mentions": 1,
-   "price": 16.46
-  },
-  {
-   "symbol": "SMH.NAS",
-   "name": "Market Vectors Semiconduc",
-   "direction": "SHORT",
-   "composite": -0.385,
+   "composite": -0.285,
    "news_score": -0.42,
-   "tech_score": -0.35,
+   "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.29 < 0.5",
    "n_mentions": 1,
-   "price": 561.19
+   "price": 325.45
   },
   {
    "symbol": "AAPL.NAS",
@@ -523,52 +506,40 @@
    "price": 333.02
   },
   {
-   "symbol": "JLL.NYSE",
-   "name": "Jones Lang LaSalle Inc",
+   "symbol": "SMH.NAS",
+   "name": "Market Vectors Semiconduc",
    "direction": "SHORT",
-   "composite": -0.285,
+   "composite": -0.385,
    "news_score": -0.42,
-   "tech_score": -0.15,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
+   "gate_reason": "composite 0.39 < 0.5",
    "n_mentions": 1,
-   "price": 325.45
+   "price": 561.19
+  },
+  {
+   "symbol": "SOFI.NAS",
+   "name": "SoFi Technologies Inc",
+   "direction": "SHORT",
+   "composite": -0.115,
+   "news_score": 0.42,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.11 < 0.5",
+   "n_mentions": 1,
+   "price": 16.46
   },
   {
    "symbol": "CTAS.NAS",
    "name": "Cintas Corp",
    "direction": "LONG",
-   "composite": 0.128,
-   "news_score": 0.405,
+   "composite": 0.037,
+   "news_score": 0.225,
    "tech_score": -0.15,
    "gate": false,
    "gate_reason": "gi\u00e0 esteso (+2.6 ATR da EMA20, +1.0 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
    "price": 205.91
-  },
-  {
-   "symbol": "MSFT.NAS",
-   "name": "Microsoft Corp",
-   "direction": "SHORT",
-   "composite": -0.13,
-   "news_score": 0.39,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.13 < 0.5",
-   "n_mentions": 2,
-   "price": 381.7
-  },
-  {
-   "symbol": "DGX.NYSE",
-   "name": "Quest Diagnostics Inc",
-   "direction": "LONG",
-   "composite": 0.537,
-   "news_score": 0.225,
-   "tech_score": 0.85,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+2.4 ATR da EMA20, +2.9 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 227.86
   }
  ],
  "journal": {
