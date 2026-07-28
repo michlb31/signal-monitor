@@ -700,7 +700,13 @@
    "sentiment -0.75 / tech -0.35 concordi"
   ],
   "opened_at": "2026-07-18T13:57:51.841842+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 15.0,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -7.14,
+  "closed_at": "2026-07-28T14:59:59.529980+00:00",
+  "bars_held": 6
  },
  {
   "id": "MOH.NYSE_202607181601",
@@ -1044,7 +1050,13 @@
    "sentiment -0.19 / tech -0.85 concordi"
   ],
   "opened_at": "2026-07-22T20:38:57.839565+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 207.73,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -7.18,
+  "closed_at": "2026-07-28T14:59:59.736309+00:00",
+  "bars_held": 3
  },
  {
   "id": "LLY.NYSE_202607231211",
@@ -1260,6 +1272,32 @@
    "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 321.94 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-07-27T20:05:01.801381+00:00",
+  "status": "CLOSED",
+  "exit_price": 333.05,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 6.84,
+  "closed_at": "2026-07-28T14:59:59.943854+00:00",
+  "bars_held": 1
+ },
+ {
+  "id": "MU.NAS_202607281459",
+  "symbol": "MU.NAS",
+  "direction": "SHORT",
+  "yf": "MU",
+  "entry": 915.79,
+  "stop": 1008.72,
+  "tp1": 822.86,
+  "tp2": 729.94,
+  "lots": 0.1,
+  "risk_eur": 8.16,
+  "confidence": 0.675,
+  "reasons": [
+   "news: AMD, Micron and Nvidia extend losses as chip stocks get clob",
+   "sentiment -1.00 / tech -0.35 concordi",
+   "prezzo esteso -1.6 ATR da EMA20 \u2192 ordine LIMIT a 915.79 sul ritracciamento (NON a mercato)"
+  ],
+  "opened_at": "2026-07-28T14:59:59.345445+00:00",
   "status": "OPEN"
  }
 ]
