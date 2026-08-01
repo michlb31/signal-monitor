@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-01T14:26:41.927029+00:00",
+ "generated_at": "2026-08-01T15:37:39.806288+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 35,
+ "n_titles": 29,
  "news_events": [
   {
    "rule": "CPI USA freddo",
@@ -16,11 +16,6 @@
    "rule": "Intervento FX Giappone",
    "strength": 0.6,
    "n": 4
-  },
-  {
-   "rule": "BoJ dovish",
-   "strength": 0.15,
-   "n": 1
   }
  ],
  "universe": [
@@ -91,16 +86,16 @@
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.416,
+   "confidence": 0.43,
    "layers": {
-    "news": -0.485,
+    "news": -0.53,
     "macro": -1.0,
     "tech": -0.175,
     "cot": 0.487,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.42 < 0.45",
+   "gate_reason": "confidence 0.43 < 0.45",
    "price": 157.39999389648438,
    "rsi": 23.0
   },
@@ -169,6 +164,38 @@
    "rsi": 64.7
   },
   {
+   "symbol": "EURJPY",
+   "direction": "SHORT",
+   "confidence": 0.315,
+   "layers": {
+    "news": -0.264,
+    "macro": -0.144,
+    "tech": -0.35,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.31 < 0.45",
+   "price": 181.49099731445312,
+   "rsi": 33.9
+  },
+  {
+   "symbol": "AUDJPY",
+   "direction": "SHORT",
+   "confidence": 0.302,
+   "layers": {
+    "news": -0.264,
+    "macro": -0.4,
+    "tech": -0.35,
+    "cot": -0.099,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.30 < 0.45",
+   "price": 110.56300354003906,
+   "rsi": 36.9
+  },
+  {
    "symbol": "EURGBP",
    "direction": "SHORT",
    "confidence": 0.301,
@@ -185,50 +212,18 @@
    "rsi": 57.0
   },
   {
-   "symbol": "EURJPY",
-   "direction": "SHORT",
-   "confidence": 0.298,
-   "layers": {
-    "news": -0.207,
-    "macro": -0.144,
-    "tech": -0.35,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.30 < 0.45",
-   "price": 181.49099731445312,
-   "rsi": 33.9
-  },
-  {
-   "symbol": "AUDJPY",
-   "direction": "SHORT",
-   "confidence": 0.284,
-   "layers": {
-    "news": -0.207,
-    "macro": -0.4,
-    "tech": -0.35,
-    "cot": -0.099,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.28 < 0.45",
-   "price": 110.56300354003906,
-   "rsi": 36.9
-  },
-  {
    "symbol": "GBPJPY",
    "direction": "SHORT",
-   "confidence": 0.272,
+   "confidence": 0.289,
    "layers": {
-    "news": -0.207,
+    "news": -0.264,
     "macro": -0.198,
     "tech": -0.35,
     "cot": -0.418,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.27 < 0.45",
+   "gate_reason": "confidence 0.29 < 0.45",
    "price": 212.24400329589844,
    "rsi": 30.8
   },
@@ -379,16 +374,16 @@
   {
    "symbol": "JP225",
    "direction": "LONG",
-   "confidence": 0.028,
+   "confidence": 0.017,
    "layers": {
-    "news": 0.037,
+    "news": 0.0,
     "macro": 0.105,
     "tech": -0.35,
     "cot": 0.487,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.03 < 0.45",
+   "gate_reason": "confidence 0.02 < 0.45",
    "price": 64362.01953125,
    "rsi": 38.7
   },
@@ -458,56 +453,9 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-01T14:26:36.203548+00:00",
+   "timestamp": "2026-08-01T15:37:34.938705+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
-  },
-  {
-   "accepted": true,
-   "symbol": "LUV.NYSE",
-   "direction": "SHORT",
-   "entry": 44.97,
-   "stop": 47.35,
-   "tp1": 42.59,
-   "tp2": 40.22,
-   "tps": [
-    42.59,
-    41.4,
-    40.22,
-    37.84,
-    35.46
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 2.4,
-   "lots": 3.4,
-   "risk_eur": 7.01,
-   "risk_pct": 1.8,
-   "margin_eur": 26.53,
-   "rr_tp1": 2.0,
-   "confidence": 0.525,
-   "reasons": [
-    "news: Loyalists may miss the old Southwest. Wall Street loves the ",
-    "sentiment -0.70 / tech -0.35 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.12,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "LUV",
-   "asset_class": "stock",
-   "timestamp": "2026-08-01T14:26:41.926982+00:00",
-   "company": "Southwest Airlines Co",
-   "entry_type": "MARKET"
   }
  ],
  "rejected": [
@@ -549,11 +497,11 @@
    "symbol": "LUV.NYSE",
    "name": "Southwest Airlines Co",
    "direction": "SHORT",
-   "composite": -0.525,
-   "news_score": -0.7,
+   "composite": -0.4,
+   "news_score": -0.45,
    "tech_score": -0.35,
-   "gate": true,
-   "gate_reason": null,
+   "gate": false,
+   "gate_reason": "composite 0.40 < 0.5",
    "n_mentions": 1,
    "price": 44.97
   },
@@ -561,11 +509,11 @@
    "symbol": "BBY.NYSE",
    "name": "Best Buy Co Inc",
    "direction": "LONG",
-   "composite": 0.385,
-   "news_score": 0.42,
+   "composite": 0.31,
+   "news_score": 0.27,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.31 < 0.5",
    "n_mentions": 1,
    "price": 86.26
   }
