@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-01T22:56:22.127820+00:00",
+ "generated_at": "2026-08-01T23:58:39.025130+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
@@ -9,8 +9,8 @@
  "news_events": [
   {
    "rule": "Intervento FX Giappone",
-   "strength": 0.54,
-   "n": 3
+   "strength": 0.45,
+   "n": 2
   },
   {
    "rule": "CPI USA freddo",
@@ -86,16 +86,16 @@
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.375,
+   "confidence": 0.364,
    "layers": {
-    "news": -0.348,
+    "news": -0.312,
     "macro": -1.0,
     "tech": -0.175,
     "cot": 0.487,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
+   "gate_reason": "confidence 0.36 < 0.45",
    "price": 157.39999389648438,
    "rsi": 23.0
   },
@@ -148,22 +148,6 @@
    "rsi": 59.3
   },
   {
-   "symbol": "EURJPY",
-   "direction": "SHORT",
-   "confidence": 0.307,
-   "layers": {
-    "news": -0.238,
-    "macro": -0.144,
-    "tech": -0.35,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 181.49099731445312,
-   "rsi": 33.9
-  },
-  {
    "symbol": "EURGBP",
    "direction": "SHORT",
    "confidence": 0.301,
@@ -180,20 +164,20 @@
    "rsi": 57.0
   },
   {
-   "symbol": "AUDJPY",
+   "symbol": "EURJPY",
    "direction": "SHORT",
-   "confidence": 0.294,
+   "confidence": 0.296,
    "layers": {
-    "news": -0.238,
-    "macro": -0.4,
+    "news": -0.2,
+    "macro": -0.144,
     "tech": -0.35,
-    "cot": -0.099,
+    "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.29 < 0.45",
-   "price": 110.56300354003906,
-   "rsi": 36.9
+   "gate_reason": "confidence 0.30 < 0.45",
+   "price": 181.49099731445312,
+   "rsi": 33.9
   },
   {
    "symbol": "EURUSD",
@@ -212,18 +196,34 @@
    "rsi": 64.7
   },
   {
+   "symbol": "AUDJPY",
+   "direction": "SHORT",
+   "confidence": 0.282,
+   "layers": {
+    "news": -0.2,
+    "macro": -0.4,
+    "tech": -0.35,
+    "cot": -0.099,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.28 < 0.45",
+   "price": 110.56300354003906,
+   "rsi": 36.9
+  },
+  {
    "symbol": "GBPJPY",
    "direction": "SHORT",
-   "confidence": 0.281,
+   "confidence": 0.27,
    "layers": {
-    "news": -0.238,
+    "news": -0.2,
     "macro": -0.198,
     "tech": -0.35,
     "cot": -0.418,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.28 < 0.45",
+   "gate_reason": "confidence 0.27 < 0.45",
    "price": 212.24400329589844,
    "rsi": 30.8
   },
@@ -444,37 +444,13 @@
    "symbol": "INCY.NAS",
    "name": "Incyte Corp",
    "direction": "LONG",
-   "composite": 0.385,
-   "news_score": 0.42,
+   "composite": 0.31,
+   "news_score": 0.27,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.31 < 0.5",
    "n_mentions": 1,
    "price": 119.52
-  },
-  {
-   "symbol": "GOOG.NAS",
-   "name": "Alphabet Inc",
-   "direction": "LONG",
-   "composite": 0.29,
-   "news_score": -0.27,
-   "tech_score": 0.85,
-   "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
-   "n_mentions": 1,
-   "price": 356.65
-  },
-  {
-   "symbol": "GS.NYSE",
-   "name": "Goldman Sachs Group Inc/1",
-   "direction": "SHORT",
-   "composite": -0.07,
-   "news_score": 0.21,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.07 < 0.5",
-   "n_mentions": 1,
-   "price": 1018.38
   },
   {
    "symbol": "SOFI.NAS",
@@ -499,6 +475,18 @@
    "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 86.26
+  },
+  {
+   "symbol": "GOOG.NAS",
+   "name": "Alphabet Inc",
+   "direction": "LONG",
+   "composite": 0.35,
+   "news_score": -0.15,
+   "tech_score": 0.85,
+   "gate": false,
+   "gate_reason": "composite 0.35 < 0.5",
+   "n_mentions": 1,
+   "price": 356.65
   }
  ],
  "journal": {
