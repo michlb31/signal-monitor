@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-02T08:56:03.306280+00:00",
+ "generated_at": "2026-08-02T10:41:31.111532+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 11,
+ "n_titles": 12,
  "news_events": [
   {
    "rule": "Intervento FX Giappone",
-   "strength": 1.2,
-   "n": 2
+   "strength": 1.1,
+   "n": 4
   }
  ],
  "universe": [
@@ -29,22 +29,6 @@
    "gate_reason": "ISM Manufacturing PMI (USD) tra 1gg \u2014 event guard attivo",
    "price": 57.7859992980957,
    "rsi": 50.5
-  },
-  {
-   "symbol": "USDJPY",
-   "direction": "SHORT",
-   "confidence": 0.419,
-   "layers": {
-    "news": -0.493,
-    "macro": -1.0,
-    "tech": -0.175,
-    "cot": 0.487,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.42 < 0.45",
-   "price": 157.39999389648438,
-   "rsi": 23.0
   },
   {
    "symbol": "XAUUSD",
@@ -79,6 +63,22 @@
    "rsi": 66.6
   },
   {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.408,
+   "layers": {
+    "news": -0.458,
+    "macro": -1.0,
+    "tech": -0.175,
+    "cot": 0.487,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.41 < 0.45",
+   "price": 157.39999389648438,
+   "rsi": 23.0
+  },
+  {
    "symbol": "AUDUSD",
    "direction": "LONG",
    "confidence": 0.387,
@@ -97,50 +97,34 @@
   {
    "symbol": "EURJPY",
    "direction": "SHORT",
-   "confidence": 0.384,
+   "confidence": 0.373,
    "layers": {
-    "news": -0.493,
+    "news": -0.458,
     "macro": -0.144,
     "tech": -0.35,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
+   "gate_reason": "confidence 0.37 < 0.45",
    "price": 181.49099731445312,
    "rsi": 33.9
   },
   {
    "symbol": "AUDJPY",
    "direction": "SHORT",
-   "confidence": 0.37,
+   "confidence": 0.36,
    "layers": {
-    "news": -0.493,
+    "news": -0.458,
     "macro": -0.4,
     "tech": -0.35,
     "cot": -0.099,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.37 < 0.45",
+   "gate_reason": "confidence 0.36 < 0.45",
    "price": 110.56300354003906,
    "rsi": 36.9
-  },
-  {
-   "symbol": "GBPJPY",
-   "direction": "SHORT",
-   "confidence": 0.357,
-   "layers": {
-    "news": -0.493,
-    "macro": -0.198,
-    "tech": -0.35,
-    "cot": -0.418,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.36 < 0.45",
-   "price": 212.24400329589844,
-   "rsi": 30.8
   },
   {
    "symbol": "DE40",
@@ -157,6 +141,22 @@
    "gate_reason": "confidence 0.35 < 0.45",
    "price": 25629.240234375,
    "rsi": 63.3
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": "SHORT",
+   "confidence": 0.347,
+   "layers": {
+    "news": -0.458,
+    "macro": -0.198,
+    "tech": -0.35,
+    "cot": -0.418,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.35 < 0.45",
+   "price": 212.24400329589844,
+   "rsi": 30.8
   },
   {
    "symbol": "EURGBP",
@@ -489,18 +489,6 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "PRU.LSE",
-   "name": "Prudential PLC",
-   "direction": "LONG",
-   "composite": 0.06,
-   "news_score": 0.27,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.06 < 0.5",
-   "n_mentions": 1,
-   "price": 1116.0
-  },
-  {
    "symbol": "PRU.NYSE",
    "name": "Prudential Financial Inc CFL",
    "direction": "LONG",
@@ -511,6 +499,18 @@
    "gate_reason": "earnings tra 2gg \u2014 blackout",
    "n_mentions": 1,
    "price": 122.08
+  },
+  {
+   "symbol": "PRU.LSE",
+   "name": "Prudential PLC",
+   "direction": "LONG",
+   "composite": 0.06,
+   "news_score": 0.27,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.06 < 0.5",
+   "n_mentions": 1,
+   "price": 1116.0
   }
  ],
  "journal": {
