@@ -1,21 +1,16 @@
 {
- "generated_at": "2026-08-02T15:38:50.725305+00:00",
+ "generated_at": "2026-08-02T16:58:39.370009+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 18,
+ "n_titles": 17,
  "news_events": [
   {
    "rule": "Escalation geopolitica",
    "strength": 1.0,
    "n": 1
-  },
-  {
-   "rule": "Intervento FX Giappone",
-   "strength": 0.83,
-   "n": 2
   },
   {
    "rule": "OPEC aumenta produzione",
@@ -26,6 +21,11 @@
    "rule": "CPI USA freddo",
    "strength": 0.55,
    "n": 1
+  },
+  {
+   "rule": "Intervento FX Giappone",
+   "strength": 0.45,
+   "n": 2
   }
  ],
  "universe": [
@@ -44,22 +44,6 @@
    "gate_reason": "ISM Manufacturing PMI (USD) tra 1gg \u2014 event guard attivo",
    "price": 57.7859992980957,
    "rsi": 50.5
-  },
-  {
-   "symbol": "USDJPY",
-   "direction": "SHORT",
-   "confidence": 0.477,
-   "layers": {
-    "news": -0.688,
-    "macro": -1.0,
-    "tech": -0.175,
-    "cot": 0.487,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "RSI 23 ipervenduto",
-   "price": 157.39999389648438,
-   "rsi": 23.0
   },
   {
    "symbol": "NZDUSD",
@@ -94,52 +78,52 @@
    "rsi": 67.7
   },
   {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.447,
+   "layers": {
+    "news": -0.587,
+    "macro": -1.0,
+    "tech": -0.175,
+    "cot": 0.487,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.45 < 0.45",
+   "price": 157.39999389648438,
+   "rsi": 23.0
+  },
+  {
    "symbol": "EURJPY",
    "direction": "SHORT",
-   "confidence": 0.402,
+   "confidence": 0.363,
    "layers": {
-    "news": -0.554,
+    "news": -0.424,
     "macro": -0.144,
     "tech": -0.35,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.40 < 0.45",
+   "gate_reason": "confidence 0.36 < 0.45",
    "price": 181.49099731445312,
    "rsi": 33.9
   },
   {
    "symbol": "AUDJPY",
    "direction": "SHORT",
-   "confidence": 0.389,
+   "confidence": 0.35,
    "layers": {
-    "news": -0.554,
+    "news": -0.424,
     "macro": -0.4,
     "tech": -0.35,
     "cot": -0.099,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.39 < 0.45",
+   "gate_reason": "confidence 0.35 < 0.45",
    "price": 110.56300354003906,
    "rsi": 36.9
-  },
-  {
-   "symbol": "GBPJPY",
-   "direction": "SHORT",
-   "confidence": 0.376,
-   "layers": {
-    "news": -0.554,
-    "macro": -0.198,
-    "tech": -0.35,
-    "cot": -0.418,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
-   "price": 212.24400329589844,
-   "rsi": 30.8
   },
   {
    "symbol": "DE40",
@@ -172,6 +156,22 @@
    "gate_reason": "confidence 0.34 < 0.45",
    "price": 1.348199486732483,
    "rsi": 59.3
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": "SHORT",
+   "confidence": 0.337,
+   "layers": {
+    "news": -0.424,
+    "macro": -0.198,
+    "tech": -0.35,
+    "cot": -0.418,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.34 < 0.45",
+   "price": 212.24400329589844,
+   "rsi": 30.8
   },
   {
    "symbol": "EURUSD",
@@ -531,11 +531,11 @@
    "symbol": "PSN.LSE",
    "name": "Persimmon PLC",
    "direction": "SHORT",
-   "composite": -0.275,
-   "news_score": -0.4,
+   "composite": -0.215,
+   "news_score": -0.28,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.28 < 0.5",
+   "gate_reason": "composite 0.22 < 0.5",
    "n_mentions": 1,
    "price": 1107.0
   },
@@ -562,30 +562,6 @@
    "gate_reason": "earnings tra 2gg \u2014 blackout",
    "n_mentions": 1,
    "price": 122.08
-  },
-  {
-   "symbol": "GS.NYSE",
-   "name": "Goldman Sachs Group Inc/1",
-   "direction": "SHORT",
-   "composite": -0.07,
-   "news_score": 0.21,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.07 < 0.5",
-   "n_mentions": 1,
-   "price": 1018.38
-  },
-  {
-   "symbol": "ADPT.NAS",
-   "name": "Adaptive Biotechnologies",
-   "direction": "LONG",
-   "composite": 0.262,
-   "news_score": 0.175,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.26 < 0.5",
-   "n_mentions": 1,
-   "price": 22.57
   }
  ],
  "journal": {
