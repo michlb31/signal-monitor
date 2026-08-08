@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-08T20:33:35.356630+00:00",
+ "generated_at": "2026-08-08T21:30:07.454373+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 32,
+ "n_titles": 30,
  "news_events": [
   {
    "rule": "Fed hawkish",
@@ -414,55 +414,7 @@
    "rsi": 44.6
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "TSEM.NAS",
-   "direction": "LONG",
-   "entry": 252.49,
-   "stop": 226.31,
-   "tp1": 278.67,
-   "tp2": 304.85,
-   "tps": [
-    278.67,
-    291.76,
-    304.85,
-    331.03,
-    357.21
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 26.2,
-   "lots": 0.3,
-   "risk_eur": 6.79,
-   "risk_pct": 1.7,
-   "margin_eur": 13.1,
-   "rr_tp1": 2.0,
-   "confidence": 0.5,
-   "reasons": [
-    "news: Tower Semiconductor (TSEM) Stock Trades At A Premium On Earn",
-    "sentiment +0.15 / tech +0.85 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "TSEM",
-   "asset_class": "stock",
-   "timestamp": "2026-08-08T20:33:35.301900+00:00",
-   "company": "Tower Semiconductor Ltd",
-   "entry_type": "MARKET"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [
   {
@@ -474,18 +426,6 @@
   }
  ],
  "stock_candidates": [
-  {
-   "symbol": "RNR.NYSE",
-   "name": "RenaissanceRe Holdings Lt",
-   "direction": "SHORT",
-   "composite": -0.088,
-   "news_score": -0.525,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.09 < 0.5",
-   "n_mentions": 1,
-   "price": 321.87
-  },
   {
    "symbol": "CCJ.NYSE",
    "name": "Cameco Corp",
@@ -499,14 +439,26 @@
    "price": 97.39
   },
   {
+   "symbol": "RNR.NYSE",
+   "name": "RenaissanceRe Holdings Lt",
+   "direction": "LONG",
+   "composite": 0.006,
+   "news_score": -0.338,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.01 < 0.5",
+   "n_mentions": 1,
+   "price": 321.87
+  },
+  {
    "symbol": "DVA.NYSE",
    "name": "DaVita Inc",
    "direction": "LONG",
-   "composite": 0.115,
-   "news_score": 0.405,
+   "composite": 0.025,
+   "news_score": 0.225,
    "tech_score": -0.175,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.03 < 0.5",
    "n_mentions": 1,
    "price": 183.77
   },
@@ -523,40 +475,52 @@
    "price": 127.44
   },
   {
-   "symbol": "NXT.LSE",
-   "name": "Next PLC",
-   "direction": "LONG",
-   "composite": 0.335,
-   "news_score": -0.18,
-   "tech_score": 0.85,
+   "symbol": "BATS.LSE",
+   "name": "British American Tobacco P",
+   "direction": "SHORT",
+   "composite": -0.269,
+   "news_score": -0.188,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.33 < 0.5",
+   "gate_reason": "composite 0.27 < 0.5",
    "n_mentions": 1,
-   "price": 15685.0
+   "price": 4421.0
   },
   {
-   "symbol": "TSEM.NAS",
-   "name": "Tower Semiconductor Ltd",
+   "symbol": "BLND.LSE",
+   "name": "British Land Co PLC/The CF",
    "direction": "LONG",
-   "composite": 0.5,
-   "news_score": 0.15,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
+   "composite": 0.081,
+   "news_score": -0.188,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.08 < 0.5",
    "n_mentions": 1,
-   "price": 252.49
+   "price": 443.2
   },
   {
-   "symbol": "CBK.ETR",
-   "name": "Commerzbank AG",
-   "direction": "LONG",
-   "composite": 0.5,
-   "news_score": 0.15,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
+   "symbol": "SMH.NAS",
+   "name": "Market Vectors Semiconduc",
+   "direction": "SHORT",
+   "composite": -0.019,
+   "news_score": -0.188,
+   "tech_score": 0.15,
+   "gate": false,
+   "gate_reason": "composite 0.02 < 0.5",
    "n_mentions": 1,
-   "price": 39.0
+   "price": 582.7
+  },
+  {
+   "symbol": "STLD.NAS",
+   "name": "Steel Dynamics Inc",
+   "direction": "SHORT",
+   "composite": -0.007,
+   "news_score": -0.188,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "composite 0.01 < 0.5",
+   "n_mentions": 1,
+   "price": 262.45
   }
  ],
  "journal": {
