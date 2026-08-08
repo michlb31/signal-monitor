@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-08T13:45:59.078860+00:00",
+ "generated_at": "2026-08-08T14:32:17.374217+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 42,
+ "n_titles": 38,
  "news_events": [
   {
    "rule": "Fed hawkish",
-   "strength": 0.3,
-   "n": 1
+   "strength": 0.45,
+   "n": 2
   },
   {
    "rule": "Intervento FX Giappone",
@@ -32,114 +32,66 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.371,
+   "confidence": 0.351,
    "layers": {
-    "news": 0.015,
+    "news": -0.052,
     "macro": 0.368,
     "tech": 0.85,
     "cot": 0.29,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.37 < 0.45",
+   "gate_reason": "confidence 0.35 < 0.45",
    "price": 0.7070635557174683,
    "rsi": 59.9
   },
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.307,
+   "confidence": 0.287,
    "layers": {
-    "news": -0.149,
+    "news": -0.082,
     "macro": -0.378,
     "tech": -0.175,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
+   "gate_reason": "confidence 0.29 < 0.45",
    "price": 157.7449951171875,
    "rsi": 22.9
   },
   {
    "symbol": "USTEC",
    "direction": "LONG",
-   "confidence": 0.266,
+   "confidence": 0.251,
    "layers": {
-    "news": -0.105,
+    "news": -0.156,
     "macro": 0.167,
     "tech": 0.85,
     "cot": 0.0,
     "event": 0.236
    },
    "gate": false,
-   "gate_reason": "confidence 0.27 < 0.45",
+   "gate_reason": "confidence 0.25 < 0.45",
    "price": 29722.30078125,
    "rsi": 59.7
   },
   {
    "symbol": "XAUUSD",
    "direction": "LONG",
-   "confidence": 0.259,
+   "confidence": 0.239,
    "layers": {
-    "news": -0.007,
+    "news": -0.071,
     "macro": 0.438,
     "tech": 0.35,
     "cot": 0.278,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.26 < 0.45",
+   "gate_reason": "confidence 0.24 < 0.45",
    "price": 4340.7001953125,
    "rsi": 72.0
-  },
-  {
-   "symbol": "USDCAD",
-   "direction": "SHORT",
-   "confidence": 0.231,
-   "layers": {
-    "news": -0.015,
-    "macro": -0.354,
-    "tech": -0.35,
-    "cot": -0.22,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
-   "price": 1.3938000202178955,
-   "rsi": 33.1
-  },
-  {
-   "symbol": "GBPUSD",
-   "direction": "LONG",
-   "confidence": 0.228,
-   "layers": {
-    "news": 0.015,
-    "macro": 0.272,
-    "tech": 0.35,
-    "cot": 0.365,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
-   "price": 1.3492727279663086,
-   "rsi": 54.1
-  },
-  {
-   "symbol": "US500",
-   "direction": "LONG",
-   "confidence": 0.228,
-   "layers": {
-    "news": -0.116,
-    "macro": 0.167,
-    "tech": 0.85,
-    "cot": 0.0,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
-   "price": 7757.64013671875,
-   "rsi": 69.8
   },
   {
    "symbol": "XAGUSD",
@@ -174,6 +126,22 @@
    "rsi": 56.8
   },
   {
+   "symbol": "US500",
+   "direction": "LONG",
+   "confidence": 0.215,
+   "layers": {
+    "news": -0.16,
+    "macro": 0.167,
+    "tech": 0.85,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 7757.64013671875,
+   "rsi": 69.8
+  },
+  {
    "symbol": "XNGUSD",
    "direction": "SHORT",
    "confidence": 0.212,
@@ -188,6 +156,54 @@
    "gate_reason": "confidence 0.21 < 0.45",
    "price": 2.6619999408721924,
    "rsi": 34.6
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": "SHORT",
+   "confidence": 0.211,
+   "layers": {
+    "news": 0.052,
+    "macro": -0.354,
+    "tech": -0.35,
+    "cot": -0.22,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 1.3938000202178955,
+   "rsi": 33.1
+  },
+  {
+   "symbol": "GBPUSD",
+   "direction": "LONG",
+   "confidence": 0.208,
+   "layers": {
+    "news": -0.052,
+    "macro": 0.272,
+    "tech": 0.35,
+    "cot": 0.365,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 1.3492727279663086,
+   "rsi": 54.1
+  },
+  {
+   "symbol": "USDCHF",
+   "direction": "LONG",
+   "confidence": 0.154,
+   "layers": {
+    "news": 0.052,
+    "macro": 0.186,
+    "tech": 0.35,
+    "cot": -0.032,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.15 < 0.45",
+   "price": 0.807669997215271,
+   "rsi": 48.9
   },
   {
    "symbol": "US30",
@@ -206,52 +222,20 @@
    "rsi": 67.0
   },
   {
-   "symbol": "USDCHF",
-   "direction": "LONG",
-   "confidence": 0.134,
-   "layers": {
-    "news": -0.015,
-    "macro": 0.186,
-    "tech": 0.35,
-    "cot": -0.032,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.13 < 0.45",
-   "price": 0.807669997215271,
-   "rsi": 48.9
-  },
-  {
    "symbol": "EURUSD",
    "direction": "LONG",
-   "confidence": 0.125,
+   "confidence": 0.105,
    "layers": {
-    "news": 0.015,
+    "news": -0.052,
     "macro": 0.152,
     "tech": -0.12,
     "cot": 0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.13 < 0.45",
+   "gate_reason": "confidence 0.10 < 0.45",
    "price": 1.156203031539917,
    "rsi": 67.9
-  },
-  {
-   "symbol": "NZDUSD",
-   "direction": "LONG",
-   "confidence": 0.107,
-   "layers": {
-    "news": 0.015,
-    "macro": 0.202,
-    "tech": -0.15,
-    "cot": 0.529,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.11 < 0.45",
-   "price": 0.5895183682441711,
-   "rsi": 55.9
   },
   {
    "symbol": "AUS200",
@@ -302,6 +286,22 @@
    "rsi": 32.6
   },
   {
+   "symbol": "NZDUSD",
+   "direction": "LONG",
+   "confidence": 0.087,
+   "layers": {
+    "news": -0.052,
+    "macro": 0.202,
+    "tech": -0.15,
+    "cot": 0.529,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.09 < 0.45",
+   "price": 0.5895183682441711,
+   "rsi": 55.9
+  },
+  {
    "symbol": "AUDJPY",
    "direction": "SHORT",
    "confidence": 0.087,
@@ -334,6 +334,22 @@
    "rsi": 23.2
   },
   {
+   "symbol": "JP225",
+   "direction": "SHORT",
+   "confidence": 0.055,
+   "layers": {
+    "news": -0.09,
+    "macro": 0.133,
+    "tech": 0.15,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.05 < 0.45",
+   "price": 65606.7109375,
+   "rsi": 54.9
+  },
+  {
    "symbol": "XTIUSD",
    "direction": "SHORT",
    "confidence": 0.051,
@@ -348,22 +364,6 @@
    "gate_reason": "confidence 0.05 < 0.45",
    "price": 78.18000030517578,
    "rsi": 43.9
-  },
-  {
-   "symbol": "JP225",
-   "direction": "SHORT",
-   "confidence": 0.046,
-   "layers": {
-    "news": -0.06,
-    "macro": 0.133,
-    "tech": 0.15,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.05 < 0.45",
-   "price": 65606.7109375,
-   "rsi": 54.9
   },
   {
    "symbol": "DE40",
@@ -417,18 +417,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "NVDA.NAS",
+   "symbol": "TSEM.NAS",
    "direction": "LONG",
-   "entry": 210.24,
-   "stop": 202.41,
-   "tp1": 218.07,
-   "tp2": 225.9,
+   "entry": 252.49,
+   "stop": 226.31,
+   "tp1": 278.67,
+   "tp2": 304.85,
    "tps": [
-    218.07,
-    221.98,
-    225.9,
-    233.73,
-    241.56
+    278.67,
+    291.76,
+    304.85,
+    331.03,
+    357.21
    ],
    "tp_multiples": [
     1.0,
@@ -437,19 +437,18 @@
     3.0,
     4.0
    ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
    "inside_structure": "False",
-   "stop_points": 7.8,
-   "lots": 1.0,
-   "risk_eur": 6.77,
+   "stop_points": 26.2,
+   "lots": 0.3,
+   "risk_eur": 6.79,
    "risk_pct": 1.7,
-   "margin_eur": 36.37,
+   "margin_eur": 13.1,
    "rr_tp1": 2.0,
-   "confidence": 0.551,
+   "confidence": 0.635,
    "reasons": [
-    "news: SpaceX\u2019s Nvidia deal could be bad news for neoclouds like Co",
-    "sentiment +0.25 / tech +0.85 concordi",
-    "prezzo esteso +2.0 ATR da EMA20 \u2192 ordine LIMIT a 210.24 sul ritracciamento (NON a mercato)"
+    "news: Tower Semiconductor (TSEM) Stock Trades At A Premium On Earn",
+    "sentiment +0.42 / tech +0.85 concordi"
    ],
    "next_event": "",
    "currencies": [],
@@ -457,11 +456,11 @@
    "commission_eur": 0.03,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "NVDA",
+   "yf": "TSEM",
    "asset_class": "stock",
-   "timestamp": "2026-08-08T13:45:59.078802+00:00",
-   "company": "Nvidia Corp",
-   "entry_type": "LIMIT"
+   "timestamp": "2026-08-08T14:32:17.261740+00:00",
+   "company": "Tower Semiconductor Ltd",
+   "entry_type": "MARKET"
   }
  ],
  "rejected": [
@@ -486,6 +485,18 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "TSEM.NAS",
+   "name": "Tower Semiconductor Ltd",
+   "direction": "LONG",
+   "composite": 0.635,
+   "news_score": 0.42,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 252.49
+  },
+  {
    "symbol": "NXT.LSE",
    "name": "Next PLC",
    "direction": "LONG",
@@ -501,13 +512,25 @@
    "symbol": "CBK.ETR",
    "name": "Commerzbank AG",
    "direction": "LONG",
-   "composite": 0.31,
+   "composite": 0.56,
    "news_score": 0.27,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.31 < 0.5",
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
    "n_mentions": 1,
    "price": 39.0
+  },
+  {
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.06,
+   "news_score": 0.27,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.06 < 0.5",
+   "n_mentions": 1,
+   "price": 94.59
   },
   {
    "symbol": "SOFI.NAS",
@@ -534,33 +557,21 @@
    "price": 151.95
   },
   {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.06,
-   "news_score": 0.27,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.06 < 0.5",
-   "n_mentions": 1,
-   "price": 94.59
-  },
-  {
    "symbol": "NVDA.NAS",
    "name": "Nvidia Corp",
    "direction": "LONG",
-   "composite": 0.551,
-   "news_score": 0.252,
+   "composite": 0.543,
+   "news_score": 0.237,
    "tech_score": 0.85,
    "gate": true,
    "gate_reason": null,
-   "n_mentions": 4,
+   "n_mentions": 2,
    "price": 223.96
   }
  ],
  "journal": {
-  "n_total": 78,
-  "n_open": 9,
+  "n_total": 79,
+  "n_open": 10,
   "n_closed": 69,
   "open_symbols": [
    "AUDUSD LONG",
@@ -571,7 +582,8 @@
    "NET.NYSE LONG",
    "CVX.NYSE LONG",
    "ZTS.NYSE SHORT",
-   "NVDA.NAS LONG"
+   "NVDA.NAS LONG",
+   "TSEM.NAS LONG"
   ],
   "win_rate": 68.1,
   "expectancy_r": 0.36,
@@ -582,32 +594,6 @@
   "pnl_eur_est": 157.12
  },
  "trades": [
-  {
-   "id": "USDJPY_202607220237",
-   "symbol": "USDJPY",
-   "direction": "LONG",
-   "yf": "USDJPY=X",
-   "entry": 162.279,
-   "stop": 161.272,
-   "tp1": 163.286,
-   "tp2": 164.292,
-   "lots": 0.01,
-   "risk_eur": 5.73,
-   "confidence": 0.46,
-   "reasons": [
-    "prezzo esteso +1.4 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
-    "news: Dollaro forte, Fed hawkish",
-    "macro +0.55 / tech +0.35 concordi"
-   ],
-   "opened_at": "2026-07-22T02:37:38.406029+00:00",
-   "status": "CLOSED",
-   "exit_price": 163.286,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 5.73,
-   "closed_at": "2026-07-23T10:23:33.646982+00:00",
-   "bars_held": 1
-  },
   {
    "id": "NKE.NYSE_202607220237",
    "symbol": "NKE.NYSE",
@@ -1550,6 +1536,25 @@
     "prezzo esteso +2.0 ATR da EMA20 \u2192 ordine LIMIT a 210.24 sul ritracciamento (NON a mercato)"
    ],
    "opened_at": "2026-08-08T11:28:51.643709+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "TSEM.NAS_202608081432",
+   "symbol": "TSEM.NAS",
+   "direction": "LONG",
+   "yf": "TSEM",
+   "entry": 252.49,
+   "stop": 226.31,
+   "tp1": 278.67,
+   "tp2": 304.85,
+   "lots": 0.3,
+   "risk_eur": 6.79,
+   "confidence": 0.635,
+   "reasons": [
+    "news: Tower Semiconductor (TSEM) Stock Trades At A Premium On Earn",
+    "sentiment +0.42 / tech +0.85 concordi"
+   ],
+   "opened_at": "2026-08-08T14:32:17.376533+00:00",
    "status": "OPEN"
   }
  ],
