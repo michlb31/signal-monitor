@@ -1,19 +1,14 @@
 {
- "generated_at": "2026-08-08T12:49:29.552305+00:00",
+ "generated_at": "2026-08-08T13:45:59.078860+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 45,
+ "n_titles": 42,
  "news_events": [
   {
    "rule": "Fed hawkish",
-   "strength": 0.3,
-   "n": 1
-  },
-  {
-   "rule": "Jobs USA deboli",
    "strength": 0.3,
    "n": 1
   },
@@ -26,56 +21,45 @@
    "rule": "Dollaro debole",
    "strength": 0.3,
    "n": 1
+  },
+  {
+   "rule": "Jobs USA deboli",
+   "strength": 0.15,
+   "n": 1
   }
  ],
  "universe": [
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.389,
+   "confidence": 0.371,
    "layers": {
-    "news": 0.075,
+    "news": 0.015,
     "macro": 0.368,
     "tech": 0.85,
     "cot": 0.29,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.39 < 0.45",
+   "gate_reason": "confidence 0.37 < 0.45",
    "price": 0.7070635557174683,
    "rsi": 59.9
   },
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.324,
+   "confidence": 0.307,
    "layers": {
-    "news": -0.207,
+    "news": -0.149,
     "macro": -0.378,
     "tech": -0.175,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.32 < 0.45",
+   "gate_reason": "confidence 0.31 < 0.45",
    "price": 157.7449951171875,
    "rsi": 22.9
-  },
-  {
-   "symbol": "XAUUSD",
-   "direction": "LONG",
-   "confidence": 0.272,
-   "layers": {
-    "news": 0.037,
-    "macro": 0.438,
-    "tech": 0.35,
-    "cot": 0.278,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.27 < 0.45",
-   "price": 4340.7001953125,
-   "rsi": 72.0
   },
   {
    "symbol": "USTEC",
@@ -94,50 +78,66 @@
    "rsi": 59.7
   },
   {
+   "symbol": "XAUUSD",
+   "direction": "LONG",
+   "confidence": 0.259,
+   "layers": {
+    "news": -0.007,
+    "macro": 0.438,
+    "tech": 0.35,
+    "cot": 0.278,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.26 < 0.45",
+   "price": 4340.7001953125,
+   "rsi": 72.0
+  },
+  {
    "symbol": "USDCAD",
    "direction": "SHORT",
-   "confidence": 0.249,
+   "confidence": 0.231,
    "layers": {
-    "news": -0.075,
+    "news": -0.015,
     "macro": -0.354,
     "tech": -0.35,
     "cot": -0.22,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.25 < 0.45",
+   "gate_reason": "confidence 0.23 < 0.45",
    "price": 1.3938000202178955,
    "rsi": 33.1
   },
   {
    "symbol": "GBPUSD",
    "direction": "LONG",
-   "confidence": 0.246,
+   "confidence": 0.228,
    "layers": {
-    "news": 0.075,
+    "news": 0.015,
     "macro": 0.272,
     "tech": 0.35,
     "cot": 0.365,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.25 < 0.45",
+   "gate_reason": "confidence 0.23 < 0.45",
    "price": 1.3492727279663086,
    "rsi": 54.1
   },
   {
    "symbol": "US500",
    "direction": "LONG",
-   "confidence": 0.22,
+   "confidence": 0.228,
    "layers": {
-    "news": -0.142,
+    "news": -0.116,
     "macro": 0.167,
     "tech": 0.85,
     "cot": 0.0,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.22 < 0.45",
+   "gate_reason": "confidence 0.23 < 0.45",
    "price": 7757.64013671875,
    "rsi": 69.8
   },
@@ -190,22 +190,6 @@
    "rsi": 34.6
   },
   {
-   "symbol": "EURUSD",
-   "direction": "LONG",
-   "confidence": 0.143,
-   "layers": {
-    "news": 0.075,
-    "macro": 0.152,
-    "tech": -0.12,
-    "cot": 0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.14 < 0.45",
-   "price": 1.156203031539917,
-   "rsi": 67.9
-  },
-  {
    "symbol": "US30",
    "direction": "LONG",
    "confidence": 0.138,
@@ -222,36 +206,52 @@
    "rsi": 67.0
   },
   {
-   "symbol": "NZDUSD",
-   "direction": "LONG",
-   "confidence": 0.125,
-   "layers": {
-    "news": 0.075,
-    "macro": 0.202,
-    "tech": -0.15,
-    "cot": 0.529,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.12 < 0.45",
-   "price": 0.5895183682441711,
-   "rsi": 55.9
-  },
-  {
    "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.116,
+   "confidence": 0.134,
    "layers": {
-    "news": -0.075,
+    "news": -0.015,
     "macro": 0.186,
     "tech": 0.35,
     "cot": -0.032,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.12 < 0.45",
+   "gate_reason": "confidence 0.13 < 0.45",
    "price": 0.807669997215271,
    "rsi": 48.9
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": "LONG",
+   "confidence": 0.125,
+   "layers": {
+    "news": 0.015,
+    "macro": 0.152,
+    "tech": -0.12,
+    "cot": 0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.13 < 0.45",
+   "price": 1.156203031539917,
+   "rsi": 67.9
+  },
+  {
+   "symbol": "NZDUSD",
+   "direction": "LONG",
+   "confidence": 0.107,
+   "layers": {
+    "news": 0.015,
+    "macro": 0.202,
+    "tech": -0.15,
+    "cot": 0.529,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.11 < 0.45",
+   "price": 0.5895183682441711,
+   "rsi": 55.9
   },
   {
    "symbol": "AUS200",
@@ -445,10 +445,10 @@
    "risk_pct": 1.7,
    "margin_eur": 36.37,
    "rr_tp1": 2.0,
-   "confidence": 0.57,
+   "confidence": 0.551,
    "reasons": [
     "news: SpaceX\u2019s Nvidia deal could be bad news for neoclouds like Co",
-    "sentiment +0.29 / tech +0.85 concordi",
+    "sentiment +0.25 / tech +0.85 concordi",
     "prezzo esteso +2.0 ATR da EMA20 \u2192 ordine LIMIT a 210.24 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -459,12 +459,22 @@
    "season_note": "",
    "yf": "NVDA",
    "asset_class": "stock",
-   "timestamp": "2026-08-08T12:49:29.520517+00:00",
+   "timestamp": "2026-08-08T13:45:59.078802+00:00",
    "company": "Nvidia Corp",
    "entry_type": "LIMIT"
   }
  ],
- "rejected": [],
+ "rejected": [
+  {
+   "accepted": false,
+   "symbol": "NXT.LSE",
+   "direction": "LONG",
+   "reject_reason": "volume minimo 1 \u21d2 rischio 127.8% > 3.0% (stop 591 punti troppo ampio per il capitale)",
+   "asset_class": "stock",
+   "company": "Next PLC",
+   "entry_type": "LIMIT"
+  }
+ ],
  "calendar": [
   {
    "date": "2026-08-12",
@@ -476,35 +486,47 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "NXT.LSE",
+   "name": "Next PLC",
+   "direction": "LONG",
+   "composite": 0.619,
+   "news_score": 0.389,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 15685.0
+  },
+  {
+   "symbol": "CBK.ETR",
+   "name": "Commerzbank AG",
+   "direction": "LONG",
+   "composite": 0.31,
+   "news_score": 0.27,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.31 < 0.5",
+   "n_mentions": 1,
+   "price": 39.0
+  },
+  {
    "symbol": "SOFI.NAS",
    "name": "SoFi Technologies Inc",
    "direction": "LONG",
-   "composite": 0.385,
-   "news_score": 0.42,
+   "composite": 0.31,
+   "news_score": 0.27,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.31 < 0.5",
    "n_mentions": 1,
    "price": 18.38
   },
   {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.135,
-   "news_score": 0.42,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.13 < 0.5",
-   "n_mentions": 1,
-   "price": 94.59
-  },
-  {
    "symbol": "AMR.NYSE",
    "name": "Alpha Metallurgi",
-   "direction": "LONG",
-   "composite": 0.035,
-   "news_score": 0.42,
+   "direction": "SHORT",
+   "composite": -0.04,
+   "news_score": 0.27,
    "tech_score": -0.35,
    "gate": false,
    "gate_reason": "composite 0.04 < 0.5",
@@ -512,28 +534,28 @@
    "price": 151.95
   },
   {
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.06,
+   "news_score": 0.27,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.06 < 0.5",
+   "n_mentions": 1,
+   "price": 94.59
+  },
+  {
    "symbol": "NVDA.NAS",
    "name": "Nvidia Corp",
    "direction": "LONG",
-   "composite": 0.57,
-   "news_score": 0.289,
+   "composite": 0.551,
+   "news_score": 0.252,
    "tech_score": 0.85,
    "gate": true,
    "gate_reason": null,
    "n_mentions": 4,
    "price": 223.96
-  },
-  {
-   "symbol": "CBK.ETR",
-   "name": "Commerzbank AG",
-   "direction": "LONG",
-   "composite": 0.56,
-   "news_score": 0.27,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 39.0
   }
  ],
  "journal": {
