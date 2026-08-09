@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-09T09:39:18.298286+00:00",
+ "generated_at": "2026-08-09T10:34:57.582666+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 12,
+ "n_titles": 11,
  "news_events": [
   {
    "rule": "Fed hawkish",
@@ -399,56 +399,7 @@
    "rsi": 44.6
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "AMZN.NAS",
-   "direction": "LONG",
-   "entry": 258.66,
-   "stop": 248.67,
-   "tp1": 268.65,
-   "tp2": 278.63,
-   "tps": [
-    268.65,
-    273.64,
-    278.63,
-    288.62,
-    298.6
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 10.0,
-   "lots": 0.8,
-   "risk_eur": 6.91,
-   "risk_pct": 1.7,
-   "margin_eur": 35.79,
-   "rr_tp1": 2.0,
-   "confidence": 0.548,
-   "reasons": [
-    "news: Jeff Bezos' Amazon Stock Surged 14% After a Blowout Earnings",
-    "sentiment +0.75 / tech +0.35 concordi",
-    "prezzo esteso +1.9 ATR da EMA20 \u2192 ordine LIMIT a 258.66 sul ritracciamento (NON a mercato)"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "AMZN",
-   "asset_class": "stock",
-   "timestamp": "2026-08-09T09:39:18.298244+00:00",
-   "company": "Amazon.com Inc",
-   "entry_type": "LIMIT"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [
   {
@@ -541,11 +492,11 @@
    "symbol": "AMZN.NAS",
    "name": "Amazon.com Inc",
    "direction": "LONG",
-   "composite": 0.548,
-   "news_score": 0.747,
+   "composite": 0.467,
+   "news_score": 0.585,
    "tech_score": 0.35,
-   "gate": true,
-   "gate_reason": null,
+   "gate": false,
+   "gate_reason": "composite 0.47 < 0.5",
    "n_mentions": 2,
    "price": 274.48
   },
@@ -553,11 +504,11 @@
    "symbol": "HD.NYSE",
    "name": "Home Depot",
    "direction": "LONG",
-   "composite": 0.385,
-   "news_score": 0.42,
+   "composite": 0.31,
+   "news_score": 0.27,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.31 < 0.5",
    "n_mentions": 1,
    "price": 355.62
   },
@@ -565,11 +516,11 @@
    "symbol": "DHI.NYSE",
    "name": "DR Horton Inc",
    "direction": "LONG",
-   "composite": 0.31,
-   "news_score": 0.27,
+   "composite": 0.25,
+   "news_score": 0.15,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.31 < 0.5",
+   "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 151.08
   }
