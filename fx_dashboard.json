@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-09T17:32:12.071408+00:00",
+ "generated_at": "2026-08-09T18:40:01.693445+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 10,
+ "n_titles": 9,
  "news_events": [
   {
    "rule": "Fed hawkish",
@@ -399,7 +399,56 @@
    "rsi": 55.9
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "AME.NYSE",
+   "direction": "LONG",
+   "entry": 245.0,
+   "stop": 237.09,
+   "tp1": 252.91,
+   "tp2": 260.83,
+   "tps": [
+    252.91,
+    256.87,
+    260.83,
+    268.74,
+    276.66
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "True",
+   "stop_points": 7.9,
+   "lots": 1.0,
+   "risk_eur": 6.84,
+   "risk_pct": 1.7,
+   "margin_eur": 42.38,
+   "rr_tp1": 2.0,
+   "confidence": 0.655,
+   "reasons": [
+    "news: AMETEK (AME) Raises Full Year Guidance, Is The Stock Still C",
+    "sentiment +0.46 / tech +0.85 concordi",
+    "prezzo esteso +1.8 ATR da EMA20 \u2192 ordine LIMIT a 245.0 sul ritracciamento (NON a mercato)"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.03,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "AME",
+   "asset_class": "stock",
+   "timestamp": "2026-08-09T18:40:01.693405+00:00",
+   "company": "AMETEK Inc",
+   "entry_type": "LIMIT"
+  }
+ ],
  "rejected": [],
  "calendar": [
   {
@@ -489,6 +538,18 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "AME.NYSE",
+   "name": "AMETEK Inc",
+   "direction": "LONG",
+   "composite": 0.655,
+   "news_score": 0.46,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 253.66
+  },
+  {
    "symbol": "FIVN.NAS",
    "name": "Five9 Inc",
    "direction": "LONG",
@@ -499,30 +560,6 @@
    "gate_reason": "gi\u00e0 esteso (+3.2 ATR da EMA20, +1.9 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
    "price": 33.99
-  },
-  {
-   "symbol": "AMZN.NAS",
-   "name": "Amazon.com Inc",
-   "direction": "LONG",
-   "composite": 0.3,
-   "news_score": 0.25,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.30 < 0.5",
-   "n_mentions": 1,
-   "price": 274.48
-  },
-  {
-   "symbol": "ESS.NYSE",
-   "name": "Essex Property Trust Inc CF",
-   "direction": "LONG",
-   "composite": 0.278,
-   "news_score": 0.207,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.28 < 0.5",
-   "n_mentions": 1,
-   "price": 288.1
   },
   {
    "symbol": "LLY.NYSE",
@@ -547,23 +584,11 @@
    "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 355.62
-  },
-  {
-   "symbol": "AVY.NYSE",
-   "name": "Avery Dennison Corp",
-   "direction": "LONG",
-   "composite": 0.25,
-   "news_score": 0.15,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.25 < 0.5",
-   "n_mentions": 1,
-   "price": 177.18
   }
  ],
  "journal": {
-  "n_total": 81,
-  "n_open": 12,
+  "n_total": 82,
+  "n_open": 13,
   "n_closed": 69,
   "open_symbols": [
    "AUDUSD LONG",
@@ -577,7 +602,8 @@
    "NVDA.NAS LONG",
    "TSEM.NAS LONG",
    "CCJ.NYSE SHORT",
-   "AMZN.NAS LONG"
+   "AMZN.NAS LONG",
+   "AME.NYSE LONG"
   ],
   "win_rate": 68.1,
   "expectancy_r": 0.36,
@@ -588,31 +614,6 @@
   "pnl_eur_est": 157.12
  },
  "trades": [
-  {
-   "id": "TEL.NYSE_202607222038",
-   "symbol": "TEL.NYSE",
-   "direction": "SHORT",
-   "yf": "TEL",
-   "entry": 200.28,
-   "stop": 207.73,
-   "tp1": 192.83,
-   "tp2": 185.37,
-   "lots": 1.1,
-   "risk_eur": 7.18,
-   "confidence": 0.519,
-   "reasons": [
-    "news: What AI Slowdown? TE Connectivity Earnings Were Rock Solid a",
-    "sentiment -0.19 / tech -0.85 concordi"
-   ],
-   "opened_at": "2026-07-22T20:38:57.839565+00:00",
-   "status": "CLOSED",
-   "exit_price": 207.73,
-   "exit_reason": "SL",
-   "r_multiple": -1.0,
-   "pnl_eur_est": -7.18,
-   "closed_at": "2026-07-28T14:59:59.736309+00:00",
-   "bars_held": 3
-  },
   {
    "id": "LLY.NYSE_202607231211",
    "symbol": "LLY.NYSE",
@@ -1539,6 +1540,26 @@
     "prezzo esteso +1.9 ATR da EMA20 \u2192 ordine LIMIT a 258.66 sul ritracciamento (NON a mercato)"
    ],
    "opened_at": "2026-08-09T07:33:14.750450+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "AME.NYSE_202608091840",
+   "symbol": "AME.NYSE",
+   "direction": "LONG",
+   "yf": "AME",
+   "entry": 245.0,
+   "stop": 237.09,
+   "tp1": 252.91,
+   "tp2": 260.83,
+   "lots": 1.0,
+   "risk_eur": 6.84,
+   "confidence": 0.655,
+   "reasons": [
+    "news: AMETEK (AME) Raises Full Year Guidance, Is The Stock Still C",
+    "sentiment +0.46 / tech +0.85 concordi",
+    "prezzo esteso +1.8 ATR da EMA20 \u2192 ordine LIMIT a 245.0 sul ritracciamento (NON a mercato)"
+   ],
+   "opened_at": "2026-08-09T18:40:01.695847+00:00",
    "status": "OPEN"
   }
  ],
