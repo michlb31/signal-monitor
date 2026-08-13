@@ -378,6 +378,24 @@ def evaluate_universe(news_by_instrument: dict) -> list:
         if ev.get("blocked"):
             gate = False; reasons.append(ev["reason"])
 
+        # CACAO: il motore generico è stato BOCCIATO dal backtest (trend
+        # following PF 0.69-1.07 su 60 combinazioni). Comanda cocoa_setup,
+        # l'unica regola validata out-of-sample. Vedi research/cocoa_research.md
+        if INSTRUMENTS[sym]["cls"] == "soft":
+            try:
+                from cocoa_setup import gate as cocoa_gate
+                cg = cocoa_gate(sym)
+                if cg.get("skip"):
+                    gate = bool(cg.get("allow"))
+                    direction, sign = "LONG", 1
+                    reasons = [cg.get("reason", "")] if not gate else []
+                    if gate:
+                        setup = cg.get("setup", {})
+                        ev_note = cg.get("reason", "")
+                        t = dict(t, atr=setup.get("atr", t.get("atr")))
+            except Exception as e:
+                gate = False; reasons.append(f"cocoa_setup non disponibile: {str(e)[:40]}")
+
         # Esteso ma non estremo → il ticket diventa ordine LIMIT sul
         # ritracciamento verso EMA20 (dove il prezzo "si livella"), non market
         entry_mode, pullback_px = "market", None

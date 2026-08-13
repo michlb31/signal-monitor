@@ -2,7 +2,51 @@
 
 **Data:** 14 luglio 2026 · **Dati:** ICE Cocoa futures continuo (CC=F), 2000-01-03 → 2026-07-14, 6.652 barre giornaliere · **Analisi:** calcoli originali su dati reali (script `cocoa_quant.py`), COT CFTC live, conoscenza di dominio.
 
-**Stato attuale:** $5.579/t · drawdown **−56%** dal massimo storico ($12.565, dic 2024) · volatilità realizzata 21g **76% annua** (regime estremo) · speculatori **net short −20.051** (38% long) con ricoperture in corso.
+> ⚠️ **AGGIORNATO 13 agosto 2026.** Le sezioni 1-12 restano valide (analisi strutturale). Sono stati aggiunti: **§0** (cosa è successo negli ultimi mesi), **§13** (setup algoritmico + backtest) e una **correzione** al §8/§12 sul COT — il dato smentisce quanto avevo scritto a luglio.
+
+**Stato al 13/08/2026:** $5.754/t · drawdown **−54%** dal massimo ($12.565, dic 2024) ma **+106% dal minimo** di $2.798 (fine feb 2026) · volatilità 21g **66% annua** (96° percentile storico) · speculatori **net short −13.320** (40% long), 17° percentile a 3 anni.
+
+---
+
+## 0. Cosa è successo negli ultimi mesi (lug 2025 → ago 2026)
+
+Due movimenti opposti e violenti, entrambi con cause fondamentali identificabili.
+
+### Fase A — Il crollo: da $8.500 a $2.798 (lug 2025 → 27 feb 2026, −67%)
+
+| Mese | Var. | |
+|---|---|---|
+| lug-nov 2025 | −9,1% · −10,2% · −11,6% · −8,9% · −12,1% | discesa ordinata, cinque mesi consecutivi |
+| dic 2025 | **+12,2%** | rimbalzo tecnico (falso segnale di fondo) |
+| **gen 2026** | **−31,3%** | capitolazione |
+| **feb 2026** | **−32,8%** | minimo a $2.798 |
+
+**Le cause, in ordine di peso:**
+
+1. **Surplus conclamato.** StoneX ha stimato un surplus mondiale di **287.000 t** per la stagione 2025/26 e altre 267.000 t per il 2026/27. A gennaio l'ICCO ha certificato scorte globali a **1,1 milioni di tonnellate**, +4,2% su base annua. Il deficit che aveva creato la bolla si era rovesciato.
+2. **Distruzione della domanda.** I *grindings* (la macinazione, cioè il consumo reale) sono crollati: −6,7% nei primi tre trimestri 2025 tra Europa, Nordamerica e Asia, con l'Asia a −16% nel Q2. Il Q1 2026 europeo ha segnato **−7,8% a 325.895 t, il primo trimestre più debole in 17 anni**. A $10.000/t i cioccolatieri hanno riformulato le ricette e ridotto le percentuali di cacao — esattamente la "demand destruction" prevista.
+3. **Sciopero degli acquirenti.** Con i prezzi in caduta, i compratori hanno smesso di comprare in attesa di prezzi migliori: fave ferme nei magazzini, in alcuni casi in deterioramento. È il classico circolo vizioso che accelera i crolli.
+4. **Capitolazione politica.** La Costa d'Avorio ha **tagliato il prezzo al coltivatore di oltre il 60%**, a 1.200 franchi CFA/kg — la conferma ufficiale che il ciclo era girato.
+
+### Fase B — La risalita: da $2.798 a $5.754 (mar → ago 2026, **+106%**)
+
+| Mese | Var. |
+|---|---|
+| mar · apr · mag 2026 | +17,9% · +5,9% · +12,3% |
+| **giu 2026** | **+27,5%** |
+| lug · ago 2026 | +7,9% · +6,6% |
+
+**Le cause:**
+
+1. **Il raccolto 2026/27 si annuncia disastroso.** Il regolatore ghanese ha proiettato la produzione 2026/27 a **450.000-550.000 t contro le 750.000 t** attese per il 2025/26 — una caduta fino al 40%, per la combinazione di *swollen shoot*, alberi vecchi ed El Niño. In Costa d'Avorio le stime precoci indicano **1,8 milioni di t, −18%** rispetto ai 2,2 milioni del 2025/26, con sviluppo dei baccelli scarso.
+2. **Meteo avverso.** Piogge eccessive hanno allagato le piantagioni in entrambi i Paesi, e i rilevamenti precoci mostrano formazione di *cherelle* (i baccelli giovani) sotto la media per il raccolto principale che parte a ottobre.
+3. **El Niño di nuovo in formazione**, con il consueto anticipo di 6-12 mesi sull'offerta dell'Africa Occidentale.
+4. **Accordo Ghana-Costa d'Avorio del 16 giugno 2026**: i due Paesi (oltre il 60% dell'offerta mondiale) hanno firmato una dichiarazione congiunta per allineare i prezzi al coltivatore e armonizzare i calendari di raccolta dal 2026/27. Il mercato l'ha letta come potere di prezzo concentrato — e infatti giugno è il mese del +27,5%.
+5. **Ricoperture degli short.** Gli speculatori erano massicciamente corti (net −29.350 a giugno): la risalita li ha costretti a ricomprare, amplificando il movimento. Il net è passato da −29.350 a −13.320 in nove settimane.
+
+**La lettura d'insieme:** è il superciclo descritto nel §3 che si ripete puntuale. Surplus → crollo → prezzi bassi che scoraggiano la cura degli alberi → nuovo deficit. Solo che stavolta il giro è stato **rapidissimo** (18 mesi invece di 3-5 anni) perché la malattia (swollen shoot) e l'età degli alberi hanno fatto da acceleratore strutturale.
+
+**Il dato che pochi guardano:** questa risalita del +106% è avvenuta **con gli speculatori ancora net SHORT** (17° percentile a 3 anni). Non è un rally guidato dai fondi: è offerta reale che manca, con i fondi rimasti indietro. Chi conosce la storia del §3 sa che i grandi rally del cacao partono così.
 
 ---
 
@@ -150,7 +194,7 @@ Volatilità strutturale misurata: **35% annua media 2000-2026** (2-3× un indice
 |---|---|---|---|
 | **ENSO (El Niño/La Niña)** | NOAA CPC (`cpc.ncep.noaa.gov`), indice ONI; IRI forecast plume | Settimanale/mensile | **ALTO a 6-12 mesi**: il migliore leading indicator dell'offerta |
 | **Meteo Africa Occidentale** (precipitazioni/Harmattan Dic-Feb) | NOAA CPC Africa desk, Open-Meteo API (gratis), TAMSAT | Giornaliera | **ALTO a 3-6 mesi** durante fioritura/sviluppo pod |
-| **COT Report (cacao 073732)** | CFTC via OpenBB (già nel sistema) | Settimanale (ven, dati mar) | **MEDIO-ALTO agli estremi**: net spec estremo = carburante per inversione (oggi: net short = setup contrarian long in costruzione) |
+| **COT Report (cacao 073732)** | CFTC via OpenBB (già nel sistema) | Settimanale (ven, dati mar) | **MEDIO — ma NON come indicatore contrarian** (vedi correzione §13.4): sui dati, spec net LONG estremo → +16,0% a 6 mesi (59% win); spec net SHORT estremo → −1,7% a 6 mesi (41% win). Sul cacao gli speculatori CONFERMANO il trend, non lo invertono |
 | **Stock certificati ICE** | ICE Report Center (`ice.com/report-center`, sezione Cocoa certified stocks) | Giornaliera | **ALTO**: scorte ai minimi = amplificatore di ogni notizia |
 | **Arrivi ai porti CIV** (cumulative arrivals) | Pubblicati da Reuters/Bloomberg citando esportatori; aggregati su siti di settore | Settimanale in stagione | **ALTO ott-mar**: il confronto arrivi vs anno precedente è IL dato del raccolto |
 | **Grindings trimestrali** (ECA Europa, CAA Asia, NCA Nordamerica) | Comunicati delle associazioni (ECA: `eurococoa.com`) | Trimestrale | **MEDIO**: proxy domanda, mercato reagisce alle sorprese |
@@ -246,7 +290,7 @@ d'oro: se il backtest è troppo bello, è rotto.
 6. **Half-life 117-637 giorni**: gli shock persistono per mesi/anni — la mean reversion è di ciclo, non di settimana. Non si "fadeano" i movimenti fondamentali.
 7. **Hurst cambia col regime** (0.46 storico → 0.54 nel superciclo): trend-following funziona SOLO nei regimi di squeeze; nei regimi calmi il mercato rangeggia.
 8. **Il superciclo 6-10 anni è il pattern dominante** (offerta che risponde con 3-4 anni di ritardo): siamo nella fase bust, −56% dal picco, come da copione 2003, 2011, 2017.
-9. **Il COT agli estremi è un segnale reale**: oggi net short −20k con ricoperture e OI in risalita = il mercato sta costruendo il setup contrarian; è il singolo dato tattico più interessante del momento.
+9. **Il COT agli estremi è un segnale reale — ma nella direzione OPPOSTA a quella che avevo scritto.** Il test del 13/08 (§13.4) smentisce la lettura contrarian: spec net long estremo → **+16,0% a 6 mesi** (59% win), spec net short estremo → **−1,7% a 6 mesi** (41% win, sotto il +5,7% di baseline). Sul cacao gli speculatori hanno storicamente ragione. Oggi il net è al 17° percentile (zona short): storicamente un contesto di rendimenti **sotto la media**, nonostante il rally in corso.
 10. **Due Paesi = metà dell'offerta**: ogni modello che non abbia il meteo di Costa d'Avorio e Ghana come feature primaria sta ignorando il fattore #1.
 
 **Massimo potere predittivo:** ENSO/meteo (6-12 mesi) → arrivi ai porti + stock ICE (settimane) → COT agli estremi (settimane) → stagionalità ott/apr (giorni-settimane) → GARCH per la vol (giorni).
@@ -275,4 +319,117 @@ d'oro: se il backtest è troppo bello, è rotto.
 **Bottom line per il sistema:** il cacao è ora nell'universo con news dedicate e COT; genererà segnali quando meteo/raccolto/posizionamento convergono — ma con l'avvertenza di sizing esplicita finché la volatilità resta in regime estremo. Il vero edge replicabile: **essere corti a ottobre, lunghi ad aprile, seguire gli squeeze quando partono, e non farsi mai trovare senza stop.**
 
 ---
-*Metodologia: tutti i valori numerici (stagionalità, autocorrelazioni, Hurst, half-life, code, correlazioni, rally/crolli, COT) sono calcolati su dati reali nella sessione del 14/07/2026. Gli eventi post-gennaio 2026 sono inferiti dai dati di prezzo e marcati come tali. Questo documento è ricerca personale, non consulenza finanziaria.*
+
+## 13. Setup algoritmico e backtest (13 agosto 2026)
+
+Dalla teoria alla regola operativa. Tutto quanto segue è **misurato**, non ipotizzato: motore event-driven, stop colpito prima del target nello stesso giorno (ipotesi conservativa), costi $10/t round-trip (spread CFD IC Markets ~8 + slippage), rischio 2% per trade.
+
+### 13.1 Cosa NON funziona (il risultato più utile)
+
+Ho testato per primo l'approccio ovvio — il trend following — in **60 combinazioni** di segnale e parametri di uscita:
+
+| Segnale | Stop/trailing testati | Hold testati | Profit factor |
+|---|---|---|---|
+| Breakout Donchian 55 | 2/3, 2/5, 3/6, 2/8, 3/10 ATR | 60, 120, 250, 500 giorni | **0,69 – 1,07** |
+| Donchian 55 + filtro MA200 | idem | idem | **0,69 – 1,04** |
+| Donchian 20 + filtro MA200 | idem | idem | **0,70 – 0,96** |
+| Incrocio MA50/200 | 2/3 ATR | 60 | 0,95 |
+| Pullback in trend | 2/3 ATR | 60 | 0,81 |
+| Stagionale ott-short / apr-long | 2/3 ATR | 60 | 0,76 |
+
+**Nessuna configurazione supera 1,07.** Il trend-following tecnico sul cacao non ha edge — esattamente ciò che prevedeva l'autocorrelazione ≈ 0 del §5. Anche il pattern stagionale di ottobre, statisticamente reale, **non sopravvive ai costi e agli stop**: è un'inclinazione della distribuzione, non un trade.
+
+Da notare: il buy & hold semplice rende +7,8% annuo composto nel periodo. Battere il buy & hold sul cacao è difficile.
+
+### 13.2 Cosa funziona: comprare i cali dentro il trend, solo long
+
+L'unica regola sopravvissuta:
+
+```
+LONG-ONLY
+├─ trigger  : RSI(14) < 30            (eccesso di ipervenduto)
+├─ filtro   : prezzo > MA200          (si compra il calo, non il crollo)
+├─ stop     : 3 × ATR(14)
+├─ trailing : 6 × ATR dal massimo
+└─ uscita   : trailing stop o 60 giorni
+```
+
+**Risultati 2000-2026:** 44 trade (~2/anno) · win rate 45,5% · **profit factor 3,01** · +0,90R medio per trade · +39,7R totali · durata media 39 giorni · max drawdown della strategia −13,7%.
+
+**Perché solo long — e non è una scelta arbitraria.** Sugli stessi dati il lato short misura PF 0,91 (perdente) contro 2,95-3,01 del lato long. La ragione è strutturale, non statistica: al ribasso esiste un pavimento (il costo di produzione: sotto una certa soglia i coltivatori smettono di vendere e i governi tagliano i prezzi al coltivatore, come a febbraio), al rialzo no — un albero nuovo produce dopo 3-4 anni, quindi l'offerta **non può** rispondere. È la stessa asimmetria che ha prodotto il +212% del 2024 e il +106% di quest'anno.
+
+### 13.3 Validazione (la parte che smonta le strategie finte)
+
+**Robustezza parametrica** — la firma di un edge vero è che non dipende dalla soglia esatta:
+
+| RSI | filtro | n | win% | PF |
+|---|---|---|---|---|
+| <25 | MA200 | 32 | 56,2% | 2,34 |
+| <30 | MA200 | 50 | 48,0% | **2,61** |
+| <35 | MA200 | 66 | 45,5% | 1,93 |
+| <40 | MA200 | 90 | 44,4% | 1,58 |
+| <30 | nessuno | 146 | 45,2% | 1,54 |
+| <35 | MA50 | 31 | 41,9% | 2,42 |
+
+Tutte sopra 1. Nessun burrone tra un parametro e il successivo.
+
+**Out-of-sample** — regola fissata sui dati 2000-2015, testata su 2016-2026 (mai vista in fase di design):
+
+| Configurazione | In-sample 2000-2015 | Out-of-sample 2016-2026 |
+|---|---|---|
+| stop 3 / trail 6 / hold 60 | PF 1,77 (n=28) | **PF 5,19 (n=16)** |
+| stop 2,5 / trail 5 / hold 40 | PF 2,38 (n=31) | **PF 3,15 (n=18)** |
+
+Il fuori campione è migliore del dentro campione: la regola non è stata cucita sui dati.
+
+**Costi:** regge fino a **$50/t** round-trip (PF 1,69). Il costo reale sul CFD è ~$10.
+
+**Bootstrap, 5.000 storie alternative** (44 trade estratti con reinserimento): equity finale mediana +81%, 5° percentile −0,2%, 95° percentile +362%, **probabilità di chiudere in perdita 5%**, drawdown mediano −10%.
+
+### 13.4 Il segnale COT: correzione a quanto scritto a luglio
+
+Nel §8 avevo classificato il COT come indicatore **contrarian**. Il test lo smentisce. Rendimenti futuri per regime di posizionamento speculativo (percentile a 3 anni, 1.585 settimane):
+
+| Regime COT | n | +1 mese | +3 mesi | +6 mesi | win 3m |
+|---|---|---|---|---|---|
+| **Short estremo (<10° pct)** | 257 | +0,9% | +2,2% | **−1,7%** | 41% |
+| Short (10-25°) | 195 | −0,1% | +0,6% | −2,0% | 38% |
+| Neutro (25-75°) | 689 | +1,6% | +2,1% | +3,6% | 45% |
+| Long (75-90°) | 185 | +2,2% | +8,2% | +13,4% | 46% |
+| **Long estremo (>90° pct)** | 259 | −0,1% | +5,2% | **+16,0%** | **59%** |
+| *baseline* | 1.585 | +1,1% | +3,3% | +5,7% | 45% |
+
+Sul cacao **gli speculatori hanno storicamente ragione**: il posizionamento estremo long precede i rendimenti migliori, quello short i peggiori. Il COT va usato come *conferma di trend*, non come segnale di inversione. Questo ribalta la lettura che avevo dato del setup attuale.
+
+### 13.5 Il limite da conoscere prima di usarla
+
+**Il 73% del profitto storico viene da UN solo trade** (dicembre 2023 → marzo 2024, +28,8R: la bolla).
+
+| Escludendo i migliori | R totale | R/trade | PF |
+|---|---|---|---|
+| — (tutti i 44) | +39,7 | +0,90 | 3,01 |
+| i primi 1 | +10,9 | +0,25 | 1,49 |
+| i primi 3 | +3,0 | +0,07 | 1,14 |
+| **i primi 5** | **−3,1** | −0,08 | **0,84** |
+
+E per decennio non è affatto uniforme: 2000-05 PF 4,51 · 2005-10 PF 4,73 · **2010-15 PF 0,73** · **2015-20 PF 0,35** · 2020-26 PF 4,13. Ci sono stati **due quinquenni consecutivi in perdita**.
+
+Questa è una strategia a coda grassa: molte perdite piccole (−1R) in attesa dell'evento raro che paga tutto. È coerente con ciò che il cacao *è* (§5: code 25× la gaussiana), ma richiede la disciplina di incassare 10 stop di fila senza cambiare regola.
+
+**Corollario operativo importante:** la ladder a 5 take profit del sistema (1R/1,5R/2R/3R/4R) **rovina questa strategia** — con un cap a 4R il risultato passa da +39,7R a +14,8R. Sul cacao si usa il trailing stop e si lascia correre.
+
+### 13.6 Stato al 13 agosto 2026 e sizing reale
+
+- prezzo $5.754 · RSI **59** · MA200 $4.575 · ATR $337
+- filtro di trend: ✅ prezzo sopra MA200 → **setup ARMATO**
+- trigger: ❌ serve RSI < 30 → **nessun ingresso adesso, si aspetta**
+- frequenza attesa del trigger: RSI<30 si è verificato nel 17% dei giorni negli ultimi 2 anni
+
+**E qui arriva il problema pratico:** con ATR a $337 lo stop a 3 ATR vale **$1.012/t**. Sul lotto minimo (0,01) sono ~$101 di rischio = **23% di un conto da €400**. Il risk manager rifiuta, correttamente. Serve una di queste condizioni: volatilità che rientra sotto ~25% annua (oggi 66%), specifiche MT5 con contratto più piccolo di quello stimato, o un capitale di almeno €2.000-2.500 per rispettare il 2% per trade.
+
+Fino ad allora il sistema **monitora e segnala, non emette ticket**.
+
+---
+*Metodologia: tutti i valori numerici (stagionalità, autocorrelazioni, Hurst, half-life, code, correlazioni, rally/crolli, COT, backtest) sono calcolati su dati reali ICE CC=F nelle sessioni del 14/07/2026 e 13/08/2026. Le cause fondamentali del §0 provengono dalle fonti citate in fondo. Backtest riproducibile con `python cocoa_setup.py --backtest`. Questo documento è ricerca personale, non consulenza finanziaria.*
+
+**Fonti §0:** [ConfectioneryNews — Cocoa prices collapse following record highs](https://www.confectionerynews.com/Article/2026/02/13/cocoa-prices-collapse-following-record-highs/) · [Yahoo Finance — Cocoa Prices Plunge as Global Supplies Build](https://finance.yahoo.com/news/cocoa-prices-plunge-global-supplies-170426987.html) · [StoneX — Cocoa Market Faces Life After Crisis](https://www.stonex.com/en/insights/cocoa-market-faces-life-after-crisis/) · [Barchart — Cocoa Prices Surge on Ghana Crop Worries](https://www.barchart.com/story/news/3618231/cocoa-prices-surge-on-ghana-crop-worries) · [Capital.com — Cocoa Price Forecast / Ghana-Ivory Coast Pricing Deal](https://capital.com/en-eu/analysis/cocoa-price-forecast) · [RioTimes — Cocoa Pricing: Ghana and Ivory Coast Align in 2026](https://www.riotimesonline.com/ghana-ivory-coast-cocoa-pricing-2026/) · [Wikifarmer — El Niño 2026 e impatto sul cacao](https://wikifarmer.com/library/en/article/el-nino-2026-cocoa-commodity-impact)
