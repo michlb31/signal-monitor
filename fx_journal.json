@@ -2385,7 +2385,13 @@
    "prezzo esteso +1.4 ATR da EMA20 \u2192 ordine LIMIT a 119.42 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-08-13T01:56:36.163795+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 115.48,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -7.19,
+  "closed_at": "2026-08-14T13:54:07.978624+00:00",
+  "bars_held": 1
  },
  {
   "id": "ILPT.NAS_202608131309",
@@ -2443,7 +2449,13 @@
    "prezzo esteso +1.5 ATR da EMA20 \u2192 ordine LIMIT a 452.28 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-08-13T18:27:25.196926+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 495.77,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 3.77,
+  "closed_at": "2026-08-14T13:54:08.248653+00:00",
+  "bars_held": 1
  },
  {
   "id": "NVDA.NAS_202608132144",
@@ -2463,7 +2475,13 @@
    "prezzo esteso +1.7 ATR da EMA20 \u2192 ordine LIMIT a 214.65 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-08-13T21:44:34.299394+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 222.28,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 6.62,
+  "closed_at": "2026-08-14T13:54:08.334751+00:00",
+  "bars_held": 1
  },
  {
   "id": "VOW3.ETR_202608140724",
@@ -2482,6 +2500,27 @@
    "sentiment -0.19 / tech -0.85 concordi"
   ],
   "opened_at": "2026-08-14T07:24:38.044607+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "EURUSD_202608141354",
+  "symbol": "EURUSD",
+  "direction": "LONG",
+  "yf": "EURUSD=X",
+  "entry": 1.15195,
+  "stop": 1.14671,
+  "tp1": 1.15719,
+  "tp2": 1.16243,
+  "lots": 0.01,
+  "risk_eur": 4.52,
+  "confidence": 0.451,
+  "reasons": [
+   "prezzo esteso +1.6 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
+   "news: BCE hawkish, Dollaro forte",
+   "macro +0.39 / tech +0.35 concordi",
+   "COT +0.70"
+  ],
+  "opened_at": "2026-08-14T13:54:06.725393+00:00",
   "status": "OPEN"
  }
 ]
