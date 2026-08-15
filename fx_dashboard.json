@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-15T16:50:59.582666+00:00",
+ "generated_at": "2026-08-15T17:20:23.646469+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 17,
+ "n_titles": 18,
  "news_events": [
   {
    "rule": "BoJ hawkish",
@@ -20,68 +20,36 @@
  ],
  "universe": [
   {
-   "symbol": "AUDJPY",
+   "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.407,
+   "confidence": 0.447,
    "layers": {
     "news": -0.099,
-    "macro": 0.762,
+    "macro": 0.717,
+    "tech": 0.977,
+    "cot": 0.114,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.45 < 0.45",
+   "price": 215.66700744628906,
+   "rsi": 41.8
+  },
+  {
+   "symbol": "AUDJPY",
+   "direction": "LONG",
+   "confidence": 0.368,
+   "layers": {
+    "news": -0.099,
+    "macro": 0.634,
     "tech": 0.977,
     "cot": -0.244,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.41 < 0.45",
+   "gate_reason": "confidence 0.37 < 0.45",
    "price": 112.87899780273438,
    "rsi": 38.7
-  },
-  {
-   "symbol": "AUDUSD",
-   "direction": "LONG",
-   "confidence": 0.32,
-   "layers": {
-    "news": 0.045,
-    "macro": 0.434,
-    "tech": 0.85,
-    "cot": -0.244,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.32 < 0.45",
-   "price": 0.708666980266571,
-   "rsi": 64.3
-  },
-  {
-   "symbol": "USDCAD",
-   "direction": "SHORT",
-   "confidence": 0.315,
-   "layers": {
-    "news": -0.045,
-    "macro": -0.473,
-    "tech": -0.35,
-    "cot": -0.478,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 1.3871999979019165,
-   "rsi": 26.1
-  },
-  {
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "confidence": 0.303,
-   "layers": {
-    "news": -0.099,
-    "macro": 0.717,
-    "tech": 0.402,
-    "cot": 0.114,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.30 < 0.45",
-   "price": 215.66700744628906,
-   "rsi": 39.2
   },
   {
    "symbol": "EURGBP",
@@ -98,6 +66,22 @@
    "gate_reason": "confidence 0.27 < 0.45",
    "price": 0.8547700047492981,
    "rsi": 54.7
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": "LONG",
+   "confidence": 0.263,
+   "layers": {
+    "news": 0.045,
+    "macro": 0.247,
+    "tech": 0.85,
+    "cot": -0.244,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.26 < 0.45",
+   "price": 0.708666980266571,
+   "rsi": 65.7
   },
   {
    "symbol": "XBRUSD",
@@ -134,32 +118,32 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.237,
+   "confidence": 0.219,
    "layers": {
     "news": 0.045,
-    "macro": 0.277,
+    "macro": 0.218,
     "tech": 0.35,
     "cot": 0.354,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.24 < 0.45",
+   "gate_reason": "confidence 0.22 < 0.45",
    "price": 0.5893793702125549,
    "rsi": 71.1
   },
   {
    "symbol": "GBPUSD",
    "direction": "LONG",
-   "confidence": 0.235,
+   "confidence": 0.217,
    "layers": {
     "news": 0.045,
-    "macro": 0.389,
+    "macro": 0.33,
     "tech": 0.35,
     "cot": 0.114,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
+   "gate_reason": "confidence 0.22 < 0.45",
    "price": 1.3535828590393066,
    "rsi": 68.5
   },
@@ -180,6 +164,22 @@
    "rsi": 49.7
   },
   {
+   "symbol": "USDCAD",
+   "direction": "SHORT",
+   "confidence": 0.208,
+   "layers": {
+    "news": -0.045,
+    "macro": -0.262,
+    "tech": -0.175,
+    "cot": -0.478,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 1.3871999979019165,
+   "rsi": 19.3
+  },
+  {
    "symbol": "EURJPY",
    "direction": "LONG",
    "confidence": 0.174,
@@ -196,20 +196,20 @@
    "rsi": 40.5
   },
   {
-   "symbol": "EURUSD",
+   "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.163,
+   "confidence": 0.17,
    "layers": {
-    "news": 0.045,
-    "macro": 0.229,
+    "news": -0.045,
+    "macro": 0.315,
     "tech": 0.35,
-    "cot": -0.045,
+    "cot": 0.012,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.16 < 0.45",
-   "price": 1.157273530960083,
-   "rsi": 71.2
+   "gate_reason": "confidence 0.17 < 0.45",
+   "price": 0.8130000233650208,
+   "rsi": 42.0
   },
   {
    "symbol": "JP225",
@@ -225,7 +225,23 @@
    "gate": false,
    "gate_reason": "confidence 0.15 < 0.45",
    "price": 68713.796875,
-   "rsi": 58.0
+   "rsi": 65.0
+  },
+  {
+   "symbol": "EURUSD",
+   "direction": "LONG",
+   "confidence": 0.145,
+   "layers": {
+    "news": 0.045,
+    "macro": 0.17,
+    "tech": 0.35,
+    "cot": -0.045,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.15 < 0.45",
+   "price": 1.157273530960083,
+   "rsi": 71.2
   },
   {
    "symbol": "XAGUSD",
@@ -260,22 +276,6 @@
    "rsi": 68.7
   },
   {
-   "symbol": "USDCHF",
-   "direction": "LONG",
-   "confidence": 0.114,
-   "layers": {
-    "news": -0.045,
-    "macro": 0.129,
-    "tech": 0.35,
-    "cot": 0.012,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.11 < 0.45",
-   "price": 0.8130000233650208,
-   "rsi": 45.9
-  },
-  {
    "symbol": "AUS200",
    "direction": "LONG",
    "confidence": 0.114,
@@ -289,7 +289,7 @@
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 9115.2001953125,
-   "rsi": 70.6
+   "rsi": 65.5
   },
   {
    "symbol": "XAUUSD",
@@ -321,7 +321,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 30046.140625,
-   "rsi": 69.3
+   "rsi": 70.5
   },
   {
    "symbol": "US30",
@@ -337,23 +337,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 65.5
-  },
-  {
-   "symbol": "USDJPY",
-   "direction": "SHORT",
-   "confidence": 0.068,
-   "layers": {
-    "news": -0.143,
-    "macro": 0.328,
-    "tech": -0.35,
-    "cot": -0.242,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.07 < 0.45",
-   "price": 159.30499267578125,
-   "rsi": 26.9
+   "rsi": 63.8
   },
   {
    "symbol": "UK100",
@@ -372,6 +356,22 @@
    "rsi": 51.5
   },
   {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.051,
+   "layers": {
+    "news": -0.143,
+    "macro": 0.386,
+    "tech": -0.35,
+    "cot": -0.242,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.05 < 0.45",
+   "price": 159.30499267578125,
+   "rsi": 26.9
+  },
+  {
    "symbol": "DE40",
    "direction": "LONG",
    "confidence": 0.04,
@@ -385,7 +385,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 89.8
+   "rsi": 88.0
   },
   {
    "symbol": "US500",
@@ -404,106 +404,69 @@
    "rsi": 75.3
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "APD.NYSE",
-   "direction": "LONG",
-   "entry": 302.42,
-   "stop": 292.89,
-   "tp1": 311.95,
-   "tp2": 321.48,
-   "tps": [
-    311.95,
-    316.72,
-    321.48,
-    331.01,
-    340.54
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 9.5,
-   "lots": 0.8,
-   "risk_eur": 6.59,
-   "risk_pct": 1.6,
-   "margin_eur": 41.81,
-   "rr_tp1": 2.0,
-   "confidence": 0.771,
-   "reasons": [
-    "news: How Zacks\u2019 Earnings Upgrade At Air Products (APD) Has Change",
-    "sentiment +0.69 / tech +0.85 concordi",
-    "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 302.42 sul ritracciamento (NON a mercato)"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "APD",
-   "asset_class": "stock",
-   "timestamp": "2026-08-15T16:50:59.582618+00:00",
-   "company": "Air Products and Chemicals",
-   "entry_type": "LIMIT"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [],
  "stock_candidates": [
   {
-   "symbol": "APD.NYSE",
-   "name": "Air Products and Chemicals",
+   "symbol": "BAM.NYSE",
+   "name": "Brookfield Asset Manageme",
    "direction": "LONG",
-   "composite": 0.771,
-   "news_score": 0.693,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 308.97
-  },
-  {
-   "symbol": "HD.NYSE",
-   "name": "Home Depot",
-   "direction": "LONG",
-   "composite": 0.072,
-   "news_score": 0.495,
+   "composite": 0.125,
+   "news_score": 0.4,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.07 < 0.5",
+   "gate_reason": "composite 0.12 < 0.5",
    "n_mentions": 1,
-   "price": 338.86
+   "price": 54.31
+  },
+  {
+   "symbol": "BIP.NYSE",
+   "name": "Brookfield Infrastructure Pa",
+   "direction": "LONG",
+   "composite": 0.375,
+   "news_score": 0.4,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.38 < 0.5",
+   "n_mentions": 1,
+   "price": 39.74
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.375,
+   "news_score": 0.4,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.38 < 0.5",
+   "n_mentions": 1,
+   "price": 166.05
   },
   {
    "symbol": "LOW.NYSE",
    "name": "Lowe's Cos Inc",
    "direction": "LONG",
-   "composite": 0.172,
-   "news_score": 0.495,
+   "composite": 0.084,
+   "news_score": 0.318,
    "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.17 < 0.5",
+   "gate_reason": "composite 0.08 < 0.5",
    "n_mentions": 1,
    "price": 218.47
   },
   {
-   "symbol": "HWM.NYSE",
-   "name": "Howmet Aerospace Inc CFL",
-   "direction": "LONG",
-   "composite": 0.333,
-   "news_score": 0.316,
-   "tech_score": 0.35,
+   "symbol": "HD.NYSE",
+   "name": "Home Depot",
+   "direction": "SHORT",
+   "composite": -0.016,
+   "news_score": 0.318,
+   "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.33 < 0.5",
-   "n_mentions": 2,
-   "price": 289.18
+   "gate_reason": "composite 0.02 < 0.5",
+   "n_mentions": 1,
+   "price": 338.86
   },
   {
    "symbol": "AMAT.NAS",
@@ -518,16 +481,16 @@
    "price": 507.18
   },
   {
-   "symbol": "MORN.NAS",
-   "name": "Morningstar Inc",
+   "symbol": "HWM.NYSE",
+   "name": "Howmet Aerospace Inc CFL",
    "direction": "LONG",
-   "composite": 0.223,
-   "news_score": 0.27,
-   "tech_score": 0.175,
+   "composite": 0.295,
+   "news_score": 0.24,
+   "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.22 < 0.5",
-   "n_mentions": 1,
-   "price": 207.41
+   "gate_reason": "composite 0.29 < 0.5",
+   "n_mentions": 2,
+   "price": 289.18
   },
   {
    "symbol": "CHTR.NAS",
