@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-15T23:20:57.917746+00:00",
+ "generated_at": "2026-08-15T23:46:17.427008+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
@@ -284,7 +284,7 @@
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 9115.2001953125,
-   "rsi": 70.6
+   "rsi": 65.5
   },
   {
    "symbol": "XAUUSD",
@@ -332,7 +332,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 65.5
+   "rsi": 63.8
   },
   {
    "symbol": "UK100",
@@ -348,7 +348,7 @@
    "gate": false,
    "gate_reason": "confidence 0.06 < 0.45",
    "price": 10750.099609375,
-   "rsi": 46.2
+   "rsi": 51.5
   },
   {
    "symbol": "DE40",
@@ -364,7 +364,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 89.8
+   "rsi": 88.0
   },
   {
    "symbol": "US500",
@@ -405,15 +405,15 @@
    "symbol": "HUM.NYSE",
    "direction": "LONG",
    "entry": 389.05,
-   "stop": 372.22,
-   "tp1": 405.88,
-   "tp2": 422.7,
+   "stop": 372.62,
+   "tp1": 405.48,
+   "tp2": 421.9,
    "tps": [
-    405.88,
-    414.29,
-    422.7,
-    439.53,
-    456.36
+    405.48,
+    413.69,
+    421.9,
+    438.33,
+    454.75
    ],
    "tp_multiples": [
     1.0,
@@ -422,18 +422,18 @@
     3.0,
     4.0
    ],
-   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
    "inside_structure": "False",
-   "stop_points": 16.8,
-   "lots": 0.4,
-   "risk_eur": 5.82,
-   "risk_pct": 1.5,
-   "margin_eur": 26.89,
+   "stop_points": 16.4,
+   "lots": 0.5,
+   "risk_eur": 7.1,
+   "risk_pct": 1.8,
+   "margin_eur": 33.62,
    "rr_tp1": 2.0,
-   "confidence": 0.525,
+   "confidence": 0.775,
    "reasons": [
     "news: Humana (HUM) Beats On Earnings And Quality, Is The Stock Abo",
-    "sentiment +0.70 / tech +0.35 concordi"
+    "sentiment +0.70 / tech +0.85 concordi"
    ],
    "next_event": "",
    "currencies": [],
@@ -443,7 +443,7 @@
    "season_note": "",
    "yf": "HUM",
    "asset_class": "stock",
-   "timestamp": "2026-08-15T23:20:57.917698+00:00",
+   "timestamp": "2026-08-15T23:46:17.426959+00:00",
    "company": "Humana Inc",
    "entry_type": "MARKET"
   }
@@ -455,9 +455,9 @@
    "symbol": "HUM.NYSE",
    "name": "Humana Inc",
    "direction": "LONG",
-   "composite": 0.525,
+   "composite": 0.775,
    "news_score": 0.7,
-   "tech_score": 0.35,
+   "tech_score": 0.85,
    "gate": true,
    "gate_reason": null,
    "n_mentions": 1,
@@ -474,6 +474,18 @@
    "gate_reason": "composite 0.01 < 0.5",
    "n_mentions": 1,
    "price": 218.47
+  },
+  {
+   "symbol": "MORN.NAS",
+   "name": "Morningstar Inc",
+   "direction": "LONG",
+   "composite": 0.25,
+   "news_score": 0.15,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.25 < 0.5",
+   "n_mentions": 1,
+   "price": 207.41
   }
  ],
  "journal": {
