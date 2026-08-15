@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-15T22:48:45.553840+00:00",
+ "generated_at": "2026-08-15T23:20:57.917746+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
@@ -15,22 +15,6 @@
  ],
  "universe": [
   {
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "confidence": 0.476,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.717,
-    "tech": 0.977,
-    "cot": 0.114,
-    "event": 0.0
-   },
-   "gate": true,
-   "gate_reason": "",
-   "price": 215.66700744628906,
-   "rsi": 41.8
-  },
-  {
    "symbol": "AUDJPY",
    "direction": "LONG",
    "confidence": 0.398,
@@ -45,6 +29,22 @@
    "gate_reason": "confidence 0.40 < 0.45",
    "price": 112.87899780273438,
    "rsi": 38.7
+  },
+  {
+   "symbol": "GBPJPY",
+   "direction": "LONG",
+   "confidence": 0.333,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.717,
+    "tech": 0.402,
+    "cot": 0.114,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.33 < 0.45",
+   "price": 215.66700744628906,
+   "rsi": 39.2
   },
   {
    "symbol": "EURGBP",
@@ -284,7 +284,7 @@
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 9115.2001953125,
-   "rsi": 65.5
+   "rsi": 70.6
   },
   {
    "symbol": "XAUUSD",
@@ -332,7 +332,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 63.8
+   "rsi": 65.5
   },
   {
    "symbol": "UK100",
@@ -364,7 +364,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 88.0
+   "rsi": 89.8
   },
   {
    "symbol": "US500",
@@ -405,15 +405,15 @@
    "symbol": "HUM.NYSE",
    "direction": "LONG",
    "entry": 389.05,
-   "stop": 372.62,
-   "tp1": 405.48,
-   "tp2": 421.9,
+   "stop": 372.22,
+   "tp1": 405.88,
+   "tp2": 422.7,
    "tps": [
-    405.48,
-    413.69,
-    421.9,
-    438.33,
-    454.75
+    405.88,
+    414.29,
+    422.7,
+    439.53,
+    456.36
    ],
    "tp_multiples": [
     1.0,
@@ -422,18 +422,18 @@
     3.0,
     4.0
    ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
    "inside_structure": "False",
-   "stop_points": 16.4,
-   "lots": 0.5,
-   "risk_eur": 7.1,
-   "risk_pct": 1.8,
-   "margin_eur": 33.62,
+   "stop_points": 16.8,
+   "lots": 0.4,
+   "risk_eur": 5.82,
+   "risk_pct": 1.5,
+   "margin_eur": 26.89,
    "rr_tp1": 2.0,
-   "confidence": 0.925,
+   "confidence": 0.525,
    "reasons": [
     "news: Humana (HUM) Beats On Earnings And Quality, Is The Stock Abo",
-    "sentiment +1.00 / tech +0.85 concordi"
+    "sentiment +0.70 / tech +0.35 concordi"
    ],
    "next_event": "",
    "currencies": [],
@@ -443,30 +443,21 @@
    "season_note": "",
    "yf": "HUM",
    "asset_class": "stock",
-   "timestamp": "2026-08-15T22:48:45.553796+00:00",
+   "timestamp": "2026-08-15T23:20:57.917698+00:00",
    "company": "Humana Inc",
    "entry_type": "MARKET"
   }
  ],
- "rejected": [
-  {
-   "accepted": false,
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "reject_reason": "volume minimo 0.01 \u21d2 rischio 4.2% > 3.0% (stop 298 punti troppo ampio per il capitale)",
-   "entry_source": "daily",
-   "entry_type": "MARKET"
-  }
- ],
+ "rejected": [],
  "calendar": [],
  "stock_candidates": [
   {
    "symbol": "HUM.NYSE",
    "name": "Humana Inc",
    "direction": "LONG",
-   "composite": 0.925,
-   "news_score": 1.0,
-   "tech_score": 0.85,
+   "composite": 0.525,
+   "news_score": 0.7,
+   "tech_score": 0.35,
    "gate": true,
    "gate_reason": null,
    "n_mentions": 1,
@@ -483,18 +474,6 @@
    "gate_reason": "composite 0.01 < 0.5",
    "n_mentions": 1,
    "price": 218.47
-  },
-  {
-   "symbol": "MORN.NAS",
-   "name": "Morningstar Inc",
-   "direction": "LONG",
-   "composite": 0.25,
-   "news_score": 0.15,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.25 < 0.5",
-   "n_mentions": 1,
-   "price": 207.41
   }
  ],
  "journal": {
