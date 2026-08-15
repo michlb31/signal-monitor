@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-15T16:24:02.439105+00:00",
+ "generated_at": "2026-08-15T16:50:59.582666+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
@@ -9,8 +9,8 @@
  "news_events": [
   {
    "rule": "BoJ hawkish",
-   "strength": 0.15,
-   "n": 1
+   "strength": 0.22,
+   "n": 2
   },
   {
    "rule": "Dollaro debole",
@@ -22,16 +22,16 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.416,
+   "confidence": 0.407,
    "layers": {
-    "news": -0.067,
+    "news": -0.099,
     "macro": 0.762,
     "tech": 0.977,
     "cot": -0.244,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.42 < 0.45",
+   "gate_reason": "confidence 0.41 < 0.45",
    "price": 112.87899780273438,
    "rsi": 38.7
   },
@@ -70,16 +70,16 @@
   {
    "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.313,
+   "confidence": 0.303,
    "layers": {
-    "news": -0.067,
+    "news": -0.099,
     "macro": 0.717,
     "tech": 0.402,
     "cot": 0.114,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
+   "gate_reason": "confidence 0.30 < 0.45",
    "price": 215.66700744628906,
    "rsi": 39.2
   },
@@ -182,16 +182,16 @@
   {
    "symbol": "EURJPY",
    "direction": "LONG",
-   "confidence": 0.183,
+   "confidence": 0.174,
    "layers": {
-    "news": -0.067,
+    "news": -0.099,
     "macro": 0.556,
     "tech": 0.173,
     "cot": -0.045,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
+   "gate_reason": "confidence 0.17 < 0.45",
    "price": 184.36500549316406,
    "rsi": 40.5
   },
@@ -214,9 +214,9 @@
   {
    "symbol": "JP225",
    "direction": "LONG",
-   "confidence": 0.154,
+   "confidence": 0.148,
    "layers": {
-    "news": -0.041,
+    "news": -0.06,
     "macro": -0.034,
     "tech": 0.85,
     "cot": -0.242,
@@ -321,7 +321,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 30046.140625,
-   "rsi": 70.5
+   "rsi": 69.3
   },
   {
    "symbol": "US30",
@@ -340,6 +340,22 @@
    "rsi": 65.5
   },
   {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.068,
+   "layers": {
+    "news": -0.143,
+    "macro": 0.328,
+    "tech": -0.35,
+    "cot": -0.242,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.07 < 0.45",
+   "price": 159.30499267578125,
+   "rsi": 26.9
+  },
+  {
    "symbol": "UK100",
    "direction": "LONG",
    "confidence": 0.06,
@@ -356,22 +372,6 @@
    "rsi": 51.5
   },
   {
-   "symbol": "USDJPY",
-   "direction": "SHORT",
-   "confidence": 0.059,
-   "layers": {
-    "news": -0.112,
-    "macro": 0.328,
-    "tech": -0.35,
-    "cot": -0.242,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.06 < 0.45",
-   "price": 159.30499267578125,
-   "rsi": 26.9
-  },
-  {
    "symbol": "DE40",
    "direction": "LONG",
    "confidence": 0.04,
@@ -385,7 +385,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 88.0
+   "rsi": 89.8
   },
   {
    "symbol": "US500",
@@ -409,16 +409,16 @@
    "accepted": true,
    "symbol": "APD.NYSE",
    "direction": "LONG",
-   "entry": 302.5,
-   "stop": 293.0,
-   "tp1": 312.0,
-   "tp2": 321.5,
+   "entry": 302.42,
+   "stop": 292.89,
+   "tp1": 311.95,
+   "tp2": 321.48,
    "tps": [
-    312.0,
-    316.75,
-    321.5,
-    331.0,
-    340.5
+    311.95,
+    316.72,
+    321.48,
+    331.01,
+    340.54
    ],
    "tp_multiples": [
     1.0,
@@ -431,15 +431,15 @@
    "inside_structure": "True",
    "stop_points": 9.5,
    "lots": 0.8,
-   "risk_eur": 6.57,
+   "risk_eur": 6.59,
    "risk_pct": 1.6,
-   "margin_eur": 41.82,
+   "margin_eur": 41.81,
    "rr_tp1": 2.0,
    "confidence": 0.771,
    "reasons": [
     "news: How Zacks\u2019 Earnings Upgrade At Air Products (APD) Has Change",
     "sentiment +0.69 / tech +0.85 concordi",
-    "prezzo esteso +1.2 ATR da EMA20 \u2192 ordine LIMIT a 302.5 sul ritracciamento (NON a mercato)"
+    "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 302.42 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
    "currencies": [],
@@ -449,7 +449,7 @@
    "season_note": "",
    "yf": "APD",
    "asset_class": "stock",
-   "timestamp": "2026-08-15T16:24:02.439061+00:00",
+   "timestamp": "2026-08-15T16:50:59.582618+00:00",
    "company": "Air Products and Chemicals",
    "entry_type": "LIMIT"
   }
@@ -470,18 +470,6 @@
    "price": 308.97
   },
   {
-   "symbol": "LOW.NYSE",
-   "name": "Lowe's Cos Inc",
-   "direction": "LONG",
-   "composite": 0.172,
-   "news_score": 0.495,
-   "tech_score": -0.15,
-   "gate": false,
-   "gate_reason": "composite 0.17 < 0.5",
-   "n_mentions": 1,
-   "price": 218.47
-  },
-  {
    "symbol": "HD.NYSE",
    "name": "Home Depot",
    "direction": "LONG",
@@ -494,14 +482,50 @@
    "price": 338.86
   },
   {
+   "symbol": "LOW.NYSE",
+   "name": "Lowe's Cos Inc",
+   "direction": "LONG",
+   "composite": 0.172,
+   "news_score": 0.495,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.17 < 0.5",
+   "n_mentions": 1,
+   "price": 218.47
+  },
+  {
+   "symbol": "HWM.NYSE",
+   "name": "Howmet Aerospace Inc CFL",
+   "direction": "LONG",
+   "composite": 0.333,
+   "news_score": 0.316,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.33 < 0.5",
+   "n_mentions": 2,
+   "price": 289.18
+  },
+  {
+   "symbol": "AMAT.NAS",
+   "name": "Applied Materials Inc",
+   "direction": "SHORT",
+   "composite": -0.025,
+   "news_score": 0.3,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.02 < 0.5",
+   "n_mentions": 1,
+   "price": 507.18
+  },
+  {
    "symbol": "MORN.NAS",
    "name": "Morningstar Inc",
    "direction": "LONG",
-   "composite": 0.31,
+   "composite": 0.223,
    "news_score": 0.27,
-   "tech_score": 0.35,
+   "tech_score": 0.175,
    "gate": false,
-   "gate_reason": "composite 0.31 < 0.5",
+   "gate_reason": "composite 0.22 < 0.5",
    "n_mentions": 1,
    "price": 207.41
   },
@@ -516,18 +540,6 @@
    "gate_reason": "composite 0.17 < 0.5",
    "n_mentions": 1,
    "price": 154.27
-  },
-  {
-   "symbol": "HWM.NYSE",
-   "name": "Howmet Aerospace Inc CFL",
-   "direction": "LONG",
-   "composite": 0.262,
-   "news_score": 0.175,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.26 < 0.5",
-   "n_mentions": 1,
-   "price": 289.18
   }
  ],
  "journal": {
