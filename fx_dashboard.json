@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-15T03:39:07.082810+00:00",
+ "generated_at": "2026-08-15T04:31:12.750577+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 25,
+ "n_titles": 24,
  "news_events": [
   {
    "rule": "Fed hawkish",
@@ -48,18 +48,34 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.284,
+   "confidence": 0.293,
    "layers": {
     "news": -0.045,
-    "macro": 0.406,
+    "macro": 0.434,
     "tech": 0.85,
     "cot": -0.244,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.28 < 0.45",
+   "gate_reason": "confidence 0.29 < 0.45",
    "price": 0.708666980266571,
    "rsi": 64.3
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": "SHORT",
+   "confidence": 0.288,
+   "layers": {
+    "news": 0.045,
+    "macro": -0.473,
+    "tech": -0.35,
+    "cot": -0.478,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.29 < 0.45",
+   "price": 1.3871999979019165,
+   "rsi": 26.1
   },
   {
    "symbol": "EURGBP",
@@ -80,18 +96,18 @@
   {
    "symbol": "XBRUSD",
    "direction": "LONG",
-   "confidence": 0.259,
+   "confidence": 0.254,
    "layers": {
     "news": 0.0,
-    "macro": 0.154,
+    "macro": 0.137,
     "tech": 0.85,
     "cot": 0.0,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.26 < 0.45",
-   "price": 88.58999633789062,
-   "rsi": 50.3
+   "gate_reason": "confidence 0.25 < 0.45",
+   "price": 88.5199966430664,
+   "rsi": 50.2
   },
   {
    "symbol": "GBPJPY",
@@ -110,28 +126,44 @@
    "rsi": 39.2
   },
   {
+   "symbol": "XNGUSD",
+   "direction": "SHORT",
+   "confidence": 0.25,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.0,
+    "tech": -1.0,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.25 < 0.45",
+   "price": 2.7330000400543213,
+   "rsi": 47.6
+  },
+  {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.225,
+   "confidence": 0.21,
    "layers": {
     "news": -0.045,
-    "macro": 0.327,
+    "macro": 0.277,
     "tech": 0.35,
     "cot": 0.354,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.23 < 0.45",
+   "gate_reason": "confidence 0.21 < 0.45",
    "price": 0.5893793702125549,
-   "rsi": 65.5
+   "rsi": 71.1
   },
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.214,
+   "confidence": 0.209,
    "layers": {
     "news": 0.0,
-    "macro": 0.154,
+    "macro": 0.137,
     "tech": 0.85,
     "cot": -0.3,
     "event": 0.0
@@ -142,114 +174,66 @@
    "rsi": 49.7
   },
   {
-   "symbol": "XNGUSD",
-   "direction": "SHORT",
-   "confidence": 0.212,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.0,
-    "tech": -0.85,
-    "cot": 0.0,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.21 < 0.45",
-   "price": 2.7149999141693115,
-   "rsi": 46.3
-  },
-  {
    "symbol": "GBPUSD",
    "direction": "LONG",
-   "confidence": 0.199,
+   "confidence": 0.208,
    "layers": {
     "news": -0.045,
-    "macro": 0.361,
+    "macro": 0.389,
     "tech": 0.35,
     "cot": 0.114,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.20 < 0.45",
+   "gate_reason": "confidence 0.21 < 0.45",
    "price": 1.3535828590393066,
    "rsi": 68.5
   },
   {
-   "symbol": "USDCAD",
-   "direction": "SHORT",
-   "confidence": 0.192,
-   "layers": {
-    "news": 0.045,
-    "macro": -0.299,
-    "tech": -0.175,
-    "cot": -0.478,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
-   "price": 1.3869999647140503,
-   "rsi": 19.2
-  },
-  {
    "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.188,
+   "confidence": 0.141,
    "layers": {
     "news": 0.045,
-    "macro": 0.285,
+    "macro": 0.129,
     "tech": 0.35,
     "cot": 0.012,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
+   "gate_reason": "confidence 0.14 < 0.45",
    "price": 0.8130000233650208,
-   "rsi": 42.0
+   "rsi": 45.9
   },
   {
    "symbol": "XAGUSD",
    "direction": "SHORT",
-   "confidence": 0.188,
+   "confidence": 0.139,
    "layers": {
     "news": 0.0,
-    "macro": -0.451,
-    "tech": -0.24,
+    "macro": -0.388,
+    "tech": -0.12,
     "cot": 0.049,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
-   "price": 64.82499694824219,
-   "rsi": 71.7
-  },
-  {
-   "symbol": "XAUUSD",
-   "direction": "SHORT",
-   "confidence": 0.151,
-   "layers": {
-    "news": -0.052,
-    "macro": -0.451,
-    "tech": -0.24,
-    "cot": 0.4,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.15 < 0.45",
-   "price": 4432.0,
-   "rsi": 76.8
+   "gate_reason": "confidence 0.14 < 0.45",
+   "price": 64.98799896240234,
+   "rsi": 72.2
   },
   {
    "symbol": "EURUSD",
    "direction": "LONG",
-   "confidence": 0.128,
+   "confidence": 0.136,
    "layers": {
     "news": -0.045,
-    "macro": 0.201,
+    "macro": 0.229,
     "tech": 0.35,
     "cot": -0.045,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.13 < 0.45",
+   "gate_reason": "confidence 0.14 < 0.45",
    "price": 1.157273530960083,
    "rsi": 71.2
   },
@@ -283,23 +267,23 @@
    "gate": false,
    "gate_reason": "confidence 0.12 < 0.45",
    "price": 68713.796875,
-   "rsi": 65.0
+   "rsi": 58.0
   },
   {
    "symbol": "COCOA",
    "direction": "LONG",
-   "confidence": 0.118,
+   "confidence": 0.116,
    "layers": {
     "news": 0.0,
-    "macro": 0.141,
+    "macro": 0.134,
     "tech": 0.35,
     "cot": -0.08,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 70). Trend ok (prezzo $5,786 > MA200 $4,573)",
-   "price": 5786.0,
-   "rsi": 69.6
+   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 69). Trend ok (prezzo $5,734 > MA200 $4,572)",
+   "price": 5734.0,
+   "rsi": 68.7
   },
   {
    "symbol": "AUS200",
@@ -315,21 +299,37 @@
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 9115.2001953125,
-   "rsi": 65.5
+   "rsi": 70.6
+  },
+  {
+   "symbol": "XAUUSD",
+   "direction": "SHORT",
+   "confidence": 0.102,
+   "layers": {
+    "news": -0.052,
+    "macro": -0.388,
+    "tech": -0.12,
+    "cot": 0.4,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.10 < 0.45",
+   "price": 4380.39990234375,
+   "rsi": 74.8
   },
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.083,
+   "confidence": 0.092,
    "layers": {
     "news": -0.221,
-    "macro": 0.356,
+    "macro": 0.328,
     "tech": -0.35,
     "cot": -0.242,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.08 < 0.45",
+   "gate_reason": "confidence 0.09 < 0.45",
    "price": 159.30499267578125,
    "rsi": 26.9
   },
@@ -347,7 +347,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 63.8
+   "rsi": 65.5
   },
   {
    "symbol": "UK100",
@@ -363,7 +363,7 @@
    "gate": false,
    "gate_reason": "confidence 0.06 < 0.45",
    "price": 10750.099609375,
-   "rsi": 46.2
+   "rsi": 51.5
   },
   {
    "symbol": "USTEC",
@@ -379,7 +379,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 30046.140625,
-   "rsi": 70.5
+   "rsi": 69.3
   },
   {
    "symbol": "DE40",
@@ -395,7 +395,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 88.0
+   "rsi": 89.8
   },
   {
    "symbol": "US500",
@@ -419,16 +419,16 @@
    "accepted": true,
    "symbol": "DELL.NYSE",
    "direction": "LONG",
-   "entry": 456.31,
+   "entry": 456.32,
    "stop": 409.13,
-   "tp1": 503.49,
-   "tp2": 550.67,
+   "tp1": 503.51,
+   "tp2": 550.7,
    "tps": [
-    503.49,
-    527.08,
-    550.67,
-    597.84,
-    645.02
+    503.51,
+    527.11,
+    550.7,
+    597.9,
+    645.09
    ],
    "tp_multiples": [
     1.0,
@@ -449,7 +449,7 @@
    "reasons": [
     "news: Earnings Prove AI Hardware Demand Is Strong. That\u2019s Good New",
     "sentiment +0.18 / tech +0.85 concordi",
-    "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 456.31 sul ritracciamento (NON a mercato)"
+    "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 456.32 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
    "currencies": [],
@@ -459,7 +459,7 @@
    "season_note": "",
    "yf": "DELL",
    "asset_class": "stock",
-   "timestamp": "2026-08-15T03:39:07.082766+00:00",
+   "timestamp": "2026-08-15T04:31:12.750528+00:00",
    "company": "Dell Technologies Inc",
    "entry_type": "LIMIT"
   }
