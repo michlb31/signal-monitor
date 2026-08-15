@@ -1,17 +1,12 @@
 {
- "generated_at": "2026-08-15T21:45:58.964909+00:00",
+ "generated_at": "2026-08-15T22:21:08.448376+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 10,
+ "n_titles": 12,
  "news_events": [
-  {
-   "rule": "BoJ hawkish",
-   "strength": 0.15,
-   "n": 1
-  },
   {
    "rule": "Dollaro debole",
    "strength": 0.15,
@@ -22,9 +17,9 @@
   {
    "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.456,
+   "confidence": 0.476,
    "layers": {
-    "news": -0.067,
+    "news": 0.0,
     "macro": 0.717,
     "tech": 0.977,
     "cot": 0.114,
@@ -38,18 +33,34 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.378,
+   "confidence": 0.398,
    "layers": {
-    "news": -0.067,
+    "news": 0.0,
     "macro": 0.634,
     "tech": 0.977,
     "cot": -0.244,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
+   "gate_reason": "confidence 0.40 < 0.45",
    "price": 112.87899780273438,
    "rsi": 38.7
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": "LONG",
+   "confidence": 0.269,
+   "layers": {
+    "news": 0.045,
+    "macro": 0.266,
+    "tech": 0.85,
+    "cot": -0.244,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.27 < 0.45",
+   "price": 0.708666980266571,
+   "rsi": 65.7
   },
   {
    "symbol": "EURGBP",
@@ -66,22 +77,6 @@
    "gate_reason": "confidence 0.27 < 0.45",
    "price": 0.8547700047492981,
    "rsi": 54.7
-  },
-  {
-   "symbol": "AUDUSD",
-   "direction": "LONG",
-   "confidence": 0.263,
-   "layers": {
-    "news": 0.045,
-    "macro": 0.247,
-    "tech": 0.85,
-    "cot": -0.244,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.26 < 0.45",
-   "price": 0.708666980266571,
-   "rsi": 65.7
   },
   {
    "symbol": "XBRUSD",
@@ -118,26 +113,26 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.219,
+   "confidence": 0.225,
    "layers": {
     "news": 0.045,
-    "macro": 0.218,
+    "macro": 0.237,
     "tech": 0.35,
     "cot": 0.354,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.22 < 0.45",
+   "gate_reason": "confidence 0.23 < 0.45",
    "price": 0.5893793702125549,
    "rsi": 71.1
   },
   {
    "symbol": "GBPUSD",
    "direction": "LONG",
-   "confidence": 0.217,
+   "confidence": 0.223,
    "layers": {
     "news": 0.045,
-    "macro": 0.33,
+    "macro": 0.349,
     "tech": 0.35,
     "cot": 0.114,
     "event": 0.0
@@ -146,6 +141,22 @@
    "gate_reason": "confidence 0.22 < 0.45",
    "price": 1.3535828590393066,
    "rsi": 68.5
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": "SHORT",
+   "confidence": 0.213,
+   "layers": {
+    "news": -0.045,
+    "macro": -0.281,
+    "tech": -0.175,
+    "cot": -0.478,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.21 < 0.45",
+   "price": 1.3871999979019165,
+   "rsi": 19.3
   },
   {
    "symbol": "XTIUSD",
@@ -164,76 +175,44 @@
    "rsi": 49.7
   },
   {
-   "symbol": "USDCAD",
-   "direction": "SHORT",
-   "confidence": 0.208,
-   "layers": {
-    "news": -0.045,
-    "macro": -0.262,
-    "tech": -0.175,
-    "cot": -0.478,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.21 < 0.45",
-   "price": 1.3871999979019165,
-   "rsi": 19.3
-  },
-  {
    "symbol": "EURJPY",
    "direction": "LONG",
-   "confidence": 0.183,
+   "confidence": 0.203,
    "layers": {
-    "news": -0.067,
+    "news": 0.0,
     "macro": 0.556,
     "tech": 0.173,
     "cot": -0.045,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
+   "gate_reason": "confidence 0.20 < 0.45",
    "price": 184.36500549316406,
    "rsi": 40.5
   },
   {
-   "symbol": "USDCHF",
-   "direction": "LONG",
-   "confidence": 0.17,
-   "layers": {
-    "news": -0.045,
-    "macro": 0.315,
-    "tech": 0.35,
-    "cot": 0.012,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.17 < 0.45",
-   "price": 0.8130000233650208,
-   "rsi": 42.0
-  },
-  {
    "symbol": "JP225",
    "direction": "LONG",
-   "confidence": 0.154,
+   "confidence": 0.166,
    "layers": {
-    "news": -0.041,
+    "news": 0.0,
     "macro": -0.034,
     "tech": 0.85,
     "cot": -0.242,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.15 < 0.45",
+   "gate_reason": "confidence 0.17 < 0.45",
    "price": 68713.796875,
-   "rsi": 58.0
+   "rsi": 65.0
   },
   {
    "symbol": "EURUSD",
    "direction": "LONG",
-   "confidence": 0.145,
+   "confidence": 0.151,
    "layers": {
     "news": 0.045,
-    "macro": 0.17,
+    "macro": 0.189,
     "tech": 0.35,
     "cot": -0.045,
     "event": 0.0
@@ -258,6 +237,22 @@
    "gate_reason": "confidence 0.14 < 0.45",
    "price": 64.98799896240234,
    "rsi": 72.2
+  },
+  {
+   "symbol": "USDCHF",
+   "direction": "LONG",
+   "confidence": 0.127,
+   "layers": {
+    "news": -0.045,
+    "macro": 0.169,
+    "tech": 0.35,
+    "cot": 0.012,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.13 < 0.45",
+   "price": 0.8130000233650208,
+   "rsi": 45.9
   },
   {
    "symbol": "COCOA",
@@ -337,7 +332,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 65.5
+   "rsi": 63.8
   },
   {
    "symbol": "UK100",
@@ -356,22 +351,6 @@
    "rsi": 46.2
   },
   {
-   "symbol": "USDJPY",
-   "direction": "SHORT",
-   "confidence": 0.042,
-   "layers": {
-    "news": -0.112,
-    "macro": 0.386,
-    "tech": -0.35,
-    "cot": -0.242,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.04 < 0.45",
-   "price": 159.30499267578125,
-   "rsi": 26.9
-  },
-  {
    "symbol": "DE40",
    "direction": "LONG",
    "confidence": 0.04,
@@ -385,7 +364,7 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 89.8
+   "rsi": 88.0
   },
   {
    "symbol": "US500",
@@ -402,9 +381,73 @@
    "gate_reason": "confidence 0.03 < 0.45",
    "price": 7785.759765625,
    "rsi": 75.3
+  },
+  {
+   "symbol": "USDJPY",
+   "direction": "SHORT",
+   "confidence": 0.027,
+   "layers": {
+    "news": -0.045,
+    "macro": 0.368,
+    "tech": -0.35,
+    "cot": -0.242,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.03 < 0.45",
+   "price": 159.30499267578125,
+   "rsi": 26.9
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "HUM.NYSE",
+   "direction": "LONG",
+   "entry": 389.05,
+   "stop": 372.62,
+   "tp1": 405.48,
+   "tp2": 421.9,
+   "tps": [
+    405.48,
+    413.69,
+    421.9,
+    438.33,
+    454.75
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "False",
+   "stop_points": 16.4,
+   "lots": 0.5,
+   "risk_eur": 7.1,
+   "risk_pct": 1.8,
+   "margin_eur": 33.62,
+   "rr_tp1": 2.0,
+   "confidence": 0.925,
+   "reasons": [
+    "news: Humana (HUM) Beats On Earnings And Quality, Is The Stock Abo",
+    "sentiment +1.00 / tech +0.85 concordi"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.03,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "HUM",
+   "asset_class": "stock",
+   "timestamp": "2026-08-15T22:21:08.448324+00:00",
+   "company": "Humana Inc",
+   "entry_type": "MARKET"
+  }
+ ],
  "rejected": [
   {
    "accepted": false,
@@ -418,16 +461,28 @@
  "calendar": [],
  "stock_candidates": [
   {
-   "symbol": "BIP.NYSE",
-   "name": "Brookfield Infrastructure Pa",
+   "symbol": "HUM.NYSE",
+   "name": "Humana Inc",
    "direction": "LONG",
-   "composite": 0.265,
-   "news_score": 0.18,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.27 < 0.5",
+   "composite": 0.925,
+   "news_score": 1.0,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
    "n_mentions": 1,
-   "price": 39.74
+   "price": 389.05
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "SHORT",
+   "composite": -0.085,
+   "news_score": 0.18,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.08 < 0.5",
+   "n_mentions": 1,
+   "price": 166.05
   },
   {
    "symbol": "BAM.NYSE",
@@ -442,8 +497,8 @@
    "price": 54.31
   },
   {
-   "symbol": "AMR.NYSE",
-   "name": "Alpha Metallurgi",
+   "symbol": "BIP.NYSE",
+   "name": "Brookfield Infrastructure Pa",
    "direction": "LONG",
    "composite": 0.265,
    "news_score": 0.18,
@@ -451,7 +506,7 @@
    "gate": false,
    "gate_reason": "composite 0.27 < 0.5",
    "n_mentions": 1,
-   "price": 166.05
+   "price": 39.74
   },
   {
    "symbol": "LOW.NYSE",
@@ -466,33 +521,21 @@
    "price": 218.47
   },
   {
-   "symbol": "HWM.NYSE",
-   "name": "Howmet Aerospace Inc CFL",
-   "direction": "LONG",
-   "composite": 0.262,
-   "news_score": 0.175,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.26 < 0.5",
-   "n_mentions": 1,
-   "price": 289.18
-  },
-  {
    "symbol": "MORN.NAS",
    "name": "Morningstar Inc",
    "direction": "LONG",
-   "composite": 0.162,
+   "composite": 0.25,
    "news_score": 0.15,
-   "tech_score": 0.175,
+   "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.16 < 0.5",
+   "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 207.41
   }
  ],
  "journal": {
-  "n_total": 106,
-  "n_open": 17,
+  "n_total": 107,
+  "n_open": 18,
   "n_closed": 89,
   "open_symbols": [
    "PSA.NYSE LONG",
@@ -511,7 +554,8 @@
    "LITE.NAS LONG",
    "BIIB.NAS LONG",
    "DELL.NYSE LONG",
-   "APD.NYSE LONG"
+   "APD.NYSE LONG",
+   "HUM.NYSE LONG"
   ],
   "win_rate": 70.8,
   "expectancy_r": 0.42,
@@ -522,32 +566,6 @@
   "pnl_eur_est": 231.31
  },
  "trades": [
-  {
-   "id": "BA.NYSE_202608031358",
-   "symbol": "BA.NYSE",
-   "direction": "LONG",
-   "yf": "BA",
-   "entry": 219.26,
-   "stop": 211.73,
-   "tp1": 226.79,
-   "tp2": 234.32,
-   "lots": 1.1,
-   "risk_eur": 7.19,
-   "confidence": 0.925,
-   "reasons": [
-    "news: Boeing Stock Gets Rare Double Upgrade. Why Wall Street\u2019s Exc",
-    "sentiment +1.00 / tech +0.85 concordi",
-    "prezzo esteso +1.2 ATR da EMA20 \u2192 ordine LIMIT a 219.26 sul ritracciamento (NON a mercato)"
-   ],
-   "opened_at": "2026-08-03T13:58:29.189557+00:00",
-   "status": "CLOSED",
-   "exit_price": 226.79,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 7.19,
-   "closed_at": "2026-08-04T14:11:09.311042+00:00",
-   "bars_held": 1
-  },
   {
    "id": "MU.NAS_202608031820",
    "symbol": "MU.NAS",
@@ -1444,6 +1462,25 @@
     "prezzo esteso +1.2 ATR da EMA20 \u2192 ordine LIMIT a 302.5 sul ritracciamento (NON a mercato)"
    ],
    "opened_at": "2026-08-15T14:49:47.196379+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "HUM.NYSE_202608152221",
+   "symbol": "HUM.NYSE",
+   "direction": "LONG",
+   "yf": "HUM",
+   "entry": 389.05,
+   "stop": 372.62,
+   "tp1": 405.48,
+   "tp2": 421.9,
+   "lots": 0.5,
+   "risk_eur": 7.1,
+   "confidence": 0.925,
+   "reasons": [
+    "news: Humana (HUM) Beats On Earnings And Quality, Is The Stock Abo",
+    "sentiment +1.00 / tech +0.85 concordi"
+   ],
+   "opened_at": "2026-08-15T22:21:08.450825+00:00",
    "status": "OPEN"
   }
  ],
