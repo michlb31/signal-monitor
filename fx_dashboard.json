@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-16T09:52:37.868033+00:00",
+ "generated_at": "2026-08-16T10:22:50.015464+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
@@ -393,55 +393,7 @@
    "rsi": 26.9
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "HUM.NYSE",
-   "direction": "LONG",
-   "entry": 389.05,
-   "stop": 372.62,
-   "tp1": 405.48,
-   "tp2": 421.9,
-   "tps": [
-    405.48,
-    413.69,
-    421.9,
-    438.33,
-    454.75
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 16.4,
-   "lots": 0.5,
-   "risk_eur": 7.1,
-   "risk_pct": 1.8,
-   "margin_eur": 33.62,
-   "rr_tp1": 2.0,
-   "confidence": 0.55,
-   "reasons": [
-    "news: Humana (HUM) Beats On Earnings And Quality, Is The Stock Abo",
-    "sentiment +0.25 / tech +0.85 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "HUM",
-   "asset_class": "stock",
-   "timestamp": "2026-08-16T09:52:37.867991+00:00",
-   "company": "Humana Inc",
-   "entry_type": "MARKET"
-  }
- ],
+ "tickets": [],
  "rejected": [
   {
    "accepted": false,
@@ -540,6 +492,18 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "WMT.NAS",
+   "name": "Walmart Inc",
+   "direction": "LONG",
+   "composite": 0.225,
+   "news_score": 0.6,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.22 < 0.5",
+   "n_mentions": 1,
+   "price": 115.27
+  },
+  {
    "symbol": "LLY.NYSE",
    "name": "Eli Lilly",
    "direction": "LONG",
@@ -562,18 +526,6 @@
    "gate_reason": "composite 0.34 < 0.5",
    "n_mentions": 1,
    "price": 40.47
-  },
-  {
-   "symbol": "HUM.NYSE",
-   "name": "Humana Inc",
-   "direction": "LONG",
-   "composite": 0.55,
-   "news_score": 0.25,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 389.05
   },
   {
    "symbol": "EBAY.NAS",
