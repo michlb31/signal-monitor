@@ -1,29 +1,13 @@
 {
- "generated_at": "2026-08-16T11:46:14.224671+00:00",
+ "generated_at": "2026-08-16T12:38:41.787825+00:00",
  "account": {
   "equity_eur": 400.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 6,
+ "n_titles": 7,
  "news_events": [],
  "universe": [
-  {
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "confidence": 0.473,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.706,
-    "tech": 0.977,
-    "cot": 0.114,
-    "event": 0.0
-   },
-   "gate": true,
-   "gate_reason": "",
-   "price": 215.66700744628906,
-   "rsi": 41.8
-  },
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
@@ -41,20 +25,20 @@
    "rsi": 38.7
   },
   {
-   "symbol": "XBRUSD",
+   "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.314,
+   "confidence": 0.329,
    "layers": {
     "news": 0.0,
-    "macro": 0.137,
-    "tech": 0.85,
-    "cot": 0.0,
-    "event": 0.4
+    "macro": 0.706,
+    "tech": 0.402,
+    "cot": 0.114,
+    "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 88.5199966430664,
-   "rsi": 50.2
+   "gate_reason": "confidence 0.33 < 0.45",
+   "price": 215.66700744628906,
+   "rsi": 39.2
   },
   {
    "symbol": "AUDUSD",
@@ -103,6 +87,22 @@
    "gate_reason": "confidence 0.26 < 0.45",
    "price": 0.8547700047492981,
    "rsi": 54.7
+  },
+  {
+   "symbol": "XBRUSD",
+   "direction": "LONG",
+   "confidence": 0.254,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.137,
+    "tech": 0.85,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.25 < 0.45",
+   "price": 88.5199966430664,
+   "rsi": 50.2
   },
   {
    "symbol": "NZDUSD",
@@ -183,22 +183,6 @@
    "gate_reason": "confidence 0.20 < 0.45",
    "price": 184.36500549316406,
    "rsi": 40.5
-  },
-  {
-   "symbol": "USTEC",
-   "direction": "LONG",
-   "confidence": 0.18,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.042,
-    "tech": 0.35,
-    "cot": 0.0,
-    "event": 0.7
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
-   "price": 30046.140625,
-   "rsi": 70.5
   },
   {
    "symbol": "JP225",
@@ -294,23 +278,7 @@
    "gate": false,
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 9115.2001953125,
-   "rsi": 65.5
-  },
-  {
-   "symbol": "US500",
-   "direction": "LONG",
-   "confidence": 0.106,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.042,
-    "tech": 0.175,
-    "cot": 0.0,
-    "event": 0.5
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.11 < 0.45",
-   "price": 7785.759765625,
-   "rsi": 75.3
+   "rsi": 70.6
   },
   {
    "symbol": "XAUUSD",
@@ -329,6 +297,22 @@
    "rsi": 76.9
   },
   {
+   "symbol": "USTEC",
+   "direction": "LONG",
+   "confidence": 0.075,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.042,
+    "tech": 0.35,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.07 < 0.45",
+   "price": 30046.140625,
+   "rsi": 69.3
+  },
+  {
    "symbol": "US30",
    "direction": "LONG",
    "confidence": 0.075,
@@ -342,7 +326,7 @@
    "gate": false,
    "gate_reason": "confidence 0.07 < 0.45",
    "price": 53732.41015625,
-   "rsi": 63.8
+   "rsi": 65.5
   },
   {
    "symbol": "UK100",
@@ -374,7 +358,23 @@
    "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
    "price": 26440.310546875,
-   "rsi": 88.0
+   "rsi": 89.8
+  },
+  {
+   "symbol": "US500",
+   "direction": "LONG",
+   "confidence": 0.031,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.042,
+    "tech": 0.175,
+    "cot": 0.0,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.03 < 0.45",
+   "price": 7785.759765625,
+   "rsi": 75.3
   },
   {
    "symbol": "USDJPY",
@@ -394,102 +394,8 @@
   }
  ],
  "tickets": [],
- "rejected": [
-  {
-   "accepted": false,
-   "symbol": "GBPJPY",
-   "direction": "LONG",
-   "reject_reason": "volume minimo 0.01 \u21d2 rischio 4.2% > 3.0% (stop 298 punti troppo ampio per il capitale)",
-   "entry_source": "daily",
-   "entry_type": "MARKET"
-  }
- ],
- "calendar": [
-  {
-   "date": "2026-08-17",
-   "ccy": "CAD",
-   "event": "CPI m/m",
-   "impact": "HIGH",
-   "days_until": 1
-  },
-  {
-   "date": "2026-08-17",
-   "ccy": "CAD",
-   "event": "Median CPI y/y",
-   "impact": "HIGH",
-   "days_until": 1
-  },
-  {
-   "date": "2026-08-17",
-   "ccy": "CAD",
-   "event": "Trimmed CPI y/y",
-   "impact": "HIGH",
-   "days_until": 1
-  },
-  {
-   "date": "2026-08-17",
-   "ccy": "CAD",
-   "event": "Common CPI y/y",
-   "impact": "MEDIUM",
-   "days_until": 1
-  },
-  {
-   "date": "2026-08-18",
-   "ccy": "GBP",
-   "event": "Claimant Count Change",
-   "impact": "HIGH",
-   "days_until": 2
-  },
-  {
-   "date": "2026-08-18",
-   "ccy": "GBP",
-   "event": "Average Earnings Index 3m/y",
-   "impact": "MEDIUM",
-   "days_until": 2
-  },
-  {
-   "date": "2026-08-18",
-   "ccy": "AUD",
-   "event": "Wage Price Index q/q",
-   "impact": "MEDIUM",
-   "days_until": 2
-  },
-  {
-   "date": "2026-08-19",
-   "ccy": "GBP",
-   "event": "CPI y/y",
-   "impact": "HIGH",
-   "days_until": 3
-  },
-  {
-   "date": "2026-08-19",
-   "ccy": "USD",
-   "event": "FOMC Meeting Minutes",
-   "impact": "HIGH",
-   "days_until": 3
-  },
-  {
-   "date": "2026-08-19",
-   "ccy": "AUD",
-   "event": "Employment Change",
-   "impact": "HIGH",
-   "days_until": 3
-  },
-  {
-   "date": "2026-08-19",
-   "ccy": "AUD",
-   "event": "Unemployment Rate",
-   "impact": "HIGH",
-   "days_until": 3
-  },
-  {
-   "date": "2026-08-19",
-   "ccy": "EUR",
-   "event": "ECB President Lagarde Speaks",
-   "impact": "MEDIUM",
-   "days_until": 3
-  }
- ],
+ "rejected": [],
+ "calendar": [],
  "stock_candidates": [
   {
    "symbol": "WMT.NAS",
