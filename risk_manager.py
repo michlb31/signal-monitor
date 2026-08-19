@@ -21,7 +21,7 @@ from instruments import INSTRUMENTS, currency_exposure
 
 # ── Configurazione conto (modificare qui se cambia il capitale) ──
 ACCOUNT = {
-    "equity_eur": 400.0,
+    "equity_eur": 587.0,
     "leverage": 30,
     "risk_pct": 0.018,          # rischio target per trade (1.8%)
     # Cap rischio: con capitale micro il lotto minimo 0.01 su una major
@@ -30,7 +30,7 @@ ACCOUNT = {
     "max_risk_pct": 0.03,       # oltre → trade rifiutato
     "max_positions": 2,
     "max_per_currency": 1,
-    "eurusd": 1.10,             # fallback conversione (aggiornato a runtime se possibile)
+    "eurusd": 1.16,             # fallback conversione (aggiornato a runtime se possibile)
     # ── Posizioni STRETTE (richiesta capitale micro, 2026-07-09) ──
     # Stop base 1.2×ATR, mai oltre 1.4×ATR anche se la struttura è più
     # lontana (accettiamo stop "dentro la struttura" pur di restare sizable).
