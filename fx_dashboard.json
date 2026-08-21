@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-21T21:24:34.343548+00:00",
+ "generated_at": "2026-08-21T21:50:44.976433+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 47,
+ "n_titles": 45,
  "news_events": [
   {
    "rule": "BoJ hawkish",
-   "strength": 1.0,
-   "n": 1
+   "strength": 1.2,
+   "n": 2
   },
   {
    "rule": "Cina stimolo",
@@ -18,12 +18,12 @@
    "n": 3
   },
   {
-   "rule": "Intervento FX Giappone",
-   "strength": 0.45,
-   "n": 2
+   "rule": "CPI USA freddo",
+   "strength": 0.3,
+   "n": 1
   },
   {
-   "rule": "CPI USA freddo",
+   "rule": "Intervento FX Giappone",
    "strength": 0.3,
    "n": 1
   },
@@ -207,25 +207,25 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.197,
+   "confidence": 0.192,
    "layers": {
-    "news": -0.412,
+    "news": -0.43,
     "macro": 0.795,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.20 < 0.45",
+   "gate_reason": "confidence 0.19 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
   },
   {
    "symbol": "USDJPY",
    "direction": "SHORT",
-   "confidence": 0.179,
+   "confidence": 0.183,
    "layers": {
-    "news": -0.686,
+    "news": -0.698,
     "macro": -0.254,
     "tech": 0.15,
     "cot": 0.435,
@@ -303,9 +303,9 @@
   {
    "symbol": "GBPJPY",
    "direction": "LONG",
-   "confidence": 0.122,
+   "confidence": 0.118,
    "layers": {
-    "news": -0.603,
+    "news": -0.617,
     "macro": 0.615,
     "tech": 0.425,
     "cot": 0.082,
@@ -351,32 +351,32 @@
   {
    "symbol": "EURJPY",
    "direction": "LONG",
-   "confidence": 0.057,
+   "confidence": 0.053,
    "layers": {
-    "news": -0.603,
+    "news": -0.617,
     "macro": 0.451,
     "tech": 0.425,
     "cot": -0.024,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.06 < 0.45",
+   "gate_reason": "confidence 0.05 < 0.45",
    "price": 185.593994140625,
    "rsi": 84.0
   },
   {
    "symbol": "JP225",
    "direction": "SHORT",
-   "confidence": 0.037,
+   "confidence": 0.052,
    "layers": {
-    "news": -0.296,
+    "news": -0.345,
     "macro": 0.187,
     "tech": -0.28,
     "cot": 0.435,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.04 < 0.45",
+   "gate_reason": "confidence 0.05 < 0.45",
    "price": 66216.7890625,
    "rsi": 64.8
   },
@@ -537,25 +537,13 @@
    "symbol": "LVS.NYSE",
    "name": "Las Vegas Sands Corp",
    "direction": "LONG",
-   "composite": 0.444,
-   "news_score": 0.537,
+   "composite": 0.363,
+   "news_score": 0.376,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.44 < 0.5",
+   "gate_reason": "composite 0.36 < 0.5",
    "n_mentions": 1,
    "price": 47.03
-  },
-  {
-   "symbol": "TSLA.NAS",
-   "name": "Tesla Inc",
-   "direction": "SHORT",
-   "composite": -0.001,
-   "news_score": 0.349,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.00 < 0.5",
-   "n_mentions": 2,
-   "price": 362.86
   },
   {
    "symbol": "XP.NAS",
@@ -580,6 +568,18 @@
    "gate_reason": "gi\u00e0 esteso (-2.8 ATR da EMA20, -4.0 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 2,
    "price": 103.7
+  },
+  {
+   "symbol": "TSLA.NAS",
+   "name": "Tesla Inc",
+   "direction": "SHORT",
+   "composite": -0.053,
+   "news_score": 0.244,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.05 < 0.5",
+   "n_mentions": 2,
+   "price": 362.86
   }
  ],
  "journal": {
