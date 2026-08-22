@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-22T20:22:01.958615+00:00",
+ "generated_at": "2026-08-22T20:49:54.606307+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 22,
+ "n_titles": 20,
  "news_events": [
   {
    "rule": "Cina stimolo",
@@ -402,18 +402,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "JLL.NYSE",
-   "direction": "LONG",
-   "entry": 367.72,
-   "stop": 353.23,
-   "tp1": 382.21,
-   "tp2": 396.7,
+   "symbol": "MNDY.NAS",
+   "direction": "SHORT",
+   "entry": 90.73,
+   "stop": 97.27,
+   "tp1": 84.19,
+   "tp2": 77.66,
    "tps": [
-    382.21,
-    389.46,
-    396.7,
-    411.2,
-    425.69
+    84.19,
+    80.93,
+    77.66,
+    71.12,
+    64.59
    ],
    "tp_multiples": [
     1.0,
@@ -423,30 +423,29 @@
     4.0
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 14.5,
-   "lots": 0.8,
-   "risk_eur": 9.93,
+   "inside_structure": "False",
+   "stop_points": 6.5,
+   "lots": 1.8,
+   "risk_eur": 10.07,
    "risk_pct": 1.7,
-   "margin_eur": 50.38,
+   "margin_eur": 27.97,
    "rr_tp1": 2.0,
-   "confidence": 0.53,
+   "confidence": 0.575,
    "reasons": [
-    "news: Dow Jones Futures: Market Rally Repairs Some Damage As Nvidi",
-    "sentiment +0.21 / tech +0.85 concordi",
-    "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
+    "news: Paramount, California AG office reportedly plan to meet Mond",
+    "sentiment -1.00 / tech -0.15 concordi"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
+   "commission_eur": 0.06,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "JLL",
+   "yf": "MNDY",
    "asset_class": "stock",
-   "timestamp": "2026-08-22T20:22:01.928616+00:00",
-   "company": "Jones Lang LaSalle Inc",
-   "entry_type": "LIMIT"
+   "timestamp": "2026-08-22T20:49:54.490424+00:00",
+   "company": "Monday.com Ltd",
+   "entry_type": "MARKET"
   }
  ],
  "rejected": [],
@@ -460,6 +459,54 @@
   }
  ],
  "stock_candidates": [
+  {
+   "symbol": "CWT.NYSE",
+   "name": "California Water Service Gr\u00ab",
+   "direction": "SHORT",
+   "composite": -0.325,
+   "news_score": -1.0,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.33 < 0.5",
+   "n_mentions": 1,
+   "price": 49.55
+  },
+  {
+   "symbol": "MNDY.NAS",
+   "name": "Monday.com Ltd",
+   "direction": "SHORT",
+   "composite": -0.575,
+   "news_score": -1.0,
+   "tech_score": -0.15,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 90.73
+  },
+  {
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.637,
+   "news_score": 0.924,
+   "tech_score": 0.35,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 98.22
+  },
+  {
+   "symbol": "HAL.NYSE",
+   "name": "Halliburton Co",
+   "direction": "LONG",
+   "composite": 0.425,
+   "news_score": 0.5,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.42 < 0.5",
+   "n_mentions": 1,
+   "price": 35.34
+  },
   {
    "symbol": "AKAM.NAS",
    "name": "Akamai Technologies Inc",
@@ -497,30 +544,6 @@
    "price": 6.95
   },
   {
-   "symbol": "ZTS.NYSE",
-   "name": "Zoetis Inc",
-   "direction": "LONG",
-   "composite": 0.088,
-   "news_score": -0.173,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.09 < 0.5",
-   "n_mentions": 1,
-   "price": 77.73
-  },
-  {
-   "symbol": "DKS.NYSE",
-   "name": "Dick's Sporting Goods Inc",
-   "direction": "LONG",
-   "composite": 0.0,
-   "news_score": 0.15,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.00 < 0.5",
-   "n_mentions": 1,
-   "price": 183.23
-  },
-  {
    "symbol": "AMR.NYSE",
    "name": "Alpha Metallurgi",
    "direction": "LONG",
@@ -531,23 +554,11 @@
    "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
    "price": 210.01
-  },
-  {
-   "symbol": "URBN.NAS",
-   "name": "Urban Outfitters Inc",
-   "direction": "LONG",
-   "composite": 0.35,
-   "news_score": 0.15,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.35 < 0.5",
-   "n_mentions": 1,
-   "price": 74.24
   }
  ],
  "journal": {
-  "n_total": 137,
-  "n_open": 19,
+  "n_total": 138,
+  "n_open": 20,
   "n_closed": 118,
   "open_symbols": [
    "DELL.NYSE LONG",
@@ -568,7 +579,8 @@
    "MELI.NAS LONG",
    "JLL.NYSE LONG",
    "URBN.NAS LONG",
-   "FLO.NYSE SHORT"
+   "FLO.NYSE SHORT",
+   "MNDY.NAS SHORT"
   ],
   "win_rate": 66.1,
   "expectancy_r": 0.32,
@@ -579,31 +591,6 @@
   "pnl_eur_est": 224.58
  },
  "trades": [
-  {
-   "id": "DBI.NYSE_202608131705",
-   "symbol": "DBI.NYSE",
-   "direction": "SHORT",
-   "yf": "DBI",
-   "entry": 6.11,
-   "stop": 6.52,
-   "tp1": 5.7,
-   "tp2": 5.29,
-   "lots": 20.2,
-   "risk_eur": 7.19,
-   "confidence": 0.565,
-   "reasons": [
-    "news: Cerebras Stock Tumbles After the AI Chip Designer\u2019s Second E",
-    "sentiment -0.28 / tech -0.85 concordi"
-   ],
-   "opened_at": "2026-08-13T17:05:40.215877+00:00",
-   "status": "CLOSED",
-   "exit_price": 5.7,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 7.19,
-   "closed_at": "2026-08-19T05:59:39.230029+00:00",
-   "bars_held": 3
-  },
   {
    "id": "DELL.NYSE_202608131827",
    "symbol": "DELL.NYSE",
@@ -1496,6 +1483,25 @@
     "prezzo esteso -1.6 ATR da EMA20 \u2192 ordine LIMIT a 7.31 sul ritracciamento (NON a mercato)"
    ],
    "opened_at": "2026-08-22T18:30:38.924105+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "MNDY.NAS_202608222049",
+   "symbol": "MNDY.NAS",
+   "direction": "SHORT",
+   "yf": "MNDY",
+   "entry": 90.73,
+   "stop": 97.27,
+   "tp1": 84.19,
+   "tp2": 77.66,
+   "lots": 1.8,
+   "risk_eur": 10.07,
+   "confidence": 0.575,
+   "reasons": [
+    "news: Paramount, California AG office reportedly plan to meet Mond",
+    "sentiment -1.00 / tech -0.15 concordi"
+   ],
+   "opened_at": "2026-08-22T20:49:54.608909+00:00",
    "status": "OPEN"
   }
  ],
