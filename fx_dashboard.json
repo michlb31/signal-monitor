@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-22T22:21:52.500726+00:00",
+ "generated_at": "2026-08-22T22:49:19.107881+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 19,
+ "n_titles": 18,
  "news_events": [
   {
    "rule": "Cina stimolo",
@@ -402,18 +402,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "JLL.NYSE",
-   "direction": "LONG",
-   "entry": 367.72,
-   "stop": 353.23,
-   "tp1": 382.21,
-   "tp2": 396.7,
+   "symbol": "FLO.NYSE",
+   "direction": "SHORT",
+   "entry": 7.31,
+   "stop": 7.59,
+   "tp1": 7.03,
+   "tp2": 6.74,
    "tps": [
-    382.21,
-    389.46,
-    396.7,
-    411.2,
-    425.69
+    7.03,
+    6.88,
+    6.74,
+    6.46,
+    6.17
    ],
    "tp_multiples": [
     1.0,
@@ -423,29 +423,29 @@
     4.0
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 14.5,
-   "lots": 0.8,
-   "risk_eur": 9.93,
-   "risk_pct": 1.7,
-   "margin_eur": 50.38,
+   "inside_structure": "False",
+   "stop_points": 0.3,
+   "lots": 43.4,
+   "risk_eur": 10.57,
+   "risk_pct": 1.8,
+   "margin_eur": 54.33,
    "rr_tp1": 2.0,
-   "confidence": 0.53,
+   "confidence": 0.519,
    "reasons": [
-    "news: Dow Jones Futures: Market Rally Repairs Some Damage As Nvidi",
-    "sentiment +0.21 / tech +0.85 concordi",
-    "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
+    "news: Flowers Foods (FLO) Stock Looks Fairly Valued With Weak Outl",
+    "sentiment -0.19 / tech -0.85 concordi",
+    "prezzo esteso -1.6 ATR da EMA20 \u2192 ordine LIMIT a 7.31 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
+   "commission_eur": 1.49,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "JLL",
+   "yf": "FLO",
    "asset_class": "stock",
-   "timestamp": "2026-08-22T22:21:52.441929+00:00",
-   "company": "Jones Lang LaSalle Inc",
+   "timestamp": "2026-08-22T22:49:19.107834+00:00",
+   "company": "Flowers Foods Inc",
    "entry_type": "LIMIT"
   }
  ],
@@ -460,18 +460,6 @@
   }
  ],
  "stock_candidates": [
-  {
-   "symbol": "NCLH.NYSE",
-   "name": "Norwegian Cruise Line Hold",
-   "direction": "LONG",
-   "composite": 0.075,
-   "news_score": 1.0,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.08 < 0.5",
-   "n_mentions": 1,
-   "price": 17.24
-  },
   {
    "symbol": "MNDY.NAS",
    "name": "Monday.com Ltd",
@@ -497,16 +485,16 @@
    "price": 49.55
   },
   {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.498,
-   "news_score": 0.647,
-   "tech_score": 0.35,
+   "symbol": "NCLH.NYSE",
+   "name": "Norwegian Cruise Line Hold",
+   "direction": "SHORT",
+   "composite": -0.075,
+   "news_score": 0.7,
+   "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.50 < 0.5",
+   "gate_reason": "composite 0.08 < 0.5",
    "n_mentions": 1,
-   "price": 98.22
+   "price": 17.24
   },
   {
    "symbol": "HAL.NYSE",
@@ -531,18 +519,6 @@
    "gate_reason": "composite 0.06 < 0.5",
    "n_mentions": 1,
    "price": 110.42
-  },
-  {
-   "symbol": "JLL.NYSE",
-   "name": "Jones Lang LaSalle Inc",
-   "direction": "LONG",
-   "composite": 0.53,
-   "news_score": 0.21,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 387.37
   },
   {
    "symbol": "FLO.NYSE",
