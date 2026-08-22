@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-22T15:47:14.454499+00:00",
+ "generated_at": "2026-08-22T16:23:50.360024+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 28,
+ "n_titles": 31,
  "news_events": [
   {
    "rule": "Cina stimolo",
-   "strength": 0.3,
-   "n": 4
+   "strength": 0.27,
+   "n": 3
   },
   {
    "rule": "CPI USA freddo",
@@ -27,9 +27,9 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.48,
+   "confidence": 0.478,
    "layers": {
-    "news": 0.178,
+    "news": 0.171,
     "macro": 0.859,
     "tech": 0.35,
     "cot": 0.542,
@@ -43,9 +43,9 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.409,
+   "confidence": 0.406,
    "layers": {
-    "news": 0.193,
+    "news": 0.184,
     "macro": 0.895,
     "tech": 0.425,
     "cot": -0.161,
@@ -91,9 +91,9 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.332,
+   "confidence": 0.329,
    "layers": {
-    "news": 0.09,
+    "news": 0.081,
     "macro": 0.743,
     "tech": 0.425,
     "cot": -0.161,
@@ -123,9 +123,9 @@
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.307,
+   "confidence": 0.306,
    "layers": {
-    "news": 0.06,
+    "news": 0.054,
     "macro": 0.097,
     "tech": 0.85,
     "cot": 0.319,
@@ -198,7 +198,7 @@
    "gate": false,
    "gate_reason": "confidence 0.25 < 0.45",
    "price": 185.677001953125,
-   "rsi": 84.3
+   "rsi": 94.4
   },
   {
    "symbol": "XBRUSD",
@@ -219,9 +219,9 @@
   {
    "symbol": "AUS200",
    "direction": "LONG",
-   "confidence": 0.19,
+   "confidence": 0.188,
    "layers": {
-    "news": 0.075,
+    "news": 0.067,
     "macro": 0.187,
     "tech": 0.35,
     "cot": 0.161,
@@ -440,7 +440,7 @@
    "risk_pct": 0.9,
    "margin_eur": 25.25,
    "rr_tp1": 2.0,
-   "confidence": 0.48,
+   "confidence": 0.478,
    "reasons": [
     "prezzo esteso +2.1 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
     "news: CPI USA freddo, Cina stimolo",
@@ -458,7 +458,7 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-22T15:47:05.286340+00:00",
+   "timestamp": "2026-08-22T16:23:41.095292+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
   },
@@ -506,7 +506,7 @@
    "season_note": "",
    "yf": "JLL",
    "asset_class": "stock",
-   "timestamp": "2026-08-22T15:47:14.454433+00:00",
+   "timestamp": "2026-08-22T16:23:50.359953+00:00",
    "company": "Jones Lang LaSalle Inc",
    "entry_type": "LIMIT"
   }
@@ -535,30 +535,6 @@
    "price": 110.42
   },
   {
-   "symbol": "DKS.NYSE",
-   "name": "Dick's Sporting Goods Inc",
-   "direction": "LONG",
-   "composite": 0.135,
-   "news_score": 0.42,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.14 < 0.5",
-   "n_mentions": 1,
-   "price": 183.23
-  },
-  {
-   "symbol": "AMR.NYSE",
-   "name": "Alpha Metallurgi",
-   "direction": "LONG",
-   "composite": 0.297,
-   "news_score": 0.42,
-   "tech_score": 0.175,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 210.01
-  },
-  {
    "symbol": "JLL.NYSE",
    "name": "Jones Lang LaSalle Inc",
    "direction": "LONG",
@@ -581,6 +557,30 @@
    "gate_reason": "composite 0.41 < 0.5",
    "n_mentions": 1,
    "price": 74.24
+  },
+  {
+   "symbol": "DKS.NYSE",
+   "name": "Dick's Sporting Goods Inc",
+   "direction": "LONG",
+   "composite": 0.06,
+   "news_score": 0.27,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.06 < 0.5",
+   "n_mentions": 1,
+   "price": 183.23
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.223,
+   "news_score": 0.27,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 1,
+   "price": 210.01
   },
   {
    "symbol": "NVDA.NAS",
