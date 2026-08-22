@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-22T17:20:21.127298+00:00",
+ "generated_at": "2026-08-22T17:46:56.299227+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 25,
+ "n_titles": 24,
  "news_events": [
   {
    "rule": "Cina stimolo",
-   "strength": 0.22,
-   "n": 2
+   "strength": 0.27,
+   "n": 3
   },
   {
    "rule": "Dollaro debole",
@@ -22,9 +22,9 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.456,
+   "confidence": 0.46,
    "layers": {
-    "news": 0.1,
+    "news": 0.112,
     "macro": 0.859,
     "tech": 0.35,
     "cot": 0.542,
@@ -38,16 +38,16 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.384,
+   "confidence": 0.388,
    "layers": {
-    "news": 0.111,
+    "news": 0.125,
     "macro": 0.895,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.38 < 0.45",
+   "gate_reason": "confidence 0.39 < 0.45",
    "price": 0.7174630165100098,
    "rsi": 78.9
   },
@@ -86,16 +86,16 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.325,
+   "confidence": 0.329,
    "layers": {
-    "news": 0.066,
+    "news": 0.081,
     "macro": 0.743,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.32 < 0.45",
+   "gate_reason": "confidence 0.33 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
   },
@@ -118,16 +118,16 @@
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.303,
+   "confidence": 0.306,
    "layers": {
-    "news": 0.044,
+    "news": 0.054,
     "macro": 0.097,
     "tech": 0.85,
     "cot": 0.319,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.30 < 0.45",
+   "gate_reason": "confidence 0.31 < 0.45",
    "price": 87.05999755859375,
    "rsi": 64.9
   },
@@ -214,16 +214,16 @@
   {
    "symbol": "AUS200",
    "direction": "LONG",
-   "confidence": 0.184,
+   "confidence": 0.188,
    "layers": {
-    "news": 0.055,
+    "news": 0.067,
     "macro": 0.187,
     "tech": 0.35,
     "cot": 0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
+   "gate_reason": "confidence 0.19 < 0.45",
    "price": 9058.900390625,
    "rsi": 53.5
   },
@@ -435,7 +435,7 @@
    "risk_pct": 0.9,
    "margin_eur": 25.25,
    "rr_tp1": 2.0,
-   "confidence": 0.456,
+   "confidence": 0.46,
    "reasons": [
     "prezzo esteso +2.1 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
     "news: Cina stimolo, Dollaro debole",
@@ -453,7 +453,7 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-22T17:20:13.854357+00:00",
+   "timestamp": "2026-08-22T17:46:48.202790+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
   },
@@ -501,7 +501,7 @@
    "season_note": "",
    "yf": "JLL",
    "asset_class": "stock",
-   "timestamp": "2026-08-22T17:20:21.127244+00:00",
+   "timestamp": "2026-08-22T17:46:56.299165+00:00",
    "company": "Jones Lang LaSalle Inc",
    "entry_type": "LIMIT"
   }
@@ -530,18 +530,6 @@
    "price": 110.42
   },
   {
-   "symbol": "URBN.NAS",
-   "name": "Urban Outfitters Inc",
-   "direction": "LONG",
-   "composite": 0.41,
-   "news_score": 0.27,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.41 < 0.5",
-   "n_mentions": 1,
-   "price": 74.24
-  },
-  {
    "symbol": "AMR.NYSE",
    "name": "Alpha Metallurgi",
    "direction": "LONG",
@@ -564,6 +552,30 @@
    "gate_reason": "composite 0.06 < 0.5",
    "n_mentions": 1,
    "price": 183.23
+  },
+  {
+   "symbol": "URBN.NAS",
+   "name": "Urban Outfitters Inc",
+   "direction": "LONG",
+   "composite": 0.41,
+   "news_score": 0.27,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.41 < 0.5",
+   "n_mentions": 1,
+   "price": 74.24
+  },
+  {
+   "symbol": "ZTS.NYSE",
+   "name": "Zoetis Inc",
+   "direction": "LONG",
+   "composite": 0.051,
+   "news_score": -0.247,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.05 < 0.5",
+   "n_mentions": 1,
+   "price": 77.73
   },
   {
    "symbol": "JLL.NYSE",
