@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-08-22T02:35:24.024230+00:00",
+ "generated_at": "2026-08-22T03:42:01.531693+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 37,
+ "n_titles": 40,
  "news_events": [
   {
-   "rule": "CPI USA freddo",
-   "strength": 0.3,
-   "n": 1
+   "rule": "Cina stimolo",
+   "strength": 0.6,
+   "n": 4
   },
   {
-   "rule": "Cina stimolo",
+   "rule": "CPI USA freddo",
    "strength": 0.3,
    "n": 1
   },
@@ -37,9 +37,9 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.565,
+   "confidence": 0.59,
    "layers": {
-    "news": 0.257,
+    "news": 0.339,
     "macro": 1.0,
     "tech": 0.85,
     "cot": -0.161,
@@ -53,9 +53,9 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.517,
+   "confidence": 0.537,
    "layers": {
-    "news": 0.278,
+    "news": 0.345,
     "macro": 0.883,
     "tech": 0.35,
     "cot": 0.542,
@@ -133,16 +133,16 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.31,
+   "confidence": 0.337,
    "layers": {
-    "news": -0.06,
+    "news": 0.03,
     "macro": 0.82,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
+   "gate_reason": "confidence 0.34 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
   },
@@ -213,32 +213,32 @@
   {
    "symbol": "AUS200",
    "direction": "LONG",
-   "confidence": 0.19,
+   "confidence": 0.212,
    "layers": {
-    "news": 0.075,
+    "news": 0.149,
     "macro": 0.187,
     "tech": 0.35,
     "cot": 0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.19 < 0.45",
+   "gate_reason": "confidence 0.21 < 0.45",
    "price": 9058.900390625,
    "rsi": 53.5
   },
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.177,
+   "confidence": 0.194,
    "layers": {
-    "news": 0.06,
+    "news": 0.119,
     "macro": 0.078,
     "tech": 0.35,
     "cot": 0.319,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.18 < 0.45",
+   "gate_reason": "confidence 0.19 < 0.45",
    "price": 86.63999938964844,
    "rsi": 63.7
   },
@@ -450,7 +450,7 @@
    "risk_pct": 1.0,
    "margin_eur": 25.25,
    "rr_tp1": 2.0,
-   "confidence": 0.517,
+   "confidence": 0.537,
    "reasons": [
     "prezzo esteso +2.0 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
     "news: CPI USA freddo, Cina stimolo",
@@ -468,56 +468,9 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-22T02:35:16.326339+00:00",
+   "timestamp": "2026-08-22T03:41:54.156139+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
-  },
-  {
-   "accepted": true,
-   "symbol": "MELI.NAS",
-   "direction": "LONG",
-   "entry": 1922.73,
-   "stop": 1817.95,
-   "tp1": 2027.51,
-   "tp2": 2132.28,
-   "tps": [
-    2027.51,
-    2079.89,
-    2132.28,
-    2237.06,
-    2341.84
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 104.8,
-   "lots": 0.1,
-   "risk_eur": 8.97,
-   "risk_pct": 1.5,
-   "margin_eur": 32.93,
-   "rr_tp1": 2.0,
-   "confidence": 0.568,
-   "reasons": [
-    "news: MercadoLibre Stock Leads 3 High Growth Picks With Strong Ear",
-    "sentiment +0.79 / tech +0.35 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "MELI",
-   "asset_class": "stock",
-   "timestamp": "2026-08-22T02:35:24.024165+00:00",
-   "company": "MercadoLibre Inc",
-   "entry_type": "MARKET"
   }
  ],
  "rejected": [],
@@ -535,11 +488,11 @@
    "symbol": "MELI.NAS",
    "name": "MercadoLibre Inc",
    "direction": "LONG",
-   "composite": 0.568,
-   "news_score": 0.785,
+   "composite": 0.45,
+   "news_score": 0.549,
    "tech_score": 0.35,
-   "gate": true,
-   "gate_reason": null,
+   "gate": false,
+   "gate_reason": "composite 0.45 < 0.5",
    "n_mentions": 1,
    "price": 1922.73
   },
@@ -547,11 +500,11 @@
    "symbol": "HTT.NYSE",
    "name": "High Templar Tech Limited",
    "direction": "LONG",
-   "composite": 0.218,
-   "news_score": 0.785,
+   "composite": 0.1,
+   "news_score": 0.549,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.22 < 0.5",
+   "gate_reason": "composite 0.10 < 0.5",
    "n_mentions": 1,
    "price": 2.5
   },
@@ -580,40 +533,40 @@
    "price": 42.93
   },
   {
-   "symbol": "COST.NAS",
-   "name": "Costco Wholesale Corp CFI",
+   "symbol": "JLL.NYSE",
+   "name": "Jones Lang LaSalle Inc",
    "direction": "LONG",
-   "composite": 0.06,
-   "news_score": 0.27,
-   "tech_score": -0.15,
+   "composite": 0.53,
+   "news_score": 0.21,
+   "tech_score": 0.85,
    "gate": false,
-   "gate_reason": "composite 0.06 < 0.5",
+   "gate_reason": "gi\u00e0 esteso (+2.3 ATR da EMA20, +1.6 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
-   "price": 947.74
+   "price": 387.37
   },
   {
    "symbol": "ADV.NAS",
    "name": "Advantage Solutions Inc",
    "direction": "LONG",
-   "composite": 0.21,
-   "news_score": 0.27,
+   "composite": 0.15,
+   "news_score": 0.15,
    "tech_score": 0.15,
    "gate": false,
-   "gate_reason": "composite 0.21 < 0.5",
+   "gate_reason": "composite 0.15 < 0.5",
    "n_mentions": 1,
    "price": 34.38
   },
   {
-   "symbol": "CAH.NYSE",
-   "name": "Cardinal Health Inc",
+   "symbol": "COST.NAS",
+   "name": "Costco Wholesale Corp CFI",
    "direction": "SHORT",
-   "composite": -0.07,
-   "news_score": 0.21,
-   "tech_score": -0.35,
+   "composite": -0.0,
+   "news_score": 0.15,
+   "tech_score": -0.15,
    "gate": false,
-   "gate_reason": "composite 0.07 < 0.5",
+   "gate_reason": "composite 0.00 < 0.5",
    "n_mentions": 1,
-   "price": 229.51
+   "price": 947.74
   },
   {
    "symbol": "XP.NAS",
