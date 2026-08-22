@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-22T05:27:14.374431+00:00",
+ "generated_at": "2026-08-22T05:55:03.318957+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
@@ -463,56 +463,8 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-22T05:27:07.013875+00:00",
+   "timestamp": "2026-08-22T05:54:56.468371+00:00",
    "entry_source": "limit",
-   "entry_type": "LIMIT"
-  },
-  {
-   "accepted": true,
-   "symbol": "JLL.NYSE",
-   "direction": "LONG",
-   "entry": 367.72,
-   "stop": 353.23,
-   "tp1": 382.21,
-   "tp2": 396.7,
-   "tps": [
-    382.21,
-    389.46,
-    396.7,
-    411.2,
-    425.69
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 14.5,
-   "lots": 0.8,
-   "risk_eur": 9.93,
-   "risk_pct": 1.7,
-   "margin_eur": 50.38,
-   "rr_tp1": 2.0,
-   "confidence": 0.53,
-   "reasons": [
-    "news: Dow Jones Futures: Market Rally Repairs Some Damage; Nvidia ",
-    "sentiment +0.21 / tech +0.85 concordi",
-    "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "JLL",
-   "asset_class": "stock",
-   "timestamp": "2026-08-22T05:27:14.374363+00:00",
-   "company": "Jones Lang LaSalle Inc",
    "entry_type": "LIMIT"
   }
  ],
@@ -528,18 +480,6 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "MELI.NAS",
-   "name": "MercadoLibre Inc",
-   "direction": "LONG",
-   "composite": 0.351,
-   "news_score": 0.353,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.35 < 0.5",
-   "n_mentions": 1,
-   "price": 1922.73
-  },
-  {
    "symbol": "HTT.NYSE",
    "name": "High Templar Tech Limited",
    "direction": "LONG",
@@ -550,6 +490,18 @@
    "gate_reason": "composite 0.00 < 0.5",
    "n_mentions": 1,
    "price": 2.5
+  },
+  {
+   "symbol": "MELI.NAS",
+   "name": "MercadoLibre Inc",
+   "direction": "LONG",
+   "composite": 0.351,
+   "news_score": 0.353,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.35 < 0.5",
+   "n_mentions": 1,
+   "price": 1922.73
   },
   {
    "symbol": "FISV.NAS",
@@ -564,28 +516,16 @@
    "price": 52.58
   },
   {
-   "symbol": "ALLY.NYSE",
-   "name": "Ally Financial Inc",
-   "direction": "SHORT",
-   "composite": -0.287,
-   "news_score": -0.225,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
-   "n_mentions": 1,
-   "price": 42.93
-  },
-  {
-   "symbol": "JLL.NYSE",
-   "name": "Jones Lang LaSalle Inc",
+   "symbol": "ADV.NAS",
+   "name": "Advantage Solutions Inc",
    "direction": "LONG",
-   "composite": 0.53,
-   "news_score": 0.21,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
+   "composite": 0.15,
+   "news_score": 0.15,
+   "tech_score": 0.15,
+   "gate": false,
+   "gate_reason": "composite 0.15 < 0.5",
    "n_mentions": 1,
-   "price": 387.37
+   "price": 34.38
   },
   {
    "symbol": "COST.NAS",
@@ -598,18 +538,6 @@
    "gate_reason": "composite 0.00 < 0.5",
    "n_mentions": 1,
    "price": 947.74
-  },
-  {
-   "symbol": "ADV.NAS",
-   "name": "Advantage Solutions Inc",
-   "direction": "LONG",
-   "composite": 0.15,
-   "news_score": 0.15,
-   "tech_score": 0.15,
-   "gate": false,
-   "gate_reason": "composite 0.15 < 0.5",
-   "n_mentions": 1,
-   "price": 34.38
   },
   {
    "symbol": "XP.NAS",
