@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-08-22T05:55:03.318957+00:00",
+ "generated_at": "2026-08-22T06:39:28.818083+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 42,
+ "n_titles": 38,
  "news_events": [
   {
    "rule": "Cina stimolo",
-   "strength": 0.6,
-   "n": 4
+   "strength": 0.54,
+   "n": 3
   },
   {
    "rule": "Dollaro debole",
@@ -32,9 +32,9 @@
   {
    "symbol": "NZDUSD",
    "direction": "LONG",
-   "confidence": 0.514,
+   "confidence": 0.51,
    "layers": {
-    "news": 0.291,
+    "news": 0.278,
     "macro": 0.859,
     "tech": 0.35,
     "cot": 0.542,
@@ -48,16 +48,16 @@
   {
    "symbol": "AUDUSD",
    "direction": "LONG",
-   "confidence": 0.446,
+   "confidence": 0.441,
    "layers": {
-    "news": 0.319,
+    "news": 0.302,
     "macro": 0.895,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.45 < 0.45",
+   "gate_reason": "confidence 0.44 < 0.45",
    "price": 0.7174630165100098,
    "rsi": 78.9
   },
@@ -96,32 +96,32 @@
   {
    "symbol": "AUDJPY",
    "direction": "LONG",
-   "confidence": 0.339,
+   "confidence": 0.333,
    "layers": {
-    "news": 0.112,
+    "news": 0.094,
     "macro": 0.743,
     "tech": 0.425,
     "cot": -0.161,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.34 < 0.45",
+   "gate_reason": "confidence 0.33 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
   },
   {
    "symbol": "XTIUSD",
    "direction": "LONG",
-   "confidence": 0.325,
+   "confidence": 0.322,
    "layers": {
-    "news": 0.119,
+    "news": 0.108,
     "macro": 0.097,
     "tech": 0.85,
     "cot": 0.319,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.33 < 0.45",
+   "gate_reason": "confidence 0.32 < 0.45",
    "price": 87.05999755859375,
    "rsi": 64.9
   },
@@ -224,9 +224,9 @@
   {
    "symbol": "AUS200",
    "direction": "LONG",
-   "confidence": 0.212,
+   "confidence": 0.208,
    "layers": {
-    "news": 0.149,
+    "news": 0.134,
     "macro": 0.187,
     "tech": 0.35,
     "cot": 0.161,
@@ -445,7 +445,7 @@
    "risk_pct": 0.9,
    "margin_eur": 25.25,
    "rr_tp1": 2.0,
-   "confidence": 0.514,
+   "confidence": 0.51,
    "reasons": [
     "prezzo esteso +2.1 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
     "news: CPI USA freddo, Cina stimolo",
@@ -463,7 +463,7 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-08-22T05:54:56.468371+00:00",
+   "timestamp": "2026-08-22T06:39:22.857025+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
   }
@@ -480,18 +480,6 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "HTT.NYSE",
-   "name": "High Templar Tech Limited",
-   "direction": "LONG",
-   "composite": 0.002,
-   "news_score": 0.353,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.00 < 0.5",
-   "n_mentions": 1,
-   "price": 2.5
-  },
-  {
    "symbol": "MELI.NAS",
    "name": "MercadoLibre Inc",
    "direction": "LONG",
@@ -502,6 +490,18 @@
    "gate_reason": "composite 0.35 < 0.5",
    "n_mentions": 1,
    "price": 1922.73
+  },
+  {
+   "symbol": "HTT.NYSE",
+   "name": "High Templar Tech Limited",
+   "direction": "LONG",
+   "composite": 0.002,
+   "news_score": 0.353,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.00 < 0.5",
+   "n_mentions": 1,
+   "price": 2.5
   },
   {
    "symbol": "FISV.NAS",
@@ -538,18 +538,6 @@
    "gate_reason": "composite 0.00 < 0.5",
    "n_mentions": 1,
    "price": 947.74
-  },
-  {
-   "symbol": "XP.NAS",
-   "name": "XP Inc",
-   "direction": "LONG",
-   "composite": 0.25,
-   "news_score": 0.15,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.25 < 0.5",
-   "n_mentions": 1,
-   "price": 16.81
   }
  ],
  "journal": {
