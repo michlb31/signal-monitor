@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-23T07:33:29.648412+00:00",
+ "generated_at": "2026-08-23T08:30:00.896251+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
@@ -71,22 +71,6 @@
    "gate_reason": "confidence 0.30 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
-  },
-  {
-   "symbol": "XTIUSD",
-   "direction": "LONG",
-   "confidence": 0.289,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.097,
-    "tech": 0.85,
-    "cot": 0.319,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.29 < 0.45",
-   "price": 87.05999755859375,
-   "rsi": 64.9
   },
   {
    "symbol": "EURUSD",
@@ -313,6 +297,22 @@
    "rsi": 51.9
   },
   {
+   "symbol": "XTIUSD",
+   "direction": "LONG",
+   "confidence": 0.077,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.097,
+    "tech": 0.0,
+    "cot": 0.319,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.08 < 0.45",
+   "price": null,
+   "rsi": null
+  },
+  {
    "symbol": "USDJPY",
    "direction": "LONG",
    "confidence": 0.066,
@@ -393,55 +393,7 @@
    "rsi": 57.9
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "ABN.AMS",
-   "direction": "LONG",
-   "entry": 40.38,
-   "stop": 39.33,
-   "tp1": 41.43,
-   "tp2": 42.48,
-   "tps": [
-    41.43,
-    41.95,
-    42.48,
-    43.53,
-    44.58
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "True",
-   "stop_points": 1.0,
-   "lots": 11.0,
-   "risk_eur": 9.88,
-   "risk_pct": 1.7,
-   "margin_eur": 88.84,
-   "rr_tp1": 2.0,
-   "confidence": 0.525,
-   "reasons": [
-    "news: ABN AMRO Stock: Improved Profitability Surplus Capital Warra",
-    "sentiment +0.70 / tech +0.35 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.89,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "ABN.AS",
-   "asset_class": "stock",
-   "timestamp": "2026-08-23T07:33:29.648359+00:00",
-   "company": "ABN AMRO Bank NV",
-   "entry_type": "MARKET"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [
   {
@@ -531,28 +483,28 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "ABN.AMS",
-   "name": "ABN AMRO Bank NV",
-   "direction": "LONG",
-   "composite": 0.525,
-   "news_score": 0.7,
-   "tech_score": 0.35,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 40.38
-  },
-  {
    "symbol": "AMR.NYSE",
    "name": "Alpha Metallurgi",
    "direction": "LONG",
-   "composite": 0.438,
-   "news_score": 0.7,
+   "composite": 0.312,
+   "news_score": 0.45,
    "tech_score": 0.175,
    "gate": false,
    "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
    "price": 210.01
+  },
+  {
+   "symbol": "ABN.AMS",
+   "name": "ABN AMRO Bank NV",
+   "direction": "LONG",
+   "composite": 0.4,
+   "news_score": 0.45,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.40 < 0.5",
+   "n_mentions": 1,
+   "price": 40.38
   },
   {
    "symbol": "CWT.NYSE",
