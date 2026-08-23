@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-23T12:41:00.860469+00:00",
+ "generated_at": "2026-08-23T13:32:48.057630+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 0,
+ "n_titles": 12,
  "news_events": [],
  "universe": [
   {
@@ -292,9 +292,9 @@
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 52). Trend ok (prezzo $5,990 > MA200 $4,569)",
-   "price": 5990.0,
-   "rsi": 51.8
+   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 52). Trend ok (prezzo $5,981 > MA200 $4,569)",
+   "price": 5981.0,
+   "rsi": 51.5
   },
   {
    "symbol": "XNGUSD",
@@ -483,14 +483,38 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "MU.NAS",
+   "name": "Micron Technology Inc",
+   "direction": "LONG",
+   "composite": 0.458,
+   "news_score": 0.566,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.46 < 0.5",
+   "n_mentions": 1,
+   "price": 966.78
+  },
+  {
+   "symbol": "NXT.LSE",
+   "name": "Next PLC",
+   "direction": "LONG",
+   "composite": 0.458,
+   "news_score": 0.566,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.46 < 0.5",
+   "n_mentions": 1,
+   "price": 15285.0
+  },
+  {
    "symbol": "WFC.NYSE",
    "name": "Wells Fargo & Co",
    "direction": "LONG",
-   "composite": 0.125,
-   "news_score": 0.6,
+   "composite": 0.035,
+   "news_score": 0.42,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.04 < 0.5",
    "n_mentions": 1,
    "price": 83.84
   },
@@ -498,13 +522,61 @@
    "symbol": "C.NYSE",
    "name": "Citigroup Inc",
    "direction": "LONG",
-   "composite": 0.125,
-   "news_score": 0.6,
+   "composite": 0.035,
+   "news_score": 0.42,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.04 < 0.5",
    "n_mentions": 1,
    "price": 131.65
+  },
+  {
+   "symbol": "TTD.NAS",
+   "name": "The Trade Desk Inc. Class /",
+   "direction": "SHORT",
+   "composite": -0.003,
+   "news_score": 0.42,
+   "tech_score": -0.425,
+   "gate": false,
+   "gate_reason": "composite 0.00 < 0.5",
+   "n_mentions": 1,
+   "price": 13.18
+  },
+  {
+   "symbol": "AMZN.NAS",
+   "name": "Amazon.com Inc",
+   "direction": "LONG",
+   "composite": 0.385,
+   "news_score": 0.42,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.39 < 0.5",
+   "n_mentions": 1,
+   "price": 258.63
+  },
+  {
+   "symbol": "ABNB.NAS",
+   "name": "Airbnb Inc",
+   "direction": "LONG",
+   "composite": 0.271,
+   "news_score": 0.368,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "composite 0.27 < 0.5",
+   "n_mentions": 2,
+   "price": 187.3
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.259,
+   "news_score": 0.343,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 2,
+   "price": 210.01
   }
  ],
  "journal": {
