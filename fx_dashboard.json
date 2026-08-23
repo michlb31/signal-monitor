@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-23T04:36:41.316214+00:00",
+ "generated_at": "2026-08-23T05:29:31.932615+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 12,
+ "n_titles": 11,
  "news_events": [],
  "universe": [
   {
@@ -396,18 +396,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "JLL.NYSE",
+   "symbol": "ABN.AMS",
    "direction": "LONG",
-   "entry": 367.72,
-   "stop": 353.23,
-   "tp1": 382.21,
-   "tp2": 396.7,
+   "entry": 40.38,
+   "stop": 39.33,
+   "tp1": 41.43,
+   "tp2": 42.48,
    "tps": [
-    382.21,
-    389.46,
-    396.7,
-    411.2,
-    425.69
+    41.43,
+    41.95,
+    42.48,
+    43.53,
+    44.58
    ],
    "tp_multiples": [
     1.0,
@@ -418,65 +418,141 @@
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
    "inside_structure": "True",
-   "stop_points": 14.5,
-   "lots": 0.8,
-   "risk_eur": 9.93,
+   "stop_points": 1.0,
+   "lots": 11.0,
+   "risk_eur": 9.88,
    "risk_pct": 1.7,
-   "margin_eur": 50.38,
+   "margin_eur": 88.84,
    "rr_tp1": 2.0,
-   "confidence": 0.53,
+   "confidence": 0.675,
    "reasons": [
-    "news: Dow Jones Futures: Market Rally Repairs Some Damage As Nvidi",
-    "sentiment +0.21 / tech +0.85 concordi",
-    "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
+    "news: ABN AMRO Stock: Improved Profitability Surplus Capital Warra",
+    "sentiment +1.00 / tech +0.35 concordi"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.03,
+   "commission_eur": 0.89,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "JLL",
+   "yf": "ABN.AS",
    "asset_class": "stock",
-   "timestamp": "2026-08-23T04:36:41.316165+00:00",
-   "company": "Jones Lang LaSalle Inc",
-   "entry_type": "LIMIT"
+   "timestamp": "2026-08-23T05:29:31.849600+00:00",
+   "company": "ABN AMRO Bank NV",
+   "entry_type": "MARKET"
   }
  ],
  "rejected": [],
  "calendar": [
   {
-   "date": "2026-08-28",
+   "date": "2026-08-24",
    "ccy": "USD",
-   "event": "PCE",
+   "event": "Treasury Sec Bessent Speaks",
    "impact": "MEDIUM",
+   "days_until": 1
+  },
+  {
+   "date": "2026-08-25",
+   "ccy": "AUD",
+   "event": "CPI m/m",
+   "impact": "HIGH",
+   "days_until": 2
+  },
+  {
+   "date": "2026-08-25",
+   "ccy": "AUD",
+   "event": "CPI y/y",
+   "impact": "HIGH",
+   "days_until": 2
+  },
+  {
+   "date": "2026-08-25",
+   "ccy": "AUD",
+   "event": "Trimmed Mean CPI m/m",
+   "impact": "HIGH",
+   "days_until": 2
+  },
+  {
+   "date": "2026-08-25",
+   "ccy": "USD",
+   "event": "CB Consumer Confidence",
+   "impact": "MEDIUM",
+   "days_until": 2
+  },
+  {
+   "date": "2026-08-26",
+   "ccy": "USD",
+   "event": "Core PCE Price Index m/m",
+   "impact": "HIGH",
+   "days_until": 3
+  },
+  {
+   "date": "2026-08-26",
+   "ccy": "USD",
+   "event": "Prelim GDP q/q",
+   "impact": "HIGH",
+   "days_until": 3
+  },
+  {
+   "date": "2026-08-26",
+   "ccy": "USD",
+   "event": "Prelim GDP Price Index q/q",
+   "impact": "MEDIUM",
+   "days_until": 3
+  },
+  {
+   "date": "2026-08-27",
+   "ccy": "USD",
+   "event": "Unemployment Claims",
+   "impact": "MEDIUM",
+   "days_until": 4
+  },
+  {
+   "date": "2026-08-27",
+   "ccy": "All",
+   "event": "Jackson Hole Symposium",
+   "impact": "MEDIUM",
+   "days_until": 4
+  },
+  {
+   "date": "2026-08-27",
+   "ccy": "JPY",
+   "event": "Tokyo Core CPI y/y",
+   "impact": "MEDIUM",
+   "days_until": 4
+  },
+  {
+   "date": "2026-08-28",
+   "ccy": "CAD",
+   "event": "GDP m/m",
+   "impact": "HIGH",
    "days_until": 5
   }
  ],
  "stock_candidates": [
   {
-   "symbol": "NAT.NYSE",
-   "name": "Nordic American Tankers Lt",
+   "symbol": "ABN.AMS",
+   "name": "ABN AMRO Bank NV",
    "direction": "LONG",
-   "composite": 0.428,
-   "news_score": 0.707,
+   "composite": 0.675,
+   "news_score": 1.0,
    "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.43 < 0.5",
+   "gate": true,
+   "gate_reason": null,
    "n_mentions": 1,
-   "price": 6.97
+   "price": 40.38
   },
   {
-   "symbol": "MNDY.NAS",
-   "name": "Monday.com Ltd",
-   "direction": "SHORT",
-   "composite": -0.2,
-   "news_score": -0.25,
-   "tech_score": -0.15,
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.588,
+   "news_score": 1.0,
+   "tech_score": 0.175,
    "gate": false,
-   "gate_reason": "composite 0.20 < 0.5",
+   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
-   "price": 90.73
+   "price": 210.01
   },
   {
    "symbol": "CWT.NYSE",
@@ -489,6 +565,18 @@
    "gate_reason": "composite 0.05 < 0.5",
    "n_mentions": 1,
    "price": 49.55
+  },
+  {
+   "symbol": "MNDY.NAS",
+   "name": "Monday.com Ltd",
+   "direction": "SHORT",
+   "composite": -0.2,
+   "news_score": -0.25,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.20 < 0.5",
+   "n_mentions": 1,
+   "price": 90.73
   },
   {
    "symbol": "NCLH.NYSE",
@@ -516,8 +604,8 @@
   }
  ],
  "journal": {
-  "n_total": 138,
-  "n_open": 19,
+  "n_total": 139,
+  "n_open": 20,
   "n_closed": 119,
   "open_symbols": [
    "DELL.NYSE LONG",
@@ -538,7 +626,8 @@
    "JLL.NYSE LONG",
    "URBN.NAS LONG",
    "FLO.NYSE SHORT",
-   "MNDY.NAS SHORT"
+   "MNDY.NAS SHORT",
+   "ABN.AMS LONG"
   ],
   "win_rate": 66.4,
   "expectancy_r": 0.32,
@@ -549,32 +638,6 @@
   "pnl_eur_est": 230.28
  },
  "trades": [
-  {
-   "id": "DELL.NYSE_202608131827",
-   "symbol": "DELL.NYSE",
-   "direction": "LONG",
-   "yf": "DELL",
-   "entry": 452.28,
-   "stop": 408.79,
-   "tp1": 495.77,
-   "tp2": 539.27,
-   "lots": 0.1,
-   "risk_eur": 3.77,
-   "confidence": 0.668,
-   "reasons": [
-    "news: Dell\u2019s stock has beaten Micron and AMD this year \u2014 and now i",
-    "sentiment +0.49 / tech +0.85 concordi",
-    "prezzo esteso +1.5 ATR da EMA20 \u2192 ordine LIMIT a 452.28 sul ritracciamento (NON a mercato)"
-   ],
-   "opened_at": "2026-08-13T18:27:25.196926+00:00",
-   "status": "CLOSED",
-   "exit_price": 495.77,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 3.77,
-   "closed_at": "2026-08-14T13:54:08.248653+00:00",
-   "bars_held": 1
-  },
   {
    "id": "NVDA.NAS_202608132144",
    "symbol": "NVDA.NAS",
@@ -1466,6 +1529,25 @@
     "sentiment -1.00 / tech -0.15 concordi"
    ],
    "opened_at": "2026-08-22T20:49:54.608909+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "ABN.AMS_202608230529",
+   "symbol": "ABN.AMS",
+   "direction": "LONG",
+   "yf": "ABN.AS",
+   "entry": 40.38,
+   "stop": 39.33,
+   "tp1": 41.43,
+   "tp2": 42.48,
+   "lots": 11.0,
+   "risk_eur": 9.88,
+   "confidence": 0.675,
+   "reasons": [
+    "news: ABN AMRO Stock: Improved Profitability Surplus Capital Warra",
+    "sentiment +1.00 / tech +0.35 concordi"
+   ],
+   "opened_at": "2026-08-23T05:29:31.935240+00:00",
    "status": "OPEN"
   }
  ],
