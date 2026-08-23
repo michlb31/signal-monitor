@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-23T02:45:39.973239+00:00",
+ "generated_at": "2026-08-23T03:51:11.836045+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
@@ -424,10 +424,10 @@
    "risk_pct": 1.7,
    "margin_eur": 50.38,
    "rr_tp1": 2.0,
-   "confidence": 0.53,
+   "confidence": 0.575,
    "reasons": [
     "news: Dow Jones Futures: Market Rally Repairs Some Damage As Nvidi",
-    "sentiment +0.21 / tech +0.85 concordi",
+    "sentiment +0.30 / tech +0.85 concordi",
     "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -438,7 +438,7 @@
    "season_note": "",
    "yf": "JLL",
    "asset_class": "stock",
-   "timestamp": "2026-08-23T02:45:39.973191+00:00",
+   "timestamp": "2026-08-23T03:51:11.836000+00:00",
    "company": "Jones Lang LaSalle Inc",
    "entry_type": "LIMIT"
   }
@@ -455,16 +455,16 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "NCLH.NYSE",
-   "name": "Norwegian Cruise Line Hold",
-   "direction": "SHORT",
-   "composite": -0.2,
-   "news_score": 0.45,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.20 < 0.5",
+   "symbol": "JLL.NYSE",
+   "name": "Jones Lang LaSalle Inc",
+   "direction": "LONG",
+   "composite": 0.575,
+   "news_score": 0.3,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
    "n_mentions": 1,
-   "price": 17.24
+   "price": 387.37
   },
   {
    "symbol": "CWT.NYSE",
@@ -491,16 +491,28 @@
    "price": 90.73
   },
   {
-   "symbol": "JLL.NYSE",
-   "name": "Jones Lang LaSalle Inc",
-   "direction": "LONG",
-   "composite": 0.53,
-   "news_score": 0.21,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
+   "symbol": "NCLH.NYSE",
+   "name": "Norwegian Cruise Line Hold",
+   "direction": "SHORT",
+   "composite": -0.3,
+   "news_score": 0.25,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.30 < 0.5",
    "n_mentions": 1,
-   "price": 387.37
+   "price": 17.24
+  },
+  {
+   "symbol": "SMH.NAS",
+   "name": "Market Vectors Semiconduc",
+   "direction": "SHORT",
+   "composite": -0.095,
+   "news_score": 0.16,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.09 < 0.5",
+   "n_mentions": 3,
+   "price": 560.42
   }
  ],
  "journal": {
