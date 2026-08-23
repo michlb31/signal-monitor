@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-23T18:29:09.923617+00:00",
+ "generated_at": "2026-08-23T18:59:22.061606+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 8,
+ "n_titles": 9,
  "news_events": [],
  "universe": [
   {
@@ -393,55 +393,7 @@
    "rsi": 57.9
   }
  ],
- "tickets": [
-  {
-   "accepted": true,
-   "symbol": "MNDY.NAS",
-   "direction": "SHORT",
-   "entry": 90.73,
-   "stop": 97.27,
-   "tp1": 84.19,
-   "tp2": 77.66,
-   "tps": [
-    84.19,
-    80.93,
-    77.66,
-    71.12,
-    64.59
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 6.5,
-   "lots": 1.8,
-   "risk_eur": 10.07,
-   "risk_pct": 1.7,
-   "margin_eur": 27.97,
-   "rr_tp1": 2.0,
-   "confidence": 0.575,
-   "reasons": [
-    "news: Paramount, California AG office reportedly plan to meet Mond",
-    "sentiment -1.00 / tech -0.15 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.06,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "MNDY",
-   "asset_class": "stock",
-   "timestamp": "2026-08-23T18:29:09.923562+00:00",
-   "company": "Monday.com Ltd",
-   "entry_type": "MARKET"
-  }
- ],
+ "tickets": [],
  "rejected": [],
  "calendar": [
   {
@@ -531,28 +483,52 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "MNDY.NAS",
+   "name": "Monday.com Ltd",
+   "direction": "SHORT",
+   "composite": -0.425,
+   "news_score": -0.7,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.42 < 0.5",
+   "n_mentions": 1,
+   "price": 90.73
+  },
+  {
    "symbol": "CWT.NYSE",
    "name": "California Water Service Gr\u00ab",
    "direction": "SHORT",
-   "composite": -0.325,
-   "news_score": -1.0,
+   "composite": -0.175,
+   "news_score": -0.7,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.33 < 0.5",
+   "gate_reason": "composite 0.17 < 0.5",
    "n_mentions": 1,
    "price": 49.55
   },
   {
-   "symbol": "MNDY.NAS",
-   "name": "Monday.com Ltd",
-   "direction": "SHORT",
-   "composite": -0.575,
-   "news_score": -1.0,
-   "tech_score": -0.15,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 90.73
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.451,
+   "news_score": 0.552,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.45 < 0.5",
+   "n_mentions": 2,
+   "price": 98.22
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.313,
+   "news_score": 0.451,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 4,
+   "price": 210.01
   },
   {
    "symbol": "SBSW.NYSE",
@@ -567,18 +543,6 @@
    "price": 12.58
   },
   {
-   "symbol": "HMY.NYSE",
-   "name": "Harmony Gold Mining Co Lt",
-   "direction": "LONG",
-   "composite": 0.297,
-   "news_score": 0.419,
-   "tech_score": 0.175,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+4.3 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 23.54
-  },
-  {
    "symbol": "PFGC.NYSE",
    "name": "Performance Food Group",
    "direction": "LONG",
@@ -591,6 +555,18 @@
    "price": 104.98
   },
   {
+   "symbol": "HMY.NYSE",
+   "name": "Harmony Gold Mining Co Lt",
+   "direction": "LONG",
+   "composite": 0.297,
+   "news_score": 0.419,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+4.3 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 1,
+   "price": 23.54
+  },
+  {
    "symbol": "C.NYSE",
    "name": "Citigroup Inc",
    "direction": "LONG",
@@ -601,30 +577,6 @@
    "gate_reason": "composite 0.02 < 0.5",
    "n_mentions": 2,
    "price": 131.65
-  },
-  {
-   "symbol": "FCX.NYSE",
-   "name": "Freeport-McMoRan Inc CFL",
-   "direction": "LONG",
-   "composite": 0.53,
-   "news_score": 0.21,
-   "tech_score": 0.85,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+3.0 ATR da EMA20, +3.5 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 76.66
-  },
-  {
-   "symbol": "MU.NAS",
-   "name": "Micron Technology Inc",
-   "direction": "LONG",
-   "composite": 0.276,
-   "news_score": 0.202,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.28 < 0.5",
-   "n_mentions": 1,
-   "price": 966.78
   }
  ],
  "journal": {
