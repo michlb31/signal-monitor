@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-23T11:20:45.710700+00:00",
+ "generated_at": "2026-08-23T11:46:39.240896+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 13,
+ "n_titles": 12,
  "news_events": [],
  "universe": [
   {
@@ -71,6 +71,22 @@
    "gate_reason": "confidence 0.30 < 0.45",
    "price": 113.96399688720703,
    "rsi": 76.4
+  },
+  {
+   "symbol": "XTIUSD",
+   "direction": "LONG",
+   "confidence": 0.289,
+   "layers": {
+    "news": 0.0,
+    "macro": 0.097,
+    "tech": 0.85,
+    "cot": 0.319,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.29 < 0.45",
+   "price": 87.05999755859375,
+   "rsi": 64.9
   },
   {
    "symbol": "EURUSD",
@@ -297,22 +313,6 @@
    "rsi": 51.9
   },
   {
-   "symbol": "XTIUSD",
-   "direction": "LONG",
-   "confidence": 0.077,
-   "layers": {
-    "news": 0.0,
-    "macro": 0.097,
-    "tech": 0.0,
-    "cot": 0.319,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.08 < 0.45",
-   "price": null,
-   "rsi": null
-  },
-  {
    "symbol": "USDJPY",
    "direction": "LONG",
    "confidence": 0.066,
@@ -483,6 +483,54 @@
  ],
  "stock_candidates": [
   {
+   "symbol": "AMZN.NAS",
+   "name": "Amazon.com Inc",
+   "direction": "LONG",
+   "composite": 0.475,
+   "news_score": 0.6,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.47 < 0.5",
+   "n_mentions": 1,
+   "price": 258.63
+  },
+  {
+   "symbol": "TTD.NAS",
+   "name": "The Trade Desk Inc. Class /",
+   "direction": "LONG",
+   "composite": 0.087,
+   "news_score": 0.6,
+   "tech_score": -0.425,
+   "gate": false,
+   "gate_reason": "composite 0.09 < 0.5",
+   "n_mentions": 1,
+   "price": 13.18
+  },
+  {
+   "symbol": "AMR.NYSE",
+   "name": "Alpha Metallurgi",
+   "direction": "LONG",
+   "composite": 0.297,
+   "news_score": 0.42,
+   "tech_score": 0.175,
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
+   "n_mentions": 2,
+   "price": 210.01
+  },
+  {
+   "symbol": "NDAQ.NAS",
+   "name": "Nasdaq Inc",
+   "direction": "LONG",
+   "composite": 0.373,
+   "news_score": 0.396,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.37 < 0.5",
+   "n_mentions": 1,
+   "price": 98.22
+  },
+  {
    "symbol": "ABN.AMS",
    "name": "ABN AMRO Bank NV",
    "direction": "LONG",
@@ -493,18 +541,6 @@
    "gate_reason": "composite 0.30 < 0.5",
    "n_mentions": 1,
    "price": 40.38
-  },
-  {
-   "symbol": "AMR.NYSE",
-   "name": "Alpha Metallurgi",
-   "direction": "LONG",
-   "composite": 0.212,
-   "news_score": 0.25,
-   "tech_score": 0.175,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+4.5 ATR da EMA20, +4.2 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 210.01
   }
  ],
  "journal": {
