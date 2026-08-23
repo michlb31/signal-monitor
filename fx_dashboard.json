@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-08-23T03:51:11.836045+00:00",
+ "generated_at": "2026-08-23T04:36:41.316214+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 15,
+ "n_titles": 12,
  "news_events": [],
  "universe": [
   {
@@ -149,8 +149,8 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.25 < 0.45",
-   "price": 185.677001953125,
-   "rsi": 94.4
+   "price": 185.36199951171875,
+   "rsi": 88.8
   },
   {
    "symbol": "XBRUSD",
@@ -292,9 +292,9 @@
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 52). Trend ok (prezzo $5,990 > MA200 $4,569)",
-   "price": 5990.0,
-   "rsi": 51.8
+   "gate_reason": "setup ARMATO ma non scattato: serve RSI <30 (ora 52). Trend ok (prezzo $5,981 > MA200 $4,569)",
+   "price": 5981.0,
+   "rsi": 51.5
   },
   {
    "symbol": "XNGUSD",
@@ -309,8 +309,8 @@
    },
    "gate": false,
    "gate_reason": "confidence 0.09 < 0.45",
-   "price": 2.7730000019073486,
-   "rsi": 49.5
+   "price": 2.811000108718872,
+   "rsi": 51.9
   },
   {
    "symbol": "USDJPY",
@@ -331,34 +331,18 @@
   {
    "symbol": "XAUUSD",
    "direction": "SHORT",
-   "confidence": 0.063,
+   "confidence": 0.044,
    "layers": {
     "news": 0.0,
     "macro": -0.286,
-    "tech": 0.175,
+    "tech": 0.25,
     "cot": -0.138,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.06 < 0.45",
-   "price": 4624.10009765625,
-   "rsi": 87.3
-  },
-  {
-   "symbol": "XAGUSD",
-   "direction": "SHORT",
-   "confidence": 0.042,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.286,
-    "tech": 0.175,
-    "cot": -0.001,
-    "event": 0.0
-   },
-   "gate": false,
    "gate_reason": "confidence 0.04 < 0.45",
-   "price": 69.46600341796875,
-   "rsi": 80.2
+   "price": 4680.60009765625,
+   "rsi": 88.1
   },
   {
    "symbol": "JP225",
@@ -375,6 +359,22 @@
    "gate_reason": "confidence 0.03 < 0.45",
    "price": 66016.359375,
    "rsi": 56.6
+  },
+  {
+   "symbol": "XAGUSD",
+   "direction": "SHORT",
+   "confidence": 0.023,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.286,
+    "tech": 0.25,
+    "cot": -0.001,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.02 < 0.45",
+   "price": 69.52999877929688,
+   "rsi": 80.3
   },
   {
    "symbol": "USTEC",
@@ -424,10 +424,10 @@
    "risk_pct": 1.7,
    "margin_eur": 50.38,
    "rr_tp1": 2.0,
-   "confidence": 0.575,
+   "confidence": 0.53,
    "reasons": [
     "news: Dow Jones Futures: Market Rally Repairs Some Damage As Nvidi",
-    "sentiment +0.30 / tech +0.85 concordi",
+    "sentiment +0.21 / tech +0.85 concordi",
     "prezzo esteso +2.2 ATR da EMA20 \u2192 ordine LIMIT a 367.72 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
@@ -438,7 +438,7 @@
    "season_note": "",
    "yf": "JLL",
    "asset_class": "stock",
-   "timestamp": "2026-08-23T03:51:11.836000+00:00",
+   "timestamp": "2026-08-23T04:36:41.316165+00:00",
    "company": "Jones Lang LaSalle Inc",
    "entry_type": "LIMIT"
   }
@@ -455,28 +455,16 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "JLL.NYSE",
-   "name": "Jones Lang LaSalle Inc",
+   "symbol": "NAT.NYSE",
+   "name": "Nordic American Tankers Lt",
    "direction": "LONG",
-   "composite": 0.575,
-   "news_score": 0.3,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 387.37
-  },
-  {
-   "symbol": "CWT.NYSE",
-   "name": "California Water Service Gr\u00ab",
-   "direction": "LONG",
-   "composite": 0.05,
-   "news_score": -0.25,
+   "composite": 0.428,
+   "news_score": 0.707,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
+   "gate_reason": "composite 0.43 < 0.5",
    "n_mentions": 1,
-   "price": 49.55
+   "price": 6.97
   },
   {
    "symbol": "MNDY.NAS",
@@ -491,6 +479,18 @@
    "price": 90.73
   },
   {
+   "symbol": "CWT.NYSE",
+   "name": "California Water Service Gr\u00ab",
+   "direction": "LONG",
+   "composite": 0.05,
+   "news_score": -0.25,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.05 < 0.5",
+   "n_mentions": 1,
+   "price": 49.55
+  },
+  {
    "symbol": "NCLH.NYSE",
    "name": "Norwegian Cruise Line Hold",
    "direction": "SHORT",
@@ -503,22 +503,22 @@
    "price": 17.24
   },
   {
-   "symbol": "SMH.NAS",
-   "name": "Market Vectors Semiconduc",
-   "direction": "SHORT",
-   "composite": -0.095,
-   "news_score": 0.16,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.09 < 0.5",
-   "n_mentions": 3,
-   "price": 560.42
+   "symbol": "JLL.NYSE",
+   "name": "Jones Lang LaSalle Inc",
+   "direction": "LONG",
+   "composite": 0.53,
+   "news_score": 0.21,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 387.37
   }
  ],
  "journal": {
   "n_total": 138,
-  "n_open": 20,
-  "n_closed": 118,
+  "n_open": 19,
+  "n_closed": 119,
   "open_symbols": [
    "DELL.NYSE LONG",
    "APD.NYSE LONG",
@@ -534,20 +534,19 @@
    "MRVL.NAS LONG",
    "CAKE.NAS LONG",
    "ALLY.NYSE SHORT",
-   "NZDUSD LONG",
    "MELI.NAS LONG",
    "JLL.NYSE LONG",
    "URBN.NAS LONG",
    "FLO.NYSE SHORT",
    "MNDY.NAS SHORT"
   ],
-  "win_rate": 66.1,
+  "win_rate": 66.4,
   "expectancy_r": 0.32,
   "avg_win_r": 0.99,
   "avg_loss_r": -1.0,
-  "profit_factor": 1.93,
-  "total_r": 37.25,
-  "pnl_eur_est": 224.58
+  "profit_factor": 1.96,
+  "total_r": 38.25,
+  "pnl_eur_est": 230.28
  },
  "trades": [
   {
@@ -1363,7 +1362,13 @@
     "COT +0.54"
    ],
    "opened_at": "2026-08-22T01:13:28.148596+00:00",
-   "status": "OPEN"
+   "status": "CLOSED",
+   "exit_price": 0.59633,
+   "exit_reason": "TP1",
+   "r_multiple": 1.0,
+   "pnl_eur_est": 5.7,
+   "closed_at": "2026-08-23T04:36:43.026561+00:00",
+   "bars_held": 1
   },
   {
    "id": "MELI.NAS_202608220235",
