@@ -2799,7 +2799,13 @@
    "prezzo esteso +1.6 ATR da EMA20 \u2192 ordine LIMIT a 937.91 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-08-17T16:57:43.153224+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 939.1199951171875,
+  "exit_reason": "TIME",
+  "r_multiple": 0.01,
+  "pnl_eur_est": 0.07,
+  "closed_at": "2026-09-02T14:08:35.412700+00:00",
+  "bars_held": 12
  },
  {
   "id": "AVGO.NAS_202608171728",
@@ -3048,7 +3054,13 @@
    "macro +0.38 / tech +0.98 concordi"
   ],
   "opened_at": "2026-08-20T05:30:18.624243+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 183.723,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -8.18,
+  "closed_at": "2026-09-02T14:08:35.488808+00:00",
+  "bars_held": 9
  },
  {
   "id": "AUDUSD_202608200659",
@@ -3991,6 +4003,27 @@
    "sentiment +0.96 / tech +0.35 concordi"
   ],
   "opened_at": "2026-09-02T00:51:28.509618+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "USDCHF_202609021408",
+  "symbol": "USDCHF",
+  "direction": "LONG",
+  "yf": "USDCHF=X",
+  "entry": 0.8125,
+  "stop": 0.80462,
+  "tp1": 0.82038,
+  "tp2": 0.82826,
+  "lots": 0.01,
+  "risk_eur": 7.47,
+  "confidence": 0.606,
+  "reasons": [
+   "news: Fed hawkish, Risk-off",
+   "macro +1.00 / tech +0.85 concordi",
+   "COT -0.33",
+   "NFP tra 2gg: storicamente UP +0.17% in pre5 (hit 69%, n=32)"
+  ],
+  "opened_at": "2026-09-02T14:08:35.181336+00:00",
   "status": "OPEN"
  }
 ]
