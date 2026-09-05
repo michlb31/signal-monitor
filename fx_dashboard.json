@@ -1,26 +1,26 @@
 {
- "generated_at": "2026-09-05T21:31:52.119166+00:00",
+ "generated_at": "2026-09-05T23:35:23.467137+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 40,
+ "n_titles": 33,
  "news_events": [
-  {
-   "rule": "BCE hawkish",
-   "strength": 1.5,
-   "n": 2
-  },
   {
    "rule": "Fed hawkish",
    "strength": 1.2,
    "n": 2
   },
   {
+   "rule": "BCE hawkish",
+   "strength": 1.2,
+   "n": 2
+  },
+  {
    "rule": "Jobs USA forti",
    "strength": 0.3,
-   "n": 5
+   "n": 4
   },
   {
    "rule": "Fed dovish",
@@ -79,16 +79,16 @@
   {
    "symbol": "EURGBP",
    "direction": "LONG",
-   "confidence": 0.292,
+   "confidence": 0.264,
    "layers": {
-    "news": 0.563,
+    "news": 0.47,
     "macro": -0.024,
     "tech": 0.35,
     "cot": 0.287,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.29 < 0.45",
+   "gate_reason": "confidence 0.26 < 0.45",
    "price": 0.8587499856948853,
    "rsi": 66.0
   },
@@ -205,6 +205,22 @@
    "rsi": 45.6
   },
   {
+   "symbol": "EURJPY",
+   "direction": "SHORT",
+   "confidence": 0.133,
+   "layers": {
+    "news": 0.378,
+    "macro": -0.674,
+    "tech": -0.35,
+    "cot": 0.287,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.13 < 0.45",
+   "price": 181.46200561523438,
+   "rsi": 28.4
+  },
+  {
    "symbol": "GBPUSD",
    "direction": "SHORT",
    "confidence": 0.116,
@@ -235,38 +251,6 @@
    "gate_reason": "confidence 0.11 < 0.45",
    "price": 65020.94140625,
    "rsi": 28.1
-  },
-  {
-   "symbol": "EURJPY",
-   "direction": "SHORT",
-   "confidence": 0.102,
-   "layers": {
-    "news": 0.482,
-    "macro": -0.674,
-    "tech": -0.35,
-    "cot": 0.287,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.10 < 0.45",
-   "price": 181.46200561523438,
-   "rsi": 28.4
-  },
-  {
-   "symbol": "DE40",
-   "direction": "SHORT",
-   "confidence": 0.102,
-   "layers": {
-    "news": -0.325,
-    "macro": -0.162,
-    "tech": 0.35,
-    "cot": -0.287,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.10 < 0.45",
-   "price": 26046.400390625,
-   "rsi": 42.5
   },
   {
    "symbol": "USTEC",
@@ -349,6 +333,22 @@
    "rsi": 47.1
   },
   {
+   "symbol": "DE40",
+   "direction": "SHORT",
+   "confidence": 0.083,
+   "layers": {
+    "news": -0.264,
+    "macro": -0.162,
+    "tech": 0.35,
+    "cot": -0.287,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.08 < 0.45",
+   "price": 26046.400390625,
+   "rsi": 42.5
+  },
+  {
    "symbol": "COCOA",
    "direction": "LONG",
    "confidence": 0.068,
@@ -398,17 +398,17 @@
   },
   {
    "symbol": "EURUSD",
-   "direction": "LONG",
-   "confidence": 0.025,
+   "direction": "SHORT",
+   "confidence": 0.013,
    "layers": {
-    "news": 0.105,
+    "news": -0.022,
     "macro": -0.041,
     "tech": -0.15,
     "cot": 0.287,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.02 < 0.45",
+   "gate_reason": "confidence 0.01 < 0.45",
    "price": 1.1621150970458984,
    "rsi": 57.1
   },
@@ -474,7 +474,7 @@
    "season_note": "",
    "yf": "NVDA",
    "asset_class": "stock",
-   "timestamp": "2026-09-05T21:31:52.119110+00:00",
+   "timestamp": "2026-09-05T23:35:23.467091+00:00",
    "company": "Nvidia Corp",
    "entry_type": "LIMIT"
   }
@@ -519,16 +519,28 @@
    "price": 126.28
   },
   {
-   "symbol": "RH.NYSE",
-   "name": "RH",
+   "symbol": "ELF.NYSE",
+   "name": "elf Beauty Inc",
+   "direction": "LONG",
+   "composite": 0.336,
+   "news_score": 0.322,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.34 < 0.5",
+   "n_mentions": 1,
+   "price": 109.67
+  },
+  {
+   "symbol": "ADC.NYSE",
+   "name": "Agree Realty Corp",
    "direction": "SHORT",
-   "composite": -0.05,
-   "news_score": 0.25,
+   "composite": -0.045,
+   "news_score": 0.26,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
+   "gate_reason": "composite 0.04 < 0.5",
    "n_mentions": 1,
-   "price": 147.99
+   "price": 72.62
   },
   {
    "symbol": "GOOG.NAS",
@@ -553,30 +565,6 @@
    "gate_reason": null,
    "n_mentions": 1,
    "price": 230.36
-  },
-  {
-   "symbol": "KHC.NAS",
-   "name": "Kraft Heinz Co/The",
-   "direction": "SHORT",
-   "composite": -0.082,
-   "news_score": 0.185,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.08 < 0.5",
-   "n_mentions": 1,
-   "price": 24.85
-  },
-  {
-   "symbol": "DELL.NYSE",
-   "name": "Dell Technologies Inc",
-   "direction": "LONG",
-   "composite": 0.511,
-   "news_score": 0.173,
-   "tech_score": 0.85,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+2.0 ATR da EMA20, +3.3 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 524.14
   },
   {
    "symbol": "GS.NYSE",
