@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-09-12T22:52:01.940781+00:00",
+ "generated_at": "2026-09-13T00:38:50.644673+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 45,
+ "n_titles": 38,
  "news_events": [
   {
    "rule": "Fed hawkish",
    "strength": 0.3,
-   "n": 8
+   "n": 5
   },
   {
    "rule": "Fed dovish",
@@ -452,7 +452,7 @@
     "macro +0.63 / tech +0.85 concordi",
     "COT +0.19"
    ],
-   "next_event": "FOMC (USD) tra 4gg",
+   "next_event": "FOMC (USD) tra 3gg",
    "currencies": [
     "USD",
     "CHF"
@@ -463,7 +463,7 @@
    "season_note": "",
    "yf": "USDCHF=X",
    "asset_class": "fx",
-   "timestamp": "2026-09-12T22:51:56.652957+00:00",
+   "timestamp": "2026-09-13T00:38:44.485943+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
   }
@@ -471,46 +471,39 @@
  "rejected": [],
  "calendar": [
   {
-   "date": "2026-09-12",
-   "ccy": "EUR",
-   "event": "ECB President Lagarde Speaks",
-   "impact": "MEDIUM",
-   "days_until": 0
-  },
-  {
    "date": "2026-09-16",
    "ccy": "USD",
    "event": "FOMC",
    "impact": "HIGH",
-   "days_until": 4
+   "days_until": 3
   },
   {
    "date": "2026-09-17",
    "ccy": "GBP",
    "event": "BOE",
    "impact": "HIGH",
-   "days_until": 5
+   "days_until": 4
   },
   {
    "date": "2026-09-18",
    "ccy": "JPY",
    "event": "BOJ",
    "impact": "HIGH",
-   "days_until": 6
+   "days_until": 5
   }
  ],
  "stock_candidates": [
   {
-   "symbol": "AU.NYSE",
-   "name": "AngloGold Ashanti Limited",
-   "direction": "SHORT",
-   "composite": -0.387,
-   "news_score": -0.7,
-   "tech_score": -0.075,
+   "symbol": "PANW.NYSE",
+   "name": "Palo Alto Networks Inc",
+   "direction": "LONG",
+   "composite": 0.275,
+   "news_score": 0.9,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.28 < 0.5",
    "n_mentions": 1,
-   "price": 104.42
+   "price": 330.65
   },
   {
    "symbol": "GO.NAS",
@@ -525,14 +518,50 @@
    "price": 11.25
   },
   {
+   "symbol": "FANG.NAS",
+   "name": "Diamondback Energy Inc Cl",
+   "direction": "LONG",
+   "composite": 0.475,
+   "news_score": 0.6,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.47 < 0.5",
+   "n_mentions": 1,
+   "price": 204.97
+  },
+  {
+   "symbol": "GVA.NYSE",
+   "name": "Granite Construction Inc CF",
+   "direction": "SHORT",
+   "composite": -0.125,
+   "news_score": 0.6,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "composite 0.12 < 0.5",
+   "n_mentions": 1,
+   "price": 118.92
+  },
+  {
+   "symbol": "AU.NYSE",
+   "name": "AngloGold Ashanti Limited",
+   "direction": "SHORT",
+   "composite": -0.263,
+   "news_score": -0.45,
+   "tech_score": -0.075,
+   "gate": false,
+   "gate_reason": "composite 0.26 < 0.5",
+   "n_mentions": 1,
+   "price": 104.42
+  },
+  {
    "symbol": "ARMK.NYSE",
    "name": "Aramark",
    "direction": "LONG",
-   "composite": 0.4,
-   "news_score": 0.45,
+   "composite": 0.3,
+   "news_score": 0.25,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.40 < 0.5",
+   "gate_reason": "composite 0.30 < 0.5",
    "n_mentions": 1,
    "price": 58.55
   },
@@ -540,11 +569,11 @@
    "symbol": "KR.NYSE",
    "name": "Kroger Co/The",
    "direction": "LONG",
-   "composite": 0.378,
-   "news_score": 0.405,
+   "composite": 0.287,
+   "news_score": 0.225,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.38 < 0.5",
+   "gate_reason": "composite 0.29 < 0.5",
    "n_mentions": 1,
    "price": 58.49
   },
@@ -559,18 +588,6 @@
    "gate_reason": "composite 0.01 < 0.5",
    "n_mentions": 1,
    "price": 45.12
-  },
-  {
-   "symbol": "TDY.NYSE",
-   "name": "Teledyne Technologies Inc |",
-   "direction": "SHORT",
-   "composite": -0.1,
-   "news_score": 0.15,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.10 < 0.5",
-   "n_mentions": 1,
-   "price": 603.79
   }
  ],
  "journal": {
