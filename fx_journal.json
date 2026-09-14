@@ -4347,7 +4347,13 @@
    "sentiment +0.33 / tech +0.85 concordi"
   ],
   "opened_at": "2026-09-08T06:17:56.113819+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 211.15,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -10.17,
+  "closed_at": "2026-09-14T13:41:58.306359+00:00",
+  "bars_held": 4
  },
  {
   "id": "URBN.NAS_202609081135",
@@ -4480,7 +4486,13 @@
    "sentiment -0.90 / tech -0.85 concordi"
   ],
   "opened_at": "2026-09-09T09:36:20.660917+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 12.66,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 10.49,
+  "closed_at": "2026-09-14T13:41:58.668833+00:00",
+  "bars_held": 3
  },
  {
   "id": "CCK.NYSE_202609092032",
@@ -4623,7 +4635,13 @@
    "sentiment +0.67 / tech +0.35 concordi"
   ],
   "opened_at": "2026-09-11T11:42:01.673472+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 915.09,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -5.37,
+  "closed_at": "2026-09-14T13:41:58.838068+00:00",
+  "bars_held": 1
  },
  {
   "id": "DELL.NYSE_202609111904",
@@ -4643,7 +4661,13 @@
    "prezzo esteso +2.1 ATR da EMA20 \u2192 ordine LIMIT a 497.87 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-09-11T19:04:30.209994+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 543.96,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 7.95,
+  "closed_at": "2026-09-14T13:41:58.945143+00:00",
+  "bars_held": 1
  },
  {
   "id": "SWBI.NAS_202609120805",
@@ -4681,7 +4705,13 @@
    "sentiment +0.27 / tech +0.85 concordi"
   ],
   "opened_at": "2026-09-12T12:19:01.028848+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 368.01,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -10.21,
+  "closed_at": "2026-09-14T13:41:59.218094+00:00",
+  "bars_held": 1
  },
  {
   "id": "KR.NYSE_202609121809",
@@ -4719,7 +4749,13 @@
    "sentiment +0.70 / tech +0.35 concordi"
   ],
   "opened_at": "2026-09-12T20:48:04.425798+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 57.06,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -10.53,
+  "closed_at": "2026-09-14T13:41:59.575924+00:00",
+  "bars_held": 1
  },
  {
   "id": "SANM.NAS_202609131111",
@@ -4759,6 +4795,48 @@
    "prezzo esteso -1.4 ATR da EMA20 \u2192 ordine LIMIT a 263.3 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-09-14T06:46:29.545223+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "JP225_202609141341",
+  "symbol": "JP225",
+  "direction": "SHORT",
+  "yf": "^N225",
+  "entry": 64972.13,
+  "stop": 66759.65,
+  "tp1": 63184.6,
+  "tp2": 61397.07,
+  "lots": 0.01,
+  "risk_eur": 10.07,
+  "confidence": 0.552,
+  "reasons": [
+   "prezzo esteso -1.5 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
+   "news: BoJ hawkish, Fed hawkish",
+   "macro -0.70 / tech -0.35 concordi",
+   "COT -0.70"
+  ],
+  "opened_at": "2026-09-14T13:41:57.623442+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "EURUSD_202609141341",
+  "symbol": "EURUSD",
+  "direction": "SHORT",
+  "yf": "EURUSD=X",
+  "entry": 1.15872,
+  "stop": 1.16437,
+  "tp1": 1.15307,
+  "tp2": 1.14742,
+  "lots": 0.02,
+  "risk_eur": 9.79,
+  "confidence": 0.551,
+  "reasons": [
+   "prezzo esteso -1.3 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
+   "news: BCE hawkish, Dollaro forte",
+   "macro -0.76 / tech -0.15 concordi",
+   "COT -0.56"
+  ],
+  "opened_at": "2026-09-14T13:41:57.623458+00:00",
   "status": "OPEN"
  }
 ]
