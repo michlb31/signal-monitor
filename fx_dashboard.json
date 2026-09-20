@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-20T14:32:36.391194+00:00",
+ "generated_at": "2026-09-20T18:00:52.039459+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 11,
+ "n_titles": 10,
  "news_events": [],
  "universe": [
   {
@@ -440,24 +440,24 @@
    "season_note": "",
    "yf": "CC=F",
    "asset_class": "soft",
-   "timestamp": "2026-09-20T14:32:29.684786+00:00",
+   "timestamp": "2026-09-20T18:00:44.832229+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
   },
   {
    "accepted": true,
-   "symbol": "SHOE.NAS",
-   "direction": "SHORT",
-   "entry": 13.07,
-   "stop": 14.27,
-   "tp1": 11.87,
-   "tp2": 10.68,
+   "symbol": "DGX.NYSE",
+   "direction": "LONG",
+   "entry": 246.45,
+   "stop": 238.78,
+   "tp1": 254.12,
+   "tp2": 261.8,
    "tps": [
-    11.87,
-    11.27,
-    10.68,
-    9.48,
-    8.28
+    254.12,
+    257.96,
+    261.8,
+    269.47,
+    277.15
    ],
    "tp_multiples": [
     1.0,
@@ -468,27 +468,27 @@
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
    "inside_structure": "True",
-   "stop_points": 1.2,
-   "lots": 10.1,
-   "risk_eur": 10.52,
-   "risk_pct": 1.8,
-   "margin_eur": 22.98,
+   "stop_points": 7.7,
+   "lots": 1.5,
+   "risk_eur": 10.02,
+   "risk_pct": 1.7,
+   "margin_eur": 64.35,
    "rr_tp1": 2.0,
-   "confidence": 0.675,
+   "confidence": 0.546,
    "reasons": [
-    "news: Shoe Carnival stock slips after earnings miss - AD HOC NEWS",
-    "sentiment -1.00 / tech -0.35 concordi"
+    "news: Quest Diagnostics stock trades near 52-week high after stron",
+    "sentiment +0.24 / tech +0.85 concordi"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.35,
+   "commission_eur": 0.05,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "SHOE",
+   "yf": "DGX",
    "asset_class": "stock",
-   "timestamp": "2026-09-20T14:32:36.377301+00:00",
-   "company": "Shoe Carnival Inc",
+   "timestamp": "2026-09-20T18:00:52.039396+00:00",
+   "company": "Quest Diagnostics Inc",
    "entry_type": "MARKET"
   }
  ],
@@ -584,29 +584,17 @@
    "symbol": "SHOE.NAS",
    "name": "Shoe Carnival Inc",
    "direction": "SHORT",
-   "composite": -0.675,
-   "news_score": -1.0,
+   "composite": -0.4,
+   "news_score": -0.45,
    "tech_score": -0.35,
-   "gate": true,
-   "gate_reason": null,
+   "gate": false,
+   "gate_reason": "composite 0.40 < 0.5",
    "n_mentions": 1,
    "price": 13.07
   },
   {
-   "symbol": "MU.NAS",
-   "name": "Micron Technology Inc",
-   "direction": "LONG",
-   "composite": 0.641,
-   "news_score": 0.432,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 3,
-   "price": 1015.8
-  },
-  {
-   "symbol": "COST.NAS",
-   "name": "Costco Wholesale Corp CFI",
+   "symbol": "TDG.NYSE",
+   "name": "TransDigm Group Inc",
    "direction": "SHORT",
    "composite": -0.003,
    "news_score": 0.42,
@@ -614,60 +602,72 @@
    "gate": false,
    "gate_reason": "composite 0.00 < 0.5",
    "n_mentions": 1,
+   "price": 1086.05
+  },
+  {
+   "symbol": "PHM.NYSE",
+   "name": "PulteGroup Inc",
+   "direction": "LONG",
+   "composite": 0.053,
+   "news_score": 0.28,
+   "tech_score": -0.175,
+   "gate": false,
+   "gate_reason": "composite 0.05 < 0.5",
+   "n_mentions": 1,
+   "price": 117.26
+  },
+  {
+   "symbol": "COST.NAS",
+   "name": "Costco Wholesale Corp CFI",
+   "direction": "SHORT",
+   "composite": -0.077,
+   "news_score": 0.27,
+   "tech_score": -0.425,
+   "gate": false,
+   "gate_reason": "composite 0.08 < 0.5",
+   "n_mentions": 1,
    "price": 895.31
+  },
+  {
+   "symbol": "DGX.NYSE",
+   "name": "Quest Diagnostics Inc",
+   "direction": "LONG",
+   "composite": 0.546,
+   "news_score": 0.242,
+   "tech_score": 0.85,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 246.45
   },
   {
    "symbol": "LH.NYSE",
    "name": "Labcorp Holdings Inc",
    "direction": "LONG",
-   "composite": 0.378,
-   "news_score": 0.405,
+   "composite": 0.287,
+   "news_score": 0.225,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.38 < 0.5",
+   "gate_reason": "composite 0.29 < 0.5",
    "n_mentions": 1,
    "price": 320.71
-  },
-  {
-   "symbol": "NXT.LSE",
-   "name": "Next PLC",
-   "direction": "LONG",
-   "composite": 0.105,
-   "news_score": 0.385,
-   "tech_score": -0.175,
-   "gate": false,
-   "gate_reason": "composite 0.11 < 0.5",
-   "n_mentions": 4,
-   "price": 14210.0
   },
   {
    "symbol": "KBH.NYSE",
    "name": "KB Home",
    "direction": "SHORT",
-   "composite": -0.37,
-   "news_score": -0.315,
+   "composite": -0.3,
+   "news_score": -0.175,
    "tech_score": -0.425,
    "gate": false,
    "gate_reason": "earnings tra 2gg \u2014 blackout",
    "n_mentions": 1,
    "price": 47.12
-  },
-  {
-   "symbol": "GL.NYSE",
-   "name": "Globe Life Inc",
-   "direction": "LONG",
-   "composite": 0.21,
-   "news_score": 0.27,
-   "tech_score": 0.15,
-   "gate": false,
-   "gate_reason": "composite 0.21 < 0.5",
-   "n_mentions": 1,
-   "price": 173.42
   }
  ],
  "journal": {
-  "n_total": 209,
-  "n_open": 16,
+  "n_total": 210,
+  "n_open": 17,
   "n_closed": 193,
   "open_symbols": [
    "LLY.NYSE SHORT",
@@ -685,7 +685,8 @@
    "LEN.NYSE SHORT",
    "WMT.NAS SHORT",
    "MU.NAS LONG",
-   "SHOE.NAS SHORT"
+   "SHOE.NAS SHORT",
+   "DGX.NYSE LONG"
   ],
   "win_rate": 66.3,
   "expectancy_r": 0.32,
@@ -696,31 +697,6 @@
   "pnl_eur_est": 458.16
  },
  "trades": [
-  {
-   "id": "NKE.NYSE_202609072043",
-   "symbol": "NKE.NYSE",
-   "direction": "SHORT",
-   "yf": "NKE",
-   "entry": 38.4,
-   "stop": 39.67,
-   "tp1": 37.13,
-   "tp2": 35.87,
-   "lots": 9.7,
-   "risk_eur": 10.56,
-   "confidence": 0.65,
-   "reasons": [
-    "news: Nike Stock (NKE) Opinions on Earnings Miss and S&P 100 Remov",
-    "sentiment -0.45 / tech -0.85 concordi"
-   ],
-   "opened_at": "2026-09-07T20:43:34.205781+00:00",
-   "status": "CLOSED",
-   "exit_price": 37.13,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 10.56,
-   "closed_at": "2026-09-09T14:13:05.345765+00:00",
-   "bars_held": 2
-  },
   {
    "id": "MS.NYSE_202609080617",
    "symbol": "MS.NYSE",
@@ -1633,6 +1609,25 @@
     "sentiment -1.00 / tech -0.35 concordi"
    ],
    "opened_at": "2026-09-20T14:32:36.394170+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "DGX.NYSE_202609201800",
+   "symbol": "DGX.NYSE",
+   "direction": "LONG",
+   "yf": "DGX",
+   "entry": 246.45,
+   "stop": 238.78,
+   "tp1": 254.12,
+   "tp2": 261.8,
+   "lots": 1.5,
+   "risk_eur": 10.02,
+   "confidence": 0.546,
+   "reasons": [
+    "news: Quest Diagnostics stock trades near 52-week high after stron",
+    "sentiment +0.24 / tech +0.85 concordi"
+   ],
+   "opened_at": "2026-09-20T18:00:52.042402+00:00",
    "status": "OPEN"
   }
  ],
