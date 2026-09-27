@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27T06:18:24.179903+00:00",
+ "generated_at": "2026-09-27T12:19:18.401223+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
@@ -393,7 +393,55 @@
    "rsi": 33.9
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "HUM.NYSE",
+   "direction": "LONG",
+   "entry": 397.93,
+   "stop": 383.91,
+   "tp1": 411.95,
+   "tp2": 425.96,
+   "tps": [
+    411.95,
+    418.96,
+    425.96,
+    439.98,
+    454.0
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
+   "inside_structure": "False",
+   "stop_points": 14.0,
+   "lots": 0.8,
+   "risk_eur": 9.84,
+   "risk_pct": 1.7,
+   "margin_eur": 55.84,
+   "rr_tp1": 2.0,
+   "confidence": 0.675,
+   "reasons": [
+    "news: Does Barclays Upgrade Change The Bull Case For Humana Stock ",
+    "sentiment +1.00 / tech +0.35 concordi"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.04,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "HUM",
+   "asset_class": "stock",
+   "timestamp": "2026-09-27T12:19:18.401177+00:00",
+   "company": "Humana Inc",
+   "entry_type": "MARKET"
+  }
+ ],
  "rejected": [],
  "calendar": [
   {
@@ -483,57 +531,81 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "CIEN.NYSE",
-   "name": "Ciena Corp",
-   "direction": "SHORT",
-   "composite": -0.075,
-   "news_score": 0.7,
-   "tech_score": -0.85,
+   "symbol": "BCS.NYSE",
+   "name": "Barclays PLC",
+   "direction": "LONG",
+   "composite": 0.325,
+   "news_score": 1.0,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.08 < 0.5",
+   "gate_reason": "composite 0.33 < 0.5",
    "n_mentions": 1,
-   "price": 356.91
+   "price": 24.81
+  },
+  {
+   "symbol": "BARC.LSE",
+   "name": "Barclays PLC",
+   "direction": "LONG",
+   "composite": 0.325,
+   "news_score": 1.0,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.33 < 0.5",
+   "n_mentions": 1,
+   "price": 463.9
+  },
+  {
+   "symbol": "HUM.NYSE",
+   "name": "Humana Inc",
+   "direction": "LONG",
+   "composite": 0.675,
+   "news_score": 1.0,
+   "tech_score": 0.35,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 397.93
+  },
+  {
+   "symbol": "F.NYSE",
+   "name": "Ford Motor Co",
+   "direction": "SHORT",
+   "composite": -0.402,
+   "news_score": -0.63,
+   "tech_score": -0.175,
+   "gate": false,
+   "gate_reason": "composite 0.40 < 0.5",
+   "n_mentions": 1,
+   "price": 12.71
+  },
+  {
+   "symbol": "AVGO.NAS",
+   "name": "Broadcom Inc",
+   "direction": "SHORT",
+   "composite": -0.04,
+   "news_score": 0.27,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.04 < 0.5",
+   "n_mentions": 1,
+   "price": 352.81
   },
   {
    "symbol": "NOC.NYSE",
    "name": "Northrop Grumman Corp Cl",
    "direction": "SHORT",
-   "composite": -0.215,
-   "news_score": 0.42,
+   "composite": -0.35,
+   "news_score": 0.15,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.21 < 0.5",
+   "gate_reason": "composite 0.35 < 0.5",
    "n_mentions": 1,
    "price": 510.52
-  },
-  {
-   "symbol": "CTAS.NAS",
-   "name": "Cintas Corp",
-   "direction": "SHORT",
-   "composite": -0.051,
-   "news_score": 0.247,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
-   "n_mentions": 1,
-   "price": 199.91
-  },
-  {
-   "symbol": "SONO.NAS",
-   "name": "Sonos Inc",
-   "direction": "LONG",
-   "composite": 0.325,
-   "news_score": 0.225,
-   "tech_score": 0.425,
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (+3.0 ATR da EMA20, +2.0 ATR in 3gg) \u2014 non inseguire",
-   "n_mentions": 1,
-   "price": 18.18
   }
  ],
  "journal": {
-  "n_total": 234,
-  "n_open": 17,
+  "n_total": 235,
+  "n_open": 18,
   "n_closed": 217,
   "open_symbols": [
    "HTT.NYSE SHORT",
@@ -552,7 +624,8 @@
    "RGA.NYSE LONG",
    "NKE.NYSE SHORT",
    "CECO.NAS LONG",
-   "SMH.NAS LONG"
+   "SMH.NAS LONG",
+   "HUM.NYSE LONG"
   ],
   "win_rate": 68.2,
   "expectancy_r": 0.36,
@@ -563,31 +636,6 @@
   "pnl_eur_est": 592.8
  },
  "trades": [
-  {
-   "id": "PFE.NYSE_202609162310",
-   "symbol": "PFE.NYSE",
-   "direction": "LONG",
-   "yf": "PFE",
-   "entry": 27.46,
-   "stop": 26.72,
-   "tp1": 28.2,
-   "tp2": 28.94,
-   "lots": 16.3,
-   "risk_eur": 10.52,
-   "confidence": 0.623,
-   "reasons": [
-    "news: Pfizer Raises 2026 Revenue Guidance to $62 Billion. Here\u2019s W",
-    "sentiment +0.90 / tech +0.35 concordi"
-   ],
-   "opened_at": "2026-09-16T23:10:39.017616+00:00",
-   "status": "CLOSED",
-   "exit_price": 28.2,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 10.52,
-   "closed_at": "2026-09-23T21:09:58.282506+00:00",
-   "bars_held": 4
-  },
   {
    "id": "USDCAD_202609170137",
    "symbol": "USDCAD",
@@ -1492,111 +1540,130 @@
    ],
    "opened_at": "2026-09-27T00:47:51.368948+00:00",
    "status": "OPEN"
+  },
+  {
+   "id": "HUM.NYSE_202609271219",
+   "symbol": "HUM.NYSE",
+   "direction": "LONG",
+   "yf": "HUM",
+   "entry": 397.93,
+   "stop": 383.91,
+   "tp1": 411.95,
+   "tp2": 425.96,
+   "lots": 0.8,
+   "risk_eur": 9.84,
+   "confidence": 0.675,
+   "reasons": [
+    "news: Does Barclays Upgrade Change The Bull Case For Humana Stock ",
+    "sentiment +1.00 / tech +0.35 concordi"
+   ],
+   "opened_at": "2026-09-27T12:19:18.404066+00:00",
+   "status": "OPEN"
   }
  ],
  "backtest": {
-  "generated_at": "2026-09-20T10:23:42.405268+00:00",
+  "generated_at": "2026-09-27T11:08:54.224687+00:00",
   "profile": "fx",
   "period": "2y",
   "horizon": 12,
   "n_instruments": 24,
   "overall": {
-   "n": 415,
-   "win_rate": 40.48192771084337,
-   "avg_return": 0.10866454760497352,
-   "median_return": -0.6008798048433922,
-   "avg_days": 7.812048192771084,
-   "profit_factor": 1.0954589142287017,
-   "total_return": 45.095787256064014,
-   "sharpe": 0.15086785892946344,
-   "sortino": 0.27862738530329534,
+   "n": 413,
+   "win_rate": 41.404358353510894,
+   "avg_return": 0.13550769655547434,
+   "median_return": -0.5917601802542741,
+   "avg_days": 7.811138014527845,
+   "profit_factor": 1.119157902357712,
+   "total_return": 55.964678677410944,
+   "sharpe": 0.18626506401076734,
+   "sortino": 0.34480284464345906,
    "max_drawdown": 54.902328547886256
   },
   "by_direction": {
    "LONG": {
     "n": 317,
-    "win_rate": 44.79495268138801,
-    "avg_return": 0.35954183135677503,
-    "median_return": -0.3804401846581207,
-    "avg_days": 8.192429022082019,
-    "profit_factor": 1.4063972036709989,
-    "total_return": 113.97476054009769,
-    "sharpe": 0.5266353261814796,
-    "sortino": 0.9724791673207855,
-    "max_drawdown": 37.323257594256425
+    "win_rate": 46.05678233438486,
+    "avg_return": 0.39846850540141193,
+    "median_return": -0.2727925647464,
+    "avg_days": 8.198738170347003,
+    "profit_factor": 1.454746287435051,
+    "total_return": 126.31451621224761,
+    "sharpe": 0.5771456003089763,
+    "sortino": 1.0670882013054965,
+    "max_drawdown": 37.32325759425644
    },
    "SHORT": {
-    "n": 98,
-    "win_rate": 26.53061224489796,
-    "avg_return": -0.7028466661636088,
-    "median_return": -1.271534406088434,
-    "avg_days": 6.581632653061225,
-    "profit_factor": 0.6411783500899693,
-    "total_return": -68.87897328403368,
-    "sharpe": -0.8947162272132094,
-    "sortino": -1.8041636924493236,
-    "max_drawdown": 69.95057799084066
+    "n": 96,
+    "win_rate": 26.041666666666668,
+    "avg_return": -0.7328108076545488,
+    "median_return": -1.3019318758921528,
+    "avg_days": 6.53125,
+    "profit_factor": 0.6334017530894325,
+    "total_return": -70.34983753483668,
+    "sharpe": -0.9273225348592015,
+    "sortino": -1.8836832066366753,
+    "max_drawdown": 71.42144224164365
    }
   },
   "by_setup": {
    "BREAKOUT": {
-    "n": 165,
-    "win_rate": 35.75757575757576,
-    "avg_return": -0.1518938797697186,
-    "median_return": -0.5121416159855577,
-    "avg_days": 8.012121212121212,
-    "profit_factor": 0.7322066626131568,
-    "total_return": -25.062490162003577,
-    "sharpe": -0.7209636799558318,
-    "sortino": -1.4032026092931862,
-    "max_drawdown": 25.32069623122064
+    "n": 163,
+    "win_rate": 38.65030674846626,
+    "avg_return": -0.11966862083957366,
+    "median_return": -0.47232938625515675,
+    "avg_days": 8.01840490797546,
+    "profit_factor": 0.7800397727952234,
+    "total_return": -19.505985196850506,
+    "sharpe": -0.5701583373389739,
+    "sortino": -1.0887211499711915,
+    "max_drawdown": 24.915003310192656
    },
    "TREND_FOLLOW": {
     "n": 148,
     "win_rate": 45.27027027027027,
-    "avg_return": 0.11275260837243618,
-    "median_return": -0.43376143678521656,
+    "avg_return": 0.12842318223504215,
+    "median_return": -0.40995603383287027,
     "avg_days": 8.216216216216216,
-    "profit_factor": 1.1184548862517665,
-    "total_return": 16.68738603912055,
-    "sharpe": 0.19823064338075988,
-    "sortino": 0.32499607004884773,
-    "max_drawdown": 27.835840674854385
+    "profit_factor": 1.1360208227375117,
+    "total_return": 19.006630970786244,
+    "sharpe": 0.2253936419249964,
+    "sortino": 0.36895742810332394,
+    "max_drawdown": 27.83584067485438
    },
    "MEAN_REVERT_LONG": {
     "n": 30,
     "win_rate": 56.666666666666664,
-    "avg_return": 1.1487080795970603,
+    "avg_return": 1.1877708413741304,
     "median_return": 0.9039874126151287,
-    "avg_days": 8.733333333333333,
-    "profit_factor": 1.463074735438881,
-    "total_return": 34.46124238791182,
-    "sharpe": 0.8183562074798807,
-    "sortino": 1.8044926925333156,
+    "avg_days": 8.833333333333334,
+    "profit_factor": 1.4788219721796323,
+    "total_return": 35.63312524122391,
+    "sharpe": 0.840592235090678,
+    "sortino": 1.8552644386647097,
     "max_drawdown": 26.048525227226065
    },
    "MEAN_REVERT_SHORT": {
-    "n": 53,
-    "win_rate": 18.867924528301888,
-    "avg_return": -1.419417009886723,
-    "median_return": -2.130376296565397,
-    "avg_days": 5.69811320754717,
-    "profit_factor": 0.47235957784268806,
-    "total_return": -75.2291015239963,
-    "sharpe": -1.7900823023376653,
-    "sortino": -3.8393047125458204,
-    "max_drawdown": 75.22910152399629
+    "n": 52,
+    "win_rate": 17.307692307692307,
+    "avg_return": -1.5015369071795666,
+    "median_return": -2.1389926041392675,
+    "avg_days": 5.480769230769231,
+    "profit_factor": 0.45738875627052433,
+    "total_return": -78.07991917333744,
+    "sharpe": -1.9175625115831538,
+    "sortino": -4.171160925735785,
+    "max_drawdown": 78.07991917333743
    },
    "DIP_BUY": {
-    "n": 19,
-    "win_rate": 78.94736842105263,
-    "avg_return": 4.959934237633238,
-    "median_return": 3.650731066547283,
-    "avg_days": 7.368421052631579,
-    "profit_factor": 5.497994085119712,
-    "total_return": 94.23875051503151,
-    "sharpe": 3.317990266722075,
-    "sortino": 10.726872278676815,
+    "n": 20,
+    "win_rate": 75.0,
+    "avg_return": 4.945541341779435,
+    "median_return": 3.255751245188364,
+    "avg_days": 7.65,
+    "profit_factor": 5.311636845638634,
+    "total_return": 98.9108268355887,
+    "sharpe": 3.2434009360817178,
+    "sortino": 10.338340267450567,
     "max_drawdown": 9.67622132342629
    }
   }
