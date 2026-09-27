@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-26T22:06:25.054653+00:00",
+ "generated_at": "2026-09-27T00:47:51.366088+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 27,
+ "n_titles": 21,
  "news_events": [
   {
    "rule": "Dollaro forte",
@@ -17,10 +17,10 @@
   {
    "symbol": "NZDUSD",
    "direction": "SHORT",
-   "confidence": 0.401,
+   "confidence": 0.4,
    "layers": {
     "news": -0.045,
-    "macro": -0.587,
+    "macro": -0.583,
     "tech": -0.425,
     "cot": -0.7,
     "event": 0.0
@@ -68,7 +68,7 @@
    "confidence": 0.368,
    "layers": {
     "news": -0.045,
-    "macro": -0.479,
+    "macro": -0.476,
     "tech": -0.425,
     "cot": -0.7,
     "event": 0.0
@@ -95,12 +95,28 @@
    "rsi": 32.0
   },
   {
-   "symbol": "USDCAD",
+   "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.322,
+   "confidence": 0.329,
    "layers": {
     "news": 0.045,
-    "macro": 0.607,
+    "macro": 0.655,
+    "tech": 0.425,
+    "cot": -0.071,
+    "event": 0.158
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.33 < 0.45",
+   "price": 0.8282999992370605,
+   "rsi": 81.4
+  },
+  {
+   "symbol": "USDCAD",
+   "direction": "LONG",
+   "confidence": 0.321,
+   "layers": {
+    "news": 0.045,
+    "macro": 0.603,
     "tech": 0.175,
     "cot": 0.552,
     "event": 0.0
@@ -109,38 +125,6 @@
    "gate_reason": "confidence 0.32 < 0.45",
    "price": 1.4141000509262085,
    "rsi": 91.9
-  },
-  {
-   "symbol": "GBPUSD",
-   "direction": "SHORT",
-   "confidence": 0.307,
-   "layers": {
-    "news": -0.045,
-    "macro": -0.483,
-    "tech": -0.175,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 1.324643611907959,
-   "rsi": 18.8
-  },
-  {
-   "symbol": "USDCHF",
-   "direction": "LONG",
-   "confidence": 0.307,
-   "layers": {
-    "news": 0.045,
-    "macro": 0.659,
-    "tech": 0.425,
-    "cot": -0.071,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 0.8282999992370605,
-   "rsi": 81.4
   },
   {
    "symbol": "US500",
@@ -159,12 +143,28 @@
    "rsi": 52.0
   },
   {
-   "symbol": "AUDUSD",
+   "symbol": "GBPUSD",
    "direction": "SHORT",
-   "confidence": 0.277,
+   "confidence": 0.298,
    "layers": {
     "news": -0.045,
-    "macro": -0.581,
+    "macro": -0.453,
+    "tech": -0.175,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.30 < 0.45",
+   "price": 1.3253458738327026,
+   "rsi": 19.9
+  },
+  {
+   "symbol": "AUDUSD",
+   "direction": "SHORT",
+   "confidence": 0.276,
+   "layers": {
+    "news": -0.045,
+    "macro": -0.577,
     "tech": -0.175,
     "cot": -0.302,
     "event": 0.0
@@ -177,16 +177,16 @@
   {
    "symbol": "GBPJPY",
    "direction": "SHORT",
-   "confidence": 0.257,
+   "confidence": 0.249,
    "layers": {
     "news": 0.0,
-    "macro": -0.216,
+    "macro": -0.189,
     "tech": -0.35,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.26 < 0.45",
+   "gate_reason": "confidence 0.25 < 0.45",
    "price": 208.3769989013672,
    "rsi": 49.8
   },
@@ -273,26 +273,26 @@
   {
    "symbol": "EURGBP",
    "direction": "SHORT",
-   "confidence": 0.142,
+   "confidence": 0.149,
    "layers": {
     "news": 0.0,
-    "macro": 0.003,
+    "macro": -0.023,
     "tech": -0.15,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.14 < 0.45",
+   "gate_reason": "confidence 0.15 < 0.45",
    "price": 0.8595200181007385,
    "rsi": 53.8
   },
   {
    "symbol": "USDJPY",
    "direction": "LONG",
-   "confidence": 0.129,
+   "confidence": 0.127,
    "layers": {
     "news": 0.045,
-    "macro": 0.267,
+    "macro": 0.263,
     "tech": -0.28,
     "cot": 0.7,
     "event": 0.0
@@ -402,18 +402,18 @@
  "tickets": [
   {
    "accepted": true,
-   "symbol": "CECO.NAS",
+   "symbol": "SMH.NAS",
    "direction": "LONG",
-   "entry": 73.5,
-   "stop": 68.19,
-   "tp1": 78.81,
-   "tp2": 84.12,
+   "entry": 581.56,
+   "stop": 559.74,
+   "tp1": 603.38,
+   "tp2": 625.19,
    "tps": [
-    78.81,
-    81.47,
-    84.12,
-    89.43,
-    94.74
+    603.38,
+    614.28,
+    625.19,
+    647.01,
+    668.82
    ],
    "tp_multiples": [
     1.0,
@@ -423,29 +423,30 @@
     4.0
    ],
    "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 5.3,
-   "lots": 2.2,
-   "risk_eur": 10.25,
-   "risk_pct": 1.7,
-   "margin_eur": 28.37,
+   "inside_structure": "True",
+   "stop_points": 21.8,
+   "lots": 0.5,
+   "risk_eur": 9.57,
+   "risk_pct": 1.6,
+   "margin_eur": 51.01,
    "rr_tp1": 2.0,
-   "confidence": 0.512,
+   "confidence": 0.5,
    "reasons": [
-    "news: Raised Guidance Might Change The Case For Investing In CECO ",
-    "sentiment +0.17 / tech +0.85 concordi"
+    "news: Prediction: Sept. 30 Will Be a Big Day for the Stock Market.",
+    "sentiment +0.15 / tech +0.85 concordi",
+    "prezzo esteso +1.9 ATR da EMA20 \u2192 ordine LIMIT a 581.56 sul ritracciamento (NON a mercato)"
    ],
    "next_event": "",
    "currencies": [],
    "spread_cost_eur": 0.0,
-   "commission_eur": 0.08,
+   "commission_eur": 0.04,
    "swap_eur_day": null,
    "season_note": "",
-   "yf": "CECO",
+   "yf": "SMH",
    "asset_class": "stock",
-   "timestamp": "2026-09-26T22:06:25.054607+00:00",
-   "company": "CECO Environmental Corp (\u00a2",
-   "entry_type": "MARKET"
+   "timestamp": "2026-09-27T00:47:51.366042+00:00",
+   "company": "Market Vectors Semiconduc",
+   "entry_type": "LIMIT"
   }
  ],
  "rejected": [],
@@ -455,7 +456,7 @@
    "ccy": "USD",
    "event": "NFP",
    "impact": "HIGH",
-   "days_until": 6
+   "days_until": 5
   }
  ],
  "stock_candidates": [
@@ -463,8 +464,8 @@
    "symbol": "SONO.NAS",
    "name": "Sonos Inc",
    "direction": "LONG",
-   "composite": 0.662,
-   "news_score": 0.9,
+   "composite": 0.415,
+   "news_score": 0.405,
    "tech_score": 0.425,
    "gate": false,
    "gate_reason": "gi\u00e0 esteso (+3.0 ATR da EMA20, +2.0 ATR in 3gg) \u2014 non inseguire",
@@ -472,81 +473,45 @@
    "price": 18.18
   },
   {
-   "symbol": "NKE.NYSE",
-   "name": "NIKE Inc",
-   "direction": "SHORT",
-   "composite": -0.421,
-   "news_score": -0.293,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.42 < 0.5",
-   "n_mentions": 2,
-   "price": 35.75
-  },
-  {
    "symbol": "CCL.NYSE",
    "name": "Carnival Corp.",
-   "direction": "LONG",
-   "composite": 0.041,
+   "direction": "SHORT",
+   "composite": -0.059,
    "news_score": 0.231,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.04 < 0.5",
+   "gate_reason": "earnings tra 2gg \u2014 blackout",
    "n_mentions": 1,
    "price": 22.25
   },
   {
-   "symbol": "AMX.NYSE",
-   "name": "America Movil SAB de CV",
+   "symbol": "NKE.NYSE",
+   "name": "NIKE Inc",
    "direction": "SHORT",
-   "composite": -0.31,
-   "news_score": 0.23,
-   "tech_score": -0.85,
+   "composite": -0.357,
+   "news_score": -0.163,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.31 < 0.5",
-   "n_mentions": 1,
-   "price": 22.03
+   "gate_reason": "composite 0.36 < 0.5",
+   "n_mentions": 2,
+   "price": 35.75
   },
   {
-   "symbol": "RGA.NYSE",
-   "name": "Reinsurance Group of Amer",
+   "symbol": "SMH.NAS",
+   "name": "Market Vectors Semiconduc",
    "direction": "LONG",
-   "composite": 0.29,
-   "news_score": 0.23,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
-   "n_mentions": 1,
-   "price": 248.65
-  },
-  {
-   "symbol": "ANF.NYSE",
-   "name": "Abercrombie & Fitch Co CF",
-   "direction": "LONG",
-   "composite": 0.287,
-   "news_score": 0.225,
-   "tech_score": 0.35,
-   "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
-   "n_mentions": 1,
-   "price": 135.71
-  },
-  {
-   "symbol": "CECO.NAS",
-   "name": "CECO Environmental Corp (\u00a2",
-   "direction": "LONG",
-   "composite": 0.512,
-   "news_score": 0.175,
+   "composite": 0.5,
+   "news_score": 0.15,
    "tech_score": 0.85,
    "gate": true,
    "gate_reason": null,
    "n_mentions": 1,
-   "price": 73.5
+   "price": 606.56
   }
  ],
  "journal": {
-  "n_total": 233,
-  "n_open": 16,
+  "n_total": 234,
+  "n_open": 17,
   "n_closed": 217,
   "open_symbols": [
    "HTT.NYSE SHORT",
@@ -564,7 +529,8 @@
    "CSIQ.NAS SHORT",
    "RGA.NYSE LONG",
    "NKE.NYSE SHORT",
-   "CECO.NAS LONG"
+   "CECO.NAS LONG",
+   "SMH.NAS LONG"
   ],
   "win_rate": 68.2,
   "expectancy_r": 0.36,
@@ -575,32 +541,6 @@
   "pnl_eur_est": 592.8
  },
  "trades": [
-  {
-   "id": "APO.NYSE_202609162024",
-   "symbol": "APO.NYSE",
-   "direction": "SHORT",
-   "yf": "APO",
-   "entry": 129.23,
-   "stop": 133.85,
-   "tp1": 124.61,
-   "tp2": 119.99,
-   "lots": 2.6,
-   "risk_eur": 10.48,
-   "confidence": 0.55,
-   "reasons": [
-    "news: Hyperscaler debt signals warning sign, Apollo cautions",
-    "sentiment -0.75 / tech -0.35 concordi",
-    "prezzo esteso -1.5 ATR da EMA20 \u2192 ordine LIMIT a 129.23 sul ritracciamento (NON a mercato)"
-   ],
-   "opened_at": "2026-09-16T20:24:16.817834+00:00",
-   "status": "CLOSED",
-   "exit_price": 124.61,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 10.48,
-   "closed_at": "2026-09-18T15:56:05.314853+00:00",
-   "bars_held": 2
-  },
   {
    "id": "PFE.NYSE_202609162310",
    "symbol": "PFE.NYSE",
@@ -1509,6 +1449,26 @@
     "sentiment +0.17 / tech +0.85 concordi"
    ],
    "opened_at": "2026-09-26T22:06:25.057602+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "SMH.NAS_202609270047",
+   "symbol": "SMH.NAS",
+   "direction": "LONG",
+   "yf": "SMH",
+   "entry": 581.56,
+   "stop": 559.74,
+   "tp1": 603.38,
+   "tp2": 625.19,
+   "lots": 0.5,
+   "risk_eur": 9.57,
+   "confidence": 0.5,
+   "reasons": [
+    "news: Prediction: Sept. 30 Will Be a Big Day for the Stock Market.",
+    "sentiment +0.15 / tech +0.85 concordi",
+    "prezzo esteso +1.9 ATR da EMA20 \u2192 ordine LIMIT a 581.56 sul ritracciamento (NON a mercato)"
+   ],
+   "opened_at": "2026-09-27T00:47:51.368948+00:00",
    "status": "OPEN"
   }
  ],
