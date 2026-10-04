@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-03T22:02:22.776100+00:00",
+ "generated_at": "2026-10-04T00:32:29.282524+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 33,
+ "n_titles": 32,
  "news_events": [
   {
    "rule": "Jobs USA deboli",
@@ -16,25 +16,14 @@
    "rule": "Fed hawkish",
    "strength": 0.15,
    "n": 1
+  },
+  {
+   "rule": "BCE hawkish",
+   "strength": 0.15,
+   "n": 1
   }
  ],
  "universe": [
-  {
-   "symbol": "EURGBP",
-   "direction": "SHORT",
-   "confidence": 0.488,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.567,
-    "tech": -0.85,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "gi\u00e0 esteso (-2.3 ATR da EMA20) \u2014 non inseguire",
-   "price": 0.8497200012207031,
-   "rsi": 33.5
-  },
   {
    "symbol": "XAUUSD",
    "direction": "SHORT",
@@ -50,6 +39,22 @@
    "gate_reason": "",
    "price": 4162.2998046875,
    "rsi": 30.6
+  },
+  {
+   "symbol": "EURGBP",
+   "direction": "SHORT",
+   "confidence": 0.468,
+   "layers": {
+    "news": 0.064,
+    "macro": -0.567,
+    "tech": -0.85,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "gi\u00e0 esteso (-2.3 ATR da EMA20) \u2014 non inseguire",
+   "price": 0.8497200012207031,
+   "rsi": 33.5
   },
   {
    "symbol": "XAGUSD",
@@ -70,32 +75,32 @@
   {
    "symbol": "EURUSD",
    "direction": "SHORT",
-   "confidence": 0.402,
+   "confidence": 0.383,
    "layers": {
-    "news": 0.02,
+    "news": 0.084,
     "macro": -0.655,
     "tech": -0.425,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.40 < 0.45",
+   "gate_reason": "confidence 0.38 < 0.45",
    "price": 1.1257457733154297,
    "rsi": 3.6
   },
   {
    "symbol": "EURJPY",
    "direction": "SHORT",
-   "confidence": 0.392,
+   "confidence": 0.373,
    "layers": {
-    "news": 0.0,
+    "news": 0.064,
     "macro": -0.25,
     "tech": -0.85,
     "cot": -0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.39 < 0.45",
+   "gate_reason": "confidence 0.37 < 0.45",
    "price": 177.25,
    "rsi": 42.1
   },
@@ -294,16 +299,16 @@
   {
    "symbol": "DE40",
    "direction": "LONG",
-   "confidence": 0.099,
+   "confidence": 0.089,
    "layers": {
-    "news": 0.0,
+    "news": -0.034,
     "macro": 0.273,
     "tech": -0.35,
     "cot": 0.7,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.10 < 0.45",
+   "gate_reason": "confidence 0.09 < 0.45",
    "price": 25231.19921875,
    "rsi": 45.5
   },
@@ -404,7 +409,56 @@
    "rsi": 34.9
   }
  ],
- "tickets": [],
+ "tickets": [
+  {
+   "accepted": true,
+   "symbol": "CIEN.NYSE",
+   "direction": "LONG",
+   "entry": 367.34,
+   "stop": 342.0,
+   "tp1": 392.68,
+   "tp2": 418.01,
+   "tps": [
+    392.68,
+    405.34,
+    418.01,
+    443.35,
+    468.68
+   ],
+   "tp_multiples": [
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0
+   ],
+   "exit_plan": "size minima: uscita unica (consigliato TP2-TP3); a TP1 sposta lo stop a breakeven",
+   "inside_structure": false,
+   "stop_points": 25.3,
+   "lots": 0.4,
+   "risk_eur": 9.0,
+   "risk_pct": 1.5,
+   "margin_eur": 26.1,
+   "rr_tp1": 2.0,
+   "confidence": 0.547,
+   "reasons": [
+    "news: Did Earnings Beat Just Shift Ciena (CIEN) Stock Investment N",
+    "sentiment +0.92 / tech +0.17 concordi",
+    "prezzo esteso +1.4 ATR da EMA20 \u2192 ordine LIMIT a 367.34 sul ritracciamento (NON a mercato)"
+   ],
+   "next_event": "",
+   "currencies": [],
+   "spread_cost_eur": 0.0,
+   "commission_eur": 0.04,
+   "swap_eur_day": null,
+   "season_note": "",
+   "yf": "CIEN",
+   "asset_class": "stock",
+   "timestamp": "2026-10-04T00:32:29.282479+00:00",
+   "company": "Ciena Corp",
+   "entry_type": "LIMIT"
+  }
+ ],
  "rejected": [
   {
    "accepted": false,
@@ -421,50 +475,74 @@
    "ccy": "USD",
    "event": "CPI",
    "impact": "HIGH",
-   "days_until": 10
+   "days_until": 9
   }
  ],
  "stock_candidates": [
   {
+   "symbol": "CIEN.NYSE",
+   "name": "Ciena Corp",
+   "direction": "LONG",
+   "composite": 0.547,
+   "news_score": 0.919,
+   "tech_score": 0.175,
+   "gate": true,
+   "gate_reason": null,
+   "n_mentions": 1,
+   "price": 391.34
+  },
+  {
    "symbol": "CCL.NYSE",
    "name": "Carnival Corp.",
    "direction": "LONG",
-   "composite": 0.475,
-   "news_score": 0.6,
+   "composite": 0.31,
+   "news_score": 0.27,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.47 < 0.5",
+   "gate_reason": "composite 0.31 < 0.5",
    "n_mentions": 1,
    "price": 25.76
   },
   {
    "symbol": "KMX.NYSE",
    "name": "CarMax Inc",
-   "direction": "LONG",
-   "composite": 0.125,
-   "news_score": 0.6,
+   "direction": "SHORT",
+   "composite": -0.04,
+   "news_score": 0.27,
    "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.12 < 0.5",
+   "gate_reason": "composite 0.04 < 0.5",
    "n_mentions": 1,
    "price": 54.92
   },
   {
-   "symbol": "SM.NYSE",
-   "name": "SM Energy Co",
-   "direction": "LONG",
-   "composite": 0.287,
-   "news_score": 0.225,
-   "tech_score": 0.35,
+   "symbol": "CCH.LSE",
+   "name": "Coca-Cola HBC AG",
+   "direction": "SHORT",
+   "composite": -0.28,
+   "news_score": -0.21,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.29 < 0.5",
+   "gate_reason": "composite 0.28 < 0.5",
    "n_mentions": 1,
-   "price": 35.24
+   "price": 4242.0
+  },
+  {
+   "symbol": "KO.NYSE",
+   "name": "Coca-Cola Co/The",
+   "direction": "SHORT",
+   "composite": -0.28,
+   "news_score": -0.21,
+   "tech_score": -0.35,
+   "gate": false,
+   "gate_reason": "composite 0.28 < 0.5",
+   "n_mentions": 1,
+   "price": 85.65
   }
  ],
  "journal": {
-  "n_total": 251,
-  "n_open": 9,
+  "n_total": 252,
+  "n_open": 10,
   "n_closed": 242,
   "open_symbols": [
    "SHOE.NAS SHORT",
@@ -475,7 +553,8 @@
    "NKE.NYSE SHORT",
    "CCL.NYSE LONG",
    "RS.NYSE LONG",
-   "SM.NYSE LONG"
+   "SM.NYSE LONG",
+   "CIEN.NYSE LONG"
   ],
   "win_rate": 69.8,
   "expectancy_r": 0.39,
@@ -486,32 +565,6 @@
   "pnl_eur_est": 749.14
  },
  "trades": [
-  {
-   "id": "EURUSD_202609210123",
-   "symbol": "EURUSD",
-   "direction": "SHORT",
-   "yf": "EURUSD=X",
-   "entry": 1.15508,
-   "stop": 1.15976,
-   "tp1": 1.15039,
-   "tp2": 1.14571,
-   "lots": 0.02,
-   "risk_eur": 8.15,
-   "confidence": 0.461,
-   "reasons": [
-    "prezzo esteso -1.6 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
-    "news: Dollaro debole, Fed hawkish",
-    "macro -0.68 / tech -0.85 concordi"
-   ],
-   "opened_at": "2026-09-21T01:23:11.597438+00:00",
-   "status": "CLOSED",
-   "exit_price": 1.15039,
-   "exit_reason": "TP1",
-   "r_multiple": 1.0,
-   "pnl_eur_est": 8.15,
-   "closed_at": "2026-09-22T01:28:09.735883+00:00",
-   "bars_held": 1
-  },
   {
    "id": "USDCAD_202609211906",
    "symbol": "USDCAD",
@@ -1471,6 +1524,26 @@
     "sentiment +0.90 / tech +0.35 concordi"
    ],
    "opened_at": "2026-10-03T11:12:59.513811+00:00",
+   "status": "OPEN"
+  },
+  {
+   "id": "CIEN.NYSE_202610040032",
+   "symbol": "CIEN.NYSE",
+   "direction": "LONG",
+   "yf": "CIEN",
+   "entry": 367.34,
+   "stop": 342.0,
+   "tp1": 392.68,
+   "tp2": 418.01,
+   "lots": 0.4,
+   "risk_eur": 9.0,
+   "confidence": 0.547,
+   "reasons": [
+    "news: Did Earnings Beat Just Shift Ciena (CIEN) Stock Investment N",
+    "sentiment +0.92 / tech +0.17 concordi",
+    "prezzo esteso +1.4 ATR da EMA20 \u2192 ordine LIMIT a 367.34 sul ritracciamento (NON a mercato)"
+   ],
+   "opened_at": "2026-10-04T00:32:29.285616+00:00",
    "status": "OPEN"
   }
  ],
