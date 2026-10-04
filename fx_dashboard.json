@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-04T06:18:22.650039+00:00",
+ "generated_at": "2026-10-04T12:47:32.628387+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 9,
+ "n_titles": 10,
  "news_events": [],
  "universe": [
   {
@@ -27,18 +27,34 @@
   {
    "symbol": "XAUUSD",
    "direction": "SHORT",
-   "confidence": 0.436,
+   "confidence": 0.48,
    "layers": {
     "news": 0.0,
-    "macro": -0.461,
+    "macro": -0.609,
     "tech": -0.85,
     "cot": -0.565,
     "event": 0.0
    },
-   "gate": false,
-   "gate_reason": "confidence 0.44 < 0.45",
+   "gate": true,
+   "gate_reason": "",
    "price": 4162.2998046875,
    "rsi": 30.6
+  },
+  {
+   "symbol": "XAGUSD",
+   "direction": "SHORT",
+   "confidence": 0.415,
+   "layers": {
+    "news": 0.0,
+    "macro": -0.609,
+    "tech": -0.85,
+    "cot": -0.134,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.42 < 0.45",
+   "price": 59.97700119018555,
+   "rsi": 36.6
   },
   {
    "symbol": "EURUSD",
@@ -55,22 +71,6 @@
    "gate_reason": "confidence 0.41 < 0.45",
    "price": 1.1257457733154297,
    "rsi": 3.6
-  },
-  {
-   "symbol": "XAGUSD",
-   "direction": "SHORT",
-   "confidence": 0.408,
-   "layers": {
-    "news": 0.0,
-    "macro": -0.461,
-    "tech": -1.0,
-    "cot": -0.134,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.41 < 0.45",
-   "price": 60.415000915527344,
-   "rsi": 37.9
   },
   {
    "symbol": "EURJPY",
@@ -394,7 +394,16 @@
   }
  ],
  "tickets": [],
- "rejected": [],
+ "rejected": [
+  {
+   "accepted": false,
+   "symbol": "XAUUSD",
+   "direction": "SHORT",
+   "reject_reason": "volume minimo 0.01 \u21d2 rischio 16.2% > 3.0% (stop 107 punti troppo ampio per il capitale)",
+   "entry_source": "limit",
+   "entry_type": "LIMIT"
+  }
+ ],
  "calendar": [
   {
    "date": "2026-10-04",
@@ -476,23 +485,11 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "AMR.NYSE",
-   "name": "Alpha Metallurgi",
-   "direction": "SHORT",
-   "composite": -0.051,
-   "news_score": 0.747,
-   "tech_score": -0.85,
-   "gate": false,
-   "gate_reason": "composite 0.05 < 0.5",
-   "n_mentions": 3,
-   "price": 171.54
-  },
-  {
    "symbol": "SMH.NAS",
    "name": "Market Vectors Semiconduc",
    "direction": "LONG",
-   "composite": 0.562,
-   "news_score": 0.7,
+   "composite": 0.338,
+   "news_score": 0.25,
    "tech_score": 0.425,
    "gate": false,
    "gate_reason": "gi\u00e0 esteso (+2.7 ATR da EMA20, +1.6 ATR in 3gg) \u2014 non inseguire",
@@ -500,40 +497,28 @@
    "price": 630.6
   },
   {
-   "symbol": "KMX.NYSE",
-   "name": "CarMax Inc",
-   "direction": "LONG",
-   "composite": 0.035,
-   "news_score": 0.42,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.04 < 0.5",
-   "n_mentions": 1,
-   "price": 54.92
-  },
-  {
    "symbol": "CCL.NYSE",
    "name": "Carnival Corp.",
    "direction": "LONG",
-   "composite": 0.385,
-   "news_score": 0.42,
+   "composite": 0.25,
+   "news_score": 0.15,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.39 < 0.5",
+   "gate_reason": "composite 0.25 < 0.5",
    "n_mentions": 1,
    "price": 25.76
   },
   {
-   "symbol": "CIEN.NYSE",
-   "name": "Ciena Corp",
-   "direction": "LONG",
-   "composite": 0.203,
-   "news_score": 0.23,
-   "tech_score": 0.175,
+   "symbol": "KMX.NYSE",
+   "name": "CarMax Inc",
+   "direction": "SHORT",
+   "composite": -0.1,
+   "news_score": 0.15,
+   "tech_score": -0.35,
    "gate": false,
-   "gate_reason": "composite 0.20 < 0.5",
+   "gate_reason": "composite 0.10 < 0.5",
    "n_mentions": 1,
-   "price": 391.34
+   "price": 54.92
   }
  ],
  "journal": {
@@ -1544,108 +1529,108 @@
   }
  ],
  "backtest": {
-  "generated_at": "2026-09-27T11:08:54.224687+00:00",
+  "generated_at": "2026-10-04T11:37:46.989957+00:00",
   "profile": "fx",
   "period": "2y",
   "horizon": 12,
   "n_instruments": 24,
   "overall": {
-   "n": 413,
-   "win_rate": 41.404358353510894,
-   "avg_return": 0.13550769655547434,
-   "median_return": -0.5917601802542741,
-   "avg_days": 7.811138014527845,
-   "profit_factor": 1.119157902357712,
-   "total_return": 55.964678677410944,
-   "sharpe": 0.18626506401076734,
-   "sortino": 0.34480284464345906,
-   "max_drawdown": 54.902328547886256
+   "n": 408,
+   "win_rate": 40.44117647058824,
+   "avg_return": 0.12436932110680886,
+   "median_return": -0.5909071229722385,
+   "avg_days": 7.764705882352941,
+   "profit_factor": 1.1076247707497562,
+   "total_return": 50.74268301157798,
+   "sharpe": 0.1701592778337422,
+   "sortino": 0.31526420799370447,
+   "max_drawdown": 54.902328547886285
   },
   "by_direction": {
    "LONG": {
-    "n": 317,
-    "win_rate": 46.05678233438486,
-    "avg_return": 0.39846850540141193,
-    "median_return": -0.2727925647464,
-    "avg_days": 8.198738170347003,
-    "profit_factor": 1.454746287435051,
-    "total_return": 126.31451621224761,
-    "sharpe": 0.5771456003089763,
-    "sortino": 1.0670882013054965,
-    "max_drawdown": 37.32325759425644
+    "n": 314,
+    "win_rate": 43.94904458598726,
+    "avg_return": 0.3485597423390142,
+    "median_return": -0.3831936861394382,
+    "avg_days": 8.124203821656051,
+    "profit_factor": 1.3823507555234857,
+    "total_return": 109.44775909445048,
+    "sharpe": 0.503529148822468,
+    "sortino": 0.9367101736193779,
+    "max_drawdown": 37.323257594256425
    },
    "SHORT": {
-    "n": 96,
-    "win_rate": 26.041666666666668,
-    "avg_return": -0.7328108076545488,
-    "median_return": -1.3019318758921528,
-    "avg_days": 6.53125,
-    "profit_factor": 0.6334017530894325,
-    "total_return": -70.34983753483668,
-    "sharpe": -0.9273225348592015,
-    "sortino": -1.8836832066366753,
-    "max_drawdown": 71.42144224164365
+    "n": 94,
+    "win_rate": 28.723404255319153,
+    "avg_return": -0.6245220859880048,
+    "median_return": -1.2202123543642736,
+    "avg_days": 6.5638297872340425,
+    "profit_factor": 0.6830660562352321,
+    "total_return": -58.70507608287245,
+    "sharpe": -0.7758947786054406,
+    "sortino": -1.5670775108717712,
+    "max_drawdown": 64.75055289847135
    }
   },
   "by_setup": {
    "BREAKOUT": {
-    "n": 163,
-    "win_rate": 38.65030674846626,
-    "avg_return": -0.11966862083957366,
-    "median_return": -0.47232938625515675,
-    "avg_days": 8.01840490797546,
-    "profit_factor": 0.7800397727952234,
-    "total_return": -19.505985196850506,
-    "sharpe": -0.5701583373389739,
-    "sortino": -1.0887211499711915,
-    "max_drawdown": 24.915003310192656
+    "n": 162,
+    "win_rate": 35.80246913580247,
+    "avg_return": -0.14123252451581153,
+    "median_return": -0.46926209121127394,
+    "avg_days": 7.962962962962963,
+    "profit_factor": 0.7400955861308314,
+    "total_return": -22.879668971561472,
+    "sharpe": -0.6882811867321844,
+    "sortino": -1.2898284616848608,
+    "max_drawdown": 24.91500331019267
    },
    "TREND_FOLLOW": {
-    "n": 148,
-    "win_rate": 45.27027027027027,
-    "avg_return": 0.12842318223504215,
-    "median_return": -0.40995603383287027,
-    "avg_days": 8.216216216216216,
-    "profit_factor": 1.1360208227375117,
-    "total_return": 19.006630970786244,
-    "sharpe": 0.2253936419249964,
-    "sortino": 0.36895742810332394,
-    "max_drawdown": 27.83584067485438
+    "n": 146,
+    "win_rate": 45.20547945205479,
+    "avg_return": 0.11392510216262465,
+    "median_return": -0.43376143678521656,
+    "avg_days": 8.095890410958905,
+    "profit_factor": 1.1177544963147061,
+    "total_return": 16.633064915743194,
+    "sharpe": 0.199697921285056,
+    "sortino": 0.32930485766656553,
+    "max_drawdown": 27.835840674854385
    },
    "MEAN_REVERT_LONG": {
-    "n": 30,
-    "win_rate": 56.666666666666664,
-    "avg_return": 1.1877708413741304,
-    "median_return": 0.9039874126151287,
-    "avg_days": 8.833333333333334,
-    "profit_factor": 1.4788219721796323,
-    "total_return": 35.63312524122391,
-    "sharpe": 0.840592235090678,
-    "sortino": 1.8552644386647097,
+    "n": 29,
+    "win_rate": 58.620689655172406,
+    "avg_return": 1.3307489779019215,
+    "median_return": 0.9620963561670554,
+    "avg_days": 9.10344827586207,
+    "profit_factor": 1.540048567540315,
+    "total_return": 38.591720359155715,
+    "sharpe": 0.9168926298074856,
+    "sortino": 2.023119414003495,
     "max_drawdown": 26.048525227226065
    },
    "MEAN_REVERT_SHORT": {
-    "n": 52,
-    "win_rate": 17.307692307692307,
-    "avg_return": -1.5015369071795666,
+    "n": 50,
+    "win_rate": 20.0,
+    "avg_return": -1.3500515834910682,
     "median_return": -2.1389926041392675,
-    "avg_days": 5.480769230769231,
-    "profit_factor": 0.45738875627052433,
-    "total_return": -78.07991917333744,
-    "sharpe": -1.9175625115831538,
-    "sortino": -4.171160925735785,
-    "max_drawdown": 78.07991917333743
+    "avg_days": 5.56,
+    "profit_factor": 0.5111414430928413,
+    "total_return": -67.50257917455339,
+    "sharpe": -1.657813545001343,
+    "sortino": -3.64166632529833,
+    "max_drawdown": 74.15560738986592
    },
    "DIP_BUY": {
-    "n": 20,
-    "win_rate": 75.0,
-    "avg_return": 4.945541341779435,
-    "median_return": 3.255751245188364,
-    "avg_days": 7.65,
-    "profit_factor": 5.311636845638634,
-    "total_return": 98.9108268355887,
-    "sharpe": 3.2434009360817178,
-    "sortino": 10.338340267450567,
+    "n": 21,
+    "win_rate": 66.66666666666666,
+    "avg_return": 4.090483137275903,
+    "median_return": 2.7389319710554227,
+    "avg_days": 7.333333333333333,
+    "profit_factor": 3.6307098372022684,
+    "total_return": 85.90014588279394,
+    "sharpe": 2.6711393268370163,
+    "sortino": 10.997180557783688,
     "max_drawdown": 9.67622132342629
    }
   }
