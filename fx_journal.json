@@ -7216,7 +7216,13 @@
    "sentiment +0.70 / tech +0.35 concordi"
   ],
   "opened_at": "2026-10-18T03:16:49.290521+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 27.77,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 10.53,
+  "closed_at": "2026-10-22T14:24:37.854984+00:00",
+  "bars_held": 4
  },
  {
   "id": "BLND.LSE_202610181245",
@@ -7262,7 +7268,13 @@
    "drift pre-earnings favorevole: +0.8% medio nei 5gg pre (80%, n=10) \u2014 earnings tra 4gg"
   ],
   "opened_at": "2026-10-18T18:49:50.504326+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 160.99,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 10.29,
+  "closed_at": "2026-10-22T14:24:38.044424+00:00",
+  "bars_held": 4
  },
  {
   "id": "TSLA.NAS_202610182332",
@@ -7354,7 +7366,13 @@
    "sentiment +0.41 / tech +0.85 concordi"
   ],
   "opened_at": "2026-10-20T18:39:32.644072+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 255.74,
+  "exit_reason": "SL",
+  "r_multiple": -1.0,
+  "pnl_eur_est": -10.48,
+  "closed_at": "2026-10-22T14:24:38.293440+00:00",
+  "bars_held": 2
  },
  {
   "id": "USTEC_202610220854",
@@ -7373,6 +7391,47 @@
    "macro -0.92 / tech -0.35 concordi"
   ],
   "opened_at": "2026-10-22T08:54:42.834930+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "EURJPY_202610221424",
+  "symbol": "EURJPY",
+  "direction": "SHORT",
+  "yf": "EURJPY=X",
+  "entry": 177.5,
+  "stop": 178.596,
+  "tp1": 176.404,
+  "tp2": 175.307,
+  "lots": 0.01,
+  "risk_eur": 6.36,
+  "confidence": 0.484,
+  "reasons": [
+   "prezzo esteso -1.7 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
+   "news: BCE hawkish, BoJ hawkish",
+   "macro -0.20 / tech -0.85 concordi",
+   "COT -0.41"
+  ],
+  "opened_at": "2026-10-22T14:24:37.565822+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "DHR.NYSE_202610221424",
+  "symbol": "DHR.NYSE",
+  "direction": "LONG",
+  "yf": "DHR",
+  "entry": 225.47,
+  "stop": 215.54,
+  "tp1": 235.4,
+  "tp2": 245.33,
+  "lots": 1.1,
+  "risk_eur": 9.75,
+  "confidence": 0.638,
+  "reasons": [
+   "news: Danaher (DHR) Q3 Earnings Fuel Stock Gains On Margin Expansi",
+   "sentiment +0.43 / tech +0.85 concordi",
+   "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 225.47 sul ritracciamento (NON a mercato)"
+  ],
+  "opened_at": "2026-10-22T14:24:37.565835+00:00",
   "status": "OPEN"
  }
 ]
