@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-07T16:46:59.321411+00:00",
+ "generated_at": "2026-11-07T20:42:17.449158+00:00",
  "account": {
   "equity_eur": 587.0,
   "leverage": 30,
   "risk_pct": 1.7999999999999998
  },
- "n_titles": 49,
+ "n_titles": 41,
  "news_events": [
   {
    "rule": "Fed hawkish",
@@ -14,16 +14,11 @@
   },
   {
    "rule": "Jobs USA forti",
-   "strength": 0.22,
-   "n": 2
+   "strength": 0.27,
+   "n": 3
   },
   {
    "rule": "CPI USA freddo",
-   "strength": 0.15,
-   "n": 1
-  },
-  {
-   "rule": "Dollaro forte",
    "strength": 0.15,
    "n": 1
   }
@@ -32,9 +27,9 @@
   {
    "symbol": "AUDUSD",
    "direction": "SHORT",
-   "confidence": 0.603,
+   "confidence": 0.596,
    "layers": {
-    "news": -0.269,
+    "news": -0.245,
     "macro": -1.0,
     "tech": -0.85,
     "cot": -0.066,
@@ -48,9 +43,9 @@
   {
    "symbol": "NZDUSD",
    "direction": "SHORT",
-   "confidence": 0.566,
+   "confidence": 0.559,
    "layers": {
-    "news": -0.269,
+    "news": -0.245,
     "macro": -0.869,
     "tech": -0.85,
     "cot": -0.082,
@@ -64,25 +59,25 @@
   {
    "symbol": "XAUUSD",
    "direction": "SHORT",
-   "confidence": 0.447,
+   "confidence": 0.441,
    "layers": {
-    "news": -0.238,
+    "news": -0.216,
     "macro": -0.812,
     "tech": -0.35,
     "cot": -0.298,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.45 < 0.45",
+   "gate_reason": "confidence 0.44 < 0.45",
    "price": 4074.89990234375,
    "rsi": 44.1
   },
   {
    "symbol": "USDJPY",
    "direction": "LONG",
-   "confidence": 0.403,
+   "confidence": 0.396,
    "layers": {
-    "news": 0.269,
+    "news": 0.245,
     "macro": 0.733,
     "tech": 0.35,
     "cot": 0.102,
@@ -110,22 +105,6 @@
    "rsi": 34.2
   },
   {
-   "symbol": "USDCAD",
-   "direction": "LONG",
-   "confidence": 0.31,
-   "layers": {
-    "news": 0.269,
-    "macro": 0.823,
-    "tech": 0.35,
-    "cot": -0.7,
-    "event": 0.0
-   },
-   "gate": false,
-   "gate_reason": "confidence 0.31 < 0.45",
-   "price": 1.4127999544143677,
-   "rsi": 52.5
-  },
-  {
    "symbol": "AUDJPY",
    "direction": "SHORT",
    "confidence": 0.304,
@@ -142,18 +121,34 @@
    "rsi": 36.1
   },
   {
+   "symbol": "USDCAD",
+   "direction": "LONG",
+   "confidence": 0.303,
+   "layers": {
+    "news": 0.245,
+    "macro": 0.823,
+    "tech": 0.35,
+    "cot": -0.7,
+    "event": 0.0
+   },
+   "gate": false,
+   "gate_reason": "confidence 0.30 < 0.45",
+   "price": 1.4127999544143677,
+   "rsi": 52.5
+  },
+  {
    "symbol": "EURUSD",
    "direction": "SHORT",
-   "confidence": 0.29,
+   "confidence": 0.283,
    "layers": {
-    "news": -0.269,
+    "news": -0.245,
     "macro": -0.237,
     "tech": -0.35,
     "cot": -0.338,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.29 < 0.45",
+   "gate_reason": "confidence 0.28 < 0.45",
    "price": 1.1228259801864624,
    "rsi": 50.5
   },
@@ -368,25 +363,25 @@
   {
    "symbol": "GBPUSD",
    "direction": "SHORT",
-   "confidence": 0.042,
+   "confidence": 0.034,
    "layers": {
-    "news": -0.269,
+    "news": -0.245,
     "macro": -0.102,
     "tech": -0.12,
     "cot": 0.664,
     "event": 0.0
    },
    "gate": false,
-   "gate_reason": "confidence 0.04 < 0.45",
+   "gate_reason": "confidence 0.03 < 0.45",
    "price": 1.3456052541732788,
    "rsi": 64.6
   },
   {
    "symbol": "USDCHF",
    "direction": "LONG",
-   "confidence": 0.024,
+   "confidence": 0.016,
    "layers": {
-    "news": 0.269,
+    "news": 0.245,
     "macro": 0.155,
     "tech": -0.35,
     "cot": -0.108,
@@ -445,10 +440,10 @@
    "risk_pct": 1.0,
    "margin_eur": 25.02,
    "rr_tp1": 2.0,
-   "confidence": 0.566,
+   "confidence": 0.559,
    "reasons": [
     "prezzo esteso -1.7 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
-    "news: CPI USA freddo, Dollaro forte",
+    "news: CPI USA freddo, Fed hawkish",
     "macro -0.87 / tech -0.85 concordi"
    ],
    "next_event": "CPI (USD) tra 5gg",
@@ -462,56 +457,9 @@
    "season_note": "",
    "yf": "NZDUSD=X",
    "asset_class": "fx",
-   "timestamp": "2026-11-07T16:46:53.871618+00:00",
+   "timestamp": "2026-11-07T20:42:11.861384+00:00",
    "entry_source": "limit",
    "entry_type": "LIMIT"
-  },
-  {
-   "accepted": true,
-   "symbol": "AMZN.NAS",
-   "direction": "LONG",
-   "entry": 259.3,
-   "stop": 249.54,
-   "tp1": 269.06,
-   "tp2": 278.83,
-   "tps": [
-    269.06,
-    273.94,
-    278.83,
-    288.59,
-    298.35
-   ],
-   "tp_multiples": [
-    1.0,
-    1.5,
-    2.0,
-    3.0,
-    4.0
-   ],
-   "exit_plan": "scala 1/5 della size a ogni TP; a TP1 sposta lo stop a breakeven",
-   "inside_structure": "False",
-   "stop_points": 9.8,
-   "lots": 1.2,
-   "risk_eur": 10.43,
-   "risk_pct": 1.8,
-   "margin_eur": 55.42,
-   "rr_tp1": 2.0,
-   "confidence": 0.775,
-   "reasons": [
-    "news: Amazon Stock: Strong Buy Before AWS Growth Rewrites The Earn",
-    "sentiment +0.70 / tech +0.85 concordi"
-   ],
-   "next_event": "",
-   "currencies": [],
-   "spread_cost_eur": 0.0,
-   "commission_eur": 0.04,
-   "swap_eur_day": null,
-   "season_note": "",
-   "yf": "AMZN",
-   "asset_class": "stock",
-   "timestamp": "2026-11-07T16:46:59.321353+00:00",
-   "company": "Amazon.com Inc",
-   "entry_type": "MARKET"
   }
  ],
  "rejected": [
@@ -535,100 +483,100 @@
  ],
  "stock_candidates": [
   {
-   "symbol": "AMR.NYSE",
-   "name": "Alpha Metallurgi",
+   "symbol": "HR.NYSE",
+   "name": "Healthcare Realty Trust Inc",
+   "direction": "LONG",
+   "composite": 0.24,
+   "news_score": 0.63,
+   "tech_score": -0.15,
+   "gate": false,
+   "gate_reason": "composite 0.24 < 0.5",
+   "n_mentions": 1,
+   "price": 19.2
+  },
+  {
+   "symbol": "CL.NYSE",
+   "name": "Colgate-Palmolive Co",
+   "direction": "LONG",
+   "composite": 0.49,
+   "news_score": 0.63,
+   "tech_score": 0.35,
+   "gate": false,
+   "gate_reason": "composite 0.49 < 0.5",
+   "n_mentions": 1,
+   "price": 96.56
+  },
+  {
+   "symbol": "GFS.NAS",
+   "name": "GLOBALFOUNDRIES Inc CF",
    "direction": "SHORT",
-   "composite": -0.075,
-   "news_score": 0.7,
+   "composite": -0.2,
+   "news_score": 0.45,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.08 < 0.5",
+   "gate_reason": "composite 0.20 < 0.5",
    "n_mentions": 1,
-   "price": 147.93
+   "price": 38.62
   },
   {
-   "symbol": "AMZN.NAS",
-   "name": "Amazon.com Inc",
-   "direction": "LONG",
-   "composite": 0.775,
-   "news_score": 0.7,
-   "tech_score": 0.85,
-   "gate": true,
-   "gate_reason": null,
-   "n_mentions": 1,
-   "price": 259.3
-  },
-  {
-   "symbol": "NDAQ.NAS",
-   "name": "Nasdaq Inc",
-   "direction": "LONG",
-   "composite": 0.438,
-   "news_score": 0.7,
-   "tech_score": 0.175,
-   "gate": false,
-   "gate_reason": "composite 0.44 < 0.5",
-   "n_mentions": 1,
-   "price": 107.12
-  },
-  {
-   "symbol": "TTD.NAS",
-   "name": "The Trade Desk Inc. Class /",
+   "symbol": "COUR.NYSE",
+   "name": "Coursera Inc",
    "direction": "SHORT",
-   "composite": -0.125,
-   "news_score": 0.6,
+   "composite": -0.215,
+   "news_score": 0.42,
    "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "earnings tra 2gg \u2014 blackout",
+   "gate_reason": "gi\u00e0 esteso (-2.3 ATR da EMA20, +0.1 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
-   "price": 12.93
+   "price": 3.74
+  },
+  {
+   "symbol": "EVRG.NAS",
+   "name": "Evergy",
+   "direction": "LONG",
+   "composite": 0.419,
+   "news_score": 0.414,
+   "tech_score": 0.425,
+   "gate": false,
+   "gate_reason": "composite 0.42 < 0.5",
+   "n_mentions": 1,
+   "price": 87.54
   },
   {
    "symbol": "RHI.NYSE",
    "name": "Robert Half Inc",
    "direction": "LONG",
-   "composite": 0.423,
-   "news_score": 0.496,
+   "composite": 0.335,
+   "news_score": 0.32,
    "tech_score": 0.35,
    "gate": false,
-   "gate_reason": "composite 0.42 < 0.5",
+   "gate_reason": "composite 0.33 < 0.5",
    "n_mentions": 3,
    "price": 41.84
   },
   {
-   "symbol": "DCH.NYSE",
-   "name": "Dauch Corporation",
-   "direction": "LONG",
-   "composite": 0.028,
-   "news_score": 0.405,
-   "tech_score": -0.35,
-   "gate": false,
-   "gate_reason": "composite 0.03 < 0.5",
-   "n_mentions": 1,
-   "price": 4.52
-  },
-  {
-   "symbol": "RPRX.NAS",
-   "name": "Royalty Pharma PLC",
-   "direction": "LONG",
-   "composite": 0.177,
-   "news_score": 0.18,
-   "tech_score": 0.175,
-   "gate": false,
-   "gate_reason": "composite 0.18 < 0.5",
-   "n_mentions": 1,
-   "price": 67.3
-  },
-  {
-   "symbol": "CRUS.NAS",
-   "name": "Cirrus Logic Inc",
+   "symbol": "TKR.NYSE",
+   "name": "Timken Co/The",
    "direction": "SHORT",
-   "composite": -0.1,
-   "news_score": 0.15,
-   "tech_score": -0.35,
+   "composite": -0.285,
+   "news_score": 0.28,
+   "tech_score": -0.85,
    "gate": false,
-   "gate_reason": "composite 0.10 < 0.5",
+   "gate_reason": "gi\u00e0 esteso (-1.8 ATR da EMA20, -2.8 ATR in 3gg) \u2014 non inseguire",
    "n_mentions": 1,
-   "price": 113.58
+   "price": 102.03
+  },
+  {
+   "symbol": "TTD.NAS",
+   "name": "The Trade Desk Inc. Class /",
+   "direction": "SHORT",
+   "composite": -0.29,
+   "news_score": 0.27,
+   "tech_score": -0.85,
+   "gate": false,
+   "gate_reason": "earnings tra 2gg \u2014 blackout",
+   "n_mentions": 1,
+   "price": 12.93
   }
  ],
  "journal": {
