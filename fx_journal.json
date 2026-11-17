@@ -8344,7 +8344,13 @@
    "prezzo esteso -1.3 ATR da EMA20 \u2192 ordine LIMIT a 157.78 sul ritracciamento (NON a mercato)"
   ],
   "opened_at": "2026-11-08T14:07:33.524338+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 144.28,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 9.62,
+  "closed_at": "2026-11-17T00:59:44.972042+00:00",
+  "bars_held": 6
  },
  {
   "id": "AUDUSD_202611081859",
@@ -8413,7 +8419,13 @@
    "macro -0.25 / tech -0.85 concordi"
   ],
   "opened_at": "2026-11-09T10:07:47.384983+00:00",
-  "status": "OPEN"
+  "status": "CLOSED",
+  "exit_price": 107.456,
+  "exit_reason": "TP1",
+  "r_multiple": 1.0,
+  "pnl_eur_est": 9.52,
+  "closed_at": "2026-11-17T00:59:45.099599+00:00",
+  "bars_held": 6
  },
  {
   "id": "DE40_202611092059",
@@ -8696,6 +8708,47 @@
    "sentiment -0.62 / tech -0.85 concordi"
   ],
   "opened_at": "2026-11-16T17:20:01.058194+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "JP225_202611170059",
+  "symbol": "JP225",
+  "direction": "SHORT",
+  "yf": "^N225",
+  "entry": 61494.73,
+  "stop": 64041.61,
+  "tp1": 58947.85,
+  "tp2": 56400.97,
+  "lots": 0.01,
+  "risk_eur": 15.05,
+  "confidence": 0.451,
+  "reasons": [
+   "prezzo esteso -1.6 ATR da EMA20 \u2192 ordine LIMIT sul ritracciamento (NON a mercato)",
+   "news: Fed hawkish",
+   "macro -0.80 / tech -0.35 concordi",
+   "COT -0.70"
+  ],
+  "opened_at": "2026-11-17T00:59:44.414788+00:00",
+  "status": "OPEN"
+ },
+ {
+  "id": "LUV.NYSE_202611170059",
+  "symbol": "LUV.NYSE",
+  "direction": "LONG",
+  "yf": "LUV",
+  "entry": 44.76,
+  "stop": 42.35,
+  "tp1": 47.17,
+  "tp2": 49.58,
+  "lots": 4.8,
+  "risk_eur": 10.52,
+  "confidence": 0.525,
+  "reasons": [
+   "news: Should Air Traffic Control Upgrade Support Require Action Fr",
+   "sentiment +0.70 / tech +0.35 concordi",
+   "prezzo esteso +1.3 ATR da EMA20 \u2192 ordine LIMIT a 44.76 sul ritracciamento (NON a mercato)"
+  ],
+  "opened_at": "2026-11-17T00:59:44.414803+00:00",
   "status": "OPEN"
  }
 ]
